@@ -675,6 +675,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 		}
 	}
 
+[hidden]{display:none!important}
 :root{
   --bg:#F5F6F8; --bg2:#EDEFF3; --surface:#FFFFFF; --surface2:#F9FAFB;
   --ink:#171A1F; --ink2:#434A56; --muted:#7D8696; --line:#E4E7EC; --line2:#EEF0F3;
@@ -2529,6 +2530,8 @@ PAGES.map.after = function () {
   });
   applyMapFilter(true);
   mapObj.on('click', () => { $('#mapcard').innerHTML = ''; });
+  [150, 500, 1200].forEach((t) => setTimeout(() => { if (mapObj) { mapObj.invalidateSize(); applyMapFilter(true); } }, t));
+  window.addEventListener('resize', () => mapObj && mapObj.invalidateSize());
 };
 function applyMapFilter(fit) {
   Object.entries(mapLayers).forEach(([k, g]) => { const on = mapFilter === 'ALL' || mapFilter === k || k === 'HOTEL'; if (on) g.addTo(mapObj); else mapObj.removeLayer(g); });
