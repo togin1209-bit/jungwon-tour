@@ -1137,6 +1137,179 @@ a.info{color:inherit}
 .card.myshop{border:2px solid var(--yellow)}
 .gl.big b{font-size:17px}.gl.big p{font-size:15px;line-height:1.55}
 
+/* =================== v3 · 쨍한 컬러 · 귀여운 아이콘 =================== */
+:root{
+  --bg:#FFF9F4; --bg2:#FFF3EA; --surface:#FFFFFF; --surface2:#FFF6EF;
+  --ink:#16121F; --ink2:#3E3650; --muted:#8A8199; --line:#F0E6DE; --line2:#F6EEE7;
+  --primary:#2563FF; --primary-ink:#1A4FE0; --primary-soft:#E8EEFF;
+  --coral:#FF2E63; --coral-soft:#FFE9EF; --mint:#00B98A; --mint-soft:#E0FAF1; --yellow:#FFC800; --yellow-soft:#FFF6CC;
+  --kyoto:#7C3AED; --kyoto-soft:#F1EAFF; --orange:#FF7A00;
+  --shadow:0 2px 4px rgba(22,18,31,.04),0 10px 28px rgba(255,90,60,.08);
+  --r-lg:24px; --r:18px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#120F18; --bg2:#0C0A10; --surface:#1D1926; --surface2:#241F2E; --ink:#FBF7FF; --ink2:#D9D1E6; --muted:#9C92AD; --line:#2F2940; --line2:#282236;
+  --primary:#5B8CFF; --primary-ink:#9DB8FF; --primary-soft:#1A2450; --coral:#FF5C86; --coral-soft:#3D1624; --mint:#2EE0AE; --mint-soft:#0F3328; --yellow:#FFD84D; --yellow-soft:#3A3010; --kyoto:#A98BFF; --kyoto-soft:#2A1F4A;
+  --shadow:0 2px 4px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);}}
+:root[data-theme="dark"]{--bg:#120F18; --bg2:#0C0A10; --surface:#1D1926; --surface2:#241F2E; --ink:#FBF7FF; --ink2:#D9D1E6; --muted:#9C92AD; --line:#2F2940; --line2:#282236;
+  --primary:#5B8CFF; --primary-ink:#9DB8FF; --primary-soft:#1A2450; --coral:#FF5C86; --coral-soft:#3D1624; --mint:#2EE0AE; --mint-soft:#0F3328; --yellow:#FFD84D; --yellow-soft:#3A3010; --kyoto:#A98BFF; --kyoto-soft:#2A1F4A;}
+.sec-title,.topbar h1{letter-spacing:-.03em;font-weight:900}
+.btn{border-radius:14px}
+.btn.primary{background:linear-gradient(135deg,#2563FF,#7C3AED);box-shadow:0 6px 16px rgba(37,99,255,.28)}
+.chip.on{background:linear-gradient(135deg,#FF2E63,#FF7A00);border-color:transparent;color:#fff}
+.daytab{border:0;box-shadow:var(--shadow)}
+.daytab.on{background:linear-gradient(135deg,#FF2E63,#FF7A00);color:#fff}
+.fab{background:linear-gradient(135deg,#FF2E63,#FF7A00);box-shadow:0 10px 24px rgba(255,46,99,.4)}
+/* tab bar */
+.tab .te{font-size:22px;line-height:1;filter:grayscale(.85) opacity(.65);transition:transform .15s,filter .15s}
+.tab.on .te{filter:none;transform:translateY(-2px) scale(1.12)}
+.tab.on{color:var(--coral)}
+.tab.on span:last-child{font-weight:900}
+/* hero carousel */
+.hc{position:relative;height:460px;background:#16121F;overflow:hidden}
+.hc-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.hc-track::-webkit-scrollbar{display:none}
+.hc-slide{flex:0 0 100%;height:100%;position:relative;scroll-snap-align:start;color:#fff;display:block}
+.hc-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hc-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0,rgba(0,0,0,0) 30%,rgba(0,0,0,.1) 55%,rgba(10,6,20,.85) 100%)}
+.hc-in{position:absolute;left:20px;right:20px;bottom:56px;z-index:1;display:flex;flex-direction:column;gap:6px}
+.hc-tag{align-self:flex-start;font-size:12px;font-weight:800;padding:5px 10px;border-radius:99px;background:#FFC800;color:#16121F}
+.hc-in h2{font-size:34px;line-height:1.12;font-weight:900;letter-spacing:-.04em;white-space:pre-line;text-shadow:0 2px 16px rgba(0,0,0,.35)}
+.hc-in p{font-size:14px;font-weight:600;opacity:.92;margin:0}
+.hc-top{position:absolute;left:0;right:0;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 16px 0;pointer-events:none}
+.hc-brand{color:#fff;font-weight:900;font-size:15px;letter-spacing:-.02em;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.hc-brand i{font-style:normal;font-weight:500;font-size:11px;letter-spacing:.2em;opacity:.8;margin-left:6px}
+.hc-sticker{background:linear-gradient(135deg,#FF2E63,#FF7A00);color:#fff;font-weight:900;font-size:20px;padding:8px 14px;border-radius:16px;transform:rotate(4deg);box-shadow:0 8px 20px rgba(255,46,99,.45)}
+.hc-dots{position:absolute;bottom:36px;left:20px;z-index:2;display:flex;gap:6px}
+.hc-dots i{width:7px;height:7px;border-radius:9px;background:rgba(255,255,255,.5);transition:width .2s}
+.hc-dots i.on{width:22px;background:#fff}
+.viewtabs{margin-top:-22px;position:relative;z-index:3;background:var(--surface);box-shadow:var(--shadow)}
+.vt.on{background:linear-gradient(135deg,#16121F,#3E3650);color:#fff}
+.vt.on small{color:#FFC800}
+/* quick menu */
+.qm{display:grid;grid-template-columns:repeat(5,1fr);gap:12px 4px}
+.qi{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.qe{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;font-size:26px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.05);transition:transform .15s}
+.qi:active .qe{transform:scale(.92) rotate(-4deg)}
+.qi b{font-size:12px;font-weight:800;color:var(--ink2);line-height:1.2}
+.gh{font-size:17px;font-weight:900;letter-spacing:-.02em;margin:0}
+/* anchor bar */
+.anc{position:sticky;top:0;z-index:25;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 16px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.anc::-webkit-scrollbar{display:none}
+.anc button{flex:none;font-size:13px;font-weight:800;padding:8px 14px;border-radius:99px;background:var(--surface);box-shadow:var(--shadow);color:var(--ink2)}
+.anc button:active{background:var(--ink);color:var(--bg)}
+.anchor-t{scroll-margin-top:64px}
+/* section heads */
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:8px}
+.sh-e{font-size:12px;font-weight:800;color:var(--coral)}
+.sh h2{font-size:22px;font-weight:900;letter-spacing:-.04em;line-height:1.2;margin:2px 0 0}
+/* stickers */
+.stk{position:absolute;left:10px;top:10px;z-index:1;font-size:11px;font-weight:900;padding:5px 9px;border-radius:10px;background:#FFC800;color:#16121F;transform:rotate(-4deg);box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.dayb{display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:99px;background:rgba(255,255,255,.92);color:#16121F}
+/* spot card (carousel) */
+.sp{width:210px;border-radius:22px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.sp-ph{position:relative;aspect-ratio:4/5;background:#ddd}
+.sp-ph img{width:100%;height:100%;object-fit:cover}
+.sp-ph .dayb{position:absolute;right:10px;top:10px}
+.sp-b{padding:12px 14px 14px;display:flex;flex-direction:column;gap:2px}
+.sp-b b{font-size:15px;font-weight:900;letter-spacing:-.02em}.sp-b small{font-size:12px;color:var(--coral);font-weight:700}
+/* dish card */
+.ds{width:220px;border-radius:22px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.ds-ph{position:relative;aspect-ratio:1;background:linear-gradient(135deg,#FFE9EF,#FFF1DC)}
+.ds-ph img{width:100%;height:100%;object-fit:cover}
+.ds-ph.noimg{display:grid;place-items:center}.ds-ph .emo{font-size:72px}
+.ds-b{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px}
+.ds-b b{font-size:17px;font-weight:900;letter-spacing:-.03em}
+.ds-b p{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.45}
+.ds-m{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--muted)}
+.pr{font-weight:900;color:var(--coral);font-size:13px}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dgrid .ds{width:auto}
+.dgrid .ds-b b{font-size:15.5px}
+/* near card */
+.nc{width:240px;border-radius:22px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.nc-ph{position:relative;height:120px;background:var(--mint-soft)}
+.nc-ph img{width:100%;height:100%;object-fit:cover}
+.nt{position:absolute;left:10px;top:10px;font-size:12px;font-weight:900;padding:5px 9px;border-radius:10px;background:#fff;color:#16121F}
+.nt2{font-size:12px;font-weight:900;padding:4px 9px;border-radius:10px;background:var(--mint-soft);color:var(--mint)}
+.nc-b{padding:12px 14px 14px;display:flex;flex-direction:column;gap:3px}
+.nc-b b{font-size:15px;font-weight:900;letter-spacing:-.02em}.nc-b .ja{font-size:11px;color:var(--muted)}
+.nc-b p{margin:2px 0;font-size:12.5px;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nc-m{display:flex;flex-wrap:wrap;gap:4px 8px;font-size:11.5px;color:var(--muted);font-weight:600}
+.seg{display:inline-flex;gap:4px;padding:4px;border-radius:99px;background:var(--line2);align-self:flex-start}
+.seg button{padding:7px 16px;border-radius:99px;font-size:13px;font-weight:800;color:var(--muted)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+/* page banner */
+.pbanner{margin:6px 16px 4px;padding:22px 20px;border-radius:26px;color:#fff;background:linear-gradient(135deg,var(--c1),var(--c2));position:relative;overflow:hidden}
+.pbanner::after{content:"";position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.14)}
+.pbanner span{font-size:11px;font-weight:900;letter-spacing:.2em;opacity:.85}
+.pbanner h2{font-size:26px;font-weight:900;letter-spacing:-.04em;margin:4px 0 2px;line-height:1.2}
+.pbanner p{margin:0;font-size:13px;opacity:.9}
+/* landmark big card */
+.lm{border-radius:26px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.lm-ph{position:relative;aspect-ratio:4/5;max-height:520px;width:100%}
+.lm-ph img{width:100%;height:100%;object-fit:cover}
+.lm-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(10,6,20,.8) 100%)}
+.lm-t{position:absolute;left:18px;right:18px;bottom:16px;z-index:1;color:#fff;display:flex;flex-direction:column;gap:4px}
+.lm-t h3{font-size:28px;font-weight:900;letter-spacing:-.04em;line-height:1.15;margin:0}
+.lm-t small{font-size:12px;opacity:.8}
+.lm-t .dayb{align-self:flex-start}
+.lm-b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:12px}
+.lm-i{margin:0;font-size:15px;line-height:1.6;color:var(--ink2);font-weight:500}
+.lm-rows{display:flex;flex-direction:column;gap:0;border-radius:16px;background:var(--surface2);padding:4px 14px}
+.lm-rows div{display:grid;grid-template-columns:70px 1fr;gap:8px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.lm-rows div:last-child{border-bottom:0}
+.lm-rows span{color:var(--muted);font-weight:700}.lm-rows b{font-weight:700}
+/* konbini */
+.kc{width:190px;display:flex;flex-direction:column;gap:5px;padding:14px;border-radius:20px;background:var(--surface);box-shadow:var(--shadow)}
+.kc b{font-size:14px;font-weight:800;line-height:1.35}
+.kc .ja{font-size:11px;color:var(--muted)}
+.kch{align-self:flex-start;font-size:11px;font-weight:900;padding:4px 8px;border-radius:8px;color:#fff}
+.kch.Eleven{background:#F26B1D}.kch.FamilyMart{background:#00A04A}.kch.Lawson{background:#0079C2}
+.kc-m{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-top:auto}
+.tg{font-size:10.5px;font-weight:800;padding:3px 7px;border-radius:7px;background:var(--yellow-soft);color:#8a6500}
+.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kgrid .kc{width:auto}
+/* misc refresh */
+.card{border-radius:22px}
+.tl-card,.tl-simple{border-radius:20px}
+.info{border-radius:18px}
+.route .rs{background:var(--coral-soft);color:var(--coral)}
+.route .rs.home{background:linear-gradient(135deg,#16121F,#3E3650);color:#fff}
+.core span{background:#FFC800;color:#16121F}
+.mehero{background:linear-gradient(135deg,#FFE9EF,#E8EEFF)}
+.ez-next{background:linear-gradient(135deg,#2563FF,#7C3AED)}
+.ez.b1{background:linear-gradient(135deg,#16121F,#3E3650)}
+/* character + autumn */
+.cc{display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:22px;background:var(--surface);box-shadow:var(--shadow);position:relative;overflow:hidden;border-top:6px solid transparent;border-image:linear-gradient(90deg,var(--c1),var(--c2)) 1}
+.cc{border-image:none;border-top:0}
+.cc::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.cc.sm{width:250px}
+.cc-top{display:flex;align-items:center;gap:6px;margin-top:4px}
+.cc-e{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.cc-br{font-size:12px;font-weight:900;color:var(--ink2)}
+.cc .dayb{margin-left:auto;background:var(--line2)}
+.cc b{font-size:16px;font-weight:900;letter-spacing:-.02em;margin-top:4px}
+.cc small{font-size:12px;color:var(--muted);font-weight:600}
+.cc p{margin:2px 0 0;font-size:13px;color:var(--ink2);line-height:1.45}
+.cc.sm p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cc-m{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--muted);font-weight:600;margin-top:4px}
+.pbanner.chara{color:#16121F}.pbanner.chara::after{background:rgba(255,255,255,.35)}
+.pbanner .aki{position:absolute;right:14px;bottom:-18px;font-style:normal;font-size:110px;font-weight:900;opacity:.18;font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif}
+.aut-ban{position:relative;display:flex;flex-direction:column;gap:4px;padding:20px;border-radius:24px;color:#fff;background:linear-gradient(135deg,#9A3412,#EA580C 55%,#F59E0B);overflow:hidden;box-shadow:0 12px 26px rgba(234,88,12,.3)}
+.aut-ban span{font-size:11px;font-weight:900;letter-spacing:.2em;opacity:.85}
+.aut-ban b{font-size:24px;font-weight:900;letter-spacing:-.04em;line-height:1.2}
+.aut-ban small{font-size:12.5px;opacity:.92}
+.aut-ban i{position:absolute;right:12px;top:8px;font-style:normal;font-size:64px;transform:rotate(18deg)}
+.ds.au .ds-ph{background:linear-gradient(135deg,#FFEBD6,#FFD9B0)}
+.ds.au .stk{background:#EA580C;color:#fff}
+.uq{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:20px;background:var(--surface);box-shadow:var(--shadow)}
+.ue{flex:none;width:46px;height:46px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:#FFEBD6}
+.uq b{font-size:15px;font-weight:900}.uq p{margin:2px 0 0;font-size:13px;color:var(--ink2)}
+.uq .dayb{background:var(--coral-soft);color:var(--coral)}
+.qm .qi:nth-child(4) .qe{background:linear-gradient(135deg,#FFE3F1,#FFF6CC)!important}
+.qm .qi:nth-child(5) .qe{background:linear-gradient(135deg,#FFEBD6,#FFD9B0)!important}
+
 </style>
 </head>
 <body>
@@ -1212,21 +1385,22 @@ const PLACES = [
     badges: ['화장실', '실내', '유모차'], official: 'https://www.kansai-airport.or.jp/',
     tips: ['입국심사·세관은 Visit Japan Web QR로 빠르게', '수유실·기저귀 교환대는 도착층 안내데스크에 문의', '픽업 기사와 만날 출구(북/남)를 미리 메시지로 확인'] },
 
-  { id: 'osaka-castle', nameKo: '오사카성 천수각', nameJa: '大阪城天守閣', area: 'OSAKA', cat: 'sight', day: 0, img: 'osaka-castle',
+  { id: 'osaka-castle', nameKo: '오사카성 천수각', nameJa: '大阪城天守閣', area: 'OSAKA', cat: 'sight', day: 2, img: 'osaka-castle',
     lat: 34.6873, lng: 135.5262, q: '大阪城天守閣',
     one: '엘리베이터로 5층까지 · 전망대(8층)는 계단',
     desc: '도요토미 히데요시의 성. 내부는 역사 박물관이고 8층 전망대에서 오사카 시내가 한눈에 보여요.',
-    stay: '60–75분', move: '숙소 → 택시 2대 약 8–10분 (다니마치선 2정거장 + 도보 15분도 가능)', walk: 'MEDIUM',
+    stay: '60–75분', move: '숙소 → 택시 2대 약 10분', walk: 'MEDIUM',
     hours: '09:00–18:00 (입장 ~17:30)', price: '성인 ¥1,200 · 중학생 이하 무료',
-    badges: ['부모님추천', '아이추천', '화장실', '많이걷기', '비오는날'],
+    badges: ['부모님추천', '아이추천', '화장실', '많이걷기', '비오는날'], rv: '○',
+    baby: { stroller: '관내 반입 불가 → 입구에서 무료 보관 · 아기띠', diaper: '천수각·혼마루 광장 다목적 화장실', stairs: '5→8층 계단 (보행이 불편하면 전 층 엘리베이터 문의)' },
     stroller: '관내 반입 자제 요청 → 입구에서 무료 보관. 아기띠 준비', toilets: '천수각 2층, 혼마루 광장(다목적 화장실 포함)',
     rest: '혼마루 광장 벤치, 성 공원 매점', stairs: '일반 관람은 엘리베이터 5층까지, 5→8층 계단. 보행 곤란자는 전 층 엘리베이터 이용 가능(직원 문의)',
     hills: '공원 입구→혼마루 완만한 오르막 · 긴 도보', parking: '택시는 오테몬(大手門) 또는 극락교 쪽 하차 → 천수각 도보 10–15분',
     official: 'https://www.osakacastle.net/', reserve: 'https://ars-osakacastle.triplabo.jp/home?lang=ja',
-    plans: { normal: '09:30 입장 → 5층까지 엘리베이터 → 8층 전망 → 10:45 고자부네 선착장', planB: '부모님은 엘리베이터로 5층까지만, 전망대는 젊은 어른+7세만. 나머지는 혼마루 광장 벤치에서 대기', skip: '천수각 내부 생략하고 외관 사진 + 고자부네만', hotel: '택시 2대로 숙소 약 10분' },
+    plans: { normal: '09:30 입장 → 엘리베이터 5층 → 8층 전망 → 11:00 택시로 도톤보리', planB: '부모님은 5층까지만(또는 전 층 엘리베이터 요청), 전망대는 젊은 어른+시은이만', skip: '천수각 내부 생략 · 외관 사진 + (선택) 고자부네 20분', hotel: '택시 2대로 숙소 약 10분' },
     verified: true },
 
-  { id: 'gozabune', nameKo: '고자부네 놀잇배', nameJa: '大阪城御座船', area: 'OSAKA', cat: 'sight', day: 0, img: 'gozabune',
+  { id: 'gozabune', nameKo: '고자부네 놀잇배', nameJa: '大阪城御座船', area: 'OSAKA', cat: 'sight', day: 2, img: 'gozabune',
     lat: 34.6895, lng: 135.5265, q: '大阪城御座船 乗り場',
     one: '해자를 도는 20분 황금 놀잇배 · 아이들 최고 인기',
     desc: '오사카성 해자를 한 바퀴 도는 약 20분 유람선. 걷지 않고 성의 석벽을 올려다볼 수 있어 부모님도 편해요.',
@@ -1279,7 +1453,7 @@ const PLACES = [
     plans: { normal: '19:00 다루마 잔잔점(예약) 쿠시카츠', planB: '다루마 예약 실패 시 요코즈나 통천각점(354석·전석 금연·넷 예약) · 붐비면 하루카스 13F 회전초밥 진(7–12인 개별실)', skip: '포장해서 숙소에서', hotel: '도부쓰엔마에역 → 택시 2대 약 10분' },
     verified: true },
 
-  { id: 'fushimi-inari', nameKo: '후시미이나리 타이샤', nameJa: '伏見稲荷大社', area: 'KYOTO', cat: 'sight', day: 2, img: 'fushimi-inari',
+  { id: 'fushimi-inari', nameKo: '후시미이나리 타이샤', nameJa: '伏見稲荷大社', area: 'KYOTO', cat: 'sight', day: 3, img: 'fushimi-inari',
     lat: 34.9671, lng: 135.7727, q: '伏見稲荷大社',
     one: '센본토리이 초입까지만 · 왕복 60–75분',
     desc: '수천 개의 붉은 토리이 터널. 산 정상까지는 2시간 이상이라 초입(오쿠샤)까지만 다녀와요.',
@@ -1335,7 +1509,7 @@ const PLACES = [
     plans: { normal: '12:15 점심', planB: '대기 길면 아라시야마 요시무라(소바) · 1층 패밀리석', skip: '밴 이동 중 편의점 도시락', hotel: '밴으로 오사카 숙소' },
     verified: true },
 
-  { id: 'kiyomizu', nameKo: '기요미즈데라 (청수사)', nameJa: '清水寺', area: 'KYOTO', cat: 'sight', day: 2, img: 'kiyomizudera',
+  { id: 'kiyomizu', nameKo: '기요미즈데라 (청수사)', nameJa: '清水寺', area: 'KYOTO', cat: 'sight', day: 3, img: 'kiyomizudera',
     lat: 34.9949, lng: 135.7850, q: '清水寺',
     one: '차완자카(茶わん坂)로 오르면 계단 없음 · 오르막 약 10분',
     desc: '절벽 위 목조 무대로 유명한 교토 대표 사찰. 경내는 유모차로 일주 참배가 가능해요.',
@@ -1352,7 +1526,7 @@ const PLACES = [
     plans: { normal: '본당 무대 → 한 바퀴 → 산넨자카로 내려가며 말차·야츠하시', planB: '부모님·윤우는 참배길 아래 찻집에서 쉬고 나머지만 본당', skip: '산넨자카 간식만', hotel: '투어 중 · 17:40 버스 출발 시간 엄수' },
     verified: true },
 
-  { id: 'sannenzaka', nameKo: '산넨자카 · 니넨자카', nameJa: '産寧坂・二年坂', area: 'KYOTO', cat: 'sight', day: 2, img: 'sannenzaka',
+  { id: 'sannenzaka', nameKo: '산넨자카 · 니넨자카', nameJa: '産寧坂・二年坂', area: 'KYOTO', cat: 'sight', day: 3, img: 'sannenzaka',
     lat: 34.9963, lng: 135.7813, q: '産寧坂',
     one: '내려가는 방향으로만 걷기 · 돌계단 구간 유모차 불가',
     desc: '옛 교토 골목. 청수사에서 내리막으로 걸으며 기념품과 간식을 즐겨요.',
@@ -1377,7 +1551,7 @@ const PLACES = [
     plans: { normal: '야사카 신사 → 하나미코지 → 말차 디저트 → 17:45 밴 재승차', planB: '모두 지치면 카페 1곳만 들르고 바로 오사카', skip: '차창으로 기온 보고 바로 복귀', hotel: '밴으로 오사카 숙소 약 70분' },
     verified: false },
 
-  { id: 'shinsaibashi', nameKo: '신사이바시스지 상점가', nameJa: '心斎橋筋商店街', area: 'OSAKA', cat: 'shop', day: 4, img: 'shinsaibashi',
+  { id: 'shinsaibashi', nameKo: '신사이바시스지 상점가', nameJa: '心斎橋筋商店街', area: 'OSAKA', cat: 'shop', day: 2, img: 'shinsaibashi',
     lat: 34.6727, lng: 135.5013, q: '心斎橋筋商店街',
     one: '지붕 있는 평지 아케이드 · 드럭스토어·유니클로·GU',
     stay: '약 90분', move: '숙소 → 택시 약 7분', walk: 'LOW',
@@ -1386,7 +1560,7 @@ const PLACES = [
     plans: { normal: '다이마루 → 신사이바시스지 → 도톤보리', planB: '비 오면 다이마루 안에서만', skip: '공항 면세점으로 대체', hotel: '택시 약 7분' },
     verified: true },
 
-  { id: 'daimaru', nameKo: '다이마루 신사이바시 · 포켓몬센터 DX', nameJa: '大丸心斎橋店 ポケモンセンターオーサカDX', area: 'OSAKA', cat: 'shop', day: 4, img: 'daimaru-shinsaibashi',
+  { id: 'daimaru', nameKo: '다이마루 신사이바시 · 포켓몬센터 DX', nameJa: '大丸心斎橋店 ポケモンセンターオーサカDX', area: 'OSAKA', cat: 'shop', day: 2, img: 'daimaru-shinsaibashi',
     lat: 34.6740, lng: 135.5009, q: 'ポケモンセンターオーサカDX',
     one: '본관 9층 포켓몬센터·카페 · 7층 베이비룸',
     stay: '약 60분', move: '미도스지선 신사이바시역 지하 직결', walk: 'LOW',
@@ -1405,7 +1579,7 @@ const PLACES = [
     tips: ['2026-04-05부로 다이마루 우메다 10–15층이 LUCUA SOUTH로 전환', '10/17(토)은 정리권(1F 남쪽 게이트 광장, 개점 후 13F 매장 앞)', '신사이바시와 반대 방향이라 시간 여유가 있을 때만'],
     official: 'https://www.nintendo.com/jp/officialstore/index.html', verified: true },
 
-  { id: 'namba-parks', nameKo: '난바 (KALDI · Standard Products · 3COINS)', nameJa: 'なんばパークス / なんばCITY', area: 'OSAKA', cat: 'shop', day: 4, img: 'kaldi',
+  { id: 'namba-parks', nameKo: '난바 (KALDI · Standard Products · 3COINS)', nameJa: 'なんばパークス / なんばCITY', area: 'OSAKA', cat: 'shop', day: 0, img: 'kaldi',
     lat: 34.6618, lng: 135.5021, q: 'なんばパークス', one: '난카이 난바역 직결 · 선택 30분 · 11:00 오픈 매장 많음', walk: 'LOW',
     desc: 'KALDI 난바시티 본관 1층(11:00–21:00), Standard Products·DAISO·THREEPPY 복합매장 난바파크스 T-terrace 1층(2026-05 오픈), 3COINS 난바시티 지하 2층, 로프트 난바파크스 5층.',
     badges: ['비오는날', '실내', '유모차'], rv: '○',
@@ -1435,16 +1609,39 @@ const PLACES = [
     tips: ['“8人・スーツケース8個・ベビーカー1台・チャイルドシート1台” 문구를 요청사항에 같이 적기', '짐 찾는 동안 한 명이 먼저 기사님께 “도착했어요” 메시지'],
     verified: true },
 
-  { id: 'dotonbori', nameKo: '도톤보리 (야식)', nameJa: '道頓堀', area: 'OSAKA', cat: 'food', day: 1, img: 'dotonbori-glico',
+  { id: 'dotonbori', nameKo: '도톤보리', nameJa: '道頓堀', area: 'OSAKA', cat: 'sight', day: 2, img: 'dotonbori-glico',
     lat: 34.6687, lng: 135.5013, q: '道頓堀 グリコサイン',
-    one: '밤 21:30 이후에도 먹을 수 있는 곳만 · 가고 싶은 사람만',
-    desc: '도착 첫날 밤이라 무리하지 않아요. 21:30 이후 열려 있는 곳: 킨류 라멘(24시간), 이치란 도톤보리 별관(칸막이석 24시간), 치보(L.O. 22:00). 551 본점(21:30 마감)·와나카(20:00 마감)는 이미 닫혀요.',
-    stay: '약 60분', move: '숙소 → 택시 2대 약 10분', walk: 'LOW', badges: ['OSAKA'],
-    baby: { stroller: '거리는 평지 · 밤에도 인파 많음', chair: '킨류는 좌식(다다미) — 아기 눕히기 가능', diaper: '사전 확인 필요', stairs: '에비스바시 계단 대신 경사로 이용' },
-    tips: ['이치란 “도톤보리점 본관”은 2025년 화재 이후 폐점 → 별관만', '소에몬초 골목은 밤에 호객이 있어 지나가기만', '글리코 사인 사진은 에비스바시 위에서'],
-    plans: { normal: '킨류 라멘 → 글리코 사진 → 편의점', planB: '줄이 길면 편의점·포장해서 숙소에서', skip: '숙소 앞 편의점만', hotel: '택시 2대 약 10분' }, verified: true },
+    one: '글리코 사인 · 강변 산책 · 타코야키 한 접시',
+    desc: '오사카 하면 떠오르는 네온 거리. 점심 먹고 강변을 따라 걷다가 에비스바시에서 글리코 사인 사진을 찍어요.',
+    stay: '약 50분', move: '오사카성 → 택시 2대 약 15분', walk: 'LOW', badges: ['아이추천', '부모님추천'],
+    baby: { stroller: '거리는 평지 · 인파 많음', diaper: '다이마루·백화점 이용 권장', stairs: '에비스바시 계단 대신 경사로' },
+    tips: ['쿠쿠루 본점 타코야키: 토요일 매장 10:30–20:30', '돈키호테 도톤보리는 통로가 좁아 유모차는 밖에서 대기', '소에몬초 골목은 밤에 호객이 있어요'],
+    plans: { normal: '글리코 사진 → 강변 산책 → 신사이바시로 걸어서', planB: '부모님은 카페에서 쉬고 나머지만 산책', skip: '바로 신사이바시', hotel: '택시 2대 약 10분' }, verified: true },
+  { id: 'grand-green', nameKo: '그랜드그린 오사카 · 우메키타 공원', nameJa: 'グラングリーン大阪 うめきた公園', area: 'OSAKA', cat: 'sight', day: 2, img: 'grand-green',
+    lat: 34.7062, lng: 135.4935, q: 'グラングリーン大阪 うめきた公園',
+    one: 'JR 오사카역 바로 옆 도심 잔디 공원 · 무료',
+    desc: '2024–25년에 문을 연 우메다의 새 명소. 넓은 잔디광장, 연못, 대지붕, 분수가 있고 남관 지하 1층에는 타임아웃마켓 푸드홀(11:00–23:00)이 있어요. “우메키타의 숲”은 2026-11-20 개원이라 이번 여행엔 아직 닫혀 있어요.',
+    stay: '약 40분', move: '신사이바시 → 미도스지선 우메다 약 8분 + 도보 약 10분 (JR 오사카역 우메키타 지하 출구 도보 약 3분)', walk: 'MEDIUM',
+    hours: '공원 상시 개방으로 알려짐 (확인 필요)', price: '무료', badges: ['아이추천', '부모님추천'], rv: '○',
+    baby: { stroller: '보도는 OK · 잔디 안은 유모차 진입 불가', diaper: '공원 수유실·화장실 있음', nurse: '공원 수유실', stairs: '대부분 평지' },
+    tips: ['분수는 발 담그는 정도만 · 기저귀 찬 아기는 들어갈 수 없어요', '공원에 쓰레기통이 없어요 → 봉투 챙기기', '공중정원까지 걸어서 약 5분'], official: 'https://umekita.com/', verified: true },
+  { id: 'umeda-shop', nameKo: '우메다 쇼핑', nameJa: '梅田 阪急うめだ本店・ルクア', area: 'OSAKA', cat: 'shop', day: 2, img: 'umeda-sky',
+    lat: 34.7033, lng: 135.4990, q: '阪急うめだ本店',
+    one: '한큐 백화점 · 루쿠아 · 그랜드 프런트 — 모두 지하로 연결',
+    desc: '오사카역·우메다역 주변 대형 쇼핑몰. 비가 와도 지하로 이동할 수 있어요. 시간이 되면 걸어서 약 10분 거리 공중정원에서 노을(10/15 일몰 17:24).',
+    stay: '약 100분', move: '신사이바시 → 미도스지선 약 8분', walk: 'MEDIUM', badges: ['비오는날', '실내', '유모차'], rv: '○',
+    baby: { stroller: '백화점·역 엘리베이터 이용', diaper: '백화점 베이비룸 (층 안내 확인)', nurse: '백화점 베이비룸', stairs: '지하 통로는 엘리베이터 위치 확인' },
+    tips: ['한큐 우메다 지하 식품관: 선물용 과자·디저트', '루쿠아 1100 10층 야와라기노니와: 무료로 쉬어가는 정원', '저녁 동양정은 한큐 12층'], verified: true },
+  { id: 'namba-tasting', nameKo: '난바 맛보기', nameJa: 'りくろーおじさんの店 なんば本店 / 551蓬莱 本店', area: 'OSAKA', cat: 'food', day: 4, img: '551-butaman',
+    lat: 34.6655, lng: 135.5020, q: 'りくろーおじさんの店 なんば本店',
+    one: '갓 구운 치즈케이크 · 551 부타만 · 타코야키',
+    desc: '리쿠로 오지상 치즈케이크(1층 매장 09:00–20:00, 2·3층 카페 11:00–17:30), 551 호라이 본점(테이크아웃 10:00–21:30 · 2·3층 식당 11:00–21:30), 쿠쿠루 타코야키(토요일 매장 10:30–20:30).',
+    stay: '약 35분', walk: 'LOW', price: '치즈케이크 ¥1,095 (2026-06 인상) · 부타만 2개 약 ¥420 (현장 확인)', badges: ['포장', '아이추천'], rv: '○',
+    baby: { stroller: '리쿠로 2·3층 카페는 계단만 → 1층에서 포장', stairs: '리쿠로 카페 계단' },
+    tips: ['551 부타만은 고기가 들어 있어 한국 반입 불가 → 여기서 먹기', '리쿠로 치즈케이크는 들고 가도 되지만 보관 주의', '11:20엔 줄이 짧은 편 (현장 상황 따라)'], official: 'https://www.rikuro.co.jp/shoplist/134.html', verified: true },
 
-  { id: 'kyoto-meet', nameKo: '교토 버스투어 집합 장소', nameJa: 'つるとんたん 宗右衛門町店', area: 'OSAKA', cat: 'transport', day: 2, img: 'udon',
+
+  { id: 'kyoto-meet', nameKo: '교토 버스투어 집합 장소', nameJa: 'つるとんたん 宗右衛門町店', area: 'OSAKA', cat: 'transport', day: 3, img: 'udon',
     lat: 34.6690, lng: 135.5048, q: 'つるとんたん 宗右衛門町店',
     one: '08:40–08:50 집합 · 09:00 출발 · 가이드 깃발',
     desc: '마이리얼트립 “교토 버스투어”(여행 한 그릇). 닛폰바시역 근처 츠루톤탄 소에몬초점 앞에서 모여요. 약 10시간 10분 코스, 약 19:10 같은 곳으로 돌아와요.',
@@ -1460,7 +1657,7 @@ const PLACES = [
     official: 'https://experiences.myrealtrip.com/products/3425896', reserve: 'https://experiences.myrealtrip.com/products/3425896',
     tips: ['08:40 도착 목표 · 늦으면 출발해요', '버스에 물·간식·물티슈·여벌 옷', '입장료는 현금으로 준비 (청수사는 현금만 받는다는 안내 있음)'], verified: true },
 
-  { id: 'arashiyama', nameKo: '아라시야마', nameJa: '嵐山 渡月橋', area: 'KYOTO', cat: 'sight', day: 2, img: 'togetsukyo',
+  { id: 'arashiyama', nameKo: '아라시야마', nameJa: '嵐山 渡月橋', area: 'KYOTO', cat: 'sight', day: 3, img: 'togetsukyo',
     lat: 35.0130, lng: 135.6780, q: '渡月橋',
     one: '도게츠교 → 점심 → 대나무숲·텐류지 → 말차 디저트 (170분)',
     desc: '투어에서 가장 긴 자유시간. 11시 전에 점심을 먼저 먹으면 대기가 짧아요. 170분 안에 전부는 어려우니 “점심 + 대나무숲 + 디저트”를 기본으로.',
@@ -1470,14 +1667,14 @@ const PLACES = [
     tips: ['10:05 도게츠교 가족사진 (강변에서 다리 전체)', '10:50 요시무라 점심 (11시 전)', '11:50 대나무숲 → 텐류지 북문(선택)', '12:20 eX카페 또는 말차 소프트 테이크아웃', '12:40 기념품 · 버스 복귀'],
     plans: { normal: '사진 → 점심 → 대나무숲 → 디저트', planB: '부모님·윤우는 점심 후 요시무라 근처 벤치에서 쉬고 나머지만 대나무숲', skip: '대나무숲 생략, 도게츠교 산책만', hotel: '투어 중에는 버스가 유일한 이동 수단' }, verified: true },
 
-  { id: 'tenryuji', nameKo: '텐류지 소겐치 정원 (선택)', nameJa: '天龍寺', area: 'KYOTO', cat: 'sight', day: 2, img: 'tenryuji',
+  { id: 'tenryuji', nameKo: '텐류지 소겐치 정원 (선택)', nameJa: '天龍寺', area: 'KYOTO', cat: 'sight', day: 3, img: 'tenryuji',
     lat: 35.0158, lng: 135.6737, q: '天龍寺',
     one: '정원 ¥500 · 초중 ¥300 · 미취학 무료 · 북문이 대나무숲과 연결',
     stay: '30분', walk: 'MEDIUM', hours: '08:30–17:00', price: '성인 ¥500 · 초중 ¥300 · 미취학 무료', badges: ['부모님추천'],
     baby: { stroller: '자갈·완경사 혼재 — 사전 확인 필요', diaper: '정원 안 다목적 화장실' },
     official: 'https://www.tenryuji.com/visit/', verified: true },
 
-  { id: 'kinkakuji', nameKo: '금각사 (킨카쿠지)', nameJa: '金閣寺 (鹿苑寺)', area: 'KYOTO', cat: 'sight', day: 2, img: 'kinkakuji',
+  { id: 'kinkakuji', nameKo: '금각사 (킨카쿠지)', nameJa: '金閣寺 (鹿苑寺)', area: 'KYOTO', cat: 'sight', day: 3, img: 'kinkakuji',
     lat: 35.0394, lng: 135.7292, q: '金閣寺',
     one: '연못 앞 사진이 핵심 · 50분이면 충분',
     desc: '연못 위 금빛 누각. 입장 직후 연못가가 가장 붐비니 가족사진은 빠르게 찍고 한 바퀴 돌아 나와요.',
@@ -1487,7 +1684,7 @@ const PLACES = [
     official: 'https://www.shokoku-ji.jp/kinkakuji/', tips: ['입장권이 부적 모양이에요 · 기념으로 보관', '현금 준비'],
     plans: { normal: '연못 앞 사진 → 한 바퀴', planB: '부모님·윤우는 연못 앞까지만 보고 입구 쪽 휴게소', skip: '버스에서 휴식', hotel: '투어 중' }, verified: true },
 
-  { id: 'kaiyukan', nameKo: '가이유칸 수족관', nameJa: '海遊館', area: 'OSAKA', cat: 'sight', day: 3, img: 'kaiyukan',
+  { id: 'kaiyukan', nameKo: '가이유칸 수족관', nameJa: '海遊館', area: 'OSAKA', cat: 'sight', day: 0, img: 'kaiyukan',
     lat: 34.6545, lng: 135.4290, q: '海遊館',
     one: '고래상어 · 8층부터 나선형 슬로프로 내려오는 동선 · 재입장 불가',
     desc: '세계 최대급 수족관. 8층에서 시작해 완만한 슬로프로 내려와 유모차도 편해요. 2026-06-15부터 한 번 나오면 다시 못 들어가니 관람을 다 마치고 점심.',
@@ -1499,7 +1696,7 @@ const PLACES = [
     tips: ['15분 단위 입장 시간 지정 e티켓 → 10:00 슬롯', '관내가 어두워 아기가 무서워할 수 있어요', '음식은 4층 카페에서만'],
     plans: { normal: '10:00 입장 → 12:00 퇴장', planB: '윤우가 힘들면 한 명이 베이비케어룸에서 쉬고 나머지 관람', skip: '—', hotel: '지하철 25분 · 택시 2대 약 30분' }, verified: true },
 
-  { id: 'tempozan-wheel', nameKo: '덴포잔 대관람차', nameJa: '天保山大観覧車', area: 'OSAKA', cat: 'sight', day: 3, img: 'tempozan-wheel',
+  { id: 'tempozan-wheel', nameKo: '덴포잔 대관람차', nameJa: '天保山大観覧車', area: 'OSAKA', cat: 'sight', day: 0, img: 'tempozan-wheel',
     lat: 34.6560, lng: 135.4318, q: '天保山大観覧車',
     one: '한 바퀴 약 15분 · 3세 이상 ¥900 · 2세 이하 무료',
     stay: '30분', walk: 'LOW', hours: '평일 10:00–21:00', price: '3세 이상 ¥900 (어른·아이 동일) · 2세 이하 무료 · 현장 요금 확인',
@@ -1507,7 +1704,7 @@ const PLACES = [
     baby: { stroller: '곤돌라 반입 불가 → 승강장 보관', stairs: '없음' },
     tips: ['8명은 4+4로 2칸', '바닥까지 투명한 시스루 곤돌라도 같은 요금', '강풍 시 운행 중지 가능'], verified: true },
 
-  { id: 'santa-maria', nameKo: '산타마리아 유람선', nameJa: '帆船型観光船 サンタマリア', area: 'OSAKA', cat: 'sight', day: 3, img: 'santa-maria',
+  { id: 'santa-maria', nameKo: '산타마리아 유람선', nameJa: '帆船型観光船 サンタマリア', area: 'OSAKA', cat: 'sight', day: 0, img: 'santa-maria',
     lat: 34.6538, lng: 135.4302, q: 'サンタマリア 海遊館西はとば',
     one: '콜럼버스 배 모양 유람선 · 약 45분 · 앉아서 쉬는 시간',
     stay: '약 45분', walk: 'LOW', hours: '평일 11:00–16:00 매시 정각 출항', price: '성인 ¥2,000 · 초등 ¥1,000 · 미취학은 어른 1명당 1명 무료 (주유패스 사이트는 ¥1,800 표기 → 현장 확인)',
@@ -1515,7 +1712,7 @@ const PLACES = [
     baby: { stroller: '선내 단차·계단 → 접어서 들고 타기 · 아기띠 권장', stairs: '있음' },
     tips: ['승선장: 가이유칸 옆 서쪽 선착장', '웹 예약은 2개월 전 1일부터 · 현장 매표 가능', '기상·조위로 예고 없이 운휴 가능'], verified: true },
 
-  { id: 'umeda-sky', nameKo: '우메다 스카이빌딩 공중정원', nameJa: '梅田スカイビル 空中庭園展望台', area: 'OSAKA', cat: 'sight', day: 3, img: 'grand-green',
+  { id: 'umeda-sky', nameKo: '우메다 스카이빌딩 공중정원', nameJa: '梅田スカイビル 空中庭園展望台', area: 'OSAKA', cat: 'sight', day: 2, img: 'grand-green',
     lat: 34.7053, lng: 135.4906, q: '梅田スカイビル 空中庭園展望台',
     one: '옥상 360° 오픈 전망대 · 10/16 일몰 17:23',
     desc: '두 빌딩을 잇는 옥상 전망대. 해 지기 전 도착해 노을과 야경을 한 번에 봐요. 걸어서 5분 거리 우메키타 공원(그랜드그린 오사카) 잔디광장도 무료로 쉬기 좋아요(“우메키타의 숲”은 11/20 개원이라 이번엔 아직).',
@@ -1524,7 +1721,7 @@ const PLACES = [
     baby: { stroller: '35→39층 시스루 에스컬레이터는 유모차 불가 → 타워 이스트 1층 고층용 엘리베이터로 39층 직행', diaper: '39·40층 다목적 화장실', nurse: '39·40층 수유실', stairs: '옥상 일부 계단' },
     official: 'https://www.skybldg.co.jp/', tips: ['주유패스 무료 입장은 15:00까지라 우리 일정에는 해당 없음', '재입장 불가', '비·강풍이면 옥상 폐쇄 가능'], verified: true },
 
-  { id: 'donki', nameKo: '돈키호테 도톤보리', nameJa: 'ドン・キホーテ 道頓堀店', area: 'OSAKA', cat: 'shop', day: 3, img: 'donki',
+  { id: 'donki', nameKo: '돈키호테 도톤보리', nameJa: 'ドン・キホーテ 道頓堀店', area: 'OSAKA', cat: 'shop', day: 2, img: 'donki',
     lat: 34.6688, lng: 135.5030, q: 'ドン・キホーテ 道頓堀店',
     one: '24시간 · 면세 · 통로가 매우 좁음',
     stay: '약 60분', walk: 'LOW', hours: '24시간 (면세 카운터 시간은 확인 필요)', badges: ['비오는날', '실내'], rv: '○',
@@ -1537,79 +1734,80 @@ const PLACES = [
    ITINERARY
    --------------------------------------------------------------------- */
 const ITINERARY = [
-  { day: 1, date: '2026-10-14', dow: '수', label: '도착', title: '오늘은 숙소까지만', area: '오사카', cover: 'kix',
-    summary: '관광 없음. 공항 → 하이에이스 → 숙소. 힘이 남으면 도톤보리 야식 한 그릇.',
-    core: ['하이에이스 픽업', '(선택) 도톤보리 야식', '편의점'],
-    rest: '21:00 이후는 모두 휴식 모드. 부모님·윤우는 숙소에서 쉬기를 권해요.',
-    route: ['간사이공항', '하이에이스', '숙소', '(선택) 도톤보리', '숙소'],
-    rain: '야식은 숙소 앞 편의점·포장으로 대체. 공항→숙소는 차량이라 영향 없음.',
-    konbini: '내일 아침(07:00 기상)용 빵·오니기리·우유를 오늘 밤에 미리 사 두기',
+  { day: 1, date: '2026-10-14', dow: '수', label: '도착', title: '숙소 도착 · 동네 맛집 야식', area: '오사카', cover: 'kix',
+    summary: '공항 → 하이에이스 → 숙소. 짐 풀고 숙소 근처 맛집에서 늦은 저녁 한 끼.',
+    core: ['하이에이스 픽업', '숙소 근처 야식', '편의점'],
+    rest: '야식은 가고 싶은 사람만. 부모님·윤우는 숙소에서 쉬고 포장해 와도 좋아요.',
+    route: ['간사이공항', '하이에이스', '숙소', '다니마치 야식 (도보)', '숙소'],
+    rain: '1·2순위는 숙소에서 걸어서 5–10분. 비가 많이 오면 택시 1대 또는 편의점·포장.',
+    konbini: '내일 아침용 빵·오니기리·우유를 오늘 밤에 미리 사 두기',
     items: [
       { t: '16:30', title: '김포 출발', type: 'flight', ref: 'out', note: '대한항공 · 편명·도착 시각은 예약 확인서 기준' },
-      { t: '19:00', title: '간사이공항 1터미널 도착', type: 'flight', ref: 'out', note: '실제 착륙 시각부터 무료 대기 90분이 시작돼요', baby: ['유모차 수하물로 수령 · 기내 반입했다면 게이트에서 받기'] },
-      { t: '19:00', end: '19:45', title: '입국심사 · 세관 · 짐 찾기', type: 'move', note: 'Visit Japan Web QR 8명분 · 캐리어 개수 세기(예약한 개수와 같은지)', baby: ['공항 수유실·기저귀 교환대는 도착층 안내데스크에 문의'] },
+      { t: '19:00', title: '간사이공항 1터미널 도착', type: 'flight', ref: 'out', note: '실제 착륙 시각부터 무료 대기 90분이 시작돼요', baby: ['유모차는 수하물로 수령 · 기내 반입했다면 게이트에서 받기'] },
+      { t: '19:00', end: '19:45', title: '입국심사 · 세관 · 짐 찾기', type: 'move', note: 'Visit Japan Web QR 8명분 · 캐리어 개수 세기', baby: ['공항 수유실·기저귀 교환대는 도착층 안내데스크에 문의'] },
       { t: '19:50', title: '기사님 만나기 → 하이에이스 탑승', type: 'place', ref: 'pickup', rv: '⭐', note: '도착 로비 · 이름 피켓 · 카카오톡/라인으로 먼저 연락 와요' },
-      { t: '20:00', end: '21:00', title: '숙소로 이동 (약 50–90분)', type: 'move', note: '통행료·유류비 포함 · 경유 추가는 현장 결제', baby: ['유아 카시트 1개 무료(사전 요청)'] },
+      { t: '20:00', end: '21:00', title: '숙소로 이동 (약 50–90분)', type: 'move', note: '통행료·유류비 포함', baby: ['유아 카시트 1개 무료(사전 요청)'] },
       { t: '21:00', title: '숙소 도착 · 셀프 체크인', type: 'hotel', ref: 'hotel', note: '출입 방법·비밀번호는 에어비앤비 호스트 메시지 확인 (이 사이트엔 적지 않기)' },
-      { t: '21:30', end: '22:30', title: '(선택) 도톤보리 야식', type: 'place', ref: 'dotonbori', note: '택시 2대 약 10분 · 가고 싶은 사람만', rv: '○' },
-      { t: '22:30', title: '편의점 · 내일 아침거리', type: 'konbini', ref: 'konbini', note: '내일 08:15 출발 · 방에서 아침' },
+      { t: '21:30', end: '23:00', title: '야식 · 쿠니가타 세이사쿠쇼 (야키토리)', type: 'meal', ref: 'kunigata', rv: '⭐', note: '8인 호리고타츠 개실 예약 · 후보 2: 이마나라(소바·숯불) · 후보 3: 후쿠타로(네기야키, 택시 10분)' },
+      { t: '23:00', title: '편의점 · 내일 아침거리', type: 'konbini', ref: 'konbini', note: '내일 09:15 출발' },
     ] },
-  { day: 2, date: '2026-10-15', dow: '목', label: '교토 버스투어', title: '교토 핵심만, 버스로 편하게', area: '교토', cover: 'hero-kyoto',
-    summary: '한국어 가이드 버스투어(약 10시간). 아라시야마 → 금각사 → 후시미이나리 → 청수사·산넨자카.',
+  { day: 2, date: '2026-10-15', dow: '목', label: '오사카 시내', title: '오사카성에서 우메다까지', area: '오사카', cover: 'osaka-castle',
+    summary: '오사카성 → 도톤보리 점심 → 신사이바시 쇼핑 → 그랜드그린 공원 → 우메다 쇼핑·노을 → 저녁.',
+    core: ['오사카성', '도톤보리·신사이바시', '우메다'],
+    rest: '12:00 점심(앉아서 60분) · 15:00 신사이바시 카페 30분. 부모님은 16시에 다니마치선 한 번으로 숙소 복귀도 OK.',
+    route: ['숙소', '오사카성', '도톤보리 점심', '신사이바시', '카페', '그랜드그린', '우메다 쇼핑', '우메다 저녁', '숙소'],
+    rain: '오사카성은 천수각 안(실내) 위주 · 신사이바시스지는 지붕 있는 아케이드 · 우메다는 백화점·지하상가로 연결돼 있어 영향 적어요.',
+    konbini: '저녁 먹고 숙소 가는 길: 푸딩·아이스·내일 아침 빵',
+    items: [
+      { t: '08:00', title: '방에서 아침', type: 'meal', ref: 'konbini', note: '어젯밤 사 둔 편의점 아침' },
+      { t: '09:15', title: '숙소 출발 (택시 2대 약 10분)', type: 'move', note: '오테몬 또는 오사카성 공원 입구 하차' },
+      { t: '09:30', end: '11:00', title: '오사카성 천수각', type: 'place', ref: 'osaka-castle', rv: '○', note: '엘리베이터로 5층까지 · 8층 전망대는 계단 · 유모차는 입구 보관 · (선택) ⛵ 황금 배 고자부네 20분' },
+      { t: '11:15', title: '도톤보리로 이동 (택시 2대 약 15분)', type: 'move', note: '부모님 체력 아끼기 · 지하철이면 다니마치욘초메 → 닛폰바시' },
+      { t: '11:40', end: '12:50', title: '점심 · 치보 도톤보리빌딩점 (오코노미야키)', type: 'meal', ref: 'chibo-dotonbori', rv: '⭐', note: '약 200석 · 전석 금연 · 직원이 구워줘요', baby: ['철판 테이블 → 윤우 자리는 철판 반대쪽'] },
+      { t: '12:50', end: '13:40', title: '도톤보리 산책 · 글리코 사진', type: 'place', ref: 'dotonbori', rv: '○', note: '(선택) 🚤 리버크루즈 20분 · 돈키호테 · 쿠쿠루 타코야키 한 접시' },
+      { t: '13:40', end: '15:00', title: '신사이바시 · 다이마루 포켓몬센터', type: 'place', ref: 'daimaru', note: '⚡ 포켓몬센터 DX(9층) → 🍑 짱구 액션백화점(옆 파르코 6층) → 🎀 산리오 신사이바시점 · 7층 베이비룸 · UNIQLO·GU' },
+      { t: '15:00', end: '15:30', title: '카페 휴식', type: 'meal', ref: 'hoshino-shinsaibashi', note: '호시노 커피 신사이바시 (수플레 팬케이크) · 부모님 쉬는 시간' },
+      { t: '15:40', title: '우메다로 이동 (미도스지선 약 8분)', type: 'move', note: '신사이바시 → 우메다 한 번에' },
+      { t: '16:00', end: '16:40', title: '그랜드그린 오사카 · 우메키타 공원 산책', type: 'place', ref: 'grand-green', rv: '○', note: 'JR 오사카역 바로 옆 잔디 공원 · 무료 · 잔디엔 유모차 진입 불가' },
+      { t: '16:40', end: '17:50', title: '우메다 쇼핑 · (선택) 공중정원 노을', type: 'place', ref: 'umeda-shop', rv: '○', note: '⚡ 포켓몬센터 오사카(LUCUA SOUTH 13층) · 🍑🎀 HEP FIVE 4층 짱구·산리오 · 🍠 오사카역 가을 젤라토 · 일몰 17:24' },
+      { t: '18:00', end: '19:30', title: '저녁 · 동양정 (한큐 우메다 12층, 함박스테이크)', type: 'meal', ref: 'toyotei-hankyu', rv: '⭐', note: '전날(10/14)까지 예약 · 대안: 로바타야키 이사리비(개별실)' },
+      { t: '19:40', title: '숙소로 (다니마치선 히가시우메다 → 다니마치로쿠초메 · 환승 없음)', type: 'move', note: '택시면 2대 약 20분 · 편의점 들르기' },
+    ] },
+  { day: 3, date: '2026-10-16', dow: '금', label: '교토 버스투어', title: '교토 핵심만, 버스로 편하게', area: '교토', cover: 'hero-kyoto',
+    summary: '한국어 가이드 버스투어(약 10시간). 아라시야마 → 금각사 → 후시미이나리 → 청수사·산넨자카 → 저녁.',
     core: ['아라시야마', '금각사', '청수사'],
     rest: '버스 이동(총 약 3시간)이 곧 휴식 시간이에요. 후시미이나리는 입구만, 부모님은 찻집에서 쉬어도 돼요.',
-    route: ['숙소', '닛폰바시 집합', '아라시야마', '금각사', '후시미이나리', '청수사·산넨자카', '닛폰바시', '도톤보리 저녁', '숙소'],
+    route: ['숙소', '닛폰바시 집합', '아라시야마', '금각사', '후시미이나리', '청수사·산넨자카', '닛폰바시 저녁', '숙소'],
     rain: '투어 진행 여부는 투어사에 확인. 비 오면 후시미이나리는 본전만, 산넨자카 돌계단은 아기띠 + 레인커버, 아라시야마는 점심을 길게.',
-    konbini: '저녁 먹고 숙소 가는 길: 푸딩·아이스·내일 아침 빵',
+    konbini: '저녁 먹고 숙소 가는 길: 내일 아침 빵 · 음료',
     items: [
       { t: '07:00', title: '기상 · 방에서 아침', type: 'meal', ref: 'konbini', note: '어젯밤 사 둔 편의점 아침' },
       { t: '08:15', title: '숙소 출발 (택시 2대 약 10분)', type: 'move', note: '유모차·아기띠 둘 다 챙기기 · 물·간식·물티슈' },
-      { t: '08:40', end: '08:50', title: '투어 집합', type: 'place', ref: 'kyoto-meet', rv: '⭐', note: '츠루톤탄 소에몬초점 앞 · 가이드 깃발 · 09:00 출발' },
-      { t: '10:00', end: '12:50', title: '아라시야마 (약 170분)', type: 'place', ref: 'arashiyama', note: '도게츠교 가족사진 → 점심 → 대나무숲·텐류지 → 말차 디저트' },
+      { t: '08:40', end: '08:50', title: '투어 집합', type: 'place', ref: 'kyoto-meet', rv: '⭐', note: '츠루톤탄 소에몬초점 앞 · 가이드 깃발 · 09:00 출발 · 10/16 출발 가능 여부 예약 달력 확인' },
+      { t: '10:00', end: '12:50', title: '아라시야마 (약 170분)', type: 'place', ref: 'arashiyama', note: '도게츠교 가족사진 → 점심 → 대나무숲 → 🌰 즉석 몽블랑 · 🐶 스누피 차야 거리' },
       { t: '10:50', title: '점심 · 아라시야마 요시무라 (소바)', type: 'meal', ref: 'yoshimura', rv: '△', note: '대안: 유도후 사가노 · 11시 전 입장이 핵심' },
       { t: '13:00', end: '13:50', title: '금각사 (50분)', type: 'place', ref: 'kinkakuji', rv: '○', note: '연못 앞 사진 → 짧게 한 바퀴' },
       { t: '14:20', end: '15:20', title: '후시미이나리 (60분)', type: 'place', ref: 'fushimi-inari', note: '본전 → 센본토리이 입구까지만 · 정상 등반 안 함' },
-      { t: '15:50', end: '17:30', title: '청수사 · 산넨자카/니넨자카 (100분)', type: 'place', ref: 'kiyomizu', rv: '○', note: '청수사 40분 → 말차 한 잔 → 야츠하시 → 쇼핑은 20분만' },
+      { t: '15:50', end: '17:30', title: '청수사 · 산넨자카/니넨자카 (100분)', type: 'place', ref: 'kiyomizu', rv: '○', note: '청수사 40분 → 🍵 말차 티라미수·파르페 → 🍡 야츠하시 → 쇼핑은 20분만' },
       { t: '17:40', end: '19:10', title: '버스로 오사카 복귀', type: 'move', note: '우메다 경유 → 닛폰바시 약 19:10 도착 · 차에서 휴식' },
-      { t: '19:20', title: '저녁 · 치보 도톤보리빌딩점 (오코노미야키)', type: 'meal', ref: 'chibo-dotonbori', rv: '⭐', note: '하차 지점에서 도보 약 5분 · 숙소 들렀다 오면 40분 이상 손해', baby: ['철판 테이블 → 윤우 자리는 철판 반대쪽'] },
-      { t: '21:00', title: '택시 2대로 숙소 · 편의점', type: 'konbini', ref: 'konbini', note: '지친 분은 19:10에 택시 1대로 먼저 숙소 → 포장 저녁' },
+      { t: '19:20', title: '저녁 · 츠루톤탄 소에몬초점 (우동)', type: 'meal', ref: 'tsurutontan-soemoncho', rv: '⭐', note: '투어 집합 장소 바로 그 가게 · 다다미·호리고타츠 개별실(4–8명) · TableCheck 예약' },
+      { t: '21:00', title: '택시 2대로 숙소 · 편의점', type: 'konbini', ref: 'konbini', note: '지친 분은 19:10에 택시 1대로 먼저 숙소' },
     ] },
-  { day: 3, date: '2026-10-16', dow: '금', label: '바다 & 우메다', title: '수족관에서 노을 전망대까지', area: '오사카', cover: 'kaiyukan',
-    summary: '가이유칸 → 덴포잔 점심 → 대관람차 → 산타마리아 → 우메다 노을 → 저녁 → (선택) 돈키호테.',
-    core: ['가이유칸', '산타마리아 유람선', '우메다 스카이빌딩 노을'],
-    rest: '12:10 점심(앉아서 60분), 14:00 유람선(앉아서 45분), 16:30 전망대 좌석. 부모님은 관람차를 쉬어도 돼요.',
-    route: ['숙소', '가이유칸', '덴포잔 점심', '대관람차', '산타마리아', '우메다 스카이빌딩', '우메다 저녁', '(선택) 돈키호테', '숙소'],
-    rain: '가이유칸은 그대로. 산타마리아는 빼고 관람차만(강풍 시 정지). 공중정원 옥상은 비·강풍 시 닫힐 수 있어 한큐·루쿠아 실내로.',
-    konbini: '아침은 편의점(계란샌드·오니기리) · 돈키호테 후 숙소 앞에서 내일 아침거리',
-    items: [
-      { t: '08:00', title: '방에서 아침 (편의점)', type: 'meal', ref: 'konbini' },
-      { t: '09:20', title: '숙소 출발 (지하철 약 25분 · 환승 1회)', type: 'move', note: '다니마치선 → 다니마치욘초메 환승 → 주오선 오사카코역 · 택시면 2대 약 30분' },
-      { t: '10:00', end: '12:00', title: '가이유칸 수족관', type: 'place', ref: 'kaiyukan', rv: '⭐', note: '10:00 입장 e티켓 · 재입장 불가(2026-06-15~)' },
-      { t: '12:10', end: '13:10', title: '점심 · 간코 (덴포잔 마켓플레이스)', type: 'meal', ref: 'ganko-tempozan', rv: '△', note: '대안: 나니와 쿠이신보 요코초(푸드코트형)' },
-      { t: '13:15', end: '13:45', title: '덴포잔 대관람차 (한 바퀴 약 15분)', type: 'place', ref: 'tempozan-wheel', rv: '○', note: '4명씩 2칸 · 유모차는 승강장 보관' },
-      { t: '14:00', end: '14:45', title: '산타마리아 유람선 (약 45분)', type: 'place', ref: 'santa-maria', rv: '△', note: '평일 11–16시 매시 정각 · 가이유칸 옆 선착장' },
-      { t: '15:00', end: '15:45', title: '우메다로 이동 (지하철 약 21분)', type: 'move', note: '오사카코 → 혼마치 환승 → 우메다 · 택시 2대면 약 30분' },
-      { t: '16:00', end: '17:40', title: '우메다 스카이빌딩 공중정원 · 노을', type: 'place', ref: 'umeda-sky', rv: '○', note: '10/16 일몰 17:23 · 유모차는 타워 이스트 1층 엘리베이터로' },
-      { t: '18:00', end: '19:30', title: '저녁 · 동양정 (한큐 우메다 12층, 함박스테이크)', type: 'meal', ref: 'toyotei-hankyu', rv: '⭐', note: '전날까지 예약 · 대안: 로바타야키 이사리비(개별실)' },
-      { t: '19:40', title: '난바로 이동 (미도스지선 약 8분)', type: 'move', note: '부모님·윤우는 우메다에서 택시로 바로 숙소도 OK' },
-      { t: '20:00', end: '21:00', title: '(선택) 돈키호테 도톤보리', type: 'place', ref: 'donki', rv: '○', note: '미도스지점이 조금 덜 붐빔 · 유모차는 밖에서 대기' },
-      { t: '21:15', title: '택시 2대로 숙소', type: 'hotel', ref: 'hotel', note: '22시 이후 택시 20% 할증' },
-    ] },
-  { day: 4, date: '2026-10-17', dow: '토', label: '쇼핑 & 귀국', title: '신사이바시에서 쇼핑하고 집으로', area: '오사카', cover: 'shinsaibashi',
-    summary: '오전은 숙소에서 짐 정리 → 11:00 체크아웃 → 다이마루(포켓몬센터) → 점심 → 쇼핑 → 14:30 샌딩 → 간사이공항.',
-    core: ['다이마루 · 포켓몬센터', '신사이바시스지', '츠루톤탄 점심'],
-    rest: '10:00–10:50 숙소에서 쉬기 · 12:30 점심(개별실) · 부모님은 쇼핑 대신 카페에서 쉬어도 돼요 · 공항에서는 체크인 후 앉아서.',
-    route: ['숙소', '(선택) 구로몬 아침', '숙소 11:00 체크아웃', '(선택) 난바 짐 보관', '다이마루', '점심', '신사이바시·난바', '간사이공항'],
-    rain: '다이마루 안에서 대부분 해결 + 신사이바시스지는 지붕 있는 아케이드라 거의 영향 없음.',
+  { day: 4, date: '2026-10-17', dow: '토', label: '맛보기 & 귀국', title: '맛있는 것 먹고 집으로', area: '오사카', cover: 'dotonbori-glico',
+    summary: '아침 구로몬 맛보기 → 11:00 체크아웃 → 치즈케이크·부타만 맛보기 → 스키야키 점심 → 레트로 카페 → 14:30 샌딩.',
+    core: ['스키야키 점심', '레트로 카페', '난바 간식 맛보기'],
+    rest: '10:00–10:50 숙소에서 쉬기 · 12:00 점심(개실 80분) · 13:30 카페(앉아서 40분). 걷는 거리는 도톤보리 안에서만.',
+    route: ['숙소', '(선택) 구로몬 아침', '숙소 11:00 체크아웃', '(선택) 난바 짐 보관', '난바 맛보기', '스키야키 점심', '카페', '간사이공항'],
+    rain: '가게 사이 이동이 도보 5분 안이라 우산만 있으면 OK. 도톤보리 아케이드(에비스바시스지) 이용.',
     konbini: '없음 · 공항 가기 전 물·간식만',
     items: [
-      { t: '08:00', title: '아침 · (선택) 구로몬 시장', type: 'place', ref: 'kuromon', rv: '○', note: '다니마치큐초메 → 닛폰바시 1정거장 · 8–9시 오픈 · 관광지 가격 주의' },
-      { t: '10:00', end: '10:50', title: '짐 정리 · 숙소에서 쉬기', type: 'hotel', ref: 'hotel', note: '부모님·윤우는 이 시간에 푹 쉬기 · 방 사진·두고 간 물건 확인' },
-      { t: '11:00', title: '체크아웃 (에어비앤비 · 짐 보관 없음)', type: 'hotel', ref: 'hotel', note: '① 호스트가 레이트 체크아웃(14:30)을 허락하면 짐 두고 쇼핑 ② 아니면 택시 2–3대로 짐과 함께 난바 → 코인로커·짐 보관' },
-      { t: '11:30', end: '12:20', title: '다이마루 신사이바시 본관', type: 'place', ref: 'daimaru', note: '9층 포켓몬센터 DX → 7층 베이비룸 → 지하 1층 과자·선물 · 난바에서 아케이드로 걸어서 약 15분' },
-      { t: '12:30', end: '13:20', title: '점심 · 츠루톤탄 소에몬초점 (우동)', type: 'meal', ref: 'tsurutontan-soemoncho', rv: '⭐', note: '다다미·호리고타츠 개별실(4–8명) · TableCheck 12:30 예약' },
-      { t: '13:20', end: '14:10', title: '신사이바시스지 · 난바 쇼핑', type: 'place', ref: 'shinsaibashi', note: 'UNIQLO·GU · 드러그스토어 → (선택) 난바 KALDI · Standard Products · 부모님은 카페에서 쉬기' },
-      { t: '14:15', title: '짐 찾기 (난바 보관 장소 또는 숙소)', type: 'hotel', ref: 'hotel', note: '난바 보관이면 걸어서 · 레이트 체크아웃이면 택시 2대로 숙소 약 10분 (그땐 13:50에 출발)' },
+      { t: '08:30', title: '(선택) 구로몬 시장 맛보기', type: 'place', ref: 'kuromon', rv: '○', note: '참치·와규 꼬치·과일 조금씩 · 다니마치큐초메 → 닛폰바시 1정거장' },
+      { t: '10:00', end: '10:50', title: '짐 정리 · 숙소에서 쉬기', type: 'hotel', ref: 'hotel', note: '부모님·윤우는 이 시간에 푹 쉬기 · 두고 간 물건 확인' },
+      { t: '11:00', title: '체크아웃 (에어비앤비 · 짐 보관 없음)', type: 'hotel', ref: 'hotel', note: '① 호스트가 레이트 체크아웃(14:30)을 허락하면 짐 두고 외출 ② 아니면 택시 2–3대로 짐과 함께 난바 → 코인로커·짐 보관' },
+      { t: '11:20', end: '11:55', title: '난바 맛보기 · 리쿠로 치즈케이크 · 551 부타만', type: 'place', ref: 'namba-tasting', rv: '○', note: '갓 구운 치즈케이크 · 551 부타만(한국 반입 불가 → 여기서) · 🎀 산리오 에비스바시점 11:30 오픈' },
+      { t: '12:00', end: '13:20', title: '점심 · 하리주 도톤보리 본점 (스키야키)', type: 'meal', ref: 'harijyu', rv: '⭐', note: '개실 17개 · 토요일 온라인 예약 · 대안: 카니도라쿠 본점(게 요리 · 어린이 세트)' },
+      { t: '13:30', end: '14:10', title: '카페 · 준킷사 아메리칸 (핫케이크·푸딩)', type: 'meal', ref: 'american', rv: '○', note: '245석 레트로 찻집 · 예약 불가 · 대안: 마루후쿠 커피점(동판 핫케이크)' },
+      { t: '14:15', title: '짐 찾기 (난바 보관 장소 또는 숙소)', type: 'hotel', ref: 'hotel', note: '레이트 체크아웃이면 13:50에 택시 2대로 숙소 → 카페는 짧게' },
       { t: '14:30', title: '하이에이스 샌딩 출발', type: 'place', ref: 'pickup', rv: '⭐', note: '꼭 지킬 시간 · 픽업 장소(난바 또는 숙소)는 예약 때 확정 · 무료 대기 30분' },
       { t: '15:45', title: '간사이공항 1터미널 도착 · 체크인', type: 'flight', ref: 'ret', note: '출발 2시간 30분 전 도착 목표 · 면세는 보안검색 후' },
       { t: '18:15', title: 'KE726 간사이 출발', type: 'flight', ref: 'ret' },
@@ -1619,12 +1817,12 @@ const ITINERARY = [
 
 /* 일정에서 뺀 곳 — 판단 이유 */
 const DROPPED = [
-  { t: '오사카성 · 고자부네', why: '교토 투어 다음 날 또 많이 걷게 돼요. 천수각은 5층 이후 계단이라 부모님 부담이 크고, 3일차에 넣으면 가이유칸·우메다가 빠듯해져요.', alt: '시간이 남으면 4일차 아침 대신 외관만 (다니마치욘초메역 1정거장)' },
-  { t: '하루카스 300', why: '3일차 우메다 스카이빌딩 노을과 역할이 겹쳐요. 전망대는 하루 한 곳이면 충분해요.', alt: '우메다 스카이빌딩으로 대체' },
-  { t: '신세카이', why: '동선 밖(남쪽)이고 저녁 시간대가 늦어져요. 쿠시카츠는 도톤보리에서도 먹을 수 있어요.', alt: '도톤보리 쿠시카츠 · 다루마 도톤보리점 등' },
-  { t: '구로몬 시장', why: '점심 시간대는 혼잡하고 관광지 가격이에요. 대신 아침 일찍은 한산해요.', alt: '4일차 아침 선택 일정으로 유지' },
-  { t: '토롯코 열차 · 기온', why: '버스투어 코스로 바꾸면서 제외했어요. 투어에 없는 곳을 따로 가면 일정이 무너져요.', alt: '—' },
+  { t: '가이유칸 · 덴포잔 · 산타마리아', why: '2일차를 오사카성·도톤보리·신사이바시·우메다로 채우면서 바다 쪽(오사카항)은 동선이 반대라 뺐어요.', alt: '다음 여행 후보 · 비 오는 날 대안' },
+  { t: '하루카스 300', why: '우메다에서 노을(공중정원)을 볼 수 있어 전망대는 하루 한 곳이면 충분해요.', alt: '우메다 공중정원 (선택)' },
+  { t: '신세카이', why: '동선 밖(남쪽)이에요. 쿠시카츠는 도톤보리에서도 먹을 수 있어요.', alt: '도톤보리 쿠시카츠 가게' },
+  { t: '토롯코 열차 · 기온', why: '버스투어 코스로 바꾸면서 제외했어요.', alt: '—' },
 ];
+
 
 /* ---------------------------------------------------------------------
    RESTAURANTS — 공통 스키마
@@ -1651,7 +1849,7 @@ const RESTAURANTS = [
     price: '¥4,400–6,600', latitude: 35.0150, longitude: 135.6755, googleMapsQuery: '湯豆腐 嵯峨野 嵐山',
     website: 'https://kyoto-sagano.jp/', reservation: 'https://www.hotpepper.jp/strJ000108819/', tabelog: 'https://tabelog.com/en/kyoto/A2601/A260403/26000814/',
     openingHours: '11:00–17:30 (L.O. 16:30)', closedDays: '7월 넷째 주 수·목, 연말', reservationRequired: '필수', group8: '가능', kids: true, stroller: '입구 보관 문의', senior: true,
-    smoking: '금연', takeout: false, img: 'yudofu', familyTip: '핫페퍼 리퀘스트 예약은 3일 전까지. 치쿠린 바로 옆이라 동선 최적.', tags: ['best', 'group8', 'kids', 'senior', 'reserve'], day: 2, verified: true }),
+    smoking: '금연', takeout: false, img: 'yudofu', familyTip: '핫페퍼 리퀘스트 예약은 3일 전까지. 치쿠린 바로 옆이라 동선 최적.', tags: ['best', 'group8', 'kids', 'senior', 'reserve'], day: 3, verified: true }),
   R({ id: 'kurogin', nameKo: '마구로야 쿠로긴 (구로몬)', nameJa: 'まぐろや黒銀 黒門市場本店', category: '초밥·참치', area: 'OSAKA', district: '구로몬 시장',
     description: '눈앞에서 해체하는 참치 · 삼색 참치동 · 이트인 가능', recommendedMenu: ['삼색동', '참치 니기리', '참치 사시미'],
     price: '확인 필요', latitude: 34.6655, longitude: 135.5063, googleMapsQuery: 'まぐろや黒銀 黒門市場',
@@ -1667,13 +1865,13 @@ const RESTAURANTS = [
     description: '대형 그릇 우동 · 금연 · 아이 환영 · 2–60인 룸', recommendedMenu: ['명란 크림 우동', '키츠네 우동', '우동 스키야키'],
     price: '¥1,000–2,000', latitude: 34.6697, longitude: 135.5032, googleMapsQuery: 'つるとんたん 宗右衛門町店',
     website: 'https://www.tsurutontan.co.jp/shop/soemoncho/', reservation: 'https://www.tablecheck.com/en/tsurutontan-soemontyou', tabelog: 'https://tabelog.com/osaka/A2701/A270202/27000374/',
-    openingHours: '11:00–익일 06:00 (금·토 ~08:00)', closedDays: '연중무휴', reservationRequired: '권장', group8: '가능', kids: true, stroller: '확인 필요', senior: true,
+    openingHours: '11:00–익일 06:00 (금·토 ~08:00)', closedDays: '연중무휴', reservationRequired: '필수', group8: '가능', kids: true, stroller: '확인 필요', senior: true,
     smoking: '금연', takeout: true, card: '확인 필요(현금 준비)', img: 'kitsune-udon', familyTip: 'Day4 점심 1순위. TableCheck 예약. 카드 불가 표기 있어 현금 준비.', tags: ['best', 'osasa', 'group8', 'kids', 'senior', 'reserve', 'takeout'], day: 4, verified: true }),
   R({ id: 'chibo-dotonbori', nameKo: '치보 도톤보리 빌딩점', nameJa: '千房 道頓堀ビル店', category: '오코노미야키', area: 'OSAKA', district: '도톤보리',
     description: '약 200석 대형 오코노미야키 · 전석 금연 · 직원이 구워줌', recommendedMenu: ['도톤보리야키', '네기야키', '야키소바'],
     price: '평균 ¥1,500', latitude: 34.6688, longitude: 135.5030, googleMapsQuery: '千房 道頓堀ビル店',
     website: 'https://shop.chibo.com/detail/28/', reservation: 'https://shop.chibo.com/detail/28/',
-    openingHours: '11:00–23:00 (L.O. 22:00)', closedDays: '확인 필요', reservationRequired: '권장', group8: '가능', kids: true, stroller: '엘리베이터 확인 필요', senior: true,
+    openingHours: '11:00–23:00 (L.O. 22:00)', closedDays: '확인 필요', reservationRequired: '필수', group8: '가능', kids: true, stroller: '엘리베이터 확인 필요', senior: true,
     smoking: '금연', takeout: false, img: 'okonomiyaki', familyTip: '철판이 뜨거우니 2세는 철판에서 먼 자리로.', tags: ['best', 'group8', 'kids', 'reserve'], verified: true }),
   R({ id: 'ariran', nameKo: '아리랑 식당 (츠루하시)', nameJa: 'アリラン食堂', category: '한식', area: 'OSAKA', district: '츠루하시',
     description: '130석 · 연중무휴 · 아이 환영 · 점심 가능 — 8인 한식 1순위', recommendedMenu: ['점심 정식(반찬 7종)', '국밥', '삼겹살', '낙곱새', '간장게장'],
@@ -1756,7 +1954,7 @@ const RESTAURANTS = [
     description: '도게츠교 바로 앞 수타 소바 · 50석 · 미취학 동반은 1층 패밀리석', recommendedMenu: ['자루소바', '텐잔젠 세트'], price: '소바 ¥990–1,600 · 세트 ¥1,600–2,980 (블로그 기준)',
     latitude: 35.0133, longitude: 135.6780, googleMapsQuery: '嵐山よしむら 渡月橋', website: 'https://yoshimura-gr.com/arashiyama/shop/',
     openingHours: '평일 11:00–16:00 (성수기 10:30–17:00)', closedDays: '무휴', reservationRequired: '권장', reservation: 'https://yoshimura-gr.com/arashiyama/', group8: '분리착석 가능성', kids: true, stroller: '1층 확인', senior: true, smoking: '확인 필요', takeout: false, img: 'soba',
-    familyTip: '전화 075-863-5700 · 예약은 “우선 안내” 방식이라 대기가 생길 수 있어요. 11시 전 입장이 핵심.', tags: ['kids'], day: 2, verified: true }),
+    familyTip: '전화 075-863-5700 · 예약은 “우선 안내” 방식이라 대기가 생길 수 있어요. 11시 전 입장이 핵심.', tags: ['kids'], day: 3, verified: true }),
   R({ id: 'itohkyuemon', nameKo: '이토큐에몬 기온시조 사보', nameJa: '伊藤久右衛門 祇園四条店 茶房', category: '말차 디저트', area: 'KYOTO', district: '기온',
     description: '우지 말차 파르페 · 44석 · 완전 금연', recommendedMenu: ['말차 파르페', '말차 소바'], price: '¥1,000–2,000',
     latitude: 35.0038, longitude: 135.7760, googleMapsQuery: '伊藤久右衛門 祇園四条店', website: 'https://www.itohkyuemon.co.jp/corporate/shop/gion/gionsabo/',
@@ -1769,33 +1967,73 @@ const RESTAURANTS = [
     price: '¥1,620~', latitude: 34.6553, longitude: 135.4300, googleMapsQuery: 'がんこ 天保山マーケットプレース',
     website: 'https://www.kaiyukan.com/thv/marketplace/', openingHours: '마켓플레이스 식당가 대략 11:00–20:00 (확인 필요)', closedDays: '확인 필요',
     reservationRequired: '권장', group8: '가능', kids: true, stroller: '쇼핑몰 안 · 엘리베이터', senior: true, smoking: '확인 필요', takeout: false, img: 'sushi',
-    familyTip: '전화 06-6576-5708로 8명 예약 문의. 12시 피크 전 12:10 입장이면 무난.', tags: ['group8', 'kids', 'reserve'], day: 3, verified: true }),
+    familyTip: '전화 06-6576-5708로 8명 예약 문의. 12시 피크 전 12:10 입장이면 무난.', tags: ['group8', 'kids', 'reserve'], day: 0, verified: true }),
   R({ id: 'kuishinbo', nameKo: '나니와 쿠이신보 요코초', nameJa: 'なにわ食いしんぼ横丁', category: '푸드코트', area: 'OSAKA', district: '덴포잔',
     description: '마켓플레이스 2층 · 1960년대 오사카 거리 콘셉트 · 약 20개 점포', recommendedMenu: ['타코야키', '오코노미야키', '쿠시카츠'],
     price: '¥800–1,500', latitude: 34.6553, longitude: 135.4300, googleMapsQuery: 'なにわ食いしんぼ横丁',
     openingHours: '11:00–20:00 (계절 변동)', closedDays: '확인 필요', reservationRequired: '불가', group8: '분리착석 가능성', kids: true, stroller: '가능', senior: true, smoking: '확인 필요', takeout: true, img: 'takoyaki',
-    familyTip: '각자 먹고 싶은 것을 고를 수 있지만 8명이 한 테이블에 앉기 어려울 수 있어요.', tags: ['kids'], day: 3, verified: true }),
+    familyTip: '각자 먹고 싶은 것을 고를 수 있지만 8명이 한 테이블에 앉기 어려울 수 있어요.', tags: ['kids'], day: 0, verified: true }),
   R({ id: 'toyotei-hankyu', nameKo: '동양정 한큐 우메다 본점 (함박스테이크)', nameJa: 'グリルキャピタル東洋亭 阪急うめだ本店', category: '함박스테이크', area: 'OSAKA', district: '우메다',
     description: '교토 100년 양식당 · 은박 함박 + 통토마토 샐러드 · 한큐백화점 12층', recommendedMenu: ['백년 양식 함박스테이크', '통토마토 샐러드', '키즈 메뉴'],
     price: '¥1,800–3,000', latitude: 34.7033, longitude: 135.4990, googleMapsQuery: '東洋亭 阪急うめだ本店',
     website: 'https://www.hankyu-dept.co.jp/honten/restaurant/detail/1194057_2073.html', reservation: 'https://www.hankyu-dept.co.jp/honten/restaurant/detail/1194057_2073.html',
     openingHours: '11:00–22:00 (L.O. 21:00경)', closedDays: '백화점 휴무일', reservationRequired: '필수', group8: '확인 필요', kids: true, stroller: '백화점 엘리베이터 · 수유실', senior: true, smoking: '금연', takeout: false, img: 'hamburg',
-    familyTip: '17:00~ 예약은 전날까지만. 비예약이면 대기가 길어요(EPARK 온라인 번호표). 유튜브 2개 영상에서 아이 동반 추천.', tags: ['best', 'kids', 'reserve'], day: 3, verified: true }),
+    familyTip: '17:00~ 예약은 전날까지만. 비예약이면 대기가 길어요(EPARK 온라인 번호표). 유튜브 2개 영상에서 아이 동반 추천.', tags: ['best', 'kids', 'reserve'], day: 2, verified: true }),
   R({ id: 'imai-hankyu', nameKo: '도톤보리 이마이 한큐 우메다점 (우동·정식)', nameJa: '道頓堀 今井 阪急うめだ本店', category: '우동·일본 가정식', area: 'OSAKA', district: '우메다',
     description: '오사카 대표 키츠네우동 노포 · 정식 세트 · 아이 의자·키즈 메뉴 있음', recommendedMenu: ['키츠네우동', '우동 정식', '키즈 메뉴'],
     price: '약 ¥1,200', latitude: 34.7033, longitude: 135.4990, googleMapsQuery: '道頓堀今井 阪急うめだ本店',
     openingHours: '11:00–22:00', closedDays: '백화점 휴무일', reservationRequired: '확인 필요', group8: '확인 필요', kids: true, stroller: '백화점 엘리베이터', senior: true, smoking: '금연', takeout: false, img: 'kitsune-udon',
-    familyTip: '동양정과 같은 12층. 동양정 대기가 길면 바로 옆으로.', tags: ['kids', 'senior'], day: 3, verified: true }),
+    familyTip: '동양정과 같은 12층. 동양정 대기가 길면 바로 옆으로.', tags: ['kids', 'senior'], day: 2, verified: true }),
   R({ id: 'timeout-market', nameKo: '타임아웃 마켓 오사카', nameJa: 'タイムアウトマーケット大阪', category: '푸드홀', area: 'OSAKA', district: '우메다',
     description: '그랜드그린 오사카 남관 지하 1층 · 약 800석 · 간사이 유명점 17곳', recommendedMenu: ['각자 원하는 가게에서'], price: '¥1,500–3,000',
     latitude: 34.7060, longitude: 135.4930, googleMapsQuery: 'タイムアウトマーケット大阪', website: 'https://www.timeout.jp/time-out-market-osaka/ja',
     openingHours: '11:00–23:00 (푸드 L.O. 22:00)', closedDays: '1/1', reservationRequired: '권장', group8: '가능', kids: true, stroller: '배리어프리', senior: true, smoking: '확인 필요', takeout: false, img: 'izakaya', card: '현금 불가(카드·QR만)',
-    familyTip: '8–50명 단체는 TableCheck 예약. 현금 안 받아요.', tags: ['group8', 'kids', 'reserve'], day: 3, verified: true }),
+    familyTip: '8–50명 단체는 TableCheck 예약. 현금 안 받아요.', tags: ['group8', 'kids', 'reserve'], day: 0, verified: true }),
   R({ id: 'ichiran-bekkan', nameKo: '이치란 도톤보리 별관', nameJa: '一蘭 道頓堀店別館', category: '라멘', area: 'OSAKA', district: '도톤보리',
     description: '칸막이석 24시간 · 테이블석 08:00–23:00 · 본관은 폐점', recommendedMenu: ['돈코츠 라멘'], price: '¥1,000–1,500',
     latitude: 34.6687, longitude: 135.5020, googleMapsQuery: '一蘭 道頓堀店別館', website: 'https://en.ichiran.com/shop/kinki/dotonbori-south/',
     openingHours: '칸막이석 24시간', closedDays: '무휴', reservationRequired: '불가', group8: '분리착석', kids: true, stroller: '확인 필요', senior: true, smoking: '확인 필요', takeout: false, img: 'ramen',
-    familyTip: '1일차 야식 후보. 칸막이석은 가족이 나란히 못 앉아요.', tags: [], day: 1, verified: true }),
+    familyTip: '1일차 야식 후보. 칸막이석은 가족이 나란히 못 앉아요.', tags: [], day: 0, verified: true }),
+
+  R({ id: 'kunigata', nameKo: '쿠니가타 세이사쿠쇼 (야키토리)', nameJa: '鶏屋 國型製作所 谷町本店', category: '야키토리', area: 'OSAKA', district: '다니마치로쿠초메 (숙소 근처)',
+    description: '나라 야마토니쿠도리 숯불 꼬치 · 전석 금연 · 8인 호리고타츠 개실 · 타베로그 3.46', recommendedMenu: ['츠쿠네', '바삭한 닭껍질', '모둠 꼬치'],
+    price: '1인 ¥4,000–5,000', latitude: 34.6760, longitude: 135.5170, googleMapsQuery: '鶏屋 國型製作所 谷町本店',
+    website: 'https://kd8r701.gorp.jp/', tabelog: 'https://tabelog.com/osaka/A2701/A270204/27004207/', reservation: 'https://www.hotpepper.jp/strJ000505844/',
+    openingHours: '17:30–01:00 (음식 L.O. 00:00) · 공식 페이지는 02:00까지 표기', closedDays: '월요일', reservationRequired: '필수', group8: '가능 (8인 개실)', kids: '확인 필요', stroller: '확인 필요', senior: true,
+    smoking: '금연', takeout: false, img: 'yakitori', familyTip: '전화 050-5489-5462 · “8名・個室・子供2名” 요청. 숙소에서 걸어서 5–10분(추정).', tags: ['best', 'group8', 'reserve', 'alcohol'], day: 1, verified: true }),
+  R({ id: 'imanara', nameKo: '이마나라 다니마치 본점 (숯불·소바 이자카야)', nameJa: '炭と蕎麦と酒 今なら 谷町本店', category: '소바·이자카야', area: 'OSAKA', district: '다니마치로쿠초메 (숙소 근처)',
+    description: '숯불구이와 수타 소바 · 연중무휴 새벽 2시까지 · 타베로그 3.53', recommendedMenu: ['숯불 오리 로스 타타키 ¥1,650', '스키야키풍 달걀 소바 ¥1,705'],
+    price: '1인 ¥3,000–4,000', latitude: 34.6765, longitude: 135.5160, googleMapsQuery: '炭と蕎麦と酒 今なら 谷町本店',
+    tabelog: 'https://tabelog.com/osaka/A2701/A270204/27081930/', reservation: 'https://www.hotpepper.jp/strJ004470621/',
+    openingHours: '평일 17:00–02:00 (음식 L.O. 01:00)', closedDays: '연중무휴', reservationRequired: '권장', group8: '분리착석 (4+4)', kids: true, stroller: '확인 필요', senior: true,
+    smoking: '확인 필요 (출처별 상이)', takeout: false, img: 'soba', familyTip: '전화 050-5570-8301 · 좌식 2개를 붙일 수 있는지 문의. 다니마치로쿠초메역 3번 출구 1분.', tags: ['alcohol'], day: 1, verified: true }),
+  R({ id: 'fukutaro', nameKo: '후쿠타로 본점 (네기야키)', nameJa: '福太郎 本店', category: '네기야키·오코노미야키', area: 'OSAKA', district: '센니치마에 (택시 약 10분)',
+    description: '파가 듬뿍 들어간 네기야키의 명가 · 전석 금연 · 타베로그 3.72 · 오코노미야키 백명점', recommendedMenu: ['스지 네기야키', '부타타마', '야키소바'],
+    price: '1인 ¥1,000–3,000', latitude: 34.6655, longitude: 135.5050, googleMapsQuery: '福太郎 本店 千日前', website: 'https://2951.jp/', tabelog: 'https://tabelog.com/osaka/A2701/A270202/27002665/',
+    openingHours: '평일 17:00–23:30 (L.O. 22:45)', closedDays: '연중무휴', reservationRequired: '불가', group8: '분리착석 가능성', kids: '확인 필요', stroller: '확인 필요', senior: true,
+    smoking: '금연', takeout: false, img: 'okonomiyaki', familyTip: '예약이 안 돼서 22:15 전후 도착 권장. 철판 카운터석은 아이 주의.', tags: ['alcohol'], day: 1, verified: true }),
+  R({ id: 'harijyu', nameKo: '하리주 도톤보리 본점 (스키야키)', nameJa: 'はり重 道頓堀本店', category: '스키야키', area: 'OSAKA', district: '도톤보리',
+    description: '1919년 창업 스키야키 노포 · 개실 17개 · 스키야키 백명점 2024 · 타베로그 3.57', recommendedMenu: ['스키야키 런치 ¥6,600', '샤부샤부 런치 ¥6,600', '(저렴) 같은 건물 하리주 그릴 함박·비프카츠 ¥2,860~'],
+    price: '런치 ¥6,600~', latitude: 34.6685, longitude: 135.5010, googleMapsQuery: 'はり重 道頓堀本店',
+    website: 'https://www.harijyu.co.jp/shop-info/category/doutonbori/', tabelog: 'https://tabelog.com/osaka/A2701/A270202/27001250/', reservation: 'https://restaurant.ikyu.com/103582',
+    openingHours: '11:30–15:30 (L.O. 14:30)', closedDays: '화요일', reservationRequired: '필수', group8: '가능 (개실)', kids: true, stroller: '가능', senior: true,
+    smoking: '확인 필요 (분연 표기)', takeout: false, img: 'yakiniku', familyTip: '코스를 안 시키는 아이는 인원에서 빼고 비고란에 적기. 전화 06-6211-7777.', tags: ['best', 'group8', 'reserve', 'senior'], day: 4, verified: true }),
+  R({ id: 'kanidoraku', nameKo: '카니도라쿠 도톤보리 본점 (게 요리)', nameJa: 'かに道楽 道頓堀本店', category: '게 요리', area: 'OSAKA', district: '도톤보리',
+    description: '움직이는 게 간판 · 개실 11개(2–20명) · 전석 금연 · 어린이 세트', recommendedMenu: ['런치 고젠 ¥3,740~', '어린이 세트 와라베 ¥2,200'],
+    price: '런치 ¥3,740–6,930', latitude: 34.6688, longitude: 135.5025, googleMapsQuery: 'かに道楽 道頓堀本店',
+    website: 'https://douraku.co.jp/kansai/honten/', reservation: 'https://www.hotpepper.jp/strJ000018294/',
+    openingHours: '11:00–22:00 (L.O. 21:00)', closedDays: '연중무휴', reservationRequired: '권장', group8: '가능 (개실)', kids: true, stroller: '확인 필요', senior: true,
+    smoking: '금연', takeout: false, img: 'sushi', familyTip: '핫페퍼 넷 예약(당일 20:00까지).', tags: ['group8', 'kids', 'reserve'], day: 4, verified: true }),
+  R({ id: 'american', nameKo: '준킷사 아메리칸 (레트로 찻집)', nameJa: '純喫茶 アメリカン', category: '카페', area: 'OSAKA', district: '도톤보리',
+    description: '1946년 창업 레트로 찻집 · 245석 · 킷사텐 백명점 2026 · 타베로그 3.64', recommendedMenu: ['명물 핫케이크', '푸딩 세트 ¥850', '믹스주스'],
+    price: '¥800–1,500', latitude: 34.6682, longitude: 135.5030, googleMapsQuery: '純喫茶 アメリカン 道頓堀', website: 'https://www.junkissa-american.com/',
+    openingHours: '10:00–22:00 (출처별 조금씩 다름)', closedDays: '목요일 부정기', reservationRequired: '불가', group8: '가능 (245석)', kids: true, stroller: '확인 필요', senior: true,
+    smoking: '금연', takeout: false, img: 'morning-set', familyTip: '넓어서 8명도 대개 함께 앉을 수 있어요(현장 상황 따라).', tags: ['kids', 'senior'], day: 4, verified: true }),
+  R({ id: 'marufuku', nameKo: '마루후쿠 커피점 센니치마에 본점', nameJa: '丸福珈琲店 千日前本店', category: '카페', area: 'OSAKA', district: '센니치마에',
+    description: '1934년 창업 · 동판 핫케이크 · 117석 · 연중무휴', recommendedMenu: ['동판 핫케이크', '블렌드 커피 ¥570', '미니 푸딩'],
+    price: '¥600–1,500', latitude: 34.6660, longitude: 135.5035, googleMapsQuery: '丸福珈琲店 千日前本店', website: 'https://marufukucoffeeten.com/store/marufukucoffee-sennichimae/',
+    openingHours: '08:00–23:00', closedDays: '1/1', reservationRequired: '불가 (토요일)', group8: '분리착석 가능성', kids: '확인 필요', stroller: '확인 필요', senior: true,
+    smoking: '금연', takeout: false, img: 'cafe-latte', familyTip: '아메리칸이 붐비면 여기로.', tags: ['senior'], day: 4, verified: true }),
 ];
 
 /* 오사사 — 「오사카에 사는 사람들TV」 */
@@ -2135,12 +2373,11 @@ const PLAN_B = [
 ];
 
 const RAIN_PLAN = [
-  { t: '1일차 · 도톤보리 야식 대신', d: '숙소 앞 편의점 · 포장', ref: 'dotonbori' },
-  { t: '2일차 · 교토 투어', d: '진행 여부 투어사 확인 · 후시미이나리는 본전만 · 산넨자카는 아기띠', ref: 'kiyomizu' },
-  { t: '3일차 · 가이유칸은 그대로', d: '전부 실내 · 관람을 느긋하게', ref: 'kaiyukan' },
-  { t: '3일차 · 유람선 대신', d: '관람차만 (강풍 시 정지) 또는 마켓플레이스 실내', ref: 'tempozan-wheel' },
-  { t: '3일차 · 공중정원 대신', d: '옥상 폐쇄 시 한큐·루쿠아 실내 쇼핑 → 이른 저녁', ref: 'umeda-sky' },
-  { t: '4일차 · 쇼핑은 그대로', d: '다이마루 + 지붕 있는 신사이바시스지', ref: 'daimaru' },
+  { t: '1일차 · 야식', d: '1·2순위는 숙소에서 걸어서 5–10분 · 비가 많이 오면 포장', ref: 'pickup' },
+  { t: '2일차 · 오사카성', d: '천수각 안(실내) 위주 · 공원 산책은 짧게', ref: 'osaka-castle' },
+  { t: '2일차 · 쇼핑은 그대로', d: '다이마루 + 지붕 있는 신사이바시스지 + 우메다 지하 연결', ref: 'daimaru' },
+  { t: '3일차 · 교토 투어', d: '진행 여부 투어사 확인 · 후시미이나리는 본전만 · 산넨자카는 아기띠', ref: 'kiyomizu' },
+  { t: '4일차 · 맛보기', d: '가게 사이 도보 5분 · 우산만 있으면 OK', ref: 'namba-tasting' },
 ]
 
 /* ---------------------------------------------------------------------
@@ -2185,17 +2422,17 @@ const CHECKLIST = [
 
 const RESERVATIONS = [
   { t: '⭐ 하이에이스 공항 픽업', when: '10/14 19:00 도착', url: 'https://experiences.myrealtrip.com/products/5679107', urgent: true, note: '인원 8 · 캐리어 수 · 유모차 · 카시트 1 · 편명' },
-  { t: '⭐ 교토 버스투어', when: '10/15 08:40', url: 'https://experiences.myrealtrip.com/products/3425896', urgent: true, note: '윤우 좌석 · 유모차 적재 문의' },
-  { t: '⭐ 치보 도톤보리빌딩점', when: '10/15 19:20', url: 'https://shop.chibo.com/detail/28/', urgent: true, note: '8명 · 테이블 · 아기 의자 요청' },
-  { t: '⭐ 가이유칸 e티켓', when: '10/16 10:00', url: 'https://webket.jp/pc/ticket/index?fc=00290&ac=0000', urgent: true, note: '15분 단위 입장 시간' },
-  { t: '⭐ 동양정 한큐 우메다', when: '10/16 18:00', url: 'https://www.hankyu-dept.co.jp/honten/restaurant/detail/1194057_2073.html', urgent: true, note: '전날(10/15)까지만 예약' },
-  { t: '⭐ 츠루톤탄 소에몬초점', when: '10/17 12:30', url: 'https://www.tablecheck.com/en/tsurutontan-soemontyou', urgent: true, note: 'TableCheck · 개별실 요청' },
+  { t: '⭐ 쿠니가타 세이사쿠쇼 (1일차 야식)', when: '10/14 21:30', url: 'https://www.hotpepper.jp/strJ000505844/', urgent: true, note: '8인 호리고타츠 개실 · 전화 050-5489-5462' },
+  { t: '⭐ 치보 도톤보리빌딩점 (점심)', when: '10/15 11:40', url: 'https://shop.chibo.com/detail/28/', urgent: true, note: '8명 · 테이블 · 아기 의자 요청' },
+  { t: '⭐ 동양정 한큐 우메다 (저녁)', when: '10/15 18:00', url: 'https://www.hankyu-dept.co.jp/honten/restaurant/detail/1194057_2073.html', urgent: true, note: '전날(10/14)까지만 예약' },
+  { t: '⭐ 교토 버스투어', when: '10/16 08:40', url: 'https://experiences.myrealtrip.com/products/3425896', urgent: true, note: '10/16 출발 가능 여부 · 윤우 좌석 · 유모차 적재 문의' },
+  { t: '⭐ 츠루톤탄 소에몬초점 (3일차 저녁)', when: '10/16 19:20', url: 'https://www.tablecheck.com/en/tsurutontan-soemontyou', urgent: true, note: 'TableCheck · 개별실 요청 · 투어 끝나는 곳' },
+  { t: '⭐ 하리주 도톤보리 본점 (스키야키)', when: '10/17 12:00', url: 'https://restaurant.ikyu.com/103582', urgent: true, note: '개실 · 전화 06-6211-7777' },
+  { t: '⭐ 에어비앤비 레이트 체크아웃 문의', when: '10/17', url: 'https://www.airbnb.co.kr/trips', urgent: true, note: '체크아웃 11:00 → 14:30까지 연장 가능한지 · 안 되면 난바 짐 보관' },
   { t: '⭐ 하이에이스 공항 샌딩', when: '10/17 14:30', url: 'https://experiences.myrealtrip.com/products/5679107', urgent: true, note: '픽업 장소: 숙소(레이트 체크아웃 시) 또는 난바 짐 보관 장소' },
-  { t: '⭐ 에어비앤비 레이트 체크아웃 문의', when: '10/17', url: 'https://www.airbnb.co.kr/trips', urgent: true, note: '체크아웃 11:00 → 14:30까지 연장 가능한지 · 추가 요금 · 안 되면 난바 짐 보관' },
-  { t: '△ 아라시야마 요시무라', when: '10/15 10:50', url: 'https://yoshimura-gr.com/arashiyama/', note: '전화 075-863-5700 · 우선 안내 방식' },
-  { t: '△ 간코 덴포잔', when: '10/16 12:10', url: 'https://www.kaiyukan.com/thv/marketplace/', note: '전화 06-6576-5708' },
-  { t: '△ 포켓몬 카페', when: '10/17', url: 'https://osaka.pokemon-cafe.jp/', note: '한 테이블 최대 6명 → 2건 · 선택' },
-];
+  { t: '△ 아라시야마 요시무라', when: '10/16 10:50', url: 'https://yoshimura-gr.com/arashiyama/', note: '전화 075-863-5700 · 우선 안내 방식' },
+  { t: '△ 포켓몬 카페', when: '10/15', url: 'https://osaka.pokemon-cafe.jp/', note: '한 테이블 최대 6명 → 2건 · 선택' },
+]
 
 /* ---------------------------------------------------------------------
    EXTERNAL LINKS — 실제 확인한 URL만
@@ -2247,9 +2484,9 @@ const WEATHER_POINTS = [
 
 const MAP_LAYERS = {
   DAY1: { label: '1일차', color: '#8A93A3' },
-  DAY2: { label: '2일차 교토', color: '#7A5AF8' },
-  DAY3: { label: '3일차 바다·우메다', color: '#2B96ED' },
-  DAY4: { label: '4일차 쇼핑', color: '#E0A100' },
+  DAY2: { label: '2일차 오사카', color: '#2B96ED' },
+  DAY3: { label: '3일차 교토', color: '#7A5AF8' },
+  DAY4: { label: '4일차 맛보기', color: '#E0A100' },
   FOOD: { label: '식당', color: '#FF6B5A' },
   CAFE: { label: '카페', color: '#1FA88A' },
   HOTEL: { label: '숙소', color: '#171A1F' },
@@ -2257,24 +2494,24 @@ const MAP_LAYERS = {
 
 /* 사진 명소 · 아이와 · 부모님과 BEST 10 (추천 시간 포함) */
 const PHOTO_SPOTS = [
-  { t: '도톤보리 글리코 사인', img: 'dotonbori-glico', q: 'グリコサイン 道頓堀', area: 'OSAKA', when: '1일차 밤 · 해 진 뒤', note: '에비스바시 위에서' },
-  { t: '도게츠교 가족사진', img: 'togetsukyo', q: '渡月橋', area: 'KYOTO', when: '2일차 10:05', note: '강변 둑에서 다리 전체' },
-  { t: '아라시야마 대나무숲', img: 'arashiyama-bamboo', q: '竹林の小径', area: 'KYOTO', when: '2일차 11:50', note: '세로 사진 추천' },
-  { t: '금각사 연못', img: 'kinkakuji', q: '金閣寺', area: 'KYOTO', when: '2일차 13:00', note: '입장 직후 연못가 · 빠르게' },
-  { t: '후시미이나리 센본토리이 입구', img: 'fushimi-inari', q: '千本鳥居', area: 'KYOTO', when: '2일차 14:30', note: '입구에서만 찍어도 충분' },
-  { t: '청수사 무대', img: 'kiyomizudera', q: '清水寺 奥の院', area: 'KYOTO', when: '2일차 16:00', note: '오쿠노인 쪽에서 무대 전경' },
-  { t: '산넨자카 골목', img: 'sannenzaka', q: '産寧坂', area: 'KYOTO', when: '2일차 17:00', note: '계단 위에서 아래로' },
-  { t: '가이유칸 고래상어 수조', img: 'kaiyukan', q: '海遊館', area: 'OSAKA', when: '3일차 오전', note: '플래시 금지' },
-  { t: '덴포잔 대관람차', img: 'tempozan-wheel', q: '天保山大観覧車', area: 'OSAKA', when: '3일차 13:15', note: '곤돌라 안에서 바다 쪽' },
-  { t: '우메다 공중정원 노을', img: 'umeda-sky', q: '梅田スカイビル 空中庭園展望台', area: 'OSAKA', when: '3일차 17:00–17:40', note: '10/16 일몰 17:23' },
+  { t: '오사카성 천수각', img: 'osaka-castle', q: '大阪城 西の丸庭園', area: 'OSAKA', when: '2일차 09:30', note: '해자 건너편에서 성 전체' },
+  { t: '도톤보리 글리코 사인', img: 'dotonbori-glico', q: 'グリコサイン 道頓堀', area: 'OSAKA', when: '2일차 13:00', note: '에비스바시 위에서' },
+  { t: '우메다 공중정원 노을', img: 'umeda-sky', q: '梅田スカイビル 空中庭園展望台', area: 'OSAKA', when: '2일차 17:00–17:40', note: '10/15 일몰 17:24' },
+  { t: '도게츠교 가족사진', img: 'togetsukyo', q: '渡月橋', area: 'KYOTO', when: '3일차 10:05', note: '강변 둑에서 다리 전체' },
+  { t: '아라시야마 대나무숲', img: 'arashiyama-bamboo', q: '竹林の小径', area: 'KYOTO', when: '3일차 11:50', note: '세로 사진 추천' },
+  { t: '금각사 연못', img: 'kinkakuji', q: '金閣寺', area: 'KYOTO', when: '3일차 13:00', note: '입장 직후 연못가 · 빠르게' },
+  { t: '후시미이나리 센본토리이 입구', img: 'fushimi-inari', q: '千本鳥居', area: 'KYOTO', when: '3일차 14:30', note: '입구에서만 찍어도 충분' },
+  { t: '청수사 무대', img: 'kiyomizudera', q: '清水寺 奥の院', area: 'KYOTO', when: '3일차 16:00', note: '오쿠노인 쪽에서 무대 전경' },
+  { t: '산넨자카 골목', img: 'sannenzaka', q: '産寧坂', area: 'KYOTO', when: '3일차 17:00', note: '계단 위에서 아래로' },
+  { t: '도톤보리 강변', img: 'dotonbori-glico', q: 'とんぼりリバーウォーク', area: 'OSAKA', when: '4일차 13:30', note: '마지막 가족사진' },
 ];
 const KIDS_BEST = [
-  ['place', 'kaiyukan'], ['place', 'tempozan-wheel'], ['place', 'santa-maria'], ['place', 'daimaru'], ['place', 'umeda-sky'],
-  ['place', 'arashiyama'], ['cafe', 'pokemon-cafe'], ['rest', 'toyotei-hankyu'], ['rest', 'chibo-dotonbori'], ['rest', 'aizuya'],
+  ['place', 'daimaru'], ['place', 'osaka-castle'], ['place', 'gozabune'], ['place', 'dotonbori'], ['place', 'arashiyama'],
+  ['place', 'namba-tasting'], ['cafe', 'pokemon-cafe'], ['rest', 'toyotei-hankyu'], ['rest', 'chibo-dotonbori'], ['rest', 'kanidoraku'],
 ];
 const SENIOR_BEST = [
-  ['place', 'kinkakuji'], ['place', 'arashiyama'], ['place', 'kiyomizu'], ['place', 'santa-maria'], ['place', 'umeda-sky'],
-  ['rest', 'yoshimura'], ['rest', 'yudofu-sagano'], ['rest', 'tsurutontan-soemoncho'], ['rest', 'imai-hankyu'], ['cafe', 'kagizen'],
+  ['place', 'osaka-castle'], ['place', 'kinkakuji'], ['place', 'arashiyama'], ['place', 'kiyomizu'], ['rest', 'harijyu'],
+  ['rest', 'yoshimura'], ['rest', 'tsurutontan-soemoncho'], ['rest', 'american'], ['rest', 'kunigata'], ['cafe', 'kagizen'],
 ];
 
 /* =====================================================================
@@ -2297,25 +2534,25 @@ const FAMILY = [
   { key: 'sieun', name: '이시은', nick: '시은', who: '조카', e: '👧', tag: '7살 · 덕후', likes: ['otaku'],
     title: '포켓몬·캐릭터 덕후', mission: '포켓몬센터에서 오사카 한정 굿즈 1개 고르기' },
   { key: 'yunu', name: '심윤우', nick: '윤우', who: '아들', e: '👶', tag: '2살(19개월) · 덕후2', likes: ['otaku2'],
-    title: '고래상어·배·관람차 덕후', mission: '가이유칸 고래상어 앞에서 “우와” 하기' },
+    title: '반짝이·배·캐릭터 덕후', mission: '도톤보리 글리코 간판 앞에서 “우와” 하기' },
 ];
 /* 관심사별 추천 */
 const LIKE_LABEL = { food: '🍜 음식', drink: '🍺 술', shop: '🛍 쇼핑', heal: '🌿 힐링', kids: '👶 아이돌봄', otaku: '✨ 덕후', otaku2: '🐋 덕후2' };
 const LIKE_PICKS = {
-  food: [['2일차 저녁', '치보 오코노미야키', 'rest:chibo-dotonbori'], ['3일차 저녁', '동양정 함박스테이크', 'rest:toyotei-hankyu'], ['4일차 점심', '츠루톤탄 우동', 'rest:tsurutontan-soemoncho'], ['2일차 점심', '아라시야마 요시무라 소바', 'rest:yoshimura'], ['1일차 야식', '킨류 라멘', 'rest:kinryu']],
-  drink: [['1일차 밤', '편의점 하이볼 × 가라아게군', '#bar'], ['2일차 저녁', '오코노미야키 × 레몬사와', 'rest:chibo-dotonbori'], ['3일차 저녁', '함박 × 생맥주 (대안: 로바타야키 × 사케)', 'rest:toyotei-hankyu'], ['선물', '사케·우메슈는 다이마루 지하 1층 · 공항 면세점', '#gifts']],
-  shop: [['3일차 밤', '돈키호테 (미도스지점이 덜 붐빔)', 'place:donki'], ['4일차', '다이마루 → 신사이바시스지', 'place:daimaru'], ['4일차', '(선택) 난바 KALDI · Standard Products', 'place:namba-parks'], ['면세', '같은 날 같은 매장 세전 ¥5,000 이상 · 여권 실물', '#gifts']],
-  heal: [['2일차', '아라시야마 도게츠교 산책 · 말차 디저트', 'place:arashiyama'], ['2일차', '텐류지 정원 (선택)', 'place:tenryuji'], ['3일차', '산타마리아 유람선 45분 (앉아서)', 'place:santa-maria'], ['3일차', '우메다 공중정원 노을', 'place:umeda-sky'], ['2일차', '이토큐에몬 말차 파르페', 'cafe:itohkyuemon-sannenzaka']],
-  kids: [['수유·기저귀', '가이유칸 입구동 2층 베이비케어룸 (온수기)', 'place:kaiyukan'], ['수유·기저귀', '다이마루 7층 베이비룸', 'place:daimaru'], ['수유·기저귀', '공중정원 39·40층 수유실', 'place:umeda-sky'], ['유모차', '금각사는 금각 옆까지 · 청수사는 단차 없는 길', 'place:kinkakuji'], ['아이 음식', '밥 안 먹을 때 가이드', '#kidsfood']],
+  food: [['1일차 야식', '쿠니가타 야키토리', 'rest:kunigata'], ['2일차 점심', '치보 오코노미야키', 'rest:chibo-dotonbori'], ['2일차 저녁', '동양정 함박스테이크', 'rest:toyotei-hankyu'], ['3일차 점심', '아라시야마 요시무라 소바', 'rest:yoshimura'], ['3일차 저녁', '츠루톤탄 우동', 'rest:tsurutontan-soemoncho'], ['4일차 점심', '하리주 스키야키', 'rest:harijyu']],
+  drink: [['1일차 야식', '야키토리 × 생맥주·하이볼', 'rest:kunigata'], ['2일차 점심', '오코노미야키 × 레몬사와', 'rest:chibo-dotonbori'], ['2일차 저녁', '함박 × 생맥주', 'rest:toyotei-hankyu'], ['4일차 점심', '스키야키 × 사케', 'rest:harijyu'], ['선물', '사케·우메슈는 다이마루 지하 1층 · 공항 면세점', '#gifts']],
+  shop: [['2일차', '다이마루 → 신사이바시스지', 'place:daimaru'], ['2일차', '(선택) 돈키호테 도톤보리', 'place:donki'], ['2일차', '우메다 한큐·루쿠아', 'place:umeda-shop'], ['면세', '같은 날 같은 매장 세전 ¥5,000 이상 · 여권 실물', '#gifts']],
+  heal: [['2일차', '우메다 공중정원 노을', 'place:umeda-sky'], ['3일차', '아라시야마 도게츠교 산책 · 말차 디저트', 'place:arashiyama'], ['3일차', '텐류지 정원 (선택)', 'place:tenryuji'], ['3일차', '이토큐에몬 말차 파르페', 'cafe:itohkyuemon-sannenzaka'], ['4일차', '레트로 찻집 아메리칸', 'rest:american']],
+  kids: [['수유·기저귀', '다이마루 7층 베이비룸 (2일차)', 'place:daimaru'], ['수유·기저귀', '우메다 백화점 베이비룸 (2일차)', 'place:umeda-shop'], ['유모차', '오사카성은 입구 보관 · 아기띠', 'place:osaka-castle'], ['유모차', '금각사는 금각 옆까지 · 청수사는 단차 없는 길', 'place:kinkakuji'], ['아이 음식', '밥 안 먹을 때 가이드', '#kidsfood']],
 };
 const KID_EATS = {
   sieun: { eat: [['타마고산도', '편의점 · 아침'], ['저지 우유 푸딩 · 수플레 푸딩', '편의점 디저트'], ['생과일 스무디', '세븐일레븐 머신'], ['동양정 키즈 메뉴', '3일차 저녁'], ['타코야키 (식혀서)', '도톤보리'], ['멜론빵', '패밀리마트']],
-    buy: [['포켓몬 오사카 한정 굿즈', '다이마루 9층'], ['GU 아동 잠옷', '신사이바시'], ['캐릭터 과자', '돈키호테 · 편의점'], ['지브리 굿즈', '도토리공화국 (위치 확인 필요)']],
-    places: [['place:daimaru', '포켓몬센터 DX'], ['place:kaiyukan', '가이유칸'], ['place:tempozan-wheel', '대관람차'], ['cafe:pokemon-cafe', '포켓몬 카페 (예약)']] },
+    buy: [['포켓몬 오사카 한정 굿즈', '다이마루 9층 (2일차)'], ['GU 아동 잠옷', '신사이바시 (2일차)'], ['캐릭터 과자', '돈키호테 · 편의점'], ['지브리 굿즈', '도토리공화국 (위치 확인 필요)']],
+    places: [['place:daimaru', '포켓몬센터 DX'], ['place:osaka-castle', '오사카성'], ['place:namba-tasting', '치즈케이크 맛보기'], ['cafe:pokemon-cafe', '포켓몬 카페 (예약)']] },
   yunu: { eat: [['우동 (잘게 잘라서)', '어디서나 · 가장 무난'], ['오니기리 (김 떼고 작게)', '편의점'], ['계란말이 · 계란찜', '일식당 · 초밥집'], ['바나나 · 요거트', '편의점 · 슈퍼'], ['유아 과자 (월령 표시 확인)', '드러그스토어 유아 코너'], ['부드러운 빵', '편의점']],
     avoid: ['곤약젤리 · 떡(모찌) — 질식 위험', '통 방울토마토·포도는 잘라서', '날생선 · 초밥 생선', '뜨거운 타코야키 속'],
-    buy: [['유아 과자 · 음료', '드러그스토어'], ['기저귀 · 물티슈 보충', '드러그스토어 · 편의점'], ['배·물고기 장난감', '가이유칸 기념품점']],
-    places: [['place:kaiyukan', '고래상어 (가이유칸)'], ['place:santa-maria', '큰 배 (산타마리아)'], ['place:tempozan-wheel', '관람차'], ['place:arashiyama', '강 · 다리 구경']] },
+    buy: [['유아 과자 · 음료', '드러그스토어'], ['기저귀 · 물티슈 보충', '드러그스토어 · 편의점'], ['불빛·소리 장난감', '돈키호테']],
+    places: [['place:gozabune', '금빛 배 (오사카성 고자부네)'], ['place:dotonbori', '반짝이 간판 (도톤보리)'], ['place:kinkakuji', '금빛 절 (금각사)'], ['place:arashiyama', '강 · 다리 구경']] },
 };
 
 
@@ -2323,14 +2560,13 @@ const RV_LEGEND = [['⭐', '사전예약 필수'], ['△', '예약 권장'], ['�
 
 /* 입장료 — 성인/아이 */
 const ADMISSIONS = [
-  { t: '금각사', a: '¥500', c: '초중 ¥300', b: '미취학 무료로 알려짐 (확인 필요)', note: '현금 준비', day: 2 },
-  { t: '청수사', a: '¥500', c: '초중 ¥200', b: '미취학 무료 여부 확인 필요', note: '현금만 받는다는 안내 있음', day: 2 },
-  { t: '텐류지 정원 (선택)', a: '¥500', c: '초중 ¥300', b: '미취학 무료', note: '', day: 2 },
-  { t: '후시미이나리', a: '무료', c: '무료', b: '무료', note: '', day: 2 },
-  { t: '가이유칸', a: '¥2,700–3,500', c: '7–15세 ¥1,400–1,650', b: '3세 미만 무료', note: '날짜별 가격 · e티켓', day: 3 },
-  { t: '덴포잔 대관람차', a: '¥900', c: '¥900 (3세 이상)', b: '2세 이하 무료', note: '주유패스 포함', day: 3 },
-  { t: '산타마리아', a: '¥2,000', c: '초등 ¥1,000', b: '어른 1명당 1명 무료', note: '주유패스 포함 · 현장 요금 확인', day: 3 },
-  { t: '우메다 공중정원', a: '¥2,000', c: '4세~초등 ¥500', b: '4세 미만 무료', note: '주유패스는 15시 전만 무료', day: 3 },
+  { t: '오사카성 천수각', a: '¥1,200', c: '중학생 이하 무료', b: '무료', note: '유모차 입구 보관', day: 2 },
+  { t: '고자부네 놀잇배 (선택)', a: '¥1,800', c: '초중 ¥900', b: '미취학 무료', note: '65세 이상 ¥1,200', day: 2 },
+  { t: '우메다 공중정원 (선택)', a: '¥2,000', c: '4세~초등 ¥500', b: '4세 미만 무료', note: '', day: 2 },
+  { t: '금각사', a: '¥500', c: '초중 ¥300', b: '미취학 무료로 알려짐 (확인 필요)', note: '현금 준비', day: 3 },
+  { t: '청수사', a: '¥500', c: '초중 ¥200', b: '미취학 무료 여부 확인 필요', note: '현금만 받는다는 안내 있음', day: 3 },
+  { t: '텐류지 정원 (선택)', a: '¥500', c: '초중 ¥300', b: '미취학 무료', note: '', day: 3 },
+  { t: '후시미이나리', a: '무료', c: '무료', b: '무료', note: '', day: 3 },
 ];
 
 /* 공항 이동 비교 — 1일차 밤 도착, 8명·캐리어 약 8개·유모차 */
@@ -2365,12 +2601,12 @@ const PASS_GUIDE = {
   price: '1일권 ¥3,500 (마이리얼트립 ₩29,158~) · 2일권 ¥5,000 · 어린이용 없음 · JR 불가',
   ours: [
     ['1일차', '필요 없음', '하이에이스로 이동'],
-    ['2일차', '필요 없음', '교토 버스투어 (교토는 대상 아님)'],
-    ['3일차', '선택 (성인 1인 약 ¥400 이득)', '대관람차 ¥900 + 산타마리아 ¥2,000 + 지하철 3번 약 ¥820 + 공중정원 10% 할인 ≈ ¥3,900. 공중정원 무료는 15시 전 입장만이라 우리 일정(16시)엔 해당 없음'],
-    ['4일차', '필요 없음', '걸어서 쇼핑 + 하이에이스'],
+    ['2일차', '대부분 필요 없음', '오사카성 ¥1,200 + 지하철 1–2번 ≈ ¥1,600. 도톤보리 리버크루즈·공중정원(15시 전 입장)까지 다 넣어야 본전 → 택시 위주인 우리 일정에선 손해'],
+    ['3일차', '필요 없음', '교토 버스투어 (교토는 대상 아님)'],
+    ['4일차', '필요 없음', '도톤보리 안에서 걸어서 + 하이에이스'],
   ],
-  verdict: '3일차에 지하철로 움직일 성인만 사면 조금 이득이에요. 택시를 섞으면 거의 본전이고, 산타마리아를 빼면 손해예요. 아이(7세)는 현장에서 개별 구매하고, 아기는 대부분 무료예요.',
-  how: ['구매 후 3개월 안에 원하는 1일 사용 (첫차~막차)', '가이유칸은 포함되지 않아요', '1예약 최대 4매'],
+  verdict: '이번 일정에서는 사지 않아도 돼요. 바다 쪽(관람차·산타마리아)을 뺐고 이동을 택시 위주로 해서 본전이 안 나와요. 2일차에 지하철로만 다니면서 리버크루즈·공중정원(15시 전)까지 넣을 때만 고려하세요.',
+  how: ['구매 후 3개월 안에 원하는 1일 사용 (첫차~막차)', '오사카성 천수각은 포함돼요', '1예약 최대 4매'],
   url: 'https://experiences.myrealtrip.com/products/5869251',
 };
 
@@ -2397,14 +2633,13 @@ const TRANSPORT_GUIDE = {
     { t: '유모차', d: '역에서는 엘리베이터 위치를 먼저 확인(Osaka Metro 역 구내도). 에스컬레이터에 유모차 싣지 않기.' },
   ],
   segments: [
-    { from: '숙소', to: '닛폰바시 (투어 집합)', day: 2, train: '다니마치큐초메 → 닛폰바시 1정거장 ¥190 + 도보', taxi: '2대 · 약 10분 · 대당 약 ¥1,000–1,300', pick: '택시', why: '집합 시간이 정해져 있어 확실한 쪽으로' },
-    { from: '닛폰바시', to: '숙소 (밤)', day: 2, train: '센니치마에선 1정거장 + 도보', taxi: '2대 · 10–15분 · 대당 약 ¥1,200–1,600', pick: '택시', why: '밤 · 피곤 · 유모차' },
-    { from: '숙소', to: '가이유칸', day: 3, train: '다니마치선 → 주오선 · 약 25분 · ¥290 · 환승 1번', taxi: '2대 · 25–35분 · 대당 약 ¥4,000–5,500', pick: '지하철', why: '환승 1번이면 충분 · 택시 2대는 약 ¥1만' },
-    { from: '오사카코', to: '우메다', day: 3, train: '주오선 → 혼마치 환승 → 미도스지선 · 약 21분 · ¥290', taxi: '2대 · 25–35분 · 대당 약 ¥4,000–5,000', pick: '지하철', why: '부모님 컨디션이 나쁘면 택시' },
-    { from: '우메다', to: '난바 (돈키호테)', day: 3, train: '미도스지선 약 8분 · ¥240', taxi: '2대 · 약 15–20분 (요금 확인 필요)', pick: '지하철', why: '한 번에 가요' },
-    { from: '도톤보리', to: '숙소 (밤)', day: 3, train: '센니치마에선 1정거장 + 도보', taxi: '2대 · 10–15분 · 22시 이후 할증', pick: '택시', why: '밤 · 쇼핑 짐' },
+    { from: '숙소', to: '오사카성', day: 2, train: '다니마치선 다니마치욘초메 + 도보 약 15분', taxi: '2대 · 약 10분', pick: '택시', why: '성까지 걷는 거리를 줄이기' },
+    { from: '오사카성', to: '도톤보리', day: 2, train: '다니마치욘초메 → 닛폰바시 (환승)', taxi: '2대 · 약 15분', pick: '택시', why: '점심 예약 시간 · 부모님 체력' },
+    { from: '신사이바시', to: '우메다', day: 2, train: '미도스지선 약 8분 · ¥240', taxi: '2대 · 약 15–20분', pick: '지하철', why: '한 번에 가요' },
+    { from: '우메다', to: '숙소 (밤)', day: 2, train: '다니마치선 히가시우메다 → 다니마치로쿠초메 · 환승 없음', taxi: '2대 · 약 20분', pick: '지하철', why: '환승 없이 숙소 역까지 · 지치면 택시' },
+    { from: '숙소', to: '닛폰바시 (투어 집합)', day: 3, train: '다니마치큐초메 → 닛폰바시 1정거장 ¥190 + 도보', taxi: '2대 · 약 10분 · 대당 약 ¥1,000–1,300', pick: '택시', why: '집합 시간이 정해져 있어 확실한 쪽으로' },
+    { from: '닛폰바시', to: '숙소 (밤)', day: 3, train: '센니치마에선 1정거장 + 도보', taxi: '2대 · 10–15분 · 대당 약 ¥1,200–1,600', pick: '택시', why: '밤 · 피곤 · 유모차' },
     { from: '숙소 (11:00 체크아웃)', to: '난바 (짐 보관)', day: 4, train: '캐리어 8개로는 비추천', taxi: '2–3대 (트렁크 여유 있는 JPN TAXI) · 약 10분', pick: '택시', why: '레이트 체크아웃이 안 될 때만' },
-    { from: '신사이바시', to: '숙소', day: 4, train: '나가호리쓰루미료쿠치선 등 (환승)', taxi: '2대 · 약 10분', pick: '택시', why: '레이트 체크아웃일 때 · 14:30 출발 시간을 지키기 위해' },
   ],
 };
 
@@ -2444,8 +2679,8 @@ const DRINK_PAIR = [
 /* 편의점 가볍게 즐기기 */
 const KONBINI_PLAN = [
   { when: '1일차 밤', what: ['돈베이 키츠네우동 (컵우동)', '가라아게군 (로손)', '캔 하이볼 · 레몬사와', '내일 아침: 타마고산도 · 오니기리 · 우유'] },
-  { when: '2일차 투어 복귀 후', what: ['저지 우유 푸딩 (세븐일레븐)', '수플레 푸딩 (패밀리마트)', '모찌롤 (로손)', '내일 아침 빵'] },
-  { when: '3일차 아침 · 간식', what: ['타마고산도', '연어 오니기리', '생과일 스무디 머신 (세븐일레븐)', '가이유칸 가는 길 물·간식'] },
+  { when: '2일차 밤 (우메다 → 숙소 길)', what: ['저지 우유 푸딩 (세븐일레븐)', '수플레 푸딩 (패밀리마트)', '모찌롤 (로손)', '내일 아침 빵'] },
+  { when: '3일차 투어 날 아침 · 버스 간식', what: ['타마고산도', '연어 오니기리', '생과일 스무디 머신 (세븐일레븐)', '버스에서 먹을 물·간식'] },
 ];
 const KONBINI_PICKS = [
   ['세븐일레븐', '타마고산도', '촉촉한 계란샌드 · 아침용'], ['세븐일레븐', '생과일 스무디', '계산 후 머신에서 직접'], ['세븐일레븐', '저지 우유 푸딩', '진한 우유 푸딩'],
@@ -2488,12 +2723,13 @@ const CULTURE = [
 
 /* 지역별 식당 1순위 + 대안 */
 const AREA_EATS = [
-  { area: '도톤보리 (1일차 야식)', first: 'kinryu', alt: 'ichiran-bekkan', note: '21:30 이후 영업 확인된 곳만' },
-  { area: '아라시야마 (2일차 점심)', first: 'yoshimura', alt: 'yudofu-sagano', note: '11시 전 입장 · 요시무라는 “우선 안내” 예약이라 대기 가능' },
-  { area: '도톤보리 (2일차 저녁)', first: 'chibo-dotonbori', alt: 'tsurutontan-soemoncho', note: '투어 하차 지점 도보권' },
-  { area: '덴포잔 (3일차 점심)', first: 'ganko-tempozan', alt: 'kuishinbo', note: '가이유칸 재입장 불가 → 관람 후' },
-  { area: '우메다 (3일차 저녁)', first: 'toyotei-hankyu', alt: 'rikimaru-isaribi', note: '다른 대안: 이마이(같은 층) · 타임아웃마켓' },
-  { area: '신사이바시 (4일차 점심)', first: 'tsurutontan-soemoncho', alt: 'chibo-dotonbori', note: '다이마루 10층 식당가도 가능' },
+  { area: '숙소 근처 (1일차 야식)', first: 'kunigata', alt: 'imanara', alt2: 'fukutaro', note: '1·2순위는 숙소에서 걸어서 5–10분(추정) · 3순위는 택시 10분 · 모두 수요일 23시 이후까지 영업' },
+  { area: '도톤보리 (2일차 점심)', first: 'chibo-dotonbori', alt: 'mizuno', note: '오사카성에서 택시 15분' },
+  { area: '우메다 (2일차 저녁)', first: 'toyotei-hankyu', alt: 'rikimaru-isaribi', note: '다른 대안: 이마이(같은 층) · 타임아웃마켓' },
+  { area: '아라시야마 (3일차 점심)', first: 'yoshimura', alt: 'yudofu-sagano', note: '11시 전 입장 · 요시무라는 “우선 안내” 예약이라 대기 가능' },
+  { area: '닛폰바시 (3일차 저녁)', first: 'tsurutontan-soemoncho', alt: 'kanidoraku', note: '투어 끝나는 곳 바로 그 가게' },
+  { area: '도톤보리 (4일차 점심)', first: 'harijyu', alt: 'kanidoraku', note: '토요일 · 개실 예약' },
+  { area: '도톤보리 (4일차 카페)', first: 'american', alt: 'marufuku', note: '둘 다 예약 불가 · 245석 아메리칸이 대가족에 유리' },
 ];
 
 /* 유튜브 참고 영상 10개 */
@@ -2510,10 +2746,10 @@ const YT_VIDEOS = [
   { id: 'KnIFnSr55kY', t: '2026 돈키호테 쇼핑리스트', ch: '매주 떠나는 호캉스', key: ['후리카케 · 간장계란밥 소스', '라유·스프레드는 위탁 수하물', '돈키 카톡 채널 쿠폰'] },
 ];
 const YT_REPEATED = [
-  ['주유패스', 3, '공중정원(15시 전)·관람차·산타마리아'], ['말차 디저트', 4, '교토 · 편의점'], ['구로몬 시장', 3, '4일차 아침 선택'],
-  ['그랜드그린·우메키타 공원', 3, '3일차 우메다'], ['동양정 · 한큐 12층', 3, '3일차 저녁 1순위'], ['가이유칸·관람차·산타마리아', 2, '3일차'],
-  ['돈키 미도스지점이 덜 붐빔', 2, '3일차 밤'], ['우메다 공중정원 노을', 2, '3일차'], ['GU', 2, '4일차'], ['택시·우버 활용', 2, '가족 이동'],
-  ['돈베이 키츠네우동', 2, '편의점·돈키'], ['이사리비 로바타야키', 2, '3일차 대안 (연기 많음 주의)'],
+  ['주유패스', 3, '이번 일정엔 불필요 (가이드 참고)'], ['말차 디저트', 4, '교토 · 편의점'], ['구로몬 시장', 3, '4일차 아침 맛보기'],
+  ['그랜드그린·우메키타 공원', 3, '2일차 우메다'], ['동양정 · 한큐 12층', 3, '2일차 저녁 1순위'], ['가이유칸·관람차·산타마리아', 2, '이번엔 제외 (다음 여행)'],
+  ['돈키 미도스지점이 덜 붐빔', 2, '2일차 (선택)'], ['우메다 공중정원 노을', 2, '2일차 (선택)'], ['GU', 2, '2일차'], ['택시·우버 활용', 2, '가족 이동'],
+  ['돈베이 키츠네우동', 2, '편의점·돈키'], ['이사리비 로바타야키', 2, '2일차 저녁 대안 (연기 많음 주의)'],
 ];
 
 /* 사진 요청 — 가족 사진 */
@@ -2526,14 +2762,14 @@ const PHOTO_REQUEST = [
 
 /* 가족별 “사 오고 싶은 것” */
 const MY_SHOP = {
-  father: { title: '직장 이모님들 간식', list: [['개별 포장 과자 대용량 상자', '간사이공항 출국장 · 다이마루 지하 1층 — 인원수만큼 개별 포장인지 확인'], ['킷캣 말차·지역 한정', '돈키호테 · 공항 (돈키가 보통 더 저렴)'], ['나마야츠하시 (교토 떡과자)', '2일차 산넨자카 혼케 니시오 야츠하시 · 시식 가능 · 유통기한 짧음'], ['말차 과자', '이토큐에몬 산넨자카점 · 다이마루 지하 1층']], tip: '간식은 4일차 공항에서 사면 들고 다닐 필요가 없어요. 고기가 든 551 부타만은 한국 반입 불가.' },
-  mother: { title: '신기한 것 · 옷 · 액세서리', list: [['3COINS 액세서리·소품', '난바시티 지하 2층 (300엔대)'], ['돈키호테 신기한 생활용품', '3일차 밤 · 미도스지점이 덜 붐빔'], ['GU · UNIQLO 옷', '4일차 신사이바시 (11:00 오픈)'], ['핸즈 아이디어 생활용품', '신사이바시 파르코 9–11층'], ['교토 소품 (손수건·작은 장식품)', '2일차 산넨자카 · 20분만']], tip: '옷·잡화도 같은 매장 세전 ¥5,000 이상이면 여권으로 면세돼요.' },
-  bro: { title: '주류 구매 · 쇼핑', list: [['사케 · 우메슈 · 일본 위스키', '다이마루 지하 1층 주류 · KALDI(주류 판매) · 돈키호테'], ['공항 면세점 술', '보안검색 후 구매 → 밀봉 봉투째 기내 반입 가능'], ['하이볼 캔 · 안주', '편의점 · 돈키호테 (현지에서 즐기기)'], ['GU · 드러그스토어', '4일차 신사이바시']], tip: '한국 면세: 술은 1인 2L 이하 & $400 이하. 시내에서 산 술은 위탁 수하물로(뽁뽁이 포장).' },
-  sis: { title: '가족 챙기는 선물 · 시은이 선물', list: [['백화점 과자 선물 세트', '다이마루 지하 1층 · 한큐 우메다'], ['말차 과자 · 말차 가루', '교토 산넨자카 · 다이마루 지하 1층'], ['포켓몬 오사카 한정 굿즈 (조카)', '다이마루 9층'], ['GU 아동 잠옷 · 머리핀 (조카)', 'GU 신사이바시 · 3COINS']], tip: '선물 포장 일본어: “プレゼント用に包んでください (푸레젠토요-니 츠츤데 쿠다사이)”.' },
-  me: { title: '술 한 병 · 윤우 물건', list: [['사케 · 우메슈', '다이마루 지하 1층 · 공항 면세점'], ['유아 과자 · 기저귀 보충', '드러그스토어'], ['돈키호테 쇼핑', '3일차 밤']], tip: '총무라면 영수증 사진을 경비 화면에 입력해 두면 정산이 쉬워요.' },
-  wife: { title: '나를 위한 선물 · 윤우 선물', list: [['화장품 · 선크림 · 안약', '드러그스토어 · 돈키호테 (가격 비교)'], ['Standard Products · KALDI', '4일차 (선택) 난바 · 11:00 오픈'], ['GU · UNIQLO', '4일차 신사이바시'], ['아기 캐릭터 옷·장난감', '포켓몬센터 · 가이유칸 기념품점'], ['유아 과자', '드러그스토어 유아 코너 (월령 표시 확인)']], tip: '다이마루 7층 베이비룸에서 한 번 쉬고 쇼핑 시작하면 편해요.' },
+  father: { title: '직장 이모님들 간식', list: [['개별 포장 과자 대용량 상자', '간사이공항 출국장 · 다이마루 지하 1층 — 인원수만큼 개별 포장인지 확인'], ['킷캣 말차·지역 한정', '돈키호테 · 공항 (돈키가 보통 더 저렴)'], ['나마야츠하시 (교토 떡과자)', '3일차 산넨자카 혼케 니시오 야츠하시 · 시식 가능 · 유통기한 짧음'], ['말차 과자', '이토큐에몬 산넨자카점 · 다이마루 지하 1층']], tip: '간식은 4일차 공항에서 사면 들고 다닐 필요가 없어요. 고기가 든 551 부타만은 한국 반입 불가.' },
+  mother: { title: '신기한 것 · 옷 · 액세서리', list: [['3COINS 액세서리·소품', '난바시티 지하 2층 (300엔대)'], ['돈키호테 신기한 생활용품', '2일차 도톤보리 (선택) · 미도스지점이 덜 붐빔'], ['GU · UNIQLO 옷', '2일차 신사이바시'], ['핸즈 아이디어 생활용품', '신사이바시 파르코 9–11층'], ['교토 소품 (손수건·작은 장식품)', '2일차 산넨자카 · 20분만']], tip: '옷·잡화도 같은 매장 세전 ¥5,000 이상이면 여권으로 면세돼요.' },
+  bro: { title: '주류 구매 · 쇼핑', list: [['사케 · 우메슈 · 일본 위스키', '다이마루 지하 1층 주류 · KALDI(주류 판매) · 돈키호테'], ['공항 면세점 술', '보안검색 후 구매 → 밀봉 봉투째 기내 반입 가능'], ['하이볼 캔 · 안주', '편의점 · 돈키호테 (현지에서 즐기기)'], ['GU · 드러그스토어', '2일차 신사이바시']], tip: '한국 면세: 술은 1인 2L 이하 & $400 이하. 시내에서 산 술은 위탁 수하물로(뽁뽁이 포장).' },
+  sis: { title: '가족 챙기는 선물 · 시은이 선물', list: [['백화점 과자 선물 세트', '다이마루 지하 1층 · 한큐 우메다'], ['말차 과자 · 말차 가루', '교토 산넨자카 · 다이마루 지하 1층'], ['포켓몬 오사카 한정 굿즈 (시은)', '다이마루 9층'], ['GU 아동 잠옷 · 머리핀 (시은)', 'GU 신사이바시 · 3COINS']], tip: '선물 포장 일본어: “プレゼント用に包んでください (푸레젠토요-니 츠츤데 쿠다사이)”.' },
+  me: { title: '술 한 병 · 윤우 물건', list: [['사케 · 우메슈', '다이마루 지하 1층 · 공항 면세점'], ['유아 과자 · 기저귀 보충', '드러그스토어'], ['돈키호테 쇼핑', '2일차 도톤보리 (선택)']], tip: '총무라면 영수증 사진을 경비 화면에 입력해 두면 정산이 쉬워요.' },
+  wife: { title: '나를 위한 선물 · 윤우 선물', list: [['화장품 · 선크림 · 안약', '드러그스토어 · 돈키호테 (가격 비교)'], ['KALDI · 한큐 식품관', '2일차 우메다 · 4일차 난바시티 1층 KALDI'], ['GU · UNIQLO', '2일차 신사이바시'], ['윤우 캐릭터 옷·장난감', '포켓몬센터 · 돈키호테'], ['유아 과자', '드러그스토어 유아 코너 (월령 표시 확인)']], tip: '다이마루 7층 베이비룸에서 한 번 쉬고 쇼핑 시작하면 편해요.' },
   sieun: { title: '예쁜 것 · 공주 · 캐릭터', list: [['포켓몬 오사카 한정 인형·굿즈', '다이마루 9층 포켓몬센터 DX'], ['반짝이 머리핀 · 액세서리', '3COINS · 돈키호테'], ['GU 아동 잠옷 (캐릭터 콜라보)', 'GU 신사이바시'], ['산리오 · 지브리 굿즈', '신사이바시 주변 (매장 위치 확인 필요)'], ['캐릭터 과자', '편의점 · 돈키호테']], tip: '포켓몬센터는 오전이 덜 붐벼요. 4일차 11:30쯤 들러요.' },
-  yunu: { title: '캐릭터 · 신기한 것 전부', list: [['고래상어·물고기 인형', '가이유칸 기념품점 (3일차)'], ['포켓몬 작은 인형', '다이마루 9층'], ['불빛·소리 나는 장난감', '돈키호테'], ['유아 과자', '드러그스토어']], tip: '19개월은 작은 부품(삼킴 위험) 장난감을 피하고 대상 연령 표시를 확인하세요.' },
+  yunu: { title: '캐릭터 · 신기한 것 전부', list: [['금빛 배·성 미니어처', '오사카성 기념품점 (2일차)'], ['포켓몬 작은 인형', '다이마루 9층'], ['불빛·소리 나는 장난감', '돈키호테'], ['유아 과자', '드러그스토어']], tip: '19개월은 작은 부품(삼킴 위험) 장난감을 피하고 대상 연령 표시를 확인하세요.' },
 };
 /* 첫 해외여행 안내 — 부모님 · 시은 · 윤우 */
 const FIRST_TRIP = [
@@ -2547,6 +2783,81 @@ const FIRST_TRIP = [
   ['👧', '시은이', '가방에 부모님 연락처와 숙소 주소 카드를 넣어 두세요.'],
   ['👶', '윤우', '비행기 이착륙 때 젖병·빨대컵을 물리면 귀가 덜 아파요. 낯선 곳에서 잠을 설칠 수 있어 첫날은 일찍 재우기.'],
 ];
+const NEARBY = [{"type": "맛집", "name": "쿠니가타 세이사쿠쇼 (야키토리)", "ja": "鶏屋 國型製作所 谷町本店", "walk": "약 5~10분(추정)", "station": "谷町六丁目駅 도보 1–3분", "hours": "17:30–01:00 (L.O. 00:00)", "closed": "월요일", "price": "¥4,000–5,000", "sig": "나라 야마토니쿠도리 숯불 꼬치 · 8인 개실", "smoke": "전석 금연", "kids": "확인 필요", "tabelog": "3.46", "note": "1일차 야식 1순위", "url": "https://www.hotpepper.jp/strJ000505844/", "lat": 34.676, "lng": 135.517, "img": "yakitori", "rest": "kunigata"}, {"type": "맛집", "name": "이마나라 다니마치 본점 (숯불·소바)", "ja": "炭と蕎麦と酒 今なら 谷町本店", "walk": "약 5~8분(추정)", "station": "谷町六丁目駅 3번 출구 1분", "hours": "평일 17:00–02:00", "closed": "연중무휴", "price": "¥3,000–4,000", "sig": "오리 로스 타타키 ¥1,650 · 달걀 소바 ¥1,705", "smoke": "확인 필요", "kids": "가능", "tabelog": "3.53", "note": "1일차 야식 2순위", "url": "https://www.hotpepper.jp/strJ004470621/", "lat": 34.6765, "lng": 135.516, "img": "soba", "rest": "imanara"}, {"type": "카페", "name": "아인스 커피", "ja": "EINS coffee（アインスコーヒー）", "walk": "약 6~7분(추정)", "station": "谷町六丁目駅 약 123m", "hours": "09:00–21:00", "closed": "부정기 휴무(不定休)", "price": "¥1,000–1,999", "sig": "핸드드립 커피, 카페라테, 바나나브레드, 레몬케이크(¥500), 치즈케이크·당근케이크", "smoke": "정보 없음(확인 필요)", "kids": "정보 없음(확인 필요)", "tabelog": 3.44, "note": "2025-06-07 오픈. 예약 불가. 카드·전자머니·QR 결제 가능. 아침 9시부터라 모닝 커피용.", "url": "https://tabelog.com/osaka/A2701/A270204/27149981/", "lat": 34.676273, "lng": 135.516159, "img": "cafe-latte"}, {"type": "카페", "name": "다니마치로쿠초메 미치마사 카페", "ja": "谷町六丁目 道勝café（ミチマサカフェ）", "walk": "약 3~4분(추정)", "station": "谷町六丁目駅 4번 출구 도보 약 2~3분", "hours": "10:00–17:30(L.O.17:00). 단축영업일 10:00–16:00(L.O.15:30) — 공식사이트는 금요일, 타베로그는 화요일로 표기가 달라 확인 필요", "closed": "정기휴무 없음, 부정기 휴무(Instagram 공지)", "price": "¥1,000–1,999", "sig": "계절 파르페 ¥2,000, 계절 타르트/케이크 ¥1,250, 애플파이 ¥780, 미치마사 선데 ¥780, 더치(水出し) 커피", "smoke": "전석 금연", "kids": "가능(영유아·미취학·초등 OK, 타베로그)", "tabelog": 3.47, "note": "空堀商店街 안 오래된 목조 마치야, 스테인드글라스·정원. 30석(1층 10, 2층 다다미 20) — 아기 동반은 2층 다다미가 편할 수 있음. 전화 06-6796-9017, 예약 가능.", "url": "https://michimasacafe.com/", "lat": 34.673824, "lng": 135.516159, "img": "cafe-latte"}, {"type": "카페", "name": "가라호리 토스트 카페", "ja": "空堀トーストcafe（旧店名 ファイン）", "walk": "약 5~6분(추정)", "station": "松屋町駅 약 175m(松屋町筋 남쪽 오른편)", "hours": "08:00–17:00", "closed": "부정기 휴무", "price": "¥1,000 미만 ~ ¥1,999", "sig": "40종 이상의 토스트(카레 양배추 소시지 토스트, 하프&하프, 과일·치즈 토스트) — 아침식사용", "smoke": "전석 금연", "kids": "가능(子供可)", "tabelog": 3.21, "note": "8시 오픈이라 가족 조식 후보. 전화 070-5434-8673. 좌석 수 확인 필요(8인 동시 착석 어려울 수 있음).", "url": "https://tabelog.com/osaka/A2701/A270204/27068389/", "lat": 34.674023, "lng": 135.511566, "img": "cafe-latte"}, {"type": "술집", "name": "폰슈타구라무 더 바 다니마치 6초메", "ja": "ポン酒タグラム The Bar 谷町6丁目", "walk": "약 9분(추정)", "station": "谷町六丁目駅 6번 출구 도보 2분", "hours": "월·수~일·공휴일 18:00–23:30(L.O.23:00) / 화 18:00–22:30(L.O.22:00)", "closed": "정기휴무 표기 없음", "price": "¥4,000–4,999", "sig": "대표 메뉴 '모둠 안주(아테모리)' 11종 ¥1,600 + 다양한 일본술", "smoke": "전석 금연(가게 밖 재떨이)", "kids": "가능(타베로그 표기), 단 카운터 16석뿐", "tabelog": 3.59, "note": null, "url": "https://tabelog.com/osaka/A2701/A270204/27127179/", "lat": 34.676197, "lng": 135.518799, "img": "izakaya"}, {"type": "술집", "name": "우오자 쇼텐(로바타노 우오자)", "ja": "魚座商店（炉端の魚座）", "walk": "약 5~6분(추정)", "station": "谷町六丁目駅 3번 출구 도보 3분", "hours": "15:00–03:00(음식 L.O.02:00, 음료 L.O.02:30)", "closed": "수요일", "price": "¥4,000–4,999", "sig": "가다랑어 짚불구이(카츠오 와라야키)+참마밥, 다시마 육수로 만든 자가제 건어물, 매일 중앙시장 입하 생선", "smoke": "분연(흡연실 있음)", "kids": "가능(유모차 입장 가능)", "tabelog": 3.32, "note": "34석(2층 테이블 18석) — 8인 단체 가능성 높음, 새벽 3시까지. 숙소에서 가장 가까운 심야 옵션.", "url": "https://tabelog.com/osaka/A2701/A270204/27147461/", "lat": 34.673664, "lng": 135.518036, "img": "izakaya"}, {"type": "술집", "name": "류노쿠라", "ja": "#龍の蔵（#ryu no kura）", "walk": "약 10~11분(추정)", "station": "谷町六丁目駅 7번 출구 도보 5분", "hours": "월·일 17:00–23:00 / 화~토·공휴일 17:00–02:00", "closed": "부정기, 12/29–1/5", "price": "¥5,000–5,999", "sig": "코스 '무뉴 구르망' ¥5,500, 새우 카다이프 말이 등 양식 안주 + 일본술", "smoke": "전석 금연", "kids": "표기 없음(확인 필요)", "tabelog": 3.45, "note": "2025-08-27 오픈, 29석(개인실 6석). 예약은 Instagram DM.", "url": "https://tabelog.com/osaka/A2701/A270204/27152045/", "lat": 34.675442, "lng": 135.521118, "img": "izakaya"}, {"type": "맛집", "name": "큐 야무테이 가라호리점", "ja": "旧ヤム邸 空堀店", "walk": "약 3~4분(추정)", "station": "谷町六丁目駅 4번 출구 도보 4분(空堀商店街에서 약 72m)", "hours": "수~토 11:30–14:30(L.O.14:00), 18:00–21:30(L.O.21:00) / 일 11:20–14:30(L.O.14:00), 18:00–21:00(L.O.20:00)", "closed": "월·화(공휴일 제외)", "price": "¥1,000–1,999", "sig": "일본식 다시를 넣은 스파이스 카레, 키마 카레 등 2~3종 아이가케(相がけ)", "smoke": "점심 전면 금연 / 저녁은 흡연 가능(타베로그 표기, 확인 필요)", "kids": "가능", "tabelog": 3.65, "note": "타베로그 리뷰 1,500건 이상의 인기점 — 점심 대기줄 가능. 아이 입에는 매울 수 있음.", "url": "https://tabelog.com/osaka/A2701/A270204/27060944/", "lat": 34.673824, "lng": 135.516159, "img": "bento"}, {"type": "맛집", "name": "와 데메킨", "ja": "和デメキン（和demekin）", "walk": "약 6분(추정)", "station": "谷町六丁目駅 도보 5분", "hours": "화~일 17:00–22:00", "closed": "월요일", "price": "¥4,000–4,999(저녁)", "sig": "단바산 고시히카리 계절 솥밥(가마메시), 연근 만주, 매일 바뀌는 50여 종 계절 메뉴", "smoke": "전석 금연(밖에 재떨이)", "kids": "가능(영유아·미취학·초등 OK)", "tabelog": 3.61, "note": "19석(개인실 있음) — 8인은 사전 예약 필수.", "url": "https://tabelog.com/osaka/A2701/A270204/27110023/", "lat": 34.672882, "lng": 135.518723, "img": "bento"}];
+const KONBINI_2026 = [{"chain": "7-Eleven", "ja": "イタリア栗の焼き栗モンブラン", "ko": "이탈리아산 군밤 마롱크림 몽블랑, 바삭한 비스킷 식감 포인트", "price": "429.84円", "season": true, "uncertain": true, "tags": ["가을한정"], "url": "https://www.sej.co.jp/products/a/item/115528/"}, {"chain": "7-Eleven", "ja": "かぼちゃの濃厚プリン", "ko": "진한 단호박 푸딩 + 쌉싸름한 캐러멜 소스(154kcal)", "price": "302.40円", "season": true, "uncertain": true, "tags": ["아이추천", "가을한정"], "url": "https://www.sej.co.jp/products/a/item/114205/"}, {"chain": "7-Eleven", "ja": "まぜまぜスイーツ 大学芋みたいなラテ わらびもち入り", "ko": "군고구마(다이가쿠이모) 맛 라테에 탱글한 와라비모치를 섞어 먹는 음료형 디저트", "price": "429円", "season": true, "uncertain": true, "tags": ["가을한정"], "url": "https://news.mynavi.jp/article/20260928-5040661/"}, {"chain": "7-Eleven", "ja": "7プレミアム まるで蜜芋", "ko": "꿀고구마 맛 '마루데' 시리즈 아이스바", "price": "205円", "season": true, "uncertain": true, "tags": ["아이추천"], "url": "https://news.mynavi.jp/article/20260928-5040661/"}, {"chain": "7-Eleven", "ja": "炭火焼き鳥（塩）", "ko": "숯불 닭꼬치 소금맛 — 맥주 안주 정석(타레맛도 있음)", "price": "213.84円", "season": false, "uncertain": false, "tags": ["술안주"], "url": "https://www.sej.co.jp/products/a/item/150403/"}, {"chain": "7-Eleven", "ja": "だし薫る和風チキン", "ko": "다시 향 일본풍 치킨, 근기 등 서일본 판매", "price": "180.36円", "season": true, "uncertain": true, "tags": ["술안주"], "url": "https://www.sej.co.jp/products/a/item/150760/"}, {"chain": "FamilyMart", "ja": "ファミチキ", "ko": "뼈 없는 바삭·육즙 치킨, 편의점 치킨의 대표 정번", "price": "248円", "season": false, "uncertain": false, "tags": ["술안주", "아이추천"], "url": "https://www.family.co.jp/goods/friedfoods/0253116.html"}, {"chain": "FamilyMart", "ja": "燻製あい鴨ロース串", "ko": "훈제 오리 로스 꼬치 — 하이볼·맥주 안주", "price": "198円", "season": "신상품(9/22 주)", "uncertain": true, "tags": ["술안주"], "url": "https://www.family.co.jp/goods/friedfoods/0251778.html"}, {"chain": "FamilyMart", "ja": "ザクほろシュー（お芋クリーム）", "ko": "바삭한 슈 껍질에 고구마 크림 — '파미마 고구마 수확제' 가을 디저트", "price": "254円", "season": true, "uncertain": true, "tags": ["가을한정", "아이추천"], "url": "https://www.family.co.jp/goods/dessert/1943207.html"}, {"chain": "FamilyMart", "ja": "極旨 黒豚まんチーズ", "ko": "국산 흑돼지 100% + 5종 치즈 호빵(수량 한정)", "price": "250円", "season": true, "uncertain": true, "tags": ["아이추천"], "url": "https://news.mynavi.jp/article/20260928-5038367/"}, {"chain": "FamilyMart", "ja": "特製濃厚ソースのオムスパ", "ko": "간사이 한정 오므라이스풍 스파게티(진한 소스) — 아이 식사용", "price": "398円", "season": "신상품·간사이 한정", "uncertain": true, "tags": ["아이추천", "간사이한정"], "url": "https://www.family.co.jp/goods/pasta/0826266.html"}, {"chain": "Lawson", "ja": "からあげクン だし醤油味", "ko": "간장+가쓰오부시 감칠맛 가라아게쿤(5개) — 맥주 안주", "price": "288円", "season": true, "uncertain": true, "tags": ["술안주", "아이추천"], "url": "https://www.lawson.co.jp/recommend/original/detail/1532663_1996.html"}, {"chain": "Lawson", "ja": "Uchi Café ごろっと栗のモンブランタルト", "ko": "밤이 통째로 들어간 몽블랑 타르트", "price": "340円", "season": true, "uncertain": true, "tags": ["가을한정"], "url": "https://www.lawson.co.jp/lab/uchicafe/art/1531456_4787.html"}, {"chain": "Lawson", "ja": "巨峰ティーフラッペ（マチカフェ）", "ko": "거봉 과육·그라니타·티크림 층의 프라페(우유 부어 완성), 과즙 17%", "price": "395円", "season": true, "uncertain": true, "tags": ["아이추천"], "url": "https://www.lawson.co.jp/lab/machicafe/art/1531892_7561.html"}];
+
+/* 메인 배너 */
+const HERO_SLIDES = [
+  { img: 'umeda-sky', tag: '2026.10.14 — 10.17', title: '맑은 가을 하늘,\n오사카로!', sub: '우리 가족 8명의 오사카·교토 4일', go: '#home' },
+  { img: 'osaka-castle', tag: '2일차 · 오사카', title: '오사카성에서\n우메다까지', sub: '성 → 도톤보리 → 신사이바시 → 그랜드그린', go: 'day:2' },
+  { img: 'kinkakuji', tag: '3일차 · 교토', title: '금빛 연못,\n대나무숲', sub: '한국어 가이드 버스투어로 편하게', go: 'day:3' },
+  { img: 'okonomiyaki', tag: '맛집', title: '오사카는\n먹으러 가는 곳', sub: '스키야키 · 오코노미야키 · 함박', go: '#food' },
+];
+
+/* 명소 — 랜드마크 */
+const SPOTS = [
+  { id: 'osaka-castle', name: '오사카성 천수각', ja: '大阪城天守閣', img: 'osaka-castle', area: '오사카', day: 2, sticker: '인생샷', intro: '금빛 장식이 반짝이는 오사카의 상징. 8층 전망대에서 오사카 시내가 한눈에 보여요.', loc: '다니마치욘초메역 도보 약 15분 · 숙소에서 택시 약 10분', price: '성인 ¥1,200 · 중학생 이하 무료', hours: '09:00–18:00 (입장 17:30)', best: '오전 9–10시 · 해자 건너편 사진', q: '大阪城天守閣' },
+  { id: 'dotonbori', name: '도톤보리', ja: '道頓堀', img: 'dotonbori-glico', area: '오사카', day: 2, sticker: '필수', intro: '글리코 간판과 네온사인, 강변 산책. 오사카 하면 떠오르는 바로 그 거리.', loc: '난바역·닛폰바시역 도보 약 5분', price: '무료', hours: '상시 (가게별 상이)', best: '낮엔 산책 · 해 진 뒤 네온', q: '道頓堀 グリコサイン' },
+  { id: 'grand-green', name: '그랜드그린 오사카 · 우메키타 공원', ja: 'グラングリーン大阪', img: 'grand-green', area: '오사카', day: 2, sticker: 'NEW', intro: 'JR 오사카역 바로 옆 도심 속 잔디 공원. 대지붕·연못·분수와 타임아웃마켓 푸드홀까지.', loc: 'JR 오사카역 우메키타 지하 출구 도보 약 3분', price: '공원 무료', hours: '공원 상시 개방으로 알려짐 (확인 필요) · 타임아웃마켓 11:00–23:00', best: '16:00 산책 → 노을', q: 'グラングリーン大阪 うめきた公園', note: '“우메키타의 숲”은 11/20 개원이라 이번엔 아직이에요. 분수는 기저귀 착용 아기는 들어갈 수 없어요. 잔디엔 유모차 진입 불가.' },
+  { id: 'umeda-sky', name: '우메다 스카이빌딩 공중정원', ja: '梅田スカイビル 空中庭園', img: 'umeda-sky', area: '오사카', day: 2, sticker: '노을맛집', intro: '두 빌딩을 잇는 옥상 360° 전망대. 10/15 일몰 17:24, 노을과 야경을 한 번에.', loc: 'JR 오사카역 도보 약 7분 · 그랜드그린에서 도보 약 5분', price: '성인 ¥2,000 · 4세~초등 ¥500', hours: '09:30–22:30 (입장 22:00)', best: '17:00–17:40', q: '梅田スカイビル 空中庭園展望台' },
+  { id: 'daimaru', name: '다이마루 신사이바시 · 포켓몬센터', ja: '大丸心斎橋店', img: 'daimaru-shinsaibashi', area: '오사카', day: 2, sticker: '아이 최애', intro: '100년 백화점 건물. 9층 포켓몬센터 DX, 7층 베이비룸, 지하 식품관 선물까지.', loc: '미도스지선 신사이바시역 지하 직결', price: '무료', hours: '10:00–20:00', best: '평일 오후 · 오픈 직후가 가장 한산', q: '大丸心斎橋店' },
+  { id: 'arashiyama', name: '아라시야마 도게츠교', ja: '嵐山 渡月橋', img: 'togetsukyo', area: '교토', day: 3, sticker: '가족사진', intro: '산과 강 사이 나무다리. 강변 둑에서 다리 전체가 들어오게 가족사진을 찍어요.', loc: '교토 버스투어 하차 후 도보', price: '무료', hours: '상시', best: '오전 10시', q: '渡月橋' },
+  { id: 'chikurin', name: '아라시야마 대나무숲', ja: '竹林の小径', img: 'arashiyama-bamboo', area: '교토', day: 3, sticker: '인생샷', intro: '하늘까지 뻗은 대나무 숲길. 포장길이라 유모차도 지나갈 수 있어요.', loc: '도게츠교에서 도보 약 10분 · 텐류지 북문과 연결', price: '무료', hours: '상시', best: '세로 사진 추천', q: '竹林の小径' },
+  { id: 'kinkakuji', name: '금각사', ja: '金閣寺', img: 'kinkakuji', area: '교토', day: 3, sticker: '장관', intro: '연못 위에 떠 있는 금빛 누각. 맑은 날엔 물에 비친 모습까지 완벽해요.', loc: '교토 버스투어 코스', price: '성인 ¥500 · 초중 ¥300', hours: '09:00–17:00', best: '입장 직후 연못가', q: '金閣寺' },
+  { id: 'fushimi-inari', name: '후시미이나리 센본토리이', ja: '伏見稲荷大社 千本鳥居', img: 'fushimi-inari', area: '교토', day: 3, sticker: '필수', intro: '수천 개의 붉은 토리이 터널. 입구 구간만 걸어도 충분히 멋져요.', loc: 'JR 이나리역 바로 앞 · 투어 코스', price: '무료', hours: '상시 (엘리베이터 09:00–15:00)', best: '센본토리이 입구', q: '伏見稲荷大社' },
+  { id: 'kiyomizu', name: '청수사 · 산넨자카', ja: '清水寺・産寧坂', img: 'kiyomizudera', area: '교토', day: 3, sticker: '장관', intro: '절벽 위 나무 무대와 옛 교토 골목. 내려오며 말차·야츠하시 맛보기.', loc: '고조자카 오르막 약 10–15분 · 투어 코스', price: '성인 ¥500 · 초중 ¥200 (현금)', hours: '06:00–18:00', best: '16:00 무대 전경', q: '清水寺' },
+  { id: 'kuromon', name: '구로몬 시장', ja: '黒門市場', img: 'kuromon-market', area: '오사카', day: 4, sticker: '맛보기', intro: '지붕 있는 580m 시장. 참치·와규 꼬치·과일을 조금씩 사 먹어요.', loc: '닛폰바시역 바로 앞 · 숙소에서 1정거장', price: '1인 ¥1,000–3,000', hours: '가게별 대체로 08:00–17:00', best: '아침 8–9시 (한산)', q: '黒門市場' },
+];
+
+/* 꼭 먹을 음식 */
+const DISHES = [
+  { name: '스키야키', img: null, emoji: '🍲', intro: '구로게와규를 달콤한 간장 육수에 익혀 날달걀에 찍어 먹는 요리', price: '런치 ¥6,600', where: '하리주 도톤보리 본점', rest: 'harijyu', day: 4, sticker: '찐맛집' },
+  { name: '오코노미야키', img: 'okonomiyaki', intro: '양배추 반죽에 돼지고기·해물을 넣어 철판에 굽는 오사카 부침개', price: '1인 약 ¥1,500', where: '치보 도톤보리빌딩점', rest: 'chibo-dotonbori', day: 2, sticker: '오사카 대표' },
+  { name: '함박스테이크', img: 'hamburg', intro: '은박에 싸서 구운 촉촉한 햄버그 + 통토마토 샐러드', price: '¥1,800–3,000', where: '동양정 한큐 우메다', rest: 'toyotei-hankyu', day: 2, sticker: '아이 최애' },
+  { name: '야키토리', img: 'yakitori', intro: '숯불에 구운 닭꼬치. 바삭한 닭껍질과 츠쿠네가 인기', price: '1인 ¥4,000–5,000', where: '쿠니가타 세이사쿠쇼 (숙소 근처)', rest: 'kunigata', day: 1, sticker: '야식' },
+  { name: '우동', img: 'kitsune-udon', intro: '쫄깃한 면에 맑은 다시 국물. 명란 크림 우동도 인기', price: '¥1,000–2,000', where: '츠루톤탄 소에몬초점', rest: 'tsurutontan-soemoncho', day: 3, sticker: '부모님 픽' },
+  { name: '소바', img: 'soba', intro: '도게츠교 앞 수타 메밀국수. 차갑게 먹는 자루소바', price: '¥990–1,600', where: '아라시야마 요시무라', rest: 'yoshimura', day: 3, sticker: '교토 점심' },
+  { name: '타코야키', img: 'takoyaki', intro: '문어가 든 동그란 반죽 구이. 속이 뜨거우니 식혀서!', price: '8개 약 ¥600–1,000 (가게별)', where: '쿠쿠루 도톤보리 본점', rest: null, day: 2, sticker: '길거리' },
+  { name: '부타만', img: '551-butaman', intro: '551 호라이의 돼지고기 찐빵. 한국 반입 불가 → 현지에서!', price: '2개 약 ¥420 (현장 확인)', where: '551 호라이 본점 (난바)', rest: '551-honten', day: 4, sticker: '맛보기' },
+  { name: '치즈케이크', img: null, emoji: '🍰', intro: '갓 구워 흔들리는 폭신한 치즈케이크. 리쿠로 오지상', price: '1홀 ¥1,095', where: '리쿠로 오지상 난바 본점', rest: null, day: 4, sticker: '맛보기' },
+  { name: '말차 파르페', img: 'matcha-parfait', intro: '우지 말차 아이스·젤리·경단이 층층이', price: '¥1,290~', where: '이토큐에몬 산넨자카점', rest: null, cafe: 'itohkyuemon-sannenzaka', day: 3, sticker: '교토 디저트' },
+  { name: '레트로 핫케이크·푸딩', img: 'pudding', intro: '1946년 찻집의 두툼한 핫케이크와 단단한 푸딩', price: '푸딩 세트 ¥850', where: '준킷사 아메리칸', rest: 'american', day: 4, sticker: '카페' },
+  { name: '네기야키', img: 'okonomiyaki', intro: '파를 듬뿍 넣어 구운 오사카식 파전. 스지(소 힘줄)와 찰떡', price: '1인 ¥1,000–3,000', where: '후쿠타로 본점', rest: 'fukutaro', day: 1, sticker: '야식' },
+];
+
+/* 캐릭터 성지 — 우리 동선 위 공식 매장 (캐릭터 이미지는 저작권상 사용하지 않음) */
+const CHARA = [
+  { brand: '포켓몬', e: '⚡', c1: '#FFCB05', c2: '#FF3D3D', name: '포켓몬센터 오사카 DX', where: '다이마루 신사이바시 본관 9층', day: 2, when: '13:40', hours: '10:00–20:00', station: '신사이바시역 직결', tip: '오사카 최대급 포켓몬 매장 · 핼러윈 굿즈(9/12 발매) · 30주년 신작 10/1부터 순차', q: 'ポケモンセンターオーサカDX' },
+  { brand: '포켓몬', e: '🍰', c1: '#FFCB05', c2: '#FF7A00', name: '포켓몬 카페 (예약제)', where: '다이마루 신사이바시 본관 9층', day: 2, when: '선택', hours: '10:00–20:00 · 90분', station: '신사이바시역 직결', tip: '웹 예약만 · 한 예약 최대 6명 → 8명은 2건 · 0세도 인원 포함 · 10월분은 9/1 오픈이라 남은 자리만', price: '피카츄 파르페 ¥2,090 · 카레 ¥2,530', q: 'ポケモンカフェ 大丸心斎橋店', url: 'https://osaka.pokemon-cafe.jp/' },
+  { brand: '짱구', e: '🍑', c1: '#FF3B30', c2: '#FFD60A', name: '짱구 공식숍 액션백화점 신사이바시점', where: '신사이바시 파르코 6층 (다이마루 바로 옆)', day: 2, when: '14:20', hours: '10:00–20:00', station: '신사이바시역', tip: '만화 속 액션백화점 콘셉트 · 가챠 1회 ¥300 · 인형 백팩 ¥3,630', q: 'アクションデパート 心斎橋店' },
+  { brand: '산리오', e: '🎀', c1: '#FF7EB6', c2: '#FFB3D1', name: '산리오 신사이바시점', where: '신사이바시스지 상점가', day: 2, when: '14:30', hours: '11:30–20:00', station: '신사이바시역', tip: '일본풍 × 산리오 한정 굿즈 · 선물 포장 가능', q: 'Sanrio 心斎橋店' },
+  { brand: '포켓몬', e: '⚡', c1: '#FFCB05', c2: '#3D7DCA', name: '포켓몬센터 오사카', where: 'LUCUA SOUTH 13층 (구 다이마루 우메다)', day: 2, when: '16:40', hours: '10:00–20:00', station: 'JR 오사카역 직결', tip: '같은 층에 Nintendo OSAKA · 원피스 스토어 · 토미카·프라레일 숍 (윤우 취향!)', q: 'ポケモンセンターオーサカ' },
+  { brand: '짱구', e: '🍑', c1: '#FF3B30', c2: '#FF9500', name: '짱구 액션백화점 오사카점', where: 'HEP FIVE 4층 (빨간 관람차 건물)', day: 2, when: '17:10', hours: '11:00–21:00', station: '우메다역 도보권', tip: '같은 층에 산리오 vivitix — 짱구·산리오 한 번에', q: 'アクションデパート 大阪店 HEP FIVE' },
+  { brand: '멀티', e: '🧸', c1: '#7C3AED', c2: '#FF7EB6', name: '키디랜드 · 치이카와랜드 우메다', where: '한큐 산반가이 지하 1층', day: 2, when: '선택', hours: '10:00–21:00', station: '한큐 오사카우메다역 직결', tip: '스누피·지브리·산리오를 한곳에서 · 치이카와 공식 상설점', q: 'キデイランド大阪梅田店' },
+  { brand: '멀티', e: '🐶', c1: '#00B98A', c2: '#FFC800', name: '아라시야마 캐릭터 거리', where: '텐류지 앞 메인 거리', day: 3, when: '자유시간', hours: '가게별 (확인 필요)', station: '투어 하차 후 도보', tip: '스누피 차야 · 리락쿠마 사보 · 미피 키친이 모여 있어요 (산리오·포켓몬 매장은 없음)', q: 'スヌーピー茶屋 京都・嵐山店' },
+  { brand: '산리오', e: '🎀', c1: '#FF7EB6', c2: '#FF2E63', name: '산리오 기프트게이트 난바 에비스바시점', where: '에비스바시스지 · 글리코 간판 근처', day: 4, when: '11:30~', hours: '11:30–20:00', station: '난바역 도보 3분', tip: '헬로키티 일본풍 한정 · 11:30 오픈 주의', q: 'Sanrio Gift Gate なんば戎橋店' },
+];
+const CHARA_NOTE = 'LUCUA SOUTH의 치이카와 파크스토어·Sanrio Hello Stage는 11–12월 오픈이라 이번 여행엔 아직 없어요. 교토에는 짱구 공식 상설점이 없어요. 캐릭터 이름·상표는 각 권리자의 것이며, 이 페이지는 매장 안내만 담았어요.';
+
+/* 가을 한정 · 교토 감성 */
+const AUTUMN = {
+  koyo: '솔직하게: 10월 중순 교토는 아직 푸른 잎이에요. 올해 단풍 절정 예상은 아라시야마 11월 중순~12월 초, 기요미즈 11월 하순~12월 초 (tenki.jp 9/27 발표). 대신 선선한 날씨, 밤·고구마·말차 디저트의 계절이에요.',
+  sweets: [
+    { name: '즉석 몽블랑 (밤·고구마)', shop: '긴노하나 사가아라시야마점', where: '아라시야마', day: 3, e: '🌰', note: '눈앞에서 짜주는 몽블랑 · 10:00–18:00 · 가격 확인 필요', q: '京都 金ノ華 嵯峨嵐山店' },
+    { name: '군밤 · 몽블랑', shop: '히사야 카페', where: '기요미즈', day: 3, e: '🌰', note: '밤 전문 · 10:00–17:00 · 가을 메뉴·가격 확인 필요', q: '比沙家 HISAYA CAFE 清水' },
+    { name: '말차 티라미수', shop: 'MACCHA HOUSE 산넨자카점', where: '산넨자카', day: 3, e: '🍵', note: '상자에 담긴 명물 · 평균 약 ¥900 · 10:30–18:00', q: 'MACCHA HOUSE 抹茶館 京都産寧坂店', img: 'matcha' },
+    { name: '말차 파르페', shop: '이토큐에몬 산넨자카점', where: '산넨자카', day: 3, e: '🍨', note: '¥1,290~ · 80석 · 예약 불가', q: '伊藤久右衛門 清水産寧坂店', img: 'matcha-parfait' },
+    { name: '고구마·밤 젤라토 플레이트', shop: '바르 델솔레 (오사카역 5층)', where: '우메다', day: 2, e: '🍠', note: '핼러윈 한정 ¥1,200 · 9/24–10/31', q: 'バール・デルソーレ 大阪ステーションシティ' },
+    { name: '영국 페어 스콘·애프터눈티', shop: '한큐 우메다 본점 9층', where: '우메다', day: 2, e: '🫖', note: '10/14–19 딱 우리 여행 기간 · 가격 확인 필요', q: '阪急うめだ本店' },
+    { name: '나마야츠하시', shop: '혼케 니시오 야츠하시 청수점', where: '청수사 앞', day: 3, e: '🍡', note: '시식 가능 · 17:30 마감', q: '本家西尾八ッ橋 清水坂店', img: 'yatsuhashi' },
+  ],
+  unique: [
+    { name: '오사카성 고자부네 (황금 배)', e: '⛵', day: 2, note: '해자 한 바퀴 20분 · 성인 ¥1,800 · 초중 ¥900 · 65세+ ¥1,200 · 앉아서 즐겨요', q: '大阪城御座船 乗り場' },
+    { name: '톤보리 리버크루즈', e: '🚤', day: 2, note: '도톤보리강 20분 · 성인 ¥2,000 · 초등 ¥500 · 미취학 무료 · 11:00–21:00 매시 정각·30분', q: 'とんぼりリバークルーズ' },
+    { name: '식품 샘플 만들기', e: '🍤', day: 4, note: '3세 이상 · 타코야키 ¥3,480 (30–45분) · 파르페 ¥3,980 · 온라인 예약 · 시은이 추천', q: 'デザインポケット 食品サンプル 千日前' },
+    { name: '글리코 간판 포즈 사진', e: '🏃', day: 4, note: '무료 · 토요일 오전이 한산 · 바로 옆 산리오 에비스바시점', q: 'グリコサイン 道頓堀' },
+  ],
+};
 
 /* JUNGWON TOUR — Family Travel OS · app core */
 (function () {
@@ -2887,8 +3198,8 @@ function openQuickFind() {
 
 /* ---------------- routing ---------------- */
 const TABS = [
-  { key: 'home', label: '일정', icon: 'cal' }, { key: 'map', label: '지도', icon: 'map' }, { key: 'food', label: '맛집', icon: 'food' },
-  { key: 'shop', label: '쇼핑', icon: 'bag' }, { key: 'tools', label: '가이드', icon: 'tool' },
+  { key: 'home', label: '일정', e: '🗓️' }, { key: 'spots', label: '명소', e: '📸' }, { key: 'food', label: '맛집', e: '🍜' },
+  { key: 'shop', label: '쇼핑', e: '🛍️' }, { key: 'tools', label: '가이드', e: '🧭' },
 ];
 const PAGE_TAB = { bar: 'food', breakfast: 'food', kidsfood: 'food', korean: 'food', cafes: 'food', osasa: 'food', convenience: 'food', takeout: 'food', glossary: 'food', best: 'home', souvenir: 'shop', gifts: 'shop' };
 const PAGES = {};
@@ -2978,7 +3289,8 @@ function timelineHTML(dayN, st) {
       else if (it.ref === 'hotel') target = 'data-go="hotel"';
       else if (it.type === 'flight') target = 'data-go="flights"';
       else if (it.ref && Rst(it.ref)) target = `data-open="rest:${it.ref}"`;
-      const r = it.ref && Rst(it.ref);
+      else if (it.ref && Caf(it.ref)) target = `data-open="cafe:${it.ref}"`;
+      const r = it.ref && (Rst(it.ref) || Caf(it.ref));
       card = `<button class="tl-simple ${r ? 'meal' : ''}" ${target}><span class="ic">${ic(icons[it.type] || 'clock')}</span><span class="grow"><h3>${esc(it.title)} ${rvMini(it.rv)}${it.end ? ` <span class="muted xs num">~${it.end}</span>` : ''}</h3>${it.note ? `<p>${esc(it.note)}</p>` : ''}${babyLine}</span>${target ? ic('chev', 'sm') : ''}</button>`;
     }
     return `<div class="tl ${cls}"><div class="tl-time num">${it.t}<span class="dot"></span></div><div>${card}</div></div>`;
@@ -3011,40 +3323,12 @@ function checklistMini() {
 }
 function tiredBtn() { return `<button class="tired" data-act="planb"><span class="ic">😮‍💨</span><span class="grow"><b>오늘 힘들어요</b><p>부모님·아이 컨디션, 비, 늦어진 일정 → 바로 대안</p></span>${ic('chev')}</button>`; }
 function weatherBlock() { return `<div id="wx"><div class="skeleton" style="height:110px"></div></div>`; }
-function guideHub() {
-  const L = [['compare', '🚐', '이동·투어 비교', '픽업 vs 대중교통'], ['pass', '🎫', '주유패스', '필요할까?'], ['sim', '📶', '유심·eSIM·로밍', '누가 뭘?'], ['transport', '🚇', '교통 가이드', '지하철 vs 택시 2대'],
-    ['admission', '🎟', '입장료', '성인·아이'], ['glossary', '🍱', '음식 한 줄 사전', '술 한 잔 궁합'], ['gifts', '🎁', '선물·면세', '카테고리별'], ['youtube', '▶️', '유튜브 10편 정리', '겹치는 곳 표시'],
-    ['culture', '🎐', '알아 두면 편한 것', '일본 생활 팁'], ['dropped', '✂️', '일정에서 뺀 곳', '이유 정리']];
-  return `<div class="section"><div class="sec-head"><div><div class="eyebrow">가이드북 · ガイド</div><h2 class="sec-title">출발 전에 읽어 두기</h2></div></div>
-    <div class="hub">${L.map(([k, e, t, s]) => `<a class="hubi" href="#${k}"><span class="e">${e}</span><b>${t}</b><small>${s}</small></a>`).join('')}</div></div>`;
-}
 function bestCarousel() {
   return `<div class="section"><div class="sec-head"><div><div class="eyebrow">이번 여행 식당 후보</div><h2 class="sec-title">이번 여행에서 진짜 먹을 곳</h2></div><a class="more" href="#best">BEST 10 ${ic('chev', 'sm')}</a></div>
     <p class="xs muted">맛집 순위가 아니라 우리 동선·아이·부모님·예약 가능성으로 고른 후보 10곳</p>
     <div class="carousel">${LOCAL_FOOD_BEST.map(([id, why], i) => { const r = Rst(id); return `<div role="button" tabindex="0" class="pcard" data-open="rest:${id}"><div class="ph" style="position:relative">${photo(r.img).replace(/^<div class="ph ">|<\/div>$/g, '')}<span class="rank num">${i + 1}</span>${favBtn('rest:' + id)}</div><div class="pb"><h3>${esc(r.nameKo)}</h3><p class="one">${esc(why)}</p>${badges(entity('rest', id).badges, 3)}</div></div>`; }).join('')}</div></div>`;
 }
-PAGES.home = function () {
-  const st = tripState();
-  if (selDay == null) selDay = st.mode === 'during' ? st.day : 1;
-  let body = '';
-  const itin = `<div class="section" style="padding-bottom:0"><div class="sec-head"><div><div class="eyebrow">일정 · 日程</div><h2 class="sec-title">여행 일정</h2></div><a class="more" href="#flights">항공편 ${ic('chev', 'sm')}</a></div></div>${dayTabs(selDay, st)}<div id="tl">${timelineHTML(selDay, st)}</div>`;
-  const view = store.get('view', 'basic');
-  if (view === 'easy') return heroHTML(st) + viewTabs(view) + easyHTML(st) + footer();
-  if (view === 'family') return heroHTML(st) + viewTabs(view) + familyHTML() + footer();
-  if (st.mode === 'during') {
-    body = `${nextupHTML(st)}<div class="section">${tiredBtn()}</div>${itin}
-      <div class="section"><div class="eyebrow">날씨 · 天気</div>${weatherBlock()}</div>${guideHub()}`;
-  } else if (st.mode === 'pre') {
-    body = `${familyStrip()}${itin}${guideHub()}<div class="section">${reservationsHTML()}${checklistMini()}</div>
-      <div class="section"><div class="sec-head"><div><div class="eyebrow">날씨 · 天気</div><h2 class="sec-title">10월 중순 날씨</h2></div><a class="more" href="#october">자세히 ${ic('chev', 'sm')}</a></div>${weatherBlock()}</div>
-      <div class="section">${tiredBtn()}</div>`;
-  } else {
-    body = `<div class="section"><div class="card"><div class="card-body"><div class="eyebrow">추억 · 思い出</div><h2 class="sec-title">3박 4일, 8명 모두 수고했어요</h2><p class="small muted">실제 쓴 돈을 정리하고, 저장한 장소를 다시 볼 수 있어요.</p><div class="btns grid2"><a class="btn primary" href="#budget">경비 정리</a><a class="btn" href="#favorites">저장한 곳</a></div></div></div></div>
-      ${dayTabs(selDay, st)}<div id="tl">${timelineHTML(selDay, st)}</div>`;
-  }
-  return heroHTML(st) + viewTabs(view) + body + footer();
-};
-PAGES.home.after = function () { loadWeather(); };
+
 
 
 /* ---------------- weather (Open-Meteo, 무료 · 키 없음) ---------------- */
@@ -3110,7 +3394,7 @@ function mapPoints() {
 }
 PAGES.map = function () {
   const chips = [['ALL', '전체', '#8A93A3'], ...Object.entries(MAP_LAYERS).map(([k, v]) => [k, v.label, v.color])];
-  return `${topbar('지도', false)}
+  return `${topbar('지도')}
     <div class="pad stack-sm" style="padding-bottom:10px"><div class="chips">${chips.map(([k, l, c]) => `<button class="chip ${mapFilter === k ? 'on' : ''}" data-mapf="${k}"><i style="background:${c}"></i>${esc(l)}</button>`).join('')}</div>
     <div class="btns"><button class="btn sm" data-mapgo="osaka">오사카</button><button class="btn sm" data-mapgo="kyoto">교토</button><button class="btn sm" data-mapgo="hotel">${ic('home', 'sm')}숙소</button><button class="btn sm" data-mapgo="me">${ic('locate', 'sm')}내 위치</button></div></div>
     <div class="mapwrap"><div id="map" role="region" aria-label="여행 지도"></div><div id="mapcard"></div><div id="mapnote"></div></div>
@@ -3179,25 +3463,6 @@ function filterRest(f) {
     default: return all;
   }
 }
-PAGES.food = function () {
-  const chips = `<div class="pad" style="padding-top:4px"><div class="chips">${FOOD_FILTERS.map((f) => `<button class="chip ${foodF === f ? 'on' : ''}" data-foodf="${esc(f)}">${esc(f)}</button>`).join('')}</div></div>`;
-  let body = '';
-  if (foodF === '카페') body = cafesSection(true);
-  else if (foodF !== '전체') {
-    const list = filterRest(foodF);
-    body = `<div class="section">${foodF === '술' ? `<a class="card" href="#bar" style="display:flex;gap:12px;align-items:center;padding:14px">${ic('beer', 'lg')}<div class="grow"><b>음식과 잘 맞는 술 한 잔</b><p class="xs muted">숙소에서 가볍게 · 편의점 술</p></div>${ic('chev')}</a>` : ''}
-      ${foodF === '오사사 추천' ? osasaIntro() : ''}<p class="xs muted num">${list.length}곳</p><div class="stack-sm">${list.map((r) => restCard(r)).join('') || '<div class="empty">조건에 맞는 곳이 없어요</div>'}</div></div>`;
-  } else {
-    body = `${areaEatsSection()}${konbiniSection()}
-      <div class="section"><div class="grid-btns">
-        <a class="gbtn" href="#breakfast"><span class="e">🍳</span>내일 아침<br>뭐 먹지?</a><a class="gbtn" href="#kidsfood"><span class="e">🍙</span>아이가 밥을<br>안 먹어요</a><a class="gbtn" href="#korean"><span class="e">🍲</span>한식이<br>먹고 싶어요</a>
-        <a class="gbtn" href="#takeout"><span class="e">🥡</span>숙소에서<br>포장</a><a class="gbtn" href="#bar"><span class="e">🍺</span>술 한 잔<br>궁합</a><a class="gbtn" href="#glossary"><span class="e">📖</span>음식<br>한 줄 사전</a></div></div>
-      ${bestCarousel()}${mustEatSection()}${cafesSection(false)}${osasaSection()}
-      <div class="section"><div class="sec-head"><div><div class="eyebrow">전체 · 全部</div><h2 class="sec-title">전체 식당</h2></div></div><div class="stack-sm">${RESTAURANTS.map((r) => restCard(r)).join('')}</div>
-      <div class="info">${ic('info', 'sm')}<div>${esc('8명 팁: 예약할 때 “大人6名・子供2名・ベビーカー1台 / テーブル席希望”을 함께 적으세요. 피크(12–13시, 18:30–20시)를 피하면 착석 확률이 크게 올라가요.')}</div></div></div>`;
-  }
-  return `${topbar('맛집', false)}${chips}${body}${footer()}`;
-};
 function osasaIntro() {
   return `<div class="info coral">${ic('info', 'sm')}<div><b>오사사에서 소개됐다는 이유만으로 BEST에 넣지 않았어요.</b> 우리 8명 가족의 동선·아이·부모님·예약 가능성을 함께 따졌어요.</div></div>`;
 }
@@ -3263,13 +3528,6 @@ PAGES.kidsfood = () => `${topbar('아이가 밥을 안 먹어요')}<div class="s
   <a class="btn primary block" href="${gm.near('うどん')}" target="_blank" rel="noopener">${ic('locate', 'sm')}현재 위치 주변 우동집</a>
   <div class="stack-sm">${KIDS_FOOD.map((k) => `<div class="lcard">${photo(k.img)}<div class="stack-sm"><h3>${esc(k.ko)} <span class="ja muted small">${esc(k.ja)}</span></h3><p class="one">${esc(k.note)}</p><div class="acts"><a class="btn sm" href="${gm.near(k.ja.split('・')[0])}" target="_blank" rel="noopener">${ic('pin', 'sm')}주변 검색</a><button class="btn sm" data-act="fs" data-ja="${esc(k.ja)}をください。" data-ko="${esc(k.ko)} 주세요">일본어</button></div></div></div>`).join('')}</div>
   <button class="phrase" data-act="fs" data-ja="子どもでも食べられますか？" data-ko="아이가 먹을 수 있나요?"><div class="grow"><div class="ko">아이가 먹을 수 있나요?</div><div class="jp">子どもでも食べられますか？</div></div>${ic('chev')}</button></div>${footer()}`;
-PAGES.convenience = () => `${topbar('일본 편의점 가이드')}<div class="section">${photo('convenience-store').replace('class="ph ', 'style="height:180px;border-radius:20px" class="ph ')}
-  <div class="grid-btns">${CONVENIENCE.stores.map((s) => `<a class="gbtn" href="${gm.near(s[0])}" target="_blank" rel="noopener"><b>${esc(s[1])}</b><span class="xs muted">${esc(s[2])}</span></a>`).join('')}</div>
-  <div class="sec-head"><div><div class="eyebrow">언제 뭘 살까</div><h2 class="sec-title">일정별 편의점</h2></div></div><div class="kplan">${KONBINI_PLAN.map((k) => `<div class="card flat"><div class="card-body"><b>${esc(k.when)}</b><ul>${k.what.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></div></div>`).join('')}</div>
-  <div class="sec-head"><div><div class="eyebrow">유튜브 편의점 영상 기준</div><h2 class="sec-title">체인별 추천</h2></div></div><div class="stack-sm">${KONBINI_PICKS.map(([c, n, d]) => `<div class="giftrow"><b>${esc(n)} <span class="badge">${esc(c)}</span></b><small>${esc(d)}</small></div>`).join('')}</div>
-  <div class="sec-head"><h2 class="sec-title">사진으로 보기</h2></div><div class="carousel">${CONVENIENCE.picks.map((p) => `<div class="pcard" style="width:130px"><div class="ph" style="aspect-ratio:1">${photo(p.img).replace(/^<div class="ph ">|<\/div>$/g, '')}</div><div class="pb"><h3>${esc(p.ko)}</h3><span class="ja xs muted">${esc(p.ja)}</span></div></div>`).join('')}</div>
-  <div class="stack-sm">${CONVENIENCE.howto.map(([t, d]) => `<details class="accordion"><summary>${esc(t)} ${ic('down', 'sm')}</summary><div class="acc-b">${esc(d)}</div></details>`).join('')}</div>
-  <a class="btn block" href="#bar">${ic('beer', 'sm')}술 한 잔 궁합 보기</a></div>${footer()}`;
 PAGES.bar = () => `${topbar('술 한 잔')}<div class="section"><div class="eyebrow">술 한 잔 · 一杯</div><h2 class="sec-title">음식과 잘 맞는 술 한 잔</h2><div class="stack-sm">${DRINK_PAIR.map(([f, d, w]) => `<div class="pairrow"><b>${esc(f)}</b><span>×</span><b class="dr">${esc(d)}</b><small>${esc(w)}</small></div>`).join('')}</div><div class="sec-head"><h2 class="sec-title">편의점에서 사는 술</h2></div><div class="info">${ic('info', 'sm')}<div class="xs">${esc(ALCOHOL.disclaimer)}</div></div>
   ${ALCOHOL.groups.map((g) => `<div class="card">${photo(g.img).replace('class="ph ', 'style="height:150px" class="ph ')}<div class="card-body"><div class="eyebrow">${g.label}</div>${g.items.map((i) => `<div class="row between" style="min-height:40px;border-bottom:1px solid var(--line2)"><span><b>${esc(i[1])}</b> <span class="xs muted">${esc(i[0])}</span></span><span class="xs muted">${esc(i[2])}</span></div>`).join('')}</div></div>`).join('')}
   <div class="sec-head"><div><div class="eyebrow">사진으로 보기</div><h2 class="sec-title">대표 조합</h2></div></div>
@@ -3289,7 +3547,7 @@ PAGES.shop = function () {
     <div class="section"><div class="sec-head"><div><div class="eyebrow">매장 · 店</div><h2 class="sec-title">매장</h2></div></div>
     <div class="carousel">${stores.map((s) => `<div role="button" tabindex="0" class="pcard" data-open="shop:${s.id}"><div class="ph" style="position:relative">${photo(s.img).replace(/^<div class="ph ">|<\/div>$/g, '')}<span class="cap">참고 사진</span>${favBtn('shop:' + s.id)}</div><div class="pb"><h3>${esc(s.name)}</h3><p class="one">${esc(s.one)}</p>${badges(s.cat.map((c) => SHOP_KO[c] || c), 3)}</div></div>`).join('') || '<div class="empty">해당 매장이 없어요</div>'}</div></div>
     ${items.length ? `<div class="section"><div class="sec-head"><div><div class="eyebrow">살 것 · 買い物</div><h2 class="sec-title">살 것</h2></div></div><div class="stack-sm">${items.map((i) => `<div class="lcard">${photo(i.img)}<div class="stack-sm"><h3>${esc(i.ko)}</h3><span class="ja xs muted">${esc(i.ja)}</span>${badges([i.who, ...i.cat.slice(0, 2).map((c) => SHOP_KO[c] || c)])}<div class="acts"><button class="btn sm" data-act="fs" data-ja="${esc(i.ja)}はありますか？" data-ko="${esc(i.ko)} 있나요?">직원에게 보여주기</button></div></div></div>`).join('')}</div></div>` : ''}
-    <div class="section"><div class="card"><div class="card-body"><div class="eyebrow">4일차 쇼핑 동선 · 건물별</div>${[['11:30 다이마루 본관', '9층 포켓몬센터 DX → 7층 베이비룸 → 4층 MoMA 디자인 스토어 → 지하 1층 과자·선물'], ['(선택) 신사이바시 파르코 (옆 건물)', '핸즈 9–11층 · 캐릭터 층(도토리공화국 위치 확인 필요)'], ['13:20 신사이바시스지', 'UNIQLO·GU · 드러그스토어'], ['13:40 (선택) 난바', 'KALDI 난바시티 1층 · Standard Products 난바파크스 1층 · 3COINS 난바시티 지하 2층']].map(([t, d]) => `<div class="giftrow"><b>${t}</b><small>${d}</small></div>`).join('')}<p class="xs muted">다이마루 안에는 KALDI·Standard Products가 없어요. 신사이바시 쪽 단독 매장도 확인되지 않아 난바에서 사요.</p></div></div>
+    <div class="section"><div class="card"><div class="card-body"><div class="eyebrow">2일차 쇼핑 동선 · 건물별</div>${[['13:40 다이마루 본관', '9층 포켓몬센터 DX → 7층 베이비룸 → 지하 1층 과자·선물'], ['신사이바시스지', 'UNIQLO·GU · 드러그스토어 · (선택) 파르코 핸즈 9–11층'], ['16:00 우메다', '한큐 백화점(지하 식품관·선물) · 루쿠아 · 그랜드 프런트'], ['4일차 (선택) 난바시티', 'KALDI 1층 · 3COINS 지하 2층 — 점심 전후 짧게']].map(([t, d]) => `<div class="giftrow"><b>${t}</b><small>${d}</small></div>`).join('')}<p class="xs muted">다이마루 안에는 KALDI·Standard Products가 없어요.</p></div></div>
     <a class="card" href="#gifts" style="display:flex;align-items:center;gap:12px;padding:16px"><span style="font-size:28px">🎁</span><div class="grow"><b>카테고리별 선물 · 면세 안내</b><p class="xs muted">과자 · 말차 · 조미료 · 약 · 캐릭터 · 술</p></div>${ic('chev')}</a>
     <a class="card" href="#souvenir" style="display:grid;grid-template-columns:1fr 120px;overflow:hidden"><div class="card-body"><div class="eyebrow">お土産</div><b style="font-size:17px">기념품 BEST 10</b><p class="xs muted">공항 · 도심 · 아이 · 부모님 · 회사 · 친구</p></div>${photo('kitkat')}</a>
     <div class="info blue">${ic('info', 'sm')}<div class="xs">${esc(SHOPPING.taxfree)}</div></div>
@@ -3352,15 +3610,19 @@ const TOOL_LIST = [
   ['admission', 'cal', '입장료', '성인 · 아이', 'var(--line2)', 'var(--ink)'],
   ['october', 'sun', '날씨', '평년값 · 실제 예보', 'var(--primary-soft)', 'var(--primary-ink)'],
   ['culture', 'info', '알아 두면 편한 것', '일본 생활 팁', 'var(--line2)', 'var(--ink)'],
-  ['youtube', 'camera', '유튜브 10편', '겹치는 곳 정리', 'var(--coral-soft)', 'var(--coral)'],
-  ['dropped', 'x', '일정에서 뺀 곳', '판단 이유', 'var(--line2)', 'var(--ink)'],
   ['flights', 'plane', '항공편', '가는 날 · 오는 날', 'var(--line2)', 'var(--ink)'],
   ['hotel', 'bed', '숙소', '주소 카드 · 주변', 'var(--line2)', 'var(--ink)'],
   ['favorites', 'heart', '저장한 곳', '♡ 모아보기', 'var(--coral-soft)', 'var(--coral)'],
   ['links', 'link', '서비스 모음', '택시 · 예약 · 입국', 'var(--kyoto-soft)', 'var(--kyoto)'],
 ];
-PAGES.tools = () => `${topbar('가이드 · 여행 도우미', false)}<div class="section"><div class="tools">${TOOL_LIST.map(([k, icn, t, s, bg, fg]) => `<a class="tool" href="#${k}"><span class="ic" style="background:${bg};color:${fg}">${ic(icn)}</span><span><b>${t}</b><p>${s}</p></span></a>`).join('')}</div>
-  ${tiredBtn()}
+const GUIDE_GROUPS = [
+  ['✈️ 출발 전', [['compare', '🚐', '이동·투어 비교'], ['checklist', '✅', '체크리스트'], ['flights', '🛫', '항공편'], ['hotel', '🏠', '숙소'], ['sim', '📶', '유심·eSIM'], ['pass', '🎫', '주유패스'], ['admission', '🎟️', '입장료'], ['firsttrip', '🔰', '첫 해외여행']]],
+  ['📍 여행 중', [['phrases', '🗣️', '일본어'], ['transport', '🚇', '교통'], ['map', '🗺️', '지도'], ['nearby', '🏠', '숙소 근처'], ['convenience', '🍙', '편의점'], ['yen', '💴', '엔화 계산'], ['october', '🌤️', '날씨'], ['emergency', '🆘', '긴급']]],
+  ['💡 알아두기', [['culture', '🎐', '일본 매너'], ['glossary', '📖', '음식 사전'], ['gifts', '🎁', '선물·면세'], ['budget', '💰', '경비'], ['favorites', '💖', '저장한 곳'], ['links', '🔗', '서비스 모음']]],
+];
+PAGES.tools = () => `${topbar('가이드', false)}<div class="pbanner" style="--c1:#7C3AED;--c2:#FF2E63"><span>GUIDE</span><h2>여행 도우미</h2><p>필요한 것만 쏙쏙</p></div>
+  ${GUIDE_GROUPS.map(([g, list]) => `<div class="section"><h3 class="gh">${g}</h3><div class="qm">${list.map(([k, e, l], i) => `<a class="qi" href="#${k}"><span class="qe" style="background:${['#FFE9EF', '#E8EEFF', '#FFF1DC', '#E6FAF3', '#FFF8CC', '#EFE8FF'][i % 6]}">${e}</span><b>${l}</b></a>`).join('')}</div></div>`).join('')}
+  <div class="section">${tiredBtn()}
   <details class="accordion"><summary>앱 설정 · 화면 모드 ${ic('down', 'sm')}</summary><div class="acc-b">
     <p>여행 전/중/후 화면을 미리 볼 수 있어요. 평소엔 “자동”으로 두세요.</p>
     <div class="chips">${[['auto', '자동'], ['pre', '여행 전'], ['day1', '1일차'], ['day2', '2일차'], ['day3', '3일차'], ['day4', '4일차'], ['post', '여행 후']].map(([k, l]) => `<button class="chip ${store.get('mode', 'auto') === k ? 'on' : ''}" data-mode="${k}">${l}</button>`).join('')}</div>
@@ -3475,7 +3737,7 @@ function areaEatsSection() {
     <p class="xs muted">8명 착석 · 아기 동반 · 금연 · 예약 · 대기를 기준으로 골랐어요. 유명하다는 이유만으로 넣지 않았어요.</p>
     <div class="stack-sm">${AREA_EATS.map((a) => { const f = Rst(a.first), b = Rst(a.alt); if (!f) return ''; return `<div class="card"><div class="card-body">
       <div class="eyebrow">${esc(a.area)}</div>
-      ${eatRow(f, '1순위')}${b ? eatRow(b, '대안') : ''}<p class="xs muted">${esc(a.note)}</p></div></div>`; }).join('')}</div></div>`;
+      ${eatRow(f, '1순위')}${b ? eatRow(b, '2순위') : ''}${a.alt2 && Rst(a.alt2) ? eatRow(Rst(a.alt2), '3순위') : ''}<p class="xs muted">${esc(a.note)}</p></div></div>`; }).join('')}</div></div>`;
 }
 function eatRow(r, lab) {
   const rv = r.reservationRequired === '필수' ? '⭐' : r.reservationRequired === '권장' ? '△' : '○';
@@ -3533,17 +3795,11 @@ PAGES.gifts = () => `${topbar('선물 · 면세')}<div class="section"><div clas
   <div class="stack-sm">${GIFTS.map((g) => `<div class="card"><div class="card-body"><b style="font-size:16px">${g.e} ${esc(g.cat)}</b>${g.items.map(([t, w]) => `<div class="giftrow"><b>${esc(t)}</b><small>${esc(w)}</small></div>`).join('')}</div></div>`).join('')}</div>
   <div class="card"><div class="card-body"><div class="eyebrow">면세 · 반입 주의</div><ul class="small">${TAXFREE.map((t) => `<li>${esc(t)}</li>`).join('')}</ul></div></div>
   <a class="btn block" href="#souvenir">${ic('gift', 'sm')}기념품 BEST 10 보기</a></div>${footer()}`;
-PAGES.youtube = () => `${topbar('유튜브 10편 정리')}<div class="section"><div class="eyebrow">動画メモ</div><h2 class="sec-title">여러 영상에서 겹친 곳</h2>
-  <p class="xs muted">자막을 직접 읽고 우리 일정에 쓸 수 있는 것만 뽑았어요. 숫자는 언급한 영상 수예요.</p>
-  <div class="stack-sm">${YT_REPEATED.map(([n, c, w]) => `<div class="rep"><span class="cnt num">${c}</span><b>${esc(n)}</b><small>${esc(w)}</small></div>`).join('')}</div>
-  <div class="sec-head"><div><div class="eyebrow">영상별</div><h2 class="sec-title">핵심 3줄</h2></div></div>
-  <div class="stack-sm">${YT_VIDEOS.map((v) => `<div class="card flat"><div class="card-body"><div class="row between"><b>${esc(v.t)}</b><small class="muted">${esc(v.ch)}</small></div><ul class="small">${v.key.map((k) => `<li>${esc(k)}</li>`).join('')}</ul><a class="btn sm" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">${ic('ext', 'sm')}영상 보기</a></div></div>`).join('')}</div></div>${footer()}`;
+
 PAGES.culture = () => `${topbar('알아 두면 편한 것')}<div class="section"><div class="eyebrow">マナー</div><h2 class="sec-title">일본에서는 보통 이래요</h2>
   <p class="xs muted">꼭 지켜야 하는 규칙이라기보다 알아 두면 편한 것들이에요.</p>
   <div class="stack-sm">${CULTURE.map(([e, t, d]) => `<div class="gl"><b>${e} ${esc(t)}</b><p>${esc(d)}</p></div>`).join('')}</div></div>${footer()}`;
-PAGES.dropped = () => `${topbar('일정에서 뺀 곳')}<div class="section"><div class="eyebrow">見送り</div><h2 class="sec-title">왜 뺐는지</h2>
-  <p class="xs muted">하루 핵심 2–3곳 · 부모님 휴식 · 윤우 낮잠을 기준으로 다시 짰어요.</p>
-  <div class="stack-sm">${DROPPED.map((d) => `<div class="card flat"><div class="card-body"><b>${esc(d.t)}</b><p class="small">${esc(d.why)}</p><p class="xs muted">대신: ${esc(d.alt)}</p></div></div>`).join('')}</div></div>${footer()}`;
+
 
 /* ================================================================
    보기 모드 — 쉬운 보기 / 기본 보기 / 우리 가족
@@ -3619,6 +3875,167 @@ PAGES.kids = () => `${topbar('시은 · 윤우')}<div class="section"><div class
 PAGE_TAB.kids = 'home';
 
 /* ================================================================
+   v3 — 쨍한 디자인 · 메인 배너 · 퀵메뉴 · 앵커 · 명소 · 맛집
+   ================================================================ */
+const CHAIN_KO = { '7-Eleven': '세븐일레븐', FamilyMart: '패밀리마트', Lawson: '로손' };
+const yenStr = (p) => { const n = parseFloat(String(p).replace(/[^0-9.]/g, '')); return isNaN(n) ? String(p || '') : '¥' + Math.round(n).toLocaleString('ko-KR'); };
+function heroCarousel(st) {
+  let sticker = st.mode === 'pre' ? `D-${st.dday}` : st.mode === 'during' ? `${st.day}일차` : '♡';
+  return `<section class="hc" aria-label="메인 배너"><div class="hc-track" id="hcTrack">${HERO_SLIDES.map((h, i) => `<a class="hc-slide" ${h.go.startsWith('day:') ? `href="#home" data-hday="${h.go.slice(4)}"` : `href="${h.go}"`}>
+      <img src="${img(h.img)}" alt="${esc(PHOTO[h.img]?.alt || '')}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>
+      <div class="hc-in"><span class="hc-tag">${esc(h.tag)}</span><h2>${esc(h.title)}</h2><p>${esc(h.sub)}</p></div></a>`).join('')}</div>
+    <div class="hc-top"><span class="hc-brand">정원투어 <i>大阪×京都</i></span><span class="hc-sticker">${sticker}</span></div>
+    <div class="hc-dots">${HERO_SLIDES.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div></section>`;
+}
+let hcTimer = null;
+function heroAfter() {
+  const tr = $('#hcTrack'); if (!tr) return;
+  const dots = $$('.hc-dots i');
+  const upd = () => { const i = Math.round(tr.scrollLeft / tr.clientWidth); dots.forEach((d, k) => d.classList.toggle('on', k === i)); };
+  tr.addEventListener('scroll', () => requestAnimationFrame(upd), { passive: true });
+  clearInterval(hcTimer);
+  let paused = false; tr.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+  hcTimer = setInterval(() => { if (paused || !document.body.contains(tr)) return; const n = HERO_SLIDES.length; const i = (Math.round(tr.scrollLeft / tr.clientWidth) + 1) % n; tr.scrollTo({ left: i * tr.clientWidth, behavior: 'smooth' }); }, 4500);
+}
+const QUICK = [
+  ['🗓️', '일정', 'anchor:sec-itin', '#FFE9EF'], ['📸', '명소', '#spots', '#E8EEFF'], ['🍜', '맛집', '#food', '#FFF1DC'], ['🎀', '캐릭터', '#chara', '#FFE3F1'], ['🍁', '가을 한정', '#autumn', '#FFEBD6'],
+  ['🏠', '숙소 근처', '#nearby', '#E6FAF3'], ['🍙', '편의점', '#convenience', '#FFF8CC'], ['🚕', '택시 카드', 'act:taxi', '#FFF1DC'], ['🗣️', '일본어', '#phrases', '#E6FAF3'], ['🆘', '긴급', '#emergency', '#FFE9EF'],
+];
+function quickMenu() {
+  return `<div class="qm">${QUICK.map(([e, l, g, bg]) => { const attr = g.startsWith('anchor:') ? `href="#" data-anchor="${g.slice(7)}"` : g.startsWith('act:') ? `href="#" data-act="${g.slice(4)}"` : `href="${g}"`; return `<a class="qi" ${attr}><span class="qe" style="background:${bg}">${e}</span><b>${l}</b></a>`; }).join('')}</div>`;
+}
+const ANCHORS = [['sec-itin', '일정'], ['sec-spots', '명소'], ['sec-food', '맛집'], ['sec-chara', '캐릭터'], ['sec-autumn', '가을'], ['sec-near', '숙소 근처'], ['sec-resv', '예약'], ['sec-wx', '날씨']];
+const anchorBar = () => `<nav class="anc" id="anc" aria-label="바로가기">${ANCHORS.map(([id, l]) => `<button data-anchor="${id}">${l}</button>`).join('')}</nav>`;
+function spotCard(s) {
+  return `<a class="sp" href="#" data-spot="${s.id}"><div class="sp-ph"><img src="${img(s.img)}" alt="${esc(s.name)}" loading="lazy"><span class="stk">${esc(s.sticker)}</span><span class="dayb">${s.day}일차</span></div>
+    <div class="sp-b"><b>${esc(s.name)}</b><small>${esc(s.price)}</small></div></a>`;
+}
+function dishCard(d) {
+  const ph = d.img && PHOTO[d.img] ? `<img src="${img(d.img)}" alt="${esc(d.name)}" loading="lazy">` : `<span class="emo">${d.emoji || '🍽️'}</span>`;
+  const open = d.rest && Rst(d.rest) ? `data-open="rest:${d.rest}"` : d.cafe ? `data-open="cafe:${d.cafe}"` : '';
+  return `<a class="ds" href="#" ${open}><div class="ds-ph ${d.img ? '' : 'noimg'}">${ph}<span class="stk">${esc(d.sticker)}</span></div>
+    <div class="ds-b"><b>${esc(d.name)}</b><p>${esc(d.intro)}</p><div class="ds-m"><span class="pr">${esc(d.price)}</span><span>📍 ${esc(d.where)}</span></div></div></a>`;
+}
+function nearCard(n) {
+  const open = n.rest ? `href="#" data-open="rest:${n.rest}"` : `href="${esc(n.url || gm.search(n.ja))}" target="_blank" rel="noopener"`;
+  const e = { 맛집: '🍢', 카페: '☕', 술집: '🍶' }[n.type];
+  return `<a class="nc" ${open}><div class="nc-ph">${PHOTO[n.img] ? `<img src="${img(n.img)}" alt="" loading="lazy">` : ''}<span class="nt">${e} ${n.type}</span></div>
+    <div class="nc-b"><b>${esc(n.name)}</b><small class="ja">${esc(n.ja)}</small><p>${esc(n.sig || '')}</p>
+    <div class="nc-m"><span>🚶 ${esc(n.walk || '')}</span><span>💴 ${esc(n.price || '')}</span>${n.tabelog ? `<span>⭐ ${esc(String(n.tabelog))}</span>` : ''}</div></div></a>`;
+}
+function secHead(eye, title, more) { return `<div class="sh"><div><span class="sh-e">${eye}</span><h2>${title}</h2></div>${more ? `<a class="more" href="${more[0]}">${more[1]} ${ic('chev', 'sm')}</a>` : ''}</div>`; }
+function basicHome(st) {
+  const nearType = store.get('nearT', '맛집');
+  return `${st.mode === 'during' ? nextupHTML(st) : ''}
+    <div class="section">${quickMenu()}</div>${anchorBar()}
+    <div id="sec-itin" class="section anchor-t" style="padding-bottom:0">${secHead('🗓️ 일정', '4일 동선 한눈에', ['#flights', '항공편'])}</div>${dayTabs(selDay, st)}<div id="tl">${timelineHTML(selDay, st)}</div>
+    <div id="sec-spots" class="section anchor-t">${secHead('📸 명소', '너무 예쁜 랜드마크', ['#spots', '전체'])}<div class="carousel">${SPOTS.map(spotCard).join('')}</div></div>
+    <div id="sec-food" class="section anchor-t">${secHead('🍜 맛집', '이건 꼭 먹어야 해', ['#food', '전체'])}<div class="carousel">${DISHES.map(dishCard).join('')}</div></div>
+    <div id="sec-chara" class="section anchor-t">${secHead('🎀 캐릭터 성지', '포켓몬 · 짱구 · 산리오', ['#chara', '전체'])}<div class="carousel">${CHARA.map((c) => charaCard(c).replace('class="cc"', 'class="cc sm"')).join('')}</div></div>
+    <div id="sec-autumn" class="section anchor-t"><a class="aut-ban" href="#autumn"><span>AUTUMN · 秋</span><b>밤 · 고구마 · 말차<br>가을 한정 디저트</b><small>+ 황금 배 · 리버크루즈 · 식품 샘플 만들기</small><i>🍁</i></a>
+      <div class="carousel">${AUTUMN.sweets.map(sweetCard).join('')}</div></div>
+    <div id="sec-near" class="section anchor-t">${secHead('🏠 숙소 근처', '걸어서 가는 맛집·카페·술집', ['#nearby', '전체'])}
+      <div class="seg">${['맛집', '카페', '술집'].map((t) => `<button class="${t === nearType ? 'on' : ''}" data-neart="${t}">${t}</button>`).join('')}</div>
+      <div class="carousel" id="nearList">${NEARBY.filter((n) => n.type === nearType).map(nearCard).join('')}</div></div>
+    <div id="sec-resv" class="section anchor-t">${reservationsHTML()}${checklistMini()}</div>
+    <div id="sec-wx" class="section anchor-t">${secHead('🌤️ 날씨', '10월 중순 오사카·교토', ['#october', '자세히'])}${weatherBlock()}</div>
+    <div class="section">${tiredBtn()}</div>`;
+}
+PAGES.home = function () {
+  const st = tripState();
+  if (selDay == null) selDay = st.mode === 'during' ? st.day : 1;
+  const view = store.get('view', 'basic');
+  const top = heroCarousel(st) + viewTabs(view);
+  if (view === 'easy') return top + easyHTML(st) + footer();
+  if (view === 'family') return top + familyHTML() + footer();
+  return top + basicHome(st) + footer();
+};
+PAGES.home.after = function () { heroAfter(); loadWeather(); };
+
+/* ---- 명소 ---- */
+let spotF = '전체';
+PAGES.spots = () => {
+  const list = SPOTS.filter((s) => spotF === '전체' || s.area === spotF);
+  return `${topbar('명소', false)}<div class="pbanner" style="--c1:#2563FF;--c2:#7C3AED"><span>LANDMARK</span><h2>눈으로 먼저 여행하기</h2><p>우리 일정에 들어간 명소만 모았어요</p></div>
+  <div class="pad"><div class="chips">${['전체', '오사카', '교토'].map((c) => `<button class="chip ${spotF === c ? 'on' : ''}" data-spotf="${c}">${c}</button>`).join('')}<a class="chip" href="#map">🗺️ 지도로 보기</a></div></div>
+  <div class="section"><div class="stack">${list.map((s) => `<article class="lm">
+    <div class="lm-ph"><img src="${img(s.img)}" alt="${esc(s.name)}" loading="lazy"><span class="stk">${esc(s.sticker)}</span><div class="lm-t"><span class="dayb">${s.day}일차 · ${s.area}</span><h3>${esc(s.name)}</h3><small>${esc(s.ja)}</small></div></div>
+    <div class="lm-b"><p class="lm-i">${esc(s.intro)}</p>
+      <div class="lm-rows"><div><span>📍 위치</span><b>${esc(s.loc)}</b></div><div><span>💴 요금</span><b>${esc(s.price)}</b></div><div><span>🕘 시간</span><b>${esc(s.hours)}</b></div><div><span>📷 추천</span><b>${esc(s.best)}</b></div></div>
+      ${s.note ? `<p class="xs muted">💡 ${esc(s.note)}</p>` : ''}
+      <div class="btns grid2"><a class="btn primary" href="${gm.dir(s.q)}" target="_blank" rel="noopener">${ic('nav', 'sm')}길찾기</a>${P(s.id) ? `<button class="btn" data-open="place:${s.id}">자세히 · 아기 정보</button>` : `<a class="btn" href="${gm.search(s.q)}" target="_blank" rel="noopener">구글 지도</a>`}</div></div></article>`).join('')}</div></div>${footer()}`;
+};
+
+/* ---- 맛집 ---- */
+PAGES.food = function () {
+  return `${topbar('맛집', false)}<div class="pbanner" style="--c1:#FF2E63;--c2:#FF7A00"><span>JMT</span><h2>오사카는 먹으러 가는 곳</h2><p>일정에 맞춰 예약·가격·위치까지 정리했어요</p></div>
+  <nav class="anc" aria-label="맛집 바로가기">${[['f-dish', '꼭 먹을 음식'], ['f-plan', '일정 식당'], ['f-near', '숙소 근처'], ['f-conv', '편의점'], ['f-drink', '술 한 잔']].map(([id, l]) => `<button data-anchor="${id}">${l}</button>`).join('')}</nav>
+  <div id="f-dish" class="section anchor-t">${secHead('🍽️ MUST EAT', '이건 꼭 먹어야 해')}<div class="dgrid">${DISHES.map(dishCard).join('')}</div>
+    <p class="xs muted">사진은 음식 종류를 보여주는 참고 사진이에요 (가게 실제 사진 아님).</p></div>
+  <div id="f-plan" class="anchor-t">${areaEatsSection()}</div>
+  <div id="f-near" class="section anchor-t">${secHead('🏠 숙소 근처', '걸어서 가는 곳', ['#nearby', '전체'])}<div class="carousel">${NEARBY.map(nearCard).join('')}</div></div>
+  <div id="f-conv" class="section anchor-t">${secHead('🍙 편의점', '요즘 편의점 신상', ['#convenience', '전체'])}<div class="carousel">${KONBINI_2026.slice(0, 8).map(konbiniCard).join('')}</div></div>
+  <div id="f-drink" class="section anchor-t">${secHead('🍺 술 한 잔', '음식과 잘 맞는 술')}<div class="stack-sm">${DRINK_PAIR.map(([f, d, w]) => `<div class="pairrow"><b>${esc(f)}</b><span>×</span><b class="dr">${esc(d)}</b><small>${esc(w)}</small></div>`).join('')}</div></div>
+  <div class="section"><div class="grid-btns"><a class="gbtn" href="#kidsfood"><span class="e">🍙</span>아이가 밥을<br>안 먹어요</a><a class="gbtn" href="#korean"><span class="e">🍲</span>한식이<br>먹고 싶어요</a><a class="gbtn" href="#glossary"><span class="e">📖</span>음식<br>한 줄 사전</a></div></div>${footer()}`;
+};
+function konbiniCard(k) {
+  const tags = [...(k.tags || []), ...(k.uncertain ? ['여행 때 없을 수도'] : [])];
+  return `<a class="kc" href="${esc(k.url)}" target="_blank" rel="noopener"><span class="kch ${k.chain.replace(/[^a-z]/gi, '')}">${CHAIN_KO[k.chain] || k.chain}</span><b>${esc(k.ko)}</b><small class="ja">${esc(k.ja)}</small><div class="kc-m"><span class="pr">${yenStr(k.price)}</span>${tags.map((t) => `<span class="tg">${esc(t)}</span>`).join('')}</div></a>`;
+}
+PAGES.nearby = () => {
+  const t = store.get('nearT2', '전체');
+  const list = NEARBY.filter((n) => t === '전체' || n.type === t);
+  return `${topbar('숙소 근처')}<div class="pbanner" style="--c1:#00C896;--c2:#2563FF"><span>NEAR HOME</span><h2>다니마치 동네 탐방</h2><p>숙소(다니마치 7초메)에서 걸어서 가는 곳 · 도보 시간은 추정</p></div>
+  <div class="pad"><div class="chips">${['전체', '맛집', '카페', '술집'].map((c) => `<button class="chip ${t === c ? 'on' : ''}" data-neart2="${c}">${c}</button>`).join('')}</div></div>
+  <div class="section"><div class="stack-sm">${list.map((n) => `<div class="card"><div class="card-body">
+    <div class="row between"><span class="nt2">${{ 맛집: '🍢', 카페: '☕', 술집: '🍶' }[n.type]} ${n.type}</span>${n.tabelog ? `<span class="badge yellow">타베로그 ${esc(String(n.tabelog))}</span>` : ''}</div>
+    <b style="font-size:17px">${esc(n.name)}</b><small class="ja muted">${esc(n.ja)}</small>
+    <p class="small">${esc(n.sig || '')}</p>
+    <div class="kv2"><span>🚶 거리</span><b>${esc(n.walk || '')} · ${esc(n.station || '')}</b><span>🕘 시간</span><b>${esc(n.hours || '')}</b><span>📅 휴무</span><b>${esc(n.closed || '')}</b><span>💴 가격</span><b>${esc(n.price || '')}</b><span>🚭 흡연</span><b>${esc(n.smoke || '')}</b><span>👶 아이</span><b>${esc(n.kids || '')}</b></div>
+    ${n.note ? `<p class="xs muted">💡 ${esc(n.note)}</p>` : ''}
+    <div class="btns grid2"><a class="btn primary" href="${gm.dir(n.ja)}" target="_blank" rel="noopener">${ic('nav', 'sm')}길찾기</a><a class="btn" href="${esc(n.url || gm.search(n.ja))}" target="_blank" rel="noopener">${ic('ext', 'sm')}가게 정보</a></div></div></div>`).join('')}</div>
+  <a class="btn block" href="${gm.hotelNear('レストラン')}" target="_blank" rel="noopener">${ic('pin', 'sm')}숙소 주변 더 찾기 (구글 지도)</a></div>${footer()}`;
+};
+PAGE_TAB.nearby = 'food'; PAGE_TAB.map = 'spots';
+PAGES.convenience = () => `${topbar('편의점')}<div class="pbanner" style="--c1:#FFC800;--c2:#FF7A00"><span>KONBINI 2026</span><h2>요즘 편의점 신상</h2><p>2026년 가을 신상·스테디셀러 · 가격은 세금 포함</p></div>
+  <div class="section"><div class="kgrid">${KONBINI_2026.map(konbiniCard).join('')}</div>
+  <div class="info yellow">${ic('info', 'sm')}<div>가을 한정 신상은 10월 중순에 매장에 없을 수 있어요. 파미치키·닭꼬치 같은 스테디셀러는 거의 항상 있어요.</div></div>
+  <div class="sec-head"><div><div class="eyebrow">언제 뭘 살까</div><h2 class="sec-title">일정별 편의점</h2></div></div><div class="kplan">${KONBINI_PLAN.map((k) => `<div class="card flat"><div class="card-body"><b>${esc(k.when)}</b><ul>${k.what.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></div></div>`).join('')}</div>
+  <div class="grid-btns">${CONVENIENCE.stores.map((s) => `<a class="gbtn" href="${gm.near(s[0])}" target="_blank" rel="noopener"><b>${esc(s[1])}</b><span class="xs muted">가까운 매장</span></a>`).join('')}</div>
+  <div class="stack-sm">${CONVENIENCE.howto.map(([t, d]) => `<details class="accordion"><summary>${esc(t)} ${ic('down', 'sm')}</summary><div class="acc-b">${esc(d)}</div></details>`).join('')}</div>
+  <a class="btn block" href="#bar">${ic('beer', 'sm')}술 한 잔 궁합 보기</a></div>${footer()}`;
+
+/* ---- 캐릭터 · 가을 ---- */
+function charaCard(c) {
+  return `<a class="cc" href="${gm.search(c.q)}" target="_blank" rel="noopener" style="--c1:${c.c1};--c2:${c.c2}"><div class="cc-top"><span class="cc-e">${c.e}</span><span class="cc-br">${c.brand}</span><span class="dayb">${c.day}일차 ${esc(c.when)}</span></div>
+    <b>${esc(c.name)}</b><small>${esc(c.where)}</small><p>${esc(c.tip)}</p><div class="cc-m"><span>🕘 ${esc(c.hours)}</span><span>🚉 ${esc(c.station)}</span>${c.price ? `<span>💴 ${esc(c.price)}</span>` : ''}</div></a>`;
+}
+function sweetCard(s) {
+  const ph = s.img && PHOTO[s.img] ? `<img src="${img(s.img)}" alt="" loading="lazy">` : `<span class="emo">${s.e}</span>`;
+  return `<a class="ds au" href="${gm.search(s.q)}" target="_blank" rel="noopener"><div class="ds-ph ${s.img ? '' : 'noimg'}">${ph}<span class="stk">가을 한정</span></div>
+    <div class="ds-b"><b>${esc(s.name)}</b><p>${esc(s.note)}</p><div class="ds-m"><span>📍 ${esc(s.shop)}</span><span>${s.day}일차 · ${esc(s.where)}</span></div></div></a>`;
+}
+PAGES.chara = () => {
+  const f = store.get('charaF', '전체');
+  const list = CHARA.filter((c) => f === '전체' || c.brand === f);
+  return `${topbar('캐릭터 성지')}<div class="pbanner chara" style="--c1:#FF7EB6;--c2:#FFCB05"><span>CHARACTER TRIP</span><h2>시은이·윤우의<br>캐릭터 성지 순례</h2><p>포켓몬 · 짱구 · 산리오 — 우리 동선 위 공식 매장만</p></div>
+  <div class="pad"><div class="chips">${['전체', '포켓몬', '짱구', '산리오', '멀티'].map((c) => `<button class="chip ${f === c ? 'on' : ''}" data-charaf="${c}">${{ 전체: '✨', 포켓몬: '⚡', 짱구: '🍑', 산리오: '🎀', 멀티: '🧸' }[c]} ${c}</button>`).join('')}</div></div>
+  <div class="section"><div class="stack-sm">${list.map((c) => charaCard(c)).join('')}</div>
+  <div class="card"><div class="card-body"><div class="eyebrow">🗺️ 캐릭터 동선</div>
+    <div class="giftrow"><b>2일차 신사이바시 (13:40–15:00)</b><small>포켓몬센터 DX(다이마루 9층) → 짱구 액션백화점(파르코 6층) → 산리오 신사이바시점 — 모두 걸어서 5분 안</small></div>
+    <div class="giftrow"><b>2일차 우메다 (16:40–17:50)</b><small>포켓몬센터 오사카(LUCUA SOUTH 13층) → HEP FIVE 4층 짱구·산리오 → (선택) 키디랜드</small></div>
+    <div class="giftrow"><b>3일차 아라시야마</b><small>스누피 차야 · 리락쿠마 사보 · 미피 키친 (자유시간에 구경만)</small></div>
+    <div class="giftrow"><b>4일차 난바</b><small>산리오 기프트게이트 에비스바시점 (11:30 오픈)</small></div></div></div>
+  <p class="xs muted">${esc(CHARA_NOTE)}</p></div>${footer()}`;
+};
+PAGES.autumn = () => `${topbar('가을 교토·오사카')}<div class="pbanner autumn" style="--c1:#C2410C;--c2:#F59E0B"><span>AUTUMN 2026 · 秋</span><h2>밤·고구마·말차의 계절</h2><p>10월 중순, 우리 동선에서 만나는 가을</p><i class="aki">秋</i></div>
+  <div class="section"><div class="info yellow">🍁<div>${esc(AUTUMN.koyo)}</div></div>
+  ${secHead('🌰 가을 한정', '지금만 먹을 수 있는 디저트')}<div class="dgrid">${AUTUMN.sweets.map(sweetCard).join('')}</div>
+  ${secHead('✨ 이색 체험', '우리 가족만의 추억')}<div class="stack-sm">${AUTUMN.unique.map((u) => `<a class="uq" href="${gm.search(u.q)}" target="_blank" rel="noopener"><span class="ue">${u.e}</span><div><b>${esc(u.name)} <span class="dayb">${u.day}일차</span></b><p>${esc(u.note)}</p></div></a>`).join('')}</div>
+  <p class="xs muted">가격·운영은 2026-09-28 기준이에요. “확인 필요”는 가게 공식 확인이 안 된 정보예요.</p></div>${footer()}`;
+PAGE_TAB.chara = 'home'; PAGE_TAB.autumn = 'home';
+
+/* ================================================================
    events (delegation)
    ================================================================ */
 document.addEventListener('click', (ev) => {
@@ -3642,6 +4059,13 @@ document.addEventListener('click', (ev) => {
     if (g === 'today') { closeSheet(true); location.hash = '#home'; return; }
     closeSheet(true); location.hash = '#' + g; return;
   }
+  if (d.anchor) { ev.preventDefault(); const el = document.getElementById(d.anchor); if (el) { const y = el.getBoundingClientRect().top + window.scrollY - 64; window.scrollTo({ top: y, behavior: 'smooth' }); } return; }
+  if (d.hday) { ev.preventDefault(); selDay = +d.hday; route(); setTimeout(() => { const el = document.getElementById('sec-itin'); el && window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' }); }, 60); return; }
+  if (d.spot) { ev.preventDefault(); const sp = SPOTS.find((x) => x.id === d.spot); if (P(d.spot)) openDetail('place', d.spot); else if (sp) { location.hash = '#spots'; } return; }
+  if (d.neart) { store.set('nearT', d.neart); $$('[data-neart]').forEach((b) => b.classList.toggle('on', b.dataset.neart === d.neart)); const nl = $('#nearList'); if (nl) { nl.innerHTML = NEARBY.filter((n) => n.type === d.neart).map(nearCard).join(''); nl.scrollLeft = 0; } return; }
+  if (d.neart2) { store.set('nearT2', d.neart2); route(); return; }
+  if (d.spotf) { spotF = d.spotf; route(); return; }
+  if (d.charaf) { store.set('charaF', d.charaf); route(); return; }
   if (d.view) { store.set('view', d.view); route(); return; }
   if (d.viewGo) { store.set('view', d.viewGo); location.hash = '#home'; route(); return; }
   if (d.ezday) { selDay = +d.ezday; route(); return; }
@@ -3689,7 +4113,7 @@ window.addEventListener('hashchange', route);
 
 /* ---------------- boot ---------------- */
 function boot() {
-  $('#tabbar').innerHTML = TABS.map((t) => `<a class="tab" data-tab="${t.key}" href="#${t.key}">${ic(t.icon)}<span>${t.label}</span></a>`).join('');
+  $('#tabbar').innerHTML = TABS.map((t) => `<a class="tab" data-tab="${t.key}" href="#${t.key}"><span class="te">${t.e}</span><span>${t.label}</span></a>`).join('');
   $('#fab').innerHTML = `${ic('pin')}주변`;
   $('#fab').addEventListener('click', openQuickFind);
   route();
