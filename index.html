@@ -1100,6 +1100,42 @@ input.in:focus{outline:2px solid var(--primary);outline-offset:0;border-color:tr
 .info.yellow{background:var(--yellow-soft)}
 a.info{color:inherit}
 .seg .kv2 b{font-weight:600}
+.viewtabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:14px 16px 0;padding:5px;border-radius:18px;background:var(--line2)}
+.vt{display:flex;flex-direction:column;align-items:center;gap:1px;padding:9px 4px;border-radius:14px;min-height:52px;color:var(--ink2)}
+.vt b{font-size:14px;font-weight:800}.vt small{font-size:10.5px;color:var(--muted)}
+.vt.on{background:var(--surface);box-shadow:var(--shadow);color:var(--ink)}
+.vt.on small{color:var(--coral);font-weight:700}
+.easy{padding:14px 16px;display:flex;flex-direction:column;gap:14px}
+.ez-next{padding:16px;border-radius:18px;background:var(--primary);color:#fff}
+.ez-next small{display:block;font-size:15px;opacity:.9}.ez-next b{font-size:24px;line-height:1.3}
+.ez-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ez{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:118px;border-radius:20px;font-size:19px;font-weight:800;text-align:center;line-height:1.25;color:var(--ink)}
+.ez span{font-size:36px}
+.ez.b1{background:var(--ink);color:var(--bg)}.ez.b2{background:var(--yellow-soft)}.ez.b3{background:var(--primary-soft)}.ez.b4{background:var(--coral-soft);color:var(--coral)}
+.ez-days{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ezd{min-height:60px;border-radius:14px;background:var(--surface);box-shadow:var(--shadow);font-size:18px;font-weight:800;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ezd small{font-size:13px;font-weight:600;color:var(--muted)}
+.ezd.on{background:var(--ink);color:var(--bg)}.ezd.on small{color:var(--bg);opacity:.8}
+.ez-card{padding:18px;border-radius:20px;background:var(--surface);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.ez-card h2{font-size:22px;font-weight:900;line-height:1.3}.ez-card p{font-size:17px;line-height:1.5;color:var(--ink2);margin:0}
+.ez-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.ez-list li{display:grid;grid-template-columns:64px 1fr;gap:8px;padding:12px 0;border-bottom:1px solid var(--line2);font-size:19px;font-weight:700;line-height:1.35}
+.ez-list .t{font-variant-numeric:tabular-nums;color:var(--primary-ink)}
+.ez-rest{padding:12px;border-radius:14px;background:var(--mint-soft)}
+.ez-say{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:14px;border-radius:14px;background:var(--surface2);text-align:left;min-height:64px}
+.ez-say b{font-size:20px}.ez-say small{font-size:16px;color:var(--muted)}
+.mem{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mc{display:flex;flex-direction:column;align-items:center;gap:2px;padding:16px 8px;border-radius:18px;background:var(--surface);box-shadow:var(--shadow);text-align:center}
+.mc .fe{font-size:34px}.mc b{font-size:16px}.mc .nm{font-size:12px;color:var(--muted)}.mc small{font-size:11px;color:var(--primary-ink);font-weight:700}
+.mem.mini{grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.mem.mini .mc{padding:10px 4px}.mem.mini .fe{font-size:22px}.mem.mini b{font-size:12px}
+.mehero{display:flex;gap:14px;align-items:center;padding:16px;border-radius:20px;background:linear-gradient(135deg,var(--primary-soft),var(--kyoto-soft))}
+.mehero .fe{font-size:48px}.mehero small{font-size:12px;color:var(--muted)}.mehero h2{font-size:20px;font-weight:900;margin:2px 0 6px}
+.pick{display:flex;flex-direction:column;gap:1px;padding:10px 26px 10px 0;border-bottom:1px solid var(--line2);position:relative;color:inherit}
+.pick small{font-size:11px;color:var(--muted)}.pick b{font-size:14.5px}
+.pick .icon{position:absolute;right:0;top:50%;transform:translateY(-50%)}
+.fm{color:inherit}
+.card.myshop{border:2px solid var(--yellow)}
+.gl.big b{font-size:17px}.gl.big p{font-size:15px;line-height:1.55}
 
 </style>
 </head>
@@ -2245,11 +2281,42 @@ const SENIOR_BEST = [
    ===================================================================== */
 
 const FAMILY = [
-  { who: '아버님', e: '👴', tag: '부모님' }, { who: '어머님', e: '👵', tag: '부모님' },
-  { who: '처형', e: '🙋‍♀️', tag: '성인' }, { who: '형님', e: '🙋‍♂️', tag: '성인' },
-  { who: '와이프', e: '👩', tag: '성인' }, { who: '본인', e: '👨', tag: '성인' },
-  { who: '조카', e: '🧒', tag: '아이' }, { who: '윤우', e: '👶', tag: '19개월 · 유모차' },
+  { key: 'father', nick: '아버님', who: '아버님', name: '박판옥', e: '👴', tag: '음식 · 술 · 쇼핑', likes: ['food', 'drink', 'shop'],
+    title: '오늘도 한잔은 기본', mission: '매일 저녁 “오늘의 한 잔” 사진 1장 남기기' },
+  { key: 'mother', nick: '어머님', who: '어머님', name: '고순', e: '👵', tag: '음식 · 힐링 · 쇼핑', likes: ['food', 'heal', 'shop'],
+    title: '천천히, 예쁜 것만 보기', mission: '유람선에서 바닷바람 맞으며 쉬기' },
+  { key: 'bro', nick: '형님', who: '형님', name: '이주형', e: '🙋‍♂️', tag: '음식 · 술 · 쇼핑', likes: ['food', 'drink', 'shop'],
+    title: '아버님 술친구 담당', mission: '아버님과 하이볼 × 타코야키 조합 완성하기' },
+  { key: 'sis', nick: '처형', who: '처형', name: '박연화', e: '🙋‍♀️', tag: '음식 · 아이돌봄 · 힐링', likes: ['food', 'kids', 'heal'],
+    title: '이 가이드북의 기본 모드 주인공', mission: '시은이와 말차 디저트 하나 나눠 먹기' },
+  { key: 'me', nick: '정원', who: '본인', name: '심정원', e: '👨', tag: '술 · 음식 · 쇼핑 · 아이돌봄', likes: ['drink', 'food', 'shop', 'kids'],
+    title: '가이드 · 총무 · 윤우 담당', mission: '14:30 샌딩 시간 사수하기' },
+  { key: 'wife', nick: '은실', who: '와이프', name: '박은실', e: '👩', tag: '음식 · 쇼핑 · 아이돌봄', likes: ['food', 'shop', 'kids'],
+    title: '쇼핑 동선 총괄', mission: '다이마루 10:00 오픈런' },
+  { key: 'sieun', nick: '시은', who: '조카', name: '이시은', e: '👧', tag: '7살 · 덕후', likes: ['otaku'],
+    title: '포켓몬·캐릭터 덕후', mission: '포켓몬센터에서 오사카 한정 굿즈 1개 고르기' },
+  { key: 'yunu', nick: '윤우', who: '아들', name: '심윤우', e: '👶', tag: '2살(19개월) · 덕후2', likes: ['otaku2'],
+    title: '고래상어·배·관람차 덕후', mission: '가이유칸 고래상어 앞에서 “우와” 하기' },
 ];
+/* 관심사별 추천 */
+const LIKE_LABEL = { food: '🍜 음식', drink: '🍺 술', shop: '🛍 쇼핑', heal: '🌿 힐링', kids: '👶 아이돌봄', otaku: '✨ 덕후', otaku2: '🐋 덕후2' };
+const LIKE_PICKS = {
+  food: [['2일차 저녁', '치보 오코노미야키', 'rest:chibo-dotonbori'], ['3일차 저녁', '동양정 함박스테이크', 'rest:toyotei-hankyu'], ['4일차 점심', '츠루톤탄 우동', 'rest:tsurutontan-soemoncho'], ['2일차 점심', '아라시야마 요시무라 소바', 'rest:yoshimura'], ['1일차 야식', '킨류 라멘', 'rest:kinryu']],
+  drink: [['1일차 밤', '편의점 하이볼 × 가라아게군', '#bar'], ['2일차 저녁', '오코노미야키 × 레몬사와', 'rest:chibo-dotonbori'], ['3일차 저녁', '함박 × 생맥주 (대안: 로바타야키 × 사케)', 'rest:toyotei-hankyu'], ['선물', '사케·우메슈는 다이마루 지하 1층 · 공항 면세점', '#gifts']],
+  shop: [['3일차 밤', '돈키호테 (미도스지점이 덜 붐빔)', 'place:donki'], ['4일차', '다이마루 → 신사이바시스지', 'place:daimaru'], ['4일차', '(선택) 난바 KALDI · Standard Products', 'place:namba-parks'], ['면세', '같은 날 같은 매장 세전 ¥5,000 이상 · 여권 실물', '#gifts']],
+  heal: [['2일차', '아라시야마 도게츠교 산책 · 말차 디저트', 'place:arashiyama'], ['2일차', '텐류지 정원 (선택)', 'place:tenryuji'], ['3일차', '산타마리아 유람선 45분 (앉아서)', 'place:santa-maria'], ['3일차', '우메다 공중정원 노을', 'place:umeda-sky'], ['2일차', '이토큐에몬 말차 파르페', 'cafe:itohkyuemon-sannenzaka']],
+  kids: [['수유·기저귀', '가이유칸 입구동 2층 베이비케어룸 (온수기)', 'place:kaiyukan'], ['수유·기저귀', '다이마루 7층 베이비룸', 'place:daimaru'], ['수유·기저귀', '공중정원 39·40층 수유실', 'place:umeda-sky'], ['유모차', '금각사는 금각 옆까지 · 청수사는 단차 없는 길', 'place:kinkakuji'], ['아이 음식', '밥 안 먹을 때 가이드', '#kidsfood']],
+};
+const KID_EATS = {
+  sieun: { eat: [['타마고산도', '편의점 · 아침'], ['저지 우유 푸딩 · 수플레 푸딩', '편의점 디저트'], ['생과일 스무디', '세븐일레븐 머신'], ['동양정 키즈 메뉴', '3일차 저녁'], ['타코야키 (식혀서)', '도톤보리'], ['멜론빵', '패밀리마트']],
+    buy: [['포켓몬 오사카 한정 굿즈', '다이마루 9층'], ['GU 아동 잠옷', '신사이바시'], ['캐릭터 과자', '돈키호테 · 편의점'], ['지브리 굿즈', '도토리공화국 (위치 확인 필요)']],
+    places: [['place:daimaru', '포켓몬센터 DX'], ['place:kaiyukan', '가이유칸'], ['place:tempozan-wheel', '대관람차'], ['cafe:pokemon-cafe', '포켓몬 카페 (예약)']] },
+  yunu: { eat: [['우동 (잘게 잘라서)', '어디서나 · 가장 무난'], ['오니기리 (김 떼고 작게)', '편의점'], ['계란말이 · 계란찜', '일식당 · 초밥집'], ['바나나 · 요거트', '편의점 · 슈퍼'], ['유아 과자 (월령 표시 확인)', '드러그스토어 유아 코너'], ['부드러운 빵', '편의점']],
+    avoid: ['곤약젤리 · 떡(모찌) — 질식 위험', '통 방울토마토·포도는 잘라서', '날생선 · 초밥 생선', '뜨거운 타코야키 속'],
+    buy: [['유아 과자 · 음료', '드러그스토어'], ['기저귀 · 물티슈 보충', '드러그스토어 · 편의점'], ['배·물고기 장난감', '가이유칸 기념품점']],
+    places: [['place:kaiyukan', '고래상어 (가이유칸)'], ['place:santa-maria', '큰 배 (산타마리아)'], ['place:tempozan-wheel', '관람차'], ['place:arashiyama', '강 · 다리 구경']] },
+};
+
 
 const RV_LEGEND = [['⭐', '사전예약 필수'], ['△', '예약 권장'], ['○', '현장 이용']];
 
@@ -2453,6 +2520,30 @@ const PHOTO_REQUEST = [
   ['윤우', '윤우 얼굴이 잘 보이는 사진 1–2장', '“아이” 카드 · 여행 후 화면'],
   ['부모님', '아버님·어머님 사진 1장', '“부모님” 카드'],
   ['여행 중', '매일 저녁 그날 베스트 사진 1장', '여행 후 “추억” 화면'],
+];
+
+/* 가족별 “사 오고 싶은 것” */
+const MY_SHOP = {
+  father: { title: '직장 이모님들 간식', list: [['개별 포장 과자 대용량 상자', '간사이공항 출국장 · 다이마루 지하 1층 — 인원수만큼 개별 포장인지 확인'], ['킷캣 말차·지역 한정', '돈키호테 · 공항 (돈키가 보통 더 저렴)'], ['나마야츠하시 (교토 떡과자)', '2일차 산넨자카 혼케 니시오 야츠하시 · 시식 가능 · 유통기한 짧음'], ['말차 과자', '이토큐에몬 산넨자카점 · 다이마루 지하 1층']], tip: '간식은 4일차 공항에서 사면 들고 다닐 필요가 없어요. 고기가 든 551 부타만은 한국 반입 불가.' },
+  mother: { title: '신기한 것 · 옷 · 액세서리', list: [['3COINS 액세서리·소품', '난바시티 지하 2층 (300엔대)'], ['돈키호테 신기한 생활용품', '3일차 밤 · 미도스지점이 덜 붐빔'], ['GU · UNIQLO 옷', '4일차 신사이바시 (11:00 오픈)'], ['핸즈 아이디어 생활용품', '신사이바시 파르코 9–11층'], ['교토 소품 (손수건·작은 장식품)', '2일차 산넨자카 · 20분만']], tip: '옷·잡화도 같은 매장 세전 ¥5,000 이상이면 여권으로 면세돼요.' },
+  bro: { title: '직장 동료 술 · 쇼핑', list: [['사케 · 우메슈 · 일본 위스키', '다이마루 지하 1층 주류 · KALDI(주류 판매) · 돈키호테'], ['공항 면세점 술', '보안검색 후 구매 → 밀봉 봉투째 기내 반입 가능'], ['하이볼 캔 · 안주', '편의점 · 돈키호테 (현지에서 즐기기)'], ['GU · 드러그스토어', '4일차 신사이바시']], tip: '한국 면세: 술은 1인 2L 이하 & $400 이하. 시내에서 산 술은 위탁 수하물로(뽁뽁이 포장).' },
+  sis: { title: '가족 챙기는 선물 · 시은이 선물', list: [['백화점 과자 선물 세트', '다이마루 지하 1층 · 한큐 우메다'], ['말차 과자 · 말차 가루', '교토 산넨자카 · 다이마루 지하 1층'], ['포켓몬 오사카 한정 굿즈 (시은)', '다이마루 9층'], ['GU 아동 잠옷 · 머리핀 (시은)', 'GU 신사이바시 · 3COINS']], tip: '선물 포장 일본어: “プレゼント用に包んでください (푸레젠토요-니 츠츤데 쿠다사이)”.' },
+  me: { title: '술 한 병 · 윤우 물건', list: [['사케 · 우메슈', '다이마루 지하 1층 · 공항 면세점'], ['유아 과자 · 기저귀 보충', '드러그스토어'], ['돈키호테 쇼핑', '3일차 밤']], tip: '총무라면 영수증 사진을 경비 화면에 입력해 두면 정산이 쉬워요.' },
+  wife: { title: '나를 위한 선물 · 윤우 선물', list: [['화장품 · 선크림 · 안약', '드러그스토어 · 돈키호테 (가격 비교)'], ['Standard Products · KALDI', '4일차 (선택) 난바 · 11:00 오픈'], ['GU · UNIQLO', '4일차 신사이바시'], ['윤우 캐릭터 옷·장난감', '포켓몬센터 · 가이유칸 기념품점'], ['유아 과자', '드러그스토어 유아 코너 (월령 표시 확인)']], tip: '다이마루 7층 베이비룸에서 한 번 쉬고 쇼핑 시작하면 편해요.' },
+  sieun: { title: '예쁜 것 · 공주 · 캐릭터', list: [['포켓몬 오사카 한정 인형·굿즈', '다이마루 9층 포켓몬센터 DX'], ['반짝이 머리핀 · 액세서리', '3COINS · 돈키호테'], ['GU 아동 잠옷 (캐릭터 콜라보)', 'GU 신사이바시'], ['산리오 · 지브리 굿즈', '신사이바시 주변 (매장 위치 확인 필요)'], ['캐릭터 과자', '편의점 · 돈키호테']], tip: '포켓몬센터는 오픈 직후(10:00)가 가장 한산해요.' },
+  yunu: { title: '캐릭터 · 신기한 것 전부', list: [['고래상어·물고기 인형', '가이유칸 기념품점 (3일차)'], ['포켓몬 작은 인형', '다이마루 9층'], ['불빛·소리 나는 장난감', '돈키호테'], ['유아 과자', '드러그스토어']], tip: '19개월은 작은 부품(삼킴 위험) 장난감을 피하고 대상 연령 표시를 확인하세요.' },
+};
+/* 첫 해외여행 안내 — 부모님 · 시은 · 윤우 */
+const FIRST_TRIP = [
+  ['🛂', '입국심사', '여권 + Visit Japan Web QR을 보여주고, 양손 검지 지문과 얼굴 사진을 찍어요(16세 미만은 지문 제외). 가족이 순서대로 같이 서요.'],
+  ['🧳', '짐 찾기', '벨트에서 우리 가방을 찾을 때까지 한곳에 모여 있기. 윤우 유모차도 같이 나와요.'],
+  ['📍', '가족과 떨어지면', '그 자리에서 기다리고 전화하기. 급하면 “숙소로 가기” 화면을 택시 기사님께 보여주세요.'],
+  ['🚗', '길 건널 때', '일본은 차가 왼쪽으로 달려요. 오른쪽을 먼저 보세요.'],
+  ['🚻', '화장실', '비데 버튼이 많아요. “止(멈춤)” 버튼을 누르면 멈춰요. 휴지는 변기에 버려도 돼요.'],
+  ['📱', '휴대폰', '도착하면 로밍이 켜졌는지 확인. 카카오톡은 그대로 써요.'],
+  ['💴', '돈', '작은 가게·절은 현금만 받는 곳이 있어요. 1만 엔짜리보다 1천 엔짜리를 넉넉히.'],
+  ['👧', '시은이', '가방에 부모님 연락처와 숙소 주소 카드를 넣어 두세요.'],
+  ['👶', '윤우', '비행기 이착륙 때 젖병·빨대컵을 물리면 귀가 덜 아파요. 낯선 곳에서 잠을 설칠 수 있어 첫날은 일찍 재우기.'],
 ];
 
 /* JUNGWON TOUR — Family Travel OS · app core */
@@ -2918,9 +3009,6 @@ function checklistMini() {
 }
 function tiredBtn() { return `<button class="tired" data-act="planb"><span class="ic">😮‍💨</span><span class="grow"><b>오늘 힘들어요</b><p>부모님·아이 컨디션, 비, 늦어진 일정 → 바로 대안</p></span>${ic('chev')}</button>`; }
 function weatherBlock() { return `<div id="wx"><div class="skeleton" style="height:110px"></div></div>`; }
-function familyStrip() {
-  return `<div class="section" style="padding-bottom:0"><div class="fam">${FAMILY.map((f) => `<div class="fm"><span class="fe">${f.e}</span><b>${esc(f.who)}</b><small>${esc(f.tag)}</small></div>`).join('')}</div></div>`;
-}
 function guideHub() {
   const L = [['compare', '🚐', '이동·투어 비교', '픽업 vs 대중교통'], ['pass', '🎫', '주유패스', '필요할까?'], ['sim', '📶', '유심·eSIM·로밍', '누가 뭘?'], ['transport', '🚇', '교통 가이드', '지하철 vs 택시 2대'],
     ['admission', '🎟', '입장료', '성인·아이'], ['glossary', '🍱', '음식 한 줄 사전', '술 한 잔 궁합'], ['gifts', '🎁', '선물·면세', '카테고리별'], ['youtube', '▶️', '유튜브 10편 정리', '겹치는 곳 표시'],
@@ -2938,6 +3026,9 @@ PAGES.home = function () {
   if (selDay == null) selDay = st.mode === 'during' ? st.day : 1;
   let body = '';
   const itin = `<div class="section" style="padding-bottom:0"><div class="sec-head"><div><div class="eyebrow">일정 · 日程</div><h2 class="sec-title">여행 일정</h2></div><a class="more" href="#flights">항공편 ${ic('chev', 'sm')}</a></div></div>${dayTabs(selDay, st)}<div id="tl">${timelineHTML(selDay, st)}</div>`;
+  const view = store.get('view', 'basic');
+  if (view === 'easy') return heroHTML(st) + viewTabs(view) + easyHTML(st) + footer();
+  if (view === 'family') return heroHTML(st) + viewTabs(view) + familyHTML() + footer();
   if (st.mode === 'during') {
     body = `${nextupHTML(st)}<div class="section">${tiredBtn()}</div>${itin}
       <div class="section"><div class="eyebrow">날씨 · 天気</div>${weatherBlock()}</div>${guideHub()}`;
@@ -2949,7 +3040,7 @@ PAGES.home = function () {
     body = `<div class="section"><div class="card"><div class="card-body"><div class="eyebrow">추억 · 思い出</div><h2 class="sec-title">3박 4일, 8명 모두 수고했어요</h2><p class="small muted">실제 쓴 돈을 정리하고, 저장한 장소를 다시 볼 수 있어요.</p><div class="btns grid2"><a class="btn primary" href="#budget">경비 정리</a><a class="btn" href="#favorites">저장한 곳</a></div></div></div></div>
       ${dayTabs(selDay, st)}<div id="tl">${timelineHTML(selDay, st)}</div>`;
   }
-  return heroHTML(st) + body + footer();
+  return heroHTML(st) + viewTabs(view) + body + footer();
 };
 PAGES.home.after = function () { loadWeather(); };
 
@@ -3453,6 +3544,79 @@ PAGES.dropped = () => `${topbar('일정에서 뺀 곳')}<div class="section"><di
   <div class="stack-sm">${DROPPED.map((d) => `<div class="card flat"><div class="card-body"><b>${esc(d.t)}</b><p class="small">${esc(d.why)}</p><p class="xs muted">대신: ${esc(d.alt)}</p></div></div>`).join('')}</div></div>${footer()}`;
 
 /* ================================================================
+   보기 모드 — 쉬운 보기 / 기본 보기 / 우리 가족
+   ================================================================ */
+const VIEWS = [['easy', '쉬운 보기', '👴👵'], ['basic', '기본 보기', 'FOR 연화'], ['family', '우리 가족', '8명']];
+function viewTabs(v) {
+  return `<div class="viewtabs" role="tablist">${VIEWS.map(([k, l, s]) => `<button role="tab" aria-selected="${k === v}" class="vt ${k === v ? 'on' : ''}" data-view="${k}"><b>${l}</b><small>${s}</small></button>`).join('')}</div>`;
+}
+function familyStrip() {
+  return `<div class="section" style="padding-bottom:0"><div class="fam">${FAMILY.map((f) => `<a class="fm" href="#me-${f.key}"><span class="fe">${f.e}</span><b>${esc(f.who)}</b><small>${esc(f.tag)}</small></a>`).join('')}</div></div>`;
+}
+function easyHTML(st) {
+  const dn = st.mode === 'during' ? st.day : selDay || 1;
+  const d = ITINERARY[dn - 1];
+  const up = st.mode === 'during' ? nextItem(st).up : null;
+  const say = [['숙소로 가 주세요', HOTEL_DATA.taxiCard, '(이 화면을 기사님께 보여주세요)'], ['화장실 어디예요?', 'トイレはどこですか？', '토이레와 도코 데스카?'], ['고맙습니다', 'ありがとうございます。', '아리가토- 고자이마스'], ['이거 주세요', 'これをください。', '코레오 쿠다사이'], ['괜찮아요', '大丈夫です。', '다이죠-부 데스']];
+  return `<div class="easy">
+    ${up ? `<div class="ez-next"><small>다음 일정 · ${up.t}</small><b>${esc(up.title)}</b></div>` : ''}
+    <div class="ez-btns">
+      <a class="ez b1" href="${gm.hotelDir()}" target="_blank" rel="noopener"><span>🏠</span>숙소로 가기</a>
+      <button class="ez b2" data-go="taxicard"><span>🚕</span>택시 기사님께<br>보여주기</button>
+      <a class="ez b3" href="${gm.near('トイレ')}" target="_blank" rel="noopener"><span>🚻</span>화장실 찾기</a>
+      <a class="ez b4" href="#emergency"><span>🆘</span>아플 때 · 긴급</a>
+    </div>
+    <div class="ez-days">${ITINERARY.map((x) => `<button class="ezd ${x.day === dn ? 'on' : ''}" data-ezday="${x.day}">${x.day}일차<small>${x.date.slice(5).replace('-', '/')}</small></button>`).join('')}</div>
+    <div class="ez-card"><h2>${d.day}일차 · ${esc(d.title)}</h2><p>${esc(d.summary)}</p>
+      <ol class="ez-list">${d.items.filter((it) => it.type !== 'move' || /출발|이동/.test(it.title)).map((it) => `<li><span class="t">${it.t}</span><span>${esc(it.title.replace(/\s*\(.*?\)\s*/g, ' ').trim())}</span></li>`).join('')}</ol>
+      <p class="ez-rest">😌 ${esc(d.rest)}</p></div>
+    <div class="ez-card"><h2>일본어 한마디</h2><p>누르면 크게 보여줘요</p>
+      ${say.map(([k, j, r]) => `<button class="ez-say" data-act="fs" data-ja="${esc(j)}" data-ko="${esc(k)}" data-ro="${esc(r)}"><b>${esc(k)}</b><small>${esc(r)}</small></button>`).join('')}</div>
+    <a class="ez-card" href="#firsttrip" style="color:inherit;background:var(--primary-soft)"><h2>✈️ 첫 해외여행 안내</h2><p>입국심사 · 화장실 · 길 건너기 · 가족과 떨어졌을 때</p></a>
+    <div class="ez-card"><h2>숙소 주소</h2><p class="ja" style="font-size:20px;font-weight:700">${esc(HOTEL_DATA.addressJa)}</p><p>길을 잃으면 이 주소를 택시 기사님께 보여주세요. 8명이면 택시 2대예요.</p></div>
+  </div>`;
+}
+function familyHTML() {
+  return `<div class="section"><div class="eyebrow">우리 가족 · 家族</div><h2 class="sec-title">누구 페이지를 열까요?</h2>
+    <div class="mem">${FAMILY.map((f) => `<a class="mc" href="#me-${f.key}"><span class="fe">${f.e}</span><b>${esc(f.nick)}</b><span class="nm">${esc(f.name)}</span><small>${esc(f.tag)}</small></a>`).join('')}</div>
+    <a class="card kidsbox" href="#kids" style="display:flex;gap:12px;align-items:center;padding:16px"><span style="font-size:30px">👧👶</span><div class="grow"><b>시은이 · 윤우 먹을 것 · 살 것</b><p class="xs muted">편의점 간식 · 키즈 메뉴 · 피해야 할 음식</p></div>${ic('chev')}</a></div>`;
+}
+function pickRow([when, t, go]) {
+  const attr = go.startsWith('#') ? `href="${go}"` : `href="#" data-open="${go}"`;
+  return `<a class="pick" ${attr}><small>${esc(when)}</small><b>${esc(t)}</b>${ic('chev', 'sm')}</a>`;
+}
+function myShopMini(k) { const m = MY_SHOP[k]; return `<div class="card myshop"><div class="card-body"><div class="eyebrow">🎁 선물로 좋은 것 · ${esc(m.title)}</div>${m.list.map(([t, w]) => `<div class="giftrow"><b>${esc(t)}</b><small>${esc(w)}</small></div>`).join('')}<p class="xs muted">💡 ${esc(m.tip)}</p></div></div>`; }
+function kidBlock(k) {
+  const d = KID_EATS[k];
+  return `<div class="card"><div class="card-body"><div class="eyebrow">🍙 먹으면 좋은 것</div>${d.eat.map(([t, w]) => `<div class="giftrow"><b>${esc(t)}</b><small>${esc(w)}</small></div>`).join('')}</div></div>
+    ${d.avoid ? `<div class="info coral">${ic('sos', 'sm')}<div><b>피해야 할 것</b><br>${d.avoid.map(esc).join('<br>')}</div></div>` : ''}
+    <div class="card"><div class="card-body"><div class="eyebrow">🛍 사면 좋은 것</div>${d.buy.map(([t, w]) => `<div class="giftrow"><b>${esc(t)}</b><small>${esc(w)}</small></div>`).join('')}</div></div>
+    <div class="card"><div class="card-body"><div class="eyebrow">⭐ 좋아할 곳</div>${d.places.map(([o, t]) => `<a class="pick" href="#" data-open="${o}"><b>${esc(t)}</b>${ic('chev', 'sm')}</a>`).join('')}</div></div>`;
+}
+FAMILY.forEach((f) => {
+  PAGES['me-' + f.key] = () => {
+    const blocks = f.likes.filter((l) => LIKE_PICKS[l]).map((l) => `<div class="card"><div class="card-body"><div class="eyebrow">${LIKE_LABEL[l]}</div>${LIKE_PICKS[l].map(pickRow).join('')}</div></div>`).join('');
+    const kid = f.key === 'sieun' || f.key === 'yunu' ? kidBlock(f.key) : '';
+    return `${topbar(f.nick + ' 맞춤 페이지')}<div class="section">
+      <div class="mehero"><span class="fe">${f.e}</span><div><small>${esc(f.who)} 전용 · ${esc(f.name)}</small><h2>${esc(f.title)}</h2><div class="badges">${f.likes.map((l) => `<span class="badge blue">${LIKE_LABEL[l]}</span>`).join('')}</div></div></div>
+      <div class="info yellow">${ic('star', 'sm')}<div><b>이번 여행 미션</b> · ${esc(f.mission)}</div></div>
+      ${MY_SHOP[f.key] ? `<div class="card myshop"><div class="card-body"><div class="eyebrow">🛍 사 오고 싶은 것</div><b style="font-size:17px">${esc(MY_SHOP[f.key].title)}</b>${MY_SHOP[f.key].list.map(([t, w]) => `<div class="giftrow"><b>${esc(t)}</b><small>${esc(w)}</small></div>`).join('')}<p class="xs muted">💡 ${esc(MY_SHOP[f.key].tip)}</p></div></div>` : ''}
+      ${['father', 'mother', 'sieun', 'yunu'].includes(f.key) ? `<a class="info blue" href="#firsttrip" style="color:inherit">${ic('plane', 'sm')}<div><b>첫 해외여행이에요</b> · 알아 두면 편한 것 보기</div></a>` : ''}
+      ${kid}${blocks}
+      ${f.key === 'father' || f.key === 'mother' ? `<button class="btn primary block" data-view-go="easy">👴👵 쉬운 보기로 첫 화면 보기</button>` : ''}
+      <div class="mem mini">${FAMILY.filter((x) => x.key !== f.key).map((x) => `<a class="mc" href="#me-${x.key}"><span class="fe">${x.e}</span><b>${esc(x.nick)}</b></a>`).join('')}</div></div>${footer()}`;
+  };
+  PAGE_TAB['me-' + f.key] = 'home';
+});
+PAGES.firsttrip = () => `${topbar('첫 해외여행 안내')}<div class="section"><div class="eyebrow">はじめての海外</div><h2 class="sec-title">아버님·어머님·시은·윤우의 첫 해외여행</h2>
+  <p class="small muted">어렵지 않아요. 이것만 알면 돼요.</p><div class="stack-sm">${FIRST_TRIP.map(([e, t, d]) => `<div class="gl big"><b>${e} ${esc(t)}</b><p>${esc(d)}</p></div>`).join('')}</div>
+  <button class="btn primary block" data-view-go="easy">👴👵 쉬운 보기로 첫 화면 보기</button></div>${footer()}`;
+PAGE_TAB.firsttrip = 'home';
+PAGES.kids = () => `${topbar('시은 · 윤우')}<div class="section"><div class="mehero"><span class="fe">👧</span><div><small>이시은 · 7살</small><h2>포켓몬·캐릭터 덕후</h2></div></div>${kidBlock('sieun')}${myShopMini('sieun')}
+  <div class="divider"></div><div class="mehero"><span class="fe">👶</span><div><small>심윤우 · 2살(19개월)</small><h2>고래상어·배·관람차 덕후</h2></div></div>${kidBlock('yunu')}${myShopMini('yunu')}</div>${footer()}`;
+PAGE_TAB.kids = 'home';
+
+/* ================================================================
    events (delegation)
    ================================================================ */
 document.addEventListener('click', (ev) => {
@@ -3476,6 +3640,9 @@ document.addEventListener('click', (ev) => {
     if (g === 'today') { closeSheet(true); location.hash = '#home'; return; }
     closeSheet(true); location.hash = '#' + g; return;
   }
+  if (d.view) { store.set('view', d.view); route(); return; }
+  if (d.viewGo) { store.set('view', d.viewGo); location.hash = '#home'; route(); return; }
+  if (d.ezday) { selDay = +d.ezday; route(); return; }
   if (d.sit) { openSituation(d.sit); return; }
   if (d.must) { openMust(d.must); return; }
   if (d.speak) { speak(d.speak); return; }
