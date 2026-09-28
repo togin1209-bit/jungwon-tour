@@ -1534,6 +1534,20 @@ html.senior .tb-lt b{font-size:18px}html.senior .tb-logo .lg-mark{width:36px;hei
 .sf-menu{display:flex;flex-wrap:wrap;gap:6px}.sf-menu span{font-size:12px;padding:5px 9px;border-radius:10px;background:var(--surface2);color:var(--ink2)}.sf-menu b{color:var(--ink)}
 .sfq{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .sfq-i{display:flex;flex-direction:column;gap:3px;padding:14px;border-radius:18px;background:var(--surface);box-shadow:var(--shadow);color:inherit}.sfq-i b{font-size:15px}.sfq-i small{font-size:11.5px;color:var(--muted)}
+/* 헤더 보기 탭 (쇼핑몰형) */
+.apphead{flex-direction:column;align-items:stretch;gap:4px;padding-bottom:0}
+.ah-row{display:flex;align-items:center;gap:6px}
+.ah-tabs{display:flex;gap:18px;padding:0 6px}
+.ah-tabs button{position:relative;padding:8px 2px 10px;font-size:15px;font-weight:800;color:rgba(255,255,255,.78);text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.ah-tabs button.on{color:#fff}
+.ah-tabs button.on::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:3px;border-radius:3px;background:#fff}
+.apphead.solid .ah-tabs button{color:var(--muted);text-shadow:none}
+.apphead.solid .ah-tabs button.on{color:var(--ink)}
+.apphead.solid .ah-tabs button.on::after{background:var(--coral)}
+.hc-top{padding-top:calc(110px + env(safe-area-inset-top,0px))}
+.hc{height:480px}
+html.senior .hc{height:340px}
+.easy{margin-top:14px}
 
 </style>
 </head>
@@ -3656,7 +3670,7 @@ function openQuickFind() {
 /* ---------------- routing ---------------- */
 const TABS = [
   { key: 'home', label: '홈', e: '🏠' }, { key: 'spots', label: '명소', e: '📸' }, { key: 'food', label: '맛집', e: '🍜' },
-  { key: 'shop', label: '쇼핑', e: '🛍️' }, { key: 'tools', label: '가이드', e: '🧭' },
+  { key: 'family', label: '우리 가족', e: '👨‍👩‍👧‍👦' }, { key: 'tools', label: '가이드', e: '🧭' },
 ];
 const PAGE_TAB = { bar: 'food', breakfast: 'food', kidsfood: 'food', korean: 'food', cafes: 'food', osasa: 'food', convenience: 'food', takeout: 'food', glossary: 'food', best: 'home', souvenir: 'shop', gifts: 'shop' };
 const PAGES = {};
@@ -3665,7 +3679,7 @@ function route() {
   const raw = (location.hash || '#home').slice(1).replace(/[^a-z0-9\-]/gi, '') || 'home';
   const key = PAGES[raw] ? raw : 'home';
   current = key;
-  const tab = TABS.some((t) => t.key === key) ? key : (PAGE_TAB[key] || 'tools');
+  let tab = TABS.some((t) => t.key === key) ? key : (PAGE_TAB[key] || 'tools'); if (!TABS.some((t) => t.key === tab)) tab = 'home';
   $$('.tab').forEach((t) => t.classList.toggle('on', t.dataset.tab === tab));
   const main = $('#main');
   routing = true;
@@ -4400,8 +4414,9 @@ function easyHTML(st) {
     <button class="ez-switch" data-view="basic">기본 보기로 돌아가기</button>
   </div>`;
 }
+PAGES.family = () => `${topbar('우리 가족', false)}<div class="pbanner" style="--c1:#FF7EB6;--c2:#7C3AED"><span>OUR FAMILY · 8명</span><h2>누구 페이지를 열까요?</h2><p>각자 좋아하는 것 · 살 것 · 먹을 것 맞춤 추천</p></div>${familyHTML()}${footer()}`;
 function familyHTML() {
-  return `<div class="section"><div class="eyebrow">우리 가족 · 家族</div><h2 class="sec-title">누구 페이지를 열까요?</h2>
+  return `<div class="section">
     <div class="mem">${FAMILY.map((f) => `<a class="mc" href="#me-${f.key}"><span class="fe">${f.e}</span><b>${esc(f.nick)}</b><span class="nm">${esc(f.name)}</span><small>${esc(f.tag)}</small></a>`).join('')}</div>
     <a class="card kidsbox" href="#kids" style="display:flex;gap:12px;align-items:center;padding:16px"><span style="font-size:30px">👧👶</span><div class="grow"><b>시은이 · 윤우 먹을 것 · 살 것</b><p class="xs muted">편의점 간식 · 키즈 메뉴 · 피해야 할 음식</p></div>${ic('chev')}</a></div>`;
 }
@@ -4430,7 +4445,7 @@ FAMILY.forEach((f) => {
       ${f.key === 'father' || f.key === 'mother' ? `<button class="btn primary block" data-view-go="easy">👴👵 쉬운 보기로 첫 화면 보기</button>` : ''}
       <div class="mem mini">${FAMILY.filter((x) => x.key !== f.key).map((x) => `<a class="mc" href="#me-${x.key}"><span class="fe">${x.e}</span><b>${esc(x.nick)}</b></a>`).join('')}</div></div>${footer()}`;
   };
-  PAGE_TAB['me-' + f.key] = 'home';
+  PAGE_TAB['me-' + f.key] = 'family';
 });
 PAGES.firsttrip = () => `${topbar('첫 해외여행 안내')}<div class="section"><div class="eyebrow">はじめての海外</div><h2 class="sec-title">아버님·어머님·시은·윤우의 첫 해외여행</h2>
   <p class="small muted">어렵지 않아요. 이것만 알면 돼요.</p><div class="stack-sm">${FIRST_TRIP.map(([e, t, d]) => `<div class="gl big"><b>${e} ${esc(t)}</b><p>${esc(d)}</p></div>`).join('')}</div>
@@ -4497,11 +4512,11 @@ PAGES.babyfood = () => {
   <div class="section" id="bf-phr"><h2 class="sec-title">식당·가게 일본어</h2><div class="stack-sm">${B.phr.map((p) => `<button class="phrase" data-act="fs" data-ja="${esc(p.jp)}" data-ko="${esc(p.ko)}" data-ro="${esc(p.pron)}"><div class="grow"><div class="ko">${esc(p.ko)}</div><div class="jp">${esc(p.jp)}</div><div class="ro">${esc(p.pron)}</div></div></button>`).join('')}</div>
     <details class="accordion"><summary>출처 보기 ${ic('down', 'sm')}</summary><div class="acc-b">${B.src.map((u) => `<a class="srcl" href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/, '').slice(0, 48))} ${ic('ext', 'sm')}</a>`).join('')}</div></details></div>${footer()}`;
 };
-PAGE_TAB.babyfood = 'home';
+PAGE_TAB.babyfood = 'family';
 
 PAGES.kids = () => `${topbar('시은 · 윤우')}<div class="section"><a class="entry-strip" href="#babyfood" style="margin:0 0 12px"><span>🍼</span><div><b>윤우 이유식 가이드</b><small>고기 이유식은 일본 반입 ✕ → 오사카에서 사는 법·매장</small></div>${ic('chev', 'sm')}</a><a class="kpc" href="#chara"><img src="${img('pokemon-cafe-user')}" alt="포켓몬 카페" loading="lazy"><div class="kpc-in"><span>⚡ 시은·윤우 추천</span><b>포켓몬 카페 · 포켓몬센터 DX</b><small>2일차 다이마루 신사이바시 9층 · 카페는 웹 예약만 (최대 6명 → 2건)</small></div></a><div class="mehero"><span class="fe">👧</span><div><small>이시은 · 7살</small><h2>포켓몬·캐릭터 덕후</h2></div></div>${kidBlock('sieun')}${myShopMini('sieun')}
   <div class="divider"></div><div class="mehero"><span class="fe">👶</span><div><small>심윤우 · 2살(19개월)</small><h2>고래상어·배·관람차 덕후</h2></div></div>${kidBlock('yunu')}${myShopMini('yunu')}</div>${footer()}`;
-PAGE_TAB.kids = 'home';
+PAGE_TAB.kids = 'family';
 
 /* ================================================================
    v3 — 쨍한 디자인 · 메인 배너 · 퀵메뉴 · 앵커 · 명소 · 맛집
@@ -4529,8 +4544,8 @@ function heroAfter() {
   hcTimer = setInterval(() => { if (paused || !document.body.contains(tr)) return; const n = HERO_SLIDES.length; const i = (Math.round(tr.scrollLeft / tr.clientWidth) + 1) % n; tr.scrollTo({ left: i * tr.clientWidth, behavior: 'smooth' }); }, 4500);
 }
 const QUICK = [
-  ['📅', '필수 예약', '#booking', '#FFE3E3'], ['🎁', '선물', '#gifts', '#FFE9EF'], ['🧸', '기념품', '#souvenir', '#FFF1DC'], ['🍙', '편의점', '#convenience', '#FFF8CC'], ['💊', '드럭스토어', 'shop:BEST|sh-drug', '#E8EEFF'], ['🐧', '돈키호테', 'shop:BEST|sh-donki', '#FFF6CC'],
-  ['👕', '의류·잡화', 'shop:FASHION|', '#E6FAF3'], ['🎀', '캐릭터', '#chara', '#FFE3F1'], ['🥃', '술 쇼핑', '#liquor', '#F1EAFF'], ['🍼', '윤우 이유식', '#babyfood', '#FFF8CC'],
+  ['📅', '필수 예약', '#booking', '#FFE3E3'], ['🛍️', '쇼핑', '#shop', '#E8EEFF'], ['🎁', '선물', '#gifts', '#FFE9EF'], ['🧸', '기념품', '#souvenir', '#FFF1DC'], ['🍙', '편의점', '#convenience', '#FFF8CC'], ['💊', '드럭스토어', 'shop:BEST|sh-drug', '#E8EEFF'], ['🐧', '돈키호테', 'shop:BEST|sh-donki', '#FFF6CC'],
+  ['🎀', '캐릭터', '#chara', '#FFE3F1'], ['🥃', '술 쇼핑', '#liquor', '#F1EAFF'], ['🍼', '윤우 이유식', '#babyfood', '#FFF8CC'],
 ];
 const QUICK2 = [
   ['📅', '예약 체크', '#booking', '#FFE9EF'], ['🚕', '택시 카드', 'act:taxi', '#FFF1DC'], ['🆘', '긴급', '#emergency', '#FFE9EF'], ['🍁', '가을 한정', '#autumn', '#FFEBD6'], ['🗓️', '일정', 'anchor:sec-itin', '#FFE9EF'], ['📸', '명소', '#spots', '#E8EEFF'],
@@ -4680,10 +4695,10 @@ function basicHome(st) {
 PAGES.home = function () {
   const st = tripState();
   if (selDay == null) selDay = st.mode === 'during' ? st.day : 1;
-  const view = store.get('view', 'basic');
-  const top = `<header class="apphead" id="apphead"><a class="tb-logo homebtn" href="#home" aria-label="정원투어 홈">${LOGO_MARK}<span class="tb-lt"><b>정원투어</b><i>오사카·교토 가족여행</i></span></a><span class="grow"></span><a class="iconbtn ah-btn" href="#search" aria-label="검색">${ic('search', 'sm')}</a><button class="iconbtn ah-btn" data-act="quick">${ic('pin', 'sm')}주변</button></header>` + heroCarousel(st) + viewTabs(view);
+  let view = store.get('view', 'basic'); if (view !== 'easy') view = 'basic';
+  const top = `<header class="apphead" id="apphead"><div class="ah-row"><a class="tb-logo homebtn" href="#home" aria-label="정원투어 홈">${LOGO_MARK}<span class="tb-lt"><b>정원투어</b><i>오사카·교토 가족여행</i></span></a><span class="grow"></span><a class="iconbtn ah-btn" href="#search" aria-label="검색">${ic('search', 'sm')}</a><button class="iconbtn ah-btn" data-act="quick">${ic('pin', 'sm')}주변</button></div>
+    <nav class="ah-tabs" role="tablist">${[['basic', '기본 보기'], ['easy', '쉬운 보기 👴👵']].map(([k, l]) => `<button role="tab" aria-selected="${k === view}" class="${k === view ? 'on' : ''}" data-view="${k}">${l}</button>`).join('')}</nav></header>` + heroCarousel(st);
   if (view === 'easy') return top + easyHTML(st) + footer();
-  if (view === 'family') return top + familyHTML() + footer();
   return top + basicHome(st) + footer();
 };
 PAGES.home.after = function () { heroAfter(); loadWeather(); if (document.getElementById('daymap')) initDayMap(selDay || 1); };
@@ -4832,6 +4847,7 @@ document.addEventListener('click', (ev) => {
   if (d.spotf) { spotF = d.spotf; rerender(); return; }
   if (d.charaf) { store.set('charaF', d.charaf); rerender(); return; }
   if (d.view) { store.set('view', d.view); rerender(); const vt = $('.viewtabs'); if (vt && vt.getBoundingClientRect().top < 0) window.scrollTo({ top: vt.getBoundingClientRect().top + window.scrollY - 8 }); return; }
+  if (d.viewGo === 'family') { location.hash = '#family'; return; }
   if (d.viewGo) { store.set('view', d.viewGo); location.hash = '#home'; route(); return; }
   if (d.ezday) { selDay = +d.ezday; const st = tripState(); if (st.mode === 'during') st.mode = 'view'; const box = $('#ezday'); if (box) { box.outerHTML = easyDayHTML(selDay, st); wonify($('#ezday')); } $$('[data-ezday]').forEach((b) => { const on = +b.dataset.ezday === selDay; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }); return; }
   if (d.sit) { openSituation(d.sit); return; }
