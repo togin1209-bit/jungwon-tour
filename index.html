@@ -7,6 +7,7 @@
 <meta name="description" content="JUNGWON TOUR · 우리 가족 8명의 오사카·교토 여행 (2026.10.14–10.17)">
 <meta name="theme-color" content="#171A1F">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FF2E63'/%3E%3Cstop offset='1' stop-color='%23FF7A00'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='14' fill='url(%23g)'/%3E%3Cpath d='M24 40V25' stroke='%23fff' stroke-width='3.2' stroke-linecap='round'/%3E%3Cpath d='M24 27c0-7 5-11 12-11 0 7-5 11-12 11z' fill='%23fff'/%3E%3Cpath d='M24 31c0-6-4.5-9.5-10.5-9.5 0 6 4.5 9.5 10.5 9.5z' fill='%23FFE3B0'/%3E%3C/svg%3E">
 <link rel="preload" as="image" href="assets/images/hero/hero-osaka.webp" fetchpriority="high">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1412,6 +1413,28 @@ html.senior .viewtabs .vt b{font-size:17px}
 .giftrow.has-th>*:not(.gth){grid-column:2}
 .gth{grid-row:1/span 3;width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--surface2)}
 .nbph{position:relative;height:130px;overflow:hidden;border-radius:var(--r-lg) var(--r-lg) 0 0}.nbph img{width:100%;height:100%;object-fit:cover}
+.ez-prep{border-radius:22px;background:#fff;border:2px solid #E6DDD2;overflow:hidden}
+.ez-prep summary{list-style:none;display:flex;align-items:center;gap:12px;padding:16px;min-height:76px;cursor:pointer}
+.ez-prep summary::-webkit-details-marker{display:none}
+.ez-prep summary b{flex:1;font-size:21px;font-weight:900;letter-spacing:-.02em;color:#16121F}
+.ez-prep summary .icon{width:24px;height:24px;color:#3E3650;transition:transform .2s}.ez-prep[open] summary .icon{transform:rotate(180deg)}
+.ez-prep .pe{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:30px}
+.ez-prep.p1 .pe{background:#D8E3FF}.ez-prep.p2 .pe{background:#FFF0A8}.ez-prep.p3 .pe{background:#D9F7EC}.ez-prep.p4 .pe{background:#FFDCE6}
+.ez-prep[open].p1{border-color:#2563FF}.ez-prep[open].p2{border-color:#E0A800}.ez-prep[open].p3{border-color:#00B98A}.ez-prep[open].p4{border-color:#FF2E63}
+.ez-pb{padding:0 16px 16px;display:flex;flex-direction:column;gap:0}
+.ez-pr{display:flex;flex-direction:column;gap:3px;padding:12px 0;border-top:1px solid #EFE7DC}
+.ez-pr b{font-size:18px;color:#16121F;line-height:1.35}.ez-pr span{font-size:17px;color:#3E3650;line-height:1.5}
+.ez-pn{font-size:15.5px!important;color:#4F4859;margin:8px 0 10px!important}
+/* 로고 */
+.lg{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:16px;background:rgba(255,255,255,.96);box-shadow:0 6px 18px rgba(0,0,0,.18);text-shadow:none}
+.lg-mark{width:34px;height:34px;flex:0 0 34px}
+.lg-t{display:flex;flex-direction:column;line-height:1}
+.lg-t b{font-size:17px;font-weight:900;letter-spacing:-.04em;color:#16121F}
+.lg-t i{font-style:normal;font-size:8.5px;font-weight:800;letter-spacing:.18em;color:#FF2E63;margin-top:3px}
+.hc-brand{text-shadow:none}
+.lg.dark{background:transparent;box-shadow:none;padding:0}
+.lg.dark .lg-t b{color:var(--ink)}
+.ft-logo{margin-bottom:6px}
 
 </style>
 </head>
@@ -3060,6 +3083,38 @@ const FOOD_RULES = {
   ],
 };
 
+/* ===== 쉬운 보기 · 여행 준비 요약 (2026-09-28 확인) ===== */
+const EASY_PREP = [
+  { e: '📶', t: '로밍 · 유심 얼마예요?', c: 'p1', rows: [
+    ['통신사 로밍 (부모님 추천)', 'KT 일본 알뜰 로밍 3GB 5일 ₩25,000 · SKT·U+ 6GB ₩39,000 안팎 · 신청만 하면 끝'],
+    ['eSIM (젊은 어른)', '일본 5일 무제한 약 ₩1~3만원대 (판매처마다 달라요) · QR로 설치'],
+    ['하루 단위 로밍', '하루 약 ₩11,000 (통신사별) → 4일이면 5일짜리 상품이 훨씬 싸요 · 출국 전에 미리 신청'],
+  ], go: ['#sim', '자세히'], note: '요금은 통신사 앱에서 출국 전 최종 확인' },
+  { e: '💴', t: '일본 물가 대충 얼마?', c: 'p2', rows: [
+    ['편의점 주먹밥', '¥150–250'], ['생수 · 음료', '¥110–180'], ['편의점 커피', '¥150–250'],
+    ['카페 라테', '¥500–700'], ['라멘 · 우동 한 그릇', '¥800–1,500'], ['점심 정식', '¥1,000–2,000'],
+    ['지하철 한 번', '¥190–290'], ['택시 기본', '¥600 (4명까지)'],
+  ], note: '대략적인 값이에요 (추정) · 1,000엔 ≈ 8,600원' },
+  { e: '💳', t: '내 카드 쓸 수 있어요?', c: 'p3', rows: [
+    ['카드 앞·뒤에 VISA · Mastercard · JCB · AMEX 로고가 있으면', '대부분 OK'],
+    ['로고 없는 “국내 전용” 카드', '일본에서 안 돼요'],
+    ['트래블카드 (트래블로그 · 트래블월렛 · 토스)', '엔화로 미리 충전 → 환전 수수료 아낌 · 세븐일레븐 ATM(세븐뱅크)에서 엔화 인출 (수수료는 카드 앱에서 확인)'],
+    ['결제할 때 “원화(KRW)로 할까요?” 나오면', '꼭 “엔화(JPY)”로 선택 · 원화 결제는 수수료가 더 붙어요'],
+    ['현금이 필요한 곳', '절·신사 입장료, 작은 식당, 동전 사물함 → 1인 약 ¥10,000 현금'],
+  ], note: '출국 전 카드 앱에서 “해외 결제 허용” 켜기 · 분실하면 앱에서 바로 정지' },
+  { e: '🎒', t: '꼭 챙기거나 미리 살 것', c: 'p4', rows: [
+    ['여권 8개', '유효기간 확인 · 사진 찍어 두기'],
+    ['Visit Japan Web QR', '8명 등록 후 캡처'],
+    ['로밍 신청 / eSIM 구매', '출국 1~2일 전'],
+    ['엔화 현금 + 트래블카드', '1인 약 ¥10,000 현금'],
+    ['돼지코 (11자 어댑터)', '일본은 110V · 한국 플러그 그대로 안 들어가요'],
+    ['보조배터리', '부치는 짐 금지 · 기내에만'],
+    ['상비약', '소화제 · 파스 · 해열제(윤우) · 평소 드시는 약'],
+    ['편한 신발 · 작은 우산', '하루 1만 보 넘게 걸어요'],
+    ['여행자보험', '8명 모두 · 출발 전에'],
+  ], go: ['#checklist', '체크리스트'] },
+];
+
 /* JUNGWON TOUR — Family Travel OS · app core */
 (function () {
 'use strict';
@@ -3689,9 +3744,9 @@ async function loadWeather() {
 }
 
 function footer() {
-  return `<footer class="footer"><div><b>정원투어</b> · 2026 오사카·교토 가족여행 최종 가이드북 <span class="jpd">よい旅を</span></div>
+  return `<footer class="footer"><div class="ft-logo">${logoHTML('dark')}</div><div>2026 오사카·교토 우리 가족 여행 가이드북 · 10/14–10/17 · 8명</div>
     <div>정보 확인일 2026-09-28. 영업시간·요금은 바뀔 수 있어요. “확인 필요”는 출처가 엇갈리거나 공식 확인이 안 된 정보예요. ⭐ 사전예약 필수 · △ 예약 권장 · ○ 현장.</div>
-    <div>사진: Wikimedia Commons (CC0 · CC BY · CC BY-SA) — <a href="#credits">출처와 라이선스</a></div></footer>`;
+    <div>사진: 가족 제공 사진 · Wikimedia Commons (CC0 · CC BY · CC BY-SA) — <a href="#credits">출처와 라이선스</a></div></footer>`;
 }
 
 /* ================================================================
@@ -4162,6 +4217,8 @@ function easyHTML(st) {
       <a class="ez-link l3" href="#firsttrip"><span>🔰</span><b>일본에서 알아둘 것</b><small>화장실 · 길 건너기 · 떨어졌을 때</small></a>
       <a class="ez-link l4" href="#nearby"><span>☕</span><b>숙소 근처 산책 · 카페</b><small>스타벅스 · 한식집도 있어요</small></a>
     </div>
+    <h2 class="ez-h">🧳 여행 준비 한눈에 <small>눌러서 펼치기</small></h2>
+    ${EASY_PREP.map((s) => `<details class="ez-prep ${s.c}"><summary><span class="pe">${s.e}</span><b>${esc(s.t)}</b>${ic('down')}</summary><div class="ez-pb">${s.rows.map(([k, v]) => `<div class="ez-pr"><b>${esc(k)}</b><span>${esc(v)}</span></div>`).join('')}${s.note ? `<p class="ez-pn">💡 ${esc(s.note)}</p>` : ''}${s.go ? `<a class="ez-mini" href="${s.go[0]}">${esc(s.go[1])} ›</a>` : ''}</div></details>`).join('')}
     <div class="ez-card"><h2>🗣️ 일본어 한마디</h2><p>누르면 화면 가득 크게 보여줘요. 가게 직원에게 보여주세요.</p>
       <div class="ez-says">${say.map(([k, j, r]) => `<button class="ez-say" data-act="fs" data-ja="${esc(j)}" data-ko="${esc(k)}" data-ro="${esc(r)}"><b>${esc(k)}</b><small>${esc(r)}</small></button>`).join('')}</div></div>
     <div class="ez-card ez-money"><h2>💴 돈 계산 쉽게</h2><p><b>1,000엔 ≈ 8,600원</b><br>엔화 숫자에 <b>0을 하나 붙이고 조금 빼면</b> 원화예요.</p><a class="ez-mini" href="#yen">계산기 열기 ›</a></div>
@@ -4234,12 +4291,14 @@ PAGE_TAB.kids = 'home';
    ================================================================ */
 const CHAIN_KO = { '7-Eleven': '세븐일레븐', FamilyMart: '패밀리마트', Lawson: '로손' };
 const yenStr = (p) => { const n = parseFloat(String(p).replace(/[^0-9.]/g, '')); return isNaN(n) ? String(p || '') : '¥' + Math.round(n).toLocaleString('ko-KR'); };
+const LOGO_MARK = `<svg class="lg-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lgG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF2E63"/><stop offset="1" stop-color="#FF7A00"/></linearGradient></defs><rect width="48" height="48" rx="14" fill="url(#lgG)"/><path d="M24 40V25" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><path d="M24 27c0-7 5-11 12-11 0 7-5 11-12 11z" fill="#fff"/><path d="M24 31c0-6-4.5-9.5-10.5-9.5 0 6 4.5 9.5 10.5 9.5z" fill="#FFE3B0"/><path d="M9 15c6-7 18-9 27-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1 3.4" fill="none" opacity=".9"/><path d="M36.5 8.5l4.5 1.6-3.7 3-.3-2.1z" fill="#fff"/></svg>`;
+const logoHTML = (cls = '') => `<span class="lg ${cls}">${LOGO_MARK}<span class="lg-t"><b>정원투어</b><i>JUNGWON TOUR</i></span></span>`;
 function heroCarousel(st) {
   let sticker = st.mode === 'pre' ? `D-${st.dday}` : st.mode === 'during' ? `${st.day}일차` : '♡';
   return `<section class="hc" aria-label="메인 배너"><div class="hc-track" id="hcTrack">${HERO_SLIDES.map((h, i) => `<a class="hc-slide" ${h.go.startsWith('day:') ? `href="#home" data-hday="${h.go.slice(4)}"` : `href="${h.go}"`}>
       <img src="${img(h.img)}" alt="${esc(PHOTO[h.img]?.alt || '')}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>
       <div class="hc-in"><span class="hc-tag">${esc(h.tag)}</span><h2>${esc(h.title)}</h2><p>${esc(h.sub)}</p></div></a>`).join('')}</div>
-    <div class="hc-top"><span class="hc-brand">정원투어</span><span class="hc-sticker">${sticker}</span></div>
+    <div class="hc-top"><span class="hc-brand">${logoHTML()}</span><span class="hc-sticker">${sticker}</span></div>
     <div class="hc-dots">${HERO_SLIDES.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div></section>`;
 }
 let hcTimer = null;
