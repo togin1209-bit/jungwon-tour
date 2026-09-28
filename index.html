@@ -1163,7 +1163,7 @@ const TRIP_CONFIG = {
   start: '2026-10-14',
   end: '2026-10-17',
   tz: 'Asia/Tokyo',
-  members: { adults: 6, kids: [{ age: 7, label: '조카' }, { age: 1, label: '아기 19개월 · 유모차' }] },
+  members: { adults: 6, kids: [{ age: 7, label: '조카' }, { age: 1, label: '윤우 19개월 · 유모차' }] },
   total: 8,
   defaultRateKrwPerJpy: 8.8, // 2026-09 매매기준율 약 8.7원 수준 · 사용자가 수정 가능
 };
@@ -1292,7 +1292,7 @@ const PLACES = [
     reboard: 'JR 이나리역 앞 (기사와 미리 약속)',
     official: 'https://inari.jp/',
     baby: { stroller: '경사로 + 엘리베이터(09:00–15:00)로 센본토리이 입구까지', diaper: '두 번째 도리이 부근 다목적 화장실', stairs: '센본토리이 안쪽부터 돌계단 → 아기띠' },
-    plans: { normal: '본전 참배 → 센본토리이 입구에서 사진 → 버스 복귀 (정상 등반 안 함)', planB: '부모님·아기는 본전 앞에서 쉬고 나머지만 센본토리이 15분', skip: '버스에서 휴식', hotel: '투어 중' },
+    plans: { normal: '본전 참배 → 센본토리이 입구에서 사진 → 버스 복귀 (정상 등반 안 함)', planB: '부모님·윤우는 본전 앞에서 쉬고 나머지만 센본토리이 15분', skip: '버스에서 휴식', hotel: '투어 중' },
     verified: true },
 
   { id: 'torokko', nameKo: '사가노 토롯코 열차', nameJa: '嵯峨野トロッコ列車', area: 'KYOTO', cat: 'sight', day: 0, img: 'sagano-train',
@@ -1349,7 +1349,7 @@ const PLACES = [
     official: 'https://www.kiyomizudera.or.jp/',
     baby: { stroller: '정면 왼쪽 단차 없는 길로 본당까지 · 경내 한 바퀴 가능', diaper: '다목적 화장실 여러 곳 · 기저귀 교환 가능', stairs: '오토와 폭포·지슈신사 쪽 계단 → 아기띠', nurse: '사전 확인 필요' },
     tips: ['지슈신사는 수리 공사로 닫혀 있을 수 있어요', '오르막 참배길이 가장 힘든 구간 → 천천히'],
-    plans: { normal: '본당 무대 → 한 바퀴 → 산넨자카로 내려가며 말차·야츠하시', planB: '부모님·아기는 참배길 아래 찻집에서 쉬고 나머지만 본당', skip: '산넨자카 간식만', hotel: '투어 중 · 17:40 버스 출발 시간 엄수' },
+    plans: { normal: '본당 무대 → 한 바퀴 → 산넨자카로 내려가며 말차·야츠하시', planB: '부모님·윤우는 참배길 아래 찻집에서 쉬고 나머지만 본당', skip: '산넨자카 간식만', hotel: '투어 중 · 17:40 버스 출발 시간 엄수' },
     verified: true },
 
   { id: 'sannenzaka', nameKo: '산넨자카 · 니넨자카', nameJa: '産寧坂・二年坂', area: 'KYOTO', cat: 'sight', day: 2, img: 'sannenzaka',
@@ -1394,7 +1394,7 @@ const PLACES = [
     stroller: '3세 이하 유모차 대여(본관 1층 인포메이션)', toilets: '본관 7층 베이비룸(기저귀 교환·수유·온수)',
     official: 'https://www.pokemon.co.jp/shop/pokecen/osakadx/',
     baby: { stroller: '3세 이하 유모차 대여(본관 1층 인포메이션)', diaper: '7층 베이비룸', nurse: '7층 베이비룸(수유·온수)', chair: '10층 식당가 매장별 확인' },
-    tips: ['포켓몬 카페: 공식 웹 예약만 · 한 테이블 최대 6명 → 8명은 2건 · 아기도 인원에 포함', '10:00 오픈 직후가 가장 한산', '다이마루 안에는 KALDI·Standard Products 없음'],
+    tips: ['포켓몬 카페: 공식 웹 예약만 · 한 테이블 최대 6명 → 8명은 2건 · 윤우도 인원에 포함', '10:00 오픈 직후가 가장 한산', '다이마루 안에는 KALDI·Standard Products 없음'],
     verified: true },
 
   { id: 'nintendo', nameKo: 'Nintendo OSAKA (선택)', nameJa: 'Nintendo OSAKA', area: 'OSAKA', cat: 'shop', day: 0, img: 'nintendo-osaka',
@@ -1420,9 +1420,9 @@ const PLACES = [
     stay: '약 50–90분 (교통 상황)', walk: 'LOW', price: '하이에이스 ₩159,781 (쿠폰 적용 시 ₩135,814~) · 판매 페이지 2026-09 기준',
     badges: ['8명 가능', '예약필수'], rv: '⭐',
     fields2: [
-      ['인원', '8명 (성인 6 · 아이 2) — 아기도 1명으로 입력'],
+      ['인원', '8명 (성인 6 · 아이 2) — 윤우도 1명으로 입력'],
       ['캐리어', '예약 시 정확한 개수 입력 · 8명+8개+유모차는 적재 한계라 판매자에게 미리 확인'],
-      ['유아 카시트', '1개 무료 · 추가 1개당 ¥2,000 → 아기용 1개 요청'],
+      ['유아 카시트', '1개 무료 · 추가 1개당 ¥2,000 → 윤우용 1개 요청'],
       ['기사님 만나기', '출발 전 카카오톡·라인·문자로 연락 → 도착 로비에서 이름 피켓'],
       ['지연 시', '항공편명을 넣어 두면 실제 도착 기준 · 늦어지면 받은 메신저로 바로 연락'],
       ['무료 대기', '픽업: 실제 도착 후 90분 · 샌딩: 30분 · 초과 시 1시간 ¥5,000'],
@@ -1449,13 +1449,13 @@ const PLACES = [
     one: '08:40–08:50 집합 · 09:00 출발 · 가이드 깃발',
     desc: '마이리얼트립 “교토 버스투어”(여행 한 그릇). 닛폰바시역 근처 츠루톤탄 소에몬초점 앞에서 모여요. 약 10시간 10분 코스, 약 19:10 같은 곳으로 돌아와요.',
     stay: '약 10시간', move: '숙소 → 택시 2대 약 10분 (또는 다니마치큐초메 → 닛폰바시 1정거장)', walk: 'LOW',
-    price: '1인 ₩39,000 (아기 좌석 필요 여부 투어사 확인)', badges: ['예약필수', 'KYOTO'], rv: '⭐',
+    price: '1인 ₩39,000 (윤우 좌석 필요 여부 투어사 확인)', badges: ['예약필수', 'KYOTO'], rv: '⭐',
     fields2: [
       ['코스', '아라시야마 170분 → 금각사 50분 → 후시미이나리 60분 → 청수사·산넨자카 100분 → 우메다 경유 → 닛폰바시'],
       ['포함', '한국어 가이드 · 버스 · 사진 촬영'],
       ['불포함', '입장료(금각사 ¥500/300 · 청수사 ¥500/200) · 식사'],
       ['취소', '전날 09:00까지 무료'],
-      ['확인할 것', '19개월 아기 좌석 · 유모차 버스 적재 · 우천 시 진행 여부'],
+      ['확인할 것', '19개월 윤우 좌석 · 유모차 버스 적재 · 우천 시 진행 여부'],
     ],
     official: 'https://experiences.myrealtrip.com/products/3425896', reserve: 'https://experiences.myrealtrip.com/products/3425896',
     tips: ['08:40 도착 목표 · 늦으면 출발해요', '버스에 물·간식·물티슈·여벌 옷', '입장료는 현금으로 준비 (청수사는 현금만 받는다는 안내 있음)'], verified: true },
@@ -1468,7 +1468,7 @@ const PLACES = [
     badges: ['부모님추천', '아이추천', '많이걷기'],
     baby: { stroller: '도게츠교·대나무숲 포장길 OK (매우 혼잡)', chair: '요시무라 1층 패밀리석', diaper: '텐류지 정원 안·란덴 아라시야마역 다목적 화장실', nurse: '사전 확인 필요', stairs: '거의 없음 · 완만한 오르막' },
     tips: ['10:05 도게츠교 가족사진 (강변에서 다리 전체)', '10:50 요시무라 점심 (11시 전)', '11:50 대나무숲 → 텐류지 북문(선택)', '12:20 eX카페 또는 말차 소프트 테이크아웃', '12:40 기념품 · 버스 복귀'],
-    plans: { normal: '사진 → 점심 → 대나무숲 → 디저트', planB: '부모님·아기는 점심 후 요시무라 근처 벤치에서 쉬고 나머지만 대나무숲', skip: '대나무숲 생략, 도게츠교 산책만', hotel: '투어 중에는 버스가 유일한 이동 수단' }, verified: true },
+    plans: { normal: '사진 → 점심 → 대나무숲 → 디저트', planB: '부모님·윤우는 점심 후 요시무라 근처 벤치에서 쉬고 나머지만 대나무숲', skip: '대나무숲 생략, 도게츠교 산책만', hotel: '투어 중에는 버스가 유일한 이동 수단' }, verified: true },
 
   { id: 'tenryuji', nameKo: '텐류지 소겐치 정원 (선택)', nameJa: '天龍寺', area: 'KYOTO', cat: 'sight', day: 2, img: 'tenryuji',
     lat: 35.0158, lng: 135.6737, q: '天龍寺',
@@ -1485,7 +1485,7 @@ const PLACES = [
     badges: ['부모님추천', 'KYOTO'], rv: '○',
     baby: { stroller: '금각 옆까지 OK → 뒤쪽 계단 앞에서 되돌아 나오기', diaper: '다목적 화장실 있음', stairs: '금각 뒤 정원길 계단·오르막 → 아기띠' },
     official: 'https://www.shokoku-ji.jp/kinkakuji/', tips: ['입장권이 부적 모양이에요 · 기념으로 보관', '현금 준비'],
-    plans: { normal: '연못 앞 사진 → 한 바퀴', planB: '부모님·아기는 연못 앞까지만 보고 입구 쪽 휴게소', skip: '버스에서 휴식', hotel: '투어 중' }, verified: true },
+    plans: { normal: '연못 앞 사진 → 한 바퀴', planB: '부모님·윤우는 연못 앞까지만 보고 입구 쪽 휴게소', skip: '버스에서 휴식', hotel: '투어 중' }, verified: true },
 
   { id: 'kaiyukan', nameKo: '가이유칸 수족관', nameJa: '海遊館', area: 'OSAKA', cat: 'sight', day: 3, img: 'kaiyukan',
     lat: 34.6545, lng: 135.4290, q: '海遊館',
@@ -1497,7 +1497,7 @@ const PLACES = [
     baby: { stroller: '대부분 슬로프 · 직원에게 말하면 엘리베이터 안내', diaper: '기저귀 교환대 있는 화장실 다수', nurse: '입구동 2층 베이비케어룸(온수기) 등 3곳', stairs: '거의 없음' },
     official: 'https://www.kaiyukan.com/', reserve: 'https://webket.jp/pc/ticket/index?fc=00290&ac=0000',
     tips: ['15분 단위 입장 시간 지정 e티켓 → 10:00 슬롯', '관내가 어두워 아기가 무서워할 수 있어요', '음식은 4층 카페에서만'],
-    plans: { normal: '10:00 입장 → 12:00 퇴장', planB: '아기가 힘들면 한 명이 베이비케어룸에서 쉬고 나머지 관람', skip: '—', hotel: '지하철 25분 · 택시 2대 약 30분' }, verified: true },
+    plans: { normal: '10:00 입장 → 12:00 퇴장', planB: '윤우가 힘들면 한 명이 베이비케어룸에서 쉬고 나머지 관람', skip: '—', hotel: '지하철 25분 · 택시 2대 약 30분' }, verified: true },
 
   { id: 'tempozan-wheel', nameKo: '덴포잔 대관람차', nameJa: '天保山大観覧車', area: 'OSAKA', cat: 'sight', day: 3, img: 'tempozan-wheel',
     lat: 34.6560, lng: 135.4318, q: '天保山大観覧車',
@@ -1540,7 +1540,7 @@ const ITINERARY = [
   { day: 1, date: '2026-10-14', dow: '수', label: '도착', title: '오늘은 숙소까지만', area: '오사카', cover: 'kix',
     summary: '관광 없음. 공항 → 하이에이스 → 숙소. 힘이 남으면 도톤보리 야식 한 그릇.',
     core: ['하이에이스 픽업', '(선택) 도톤보리 야식', '편의점'],
-    rest: '21:00 이후는 모두 휴식 모드. 부모님·아기는 숙소에서 쉬기를 권해요.',
+    rest: '21:00 이후는 모두 휴식 모드. 부모님·윤우는 숙소에서 쉬기를 권해요.',
     route: ['간사이공항', '하이에이스', '숙소', '(선택) 도톤보리', '숙소'],
     rain: '야식은 숙소 앞 편의점·포장으로 대체. 공항→숙소는 차량이라 영향 없음.',
     konbini: '내일 아침(07:00 기상)용 빵·오니기리·우유를 오늘 밤에 미리 사 두기',
@@ -1571,7 +1571,7 @@ const ITINERARY = [
       { t: '14:20', end: '15:20', title: '후시미이나리 (60분)', type: 'place', ref: 'fushimi-inari', note: '본전 → 센본토리이 입구까지만 · 정상 등반 안 함' },
       { t: '15:50', end: '17:30', title: '청수사 · 산넨자카/니넨자카 (100분)', type: 'place', ref: 'kiyomizu', rv: '○', note: '청수사 40분 → 말차 한 잔 → 야츠하시 → 쇼핑은 20분만' },
       { t: '17:40', end: '19:10', title: '버스로 오사카 복귀', type: 'move', note: '우메다 경유 → 닛폰바시 약 19:10 도착 · 차에서 휴식' },
-      { t: '19:20', title: '저녁 · 치보 도톤보리빌딩점 (오코노미야키)', type: 'meal', ref: 'chibo-dotonbori', rv: '⭐', note: '하차 지점에서 도보 약 5분 · 숙소 들렀다 오면 40분 이상 손해', baby: ['철판 테이블 → 아기 자리는 철판 반대쪽'] },
+      { t: '19:20', title: '저녁 · 치보 도톤보리빌딩점 (오코노미야키)', type: 'meal', ref: 'chibo-dotonbori', rv: '⭐', note: '하차 지점에서 도보 약 5분 · 숙소 들렀다 오면 40분 이상 손해', baby: ['철판 테이블 → 윤우 자리는 철판 반대쪽'] },
       { t: '21:00', title: '택시 2대로 숙소 · 편의점', type: 'konbini', ref: 'konbini', note: '지친 분은 19:10에 택시 1대로 먼저 숙소 → 포장 저녁' },
     ] },
   { day: 3, date: '2026-10-16', dow: '금', label: '바다 & 우메다', title: '수족관에서 노을 전망대까지', area: '오사카', cover: 'kaiyukan',
@@ -1591,7 +1591,7 @@ const ITINERARY = [
       { t: '15:00', end: '15:45', title: '우메다로 이동 (지하철 약 21분)', type: 'move', note: '오사카코 → 혼마치 환승 → 우메다 · 택시 2대면 약 30분' },
       { t: '16:00', end: '17:40', title: '우메다 스카이빌딩 공중정원 · 노을', type: 'place', ref: 'umeda-sky', rv: '○', note: '10/16 일몰 17:23 · 유모차는 타워 이스트 1층 엘리베이터로' },
       { t: '18:00', end: '19:30', title: '저녁 · 동양정 (한큐 우메다 12층, 함박스테이크)', type: 'meal', ref: 'toyotei-hankyu', rv: '⭐', note: '전날까지 예약 · 대안: 로바타야키 이사리비(개별실)' },
-      { t: '19:40', title: '난바로 이동 (미도스지선 약 8분)', type: 'move', note: '부모님·아기는 우메다에서 택시로 바로 숙소도 OK' },
+      { t: '19:40', title: '난바로 이동 (미도스지선 약 8분)', type: 'move', note: '부모님·윤우는 우메다에서 택시로 바로 숙소도 OK' },
       { t: '20:00', end: '21:00', title: '(선택) 돈키호테 도톤보리', type: 'place', ref: 'donki', rv: '○', note: '미도스지점이 조금 덜 붐빔 · 유모차는 밖에서 대기' },
       { t: '21:15', title: '택시 2대로 숙소', type: 'hotel', ref: 'hotel', note: '22시 이후 택시 20% 할증' },
     ] },
@@ -2160,7 +2160,7 @@ const BUDGET = {
   items: [
     { key: 'pickup', label: '공항 픽업 하이에이스', est: 18200, note: '₩159,781 (쿠폰 시 ₩135,814~) · 판매 페이지 기준' },
     { key: 'sending', label: '공항 샌딩 하이에이스', est: 18200, note: '같은 상품 · 요금은 옵션 화면에서 확인 필요' },
-    { key: 'tour', label: '교토 버스투어', est: 31000, note: '₩39,000 × 7명 · 아기 좌석 확인' },
+    { key: 'tour', label: '교토 버스투어', est: 31000, note: '₩39,000 × 7명 · 윤우 좌석 확인' },
     { key: 'metro', label: '지하철 · 택시', est: 25000, note: '택시 2대 × 여러 번 + 3일차 지하철' },
     { key: 'tickets', label: '입장료', est: 60000, note: '금각사·청수사·가이유칸·관람차·산타마리아·공중정원' },
     { key: 'meals', label: '식사', est: 165000, note: '8명 × 3일 + 야식' },
@@ -2185,7 +2185,7 @@ const CHECKLIST = [
 
 const RESERVATIONS = [
   { t: '⭐ 하이에이스 공항 픽업', when: '10/14 19:00 도착', url: 'https://experiences.myrealtrip.com/products/5679107', urgent: true, note: '인원 8 · 캐리어 수 · 유모차 · 카시트 1 · 편명' },
-  { t: '⭐ 교토 버스투어', when: '10/15 08:40', url: 'https://experiences.myrealtrip.com/products/3425896', urgent: true, note: '아기 좌석 · 유모차 적재 문의' },
+  { t: '⭐ 교토 버스투어', when: '10/15 08:40', url: 'https://experiences.myrealtrip.com/products/3425896', urgent: true, note: '윤우 좌석 · 유모차 적재 문의' },
   { t: '⭐ 치보 도톤보리빌딩점', when: '10/15 19:20', url: 'https://shop.chibo.com/detail/28/', urgent: true, note: '8명 · 테이블 · 아기 의자 요청' },
   { t: '⭐ 가이유칸 e티켓', when: '10/16 10:00', url: 'https://webket.jp/pc/ticket/index?fc=00290&ac=0000', urgent: true, note: '15분 단위 입장 시간' },
   { t: '⭐ 동양정 한큐 우메다', when: '10/16 18:00', url: 'https://www.hankyu-dept.co.jp/honten/restaurant/detail/1194057_2073.html', urgent: true, note: '전날(10/15)까지만 예약' },
@@ -2282,21 +2282,21 @@ const SENIOR_BEST = [
    ===================================================================== */
 
 const FAMILY = [
-  { key: 'father', nick: '아버님', who: '아버님', e: '👴', tag: '음식 · 술 · 쇼핑', likes: ['food', 'drink', 'shop'],
+  { key: 'father', name: '박판옥', nick: '아버님', who: '아버님', e: '👴', tag: '음식 · 술 · 쇼핑', likes: ['food', 'drink', 'shop'],
     title: '오늘도 한잔은 기본', mission: '매일 저녁 “오늘의 한 잔” 사진 1장 남기기' },
-  { key: 'mother', nick: '어머님', who: '어머님', e: '👵', tag: '음식 · 힐링 · 쇼핑', likes: ['food', 'heal', 'shop'],
+  { key: 'mother', name: '고순', nick: '어머님', who: '어머님', e: '👵', tag: '음식 · 힐링 · 쇼핑', likes: ['food', 'heal', 'shop'],
     title: '천천히, 예쁜 것만 보기', mission: '유람선에서 바닷바람 맞으며 쉬기' },
-  { key: 'bro', nick: '형님', who: '형님', e: '🙋‍♂️', tag: '음식 · 술 · 쇼핑', likes: ['food', 'drink', 'shop'],
+  { key: 'bro', name: '이주형', nick: '형님', who: '형님', e: '🙋‍♂️', tag: '음식 · 술 · 쇼핑', likes: ['food', 'drink', 'shop'],
     title: '아버님 술친구 담당', mission: '아버님과 하이볼 × 타코야키 조합 완성하기' },
-  { key: 'sis', nick: '처형', who: '처형', e: '🙋‍♀️', tag: '음식 · 아이돌봄 · 힐링', likes: ['food', 'kids', 'heal'],
-    title: '이 가이드북의 기본 모드 주인공', mission: '조카와 말차 디저트 하나 나눠 먹기' },
-  { key: 'me', nick: '나', who: '본인', e: '👨', tag: '술 · 음식 · 쇼핑 · 아이돌봄', likes: ['drink', 'food', 'shop', 'kids'],
-    title: '가이드 · 총무 · 아기 담당', mission: '14:30 샌딩 시간 사수하기' },
-  { key: 'wife', nick: '와이프', who: '와이프', e: '👩', tag: '음식 · 쇼핑 · 아이돌봄', likes: ['food', 'shop', 'kids'],
+  { key: 'sis', name: '박연화', nick: '연화', who: '처형', e: '🙋‍♀️', tag: '음식 · 아이돌봄 · 힐링', likes: ['food', 'kids', 'heal'],
+    title: '이 가이드북의 기본 모드 주인공', mission: '시은이와 말차 디저트 하나 나눠 먹기' },
+  { key: 'me', name: '심정원', nick: '정원', who: '본인', e: '👨', tag: '술 · 음식 · 쇼핑 · 아이돌봄', likes: ['drink', 'food', 'shop', 'kids'],
+    title: '가이드 · 총무 · 윤우 담당', mission: '14:30 샌딩 시간 사수하기' },
+  { key: 'wife', name: '박은실', nick: '은실', who: '와이프', e: '👩', tag: '음식 · 쇼핑 · 아이돌봄', likes: ['food', 'shop', 'kids'],
     title: '쇼핑 동선 총괄', mission: '다이마루 10:00 오픈런' },
-  { key: 'sieun', nick: '조카', who: '조카', e: '👧', tag: '7살 · 덕후', likes: ['otaku'],
+  { key: 'sieun', name: '이시은', nick: '시은', who: '조카', e: '👧', tag: '7살 · 덕후', likes: ['otaku'],
     title: '포켓몬·캐릭터 덕후', mission: '포켓몬센터에서 오사카 한정 굿즈 1개 고르기' },
-  { key: 'yunu', nick: '아들', who: '아들', e: '👶', tag: '2살(19개월) · 덕후2', likes: ['otaku2'],
+  { key: 'yunu', name: '심윤우', nick: '윤우', who: '아들', e: '👶', tag: '2살(19개월) · 덕후2', likes: ['otaku2'],
     title: '고래상어·배·관람차 덕후', mission: '가이유칸 고래상어 앞에서 “우와” 하기' },
 ];
 /* 관심사별 추천 */
@@ -2352,7 +2352,7 @@ const TOUR_COMPARE = {
   title: '교토 버스투어 vs 우리끼리 대중교통',
   verdict: '버스투어 추천. 같은 4곳을 대중교통으로 가면 이동만 4.5–5시간, 환승 6–8번이에요. 8명+유모차로는 교토 시내버스에 한 번에 못 탈 수도 있어요.',
   rows: [
-    { k: '버스투어 (마이리얼트립)', price: '₩39,000×7 = ₩273,000 (약 ¥31,000) · 아기 좌석 확인', time: '약 10시간 · 환승 0', pros: ['한국어 가이드', '버스에서 쉬기', '집합·해산이 숙소 근처(닛폰바시)'], cons: ['정해진 시간표 · 자유시간 제한', '입장료·식사 별도'], best: true },
+    { k: '버스투어 (마이리얼트립)', price: '₩39,000×7 = ₩273,000 (약 ¥31,000) · 윤우 좌석 확인', time: '약 10시간 · 환승 0', pros: ['한국어 가이드', '버스에서 쉬기', '집합·해산이 숙소 근처(닛폰바시)'], cons: ['정해진 시간표 · 자유시간 제한', '입장료·식사 별도'], best: true },
     { k: '대중교통 DIY', price: '성인 약 ¥2,200 · 아이 약 ¥1,100 → 8명 약 ¥14,300 (+교토 안 택시)', time: '이동만 4.5–5시간 · 환승 6–8번', pros: ['약 ₩15만 절약', '원하는 곳에 오래 머물기'], cons: ['4곳이 동서남북으로 흩어짐', '관광객 만원 버스', '계단·오르막에서 유모차 이동'] },
   ],
   note: 'DIY라면 명소를 2곳(후시미이나리 + 청수사 = 게이한선 한 노선)으로 줄이는 게 현실적이에요.',
@@ -2471,7 +2471,7 @@ const TAXFREE = [
   '시내에서 산 술(100ml 초과)은 위탁 수하물로',
   '한국 입국 면세 한도: 1인 $800 · 술 2L 이하 & $400 이하',
   '551 부타만 등 고기가 든 식품은 한국 반입 불가',
-  '곤약젤리는 19개월 아기에게 주지 마세요 (질식 위험)',
+  '곤약젤리는 19개월 윤우에게 주지 마세요 (질식 위험)',
 ];
 
 /* 일본 문화 · 알아 두면 편한 것 */
@@ -2519,7 +2519,7 @@ const YT_REPEATED = [
 /* 사진 요청 — 가족 사진 */
 const PHOTO_REQUEST = [
   ['메인 표지', '가족 8명이 함께 나온 사진 1장 (가로)', '홈 화면 맨 위'],
-  ['아기', '아기 얼굴이 잘 보이는 사진 1–2장', '“아이” 카드 · 여행 후 화면'],
+  ['윤우', '윤우 얼굴이 잘 보이는 사진 1–2장', '“아이” 카드 · 여행 후 화면'],
   ['부모님', '아버님·어머님 사진 1장', '“부모님” 카드'],
   ['여행 중', '매일 저녁 그날 베스트 사진 1장', '여행 후 “추억” 화면'],
 ];
@@ -2529,23 +2529,23 @@ const MY_SHOP = {
   father: { title: '직장 이모님들 간식', list: [['개별 포장 과자 대용량 상자', '간사이공항 출국장 · 다이마루 지하 1층 — 인원수만큼 개별 포장인지 확인'], ['킷캣 말차·지역 한정', '돈키호테 · 공항 (돈키가 보통 더 저렴)'], ['나마야츠하시 (교토 떡과자)', '2일차 산넨자카 혼케 니시오 야츠하시 · 시식 가능 · 유통기한 짧음'], ['말차 과자', '이토큐에몬 산넨자카점 · 다이마루 지하 1층']], tip: '간식은 4일차 공항에서 사면 들고 다닐 필요가 없어요. 고기가 든 551 부타만은 한국 반입 불가.' },
   mother: { title: '신기한 것 · 옷 · 액세서리', list: [['3COINS 액세서리·소품', '난바시티 지하 2층 (300엔대)'], ['돈키호테 신기한 생활용품', '3일차 밤 · 미도스지점이 덜 붐빔'], ['GU · UNIQLO 옷', '4일차 신사이바시 (11:00 오픈)'], ['핸즈 아이디어 생활용품', '신사이바시 파르코 9–11층'], ['교토 소품 (손수건·작은 장식품)', '2일차 산넨자카 · 20분만']], tip: '옷·잡화도 같은 매장 세전 ¥5,000 이상이면 여권으로 면세돼요.' },
   bro: { title: '직장 동료 술 · 쇼핑', list: [['사케 · 우메슈 · 일본 위스키', '다이마루 지하 1층 주류 · KALDI(주류 판매) · 돈키호테'], ['공항 면세점 술', '보안검색 후 구매 → 밀봉 봉투째 기내 반입 가능'], ['하이볼 캔 · 안주', '편의점 · 돈키호테 (현지에서 즐기기)'], ['GU · 드러그스토어', '4일차 신사이바시']], tip: '한국 면세: 술은 1인 2L 이하 & $400 이하. 시내에서 산 술은 위탁 수하물로(뽁뽁이 포장).' },
-  sis: { title: '가족 챙기는 선물 · 조카 선물', list: [['백화점 과자 선물 세트', '다이마루 지하 1층 · 한큐 우메다'], ['말차 과자 · 말차 가루', '교토 산넨자카 · 다이마루 지하 1층'], ['포켓몬 오사카 한정 굿즈 (조카)', '다이마루 9층'], ['GU 아동 잠옷 · 머리핀 (조카)', 'GU 신사이바시 · 3COINS']], tip: '선물 포장 일본어: “プレゼント用に包んでください (푸레젠토요-니 츠츤데 쿠다사이)”.' },
-  me: { title: '술 한 병 · 아기 물건', list: [['사케 · 우메슈', '다이마루 지하 1층 · 공항 면세점'], ['유아 과자 · 기저귀 보충', '드러그스토어'], ['돈키호테 쇼핑', '3일차 밤']], tip: '총무라면 영수증 사진을 경비 화면에 입력해 두면 정산이 쉬워요.' },
-  wife: { title: '나를 위한 선물 · 아기 선물', list: [['화장품 · 선크림 · 안약', '드러그스토어 · 돈키호테 (가격 비교)'], ['Standard Products · KALDI', '4일차 (선택) 난바 · 11:00 오픈'], ['GU · UNIQLO', '4일차 신사이바시'], ['아기 캐릭터 옷·장난감', '포켓몬센터 · 가이유칸 기념품점'], ['유아 과자', '드러그스토어 유아 코너 (월령 표시 확인)']], tip: '다이마루 7층 베이비룸에서 한 번 쉬고 쇼핑 시작하면 편해요.' },
+  sis: { title: '가족 챙기는 선물 · 시은이 선물', list: [['백화점 과자 선물 세트', '다이마루 지하 1층 · 한큐 우메다'], ['말차 과자 · 말차 가루', '교토 산넨자카 · 다이마루 지하 1층'], ['포켓몬 오사카 한정 굿즈 (조카)', '다이마루 9층'], ['GU 아동 잠옷 · 머리핀 (조카)', 'GU 신사이바시 · 3COINS']], tip: '선물 포장 일본어: “プレゼント用に包んでください (푸레젠토요-니 츠츤데 쿠다사이)”.' },
+  me: { title: '술 한 병 · 윤우 물건', list: [['사케 · 우메슈', '다이마루 지하 1층 · 공항 면세점'], ['유아 과자 · 기저귀 보충', '드러그스토어'], ['돈키호테 쇼핑', '3일차 밤']], tip: '총무라면 영수증 사진을 경비 화면에 입력해 두면 정산이 쉬워요.' },
+  wife: { title: '나를 위한 선물 · 윤우 선물', list: [['화장품 · 선크림 · 안약', '드러그스토어 · 돈키호테 (가격 비교)'], ['Standard Products · KALDI', '4일차 (선택) 난바 · 11:00 오픈'], ['GU · UNIQLO', '4일차 신사이바시'], ['아기 캐릭터 옷·장난감', '포켓몬센터 · 가이유칸 기념품점'], ['유아 과자', '드러그스토어 유아 코너 (월령 표시 확인)']], tip: '다이마루 7층 베이비룸에서 한 번 쉬고 쇼핑 시작하면 편해요.' },
   sieun: { title: '예쁜 것 · 공주 · 캐릭터', list: [['포켓몬 오사카 한정 인형·굿즈', '다이마루 9층 포켓몬센터 DX'], ['반짝이 머리핀 · 액세서리', '3COINS · 돈키호테'], ['GU 아동 잠옷 (캐릭터 콜라보)', 'GU 신사이바시'], ['산리오 · 지브리 굿즈', '신사이바시 주변 (매장 위치 확인 필요)'], ['캐릭터 과자', '편의점 · 돈키호테']], tip: '포켓몬센터는 오픈 직후(10:00)가 가장 한산해요.' },
   yunu: { title: '캐릭터 · 신기한 것 전부', list: [['고래상어·물고기 인형', '가이유칸 기념품점 (3일차)'], ['포켓몬 작은 인형', '다이마루 9층'], ['불빛·소리 나는 장난감', '돈키호테'], ['유아 과자', '드러그스토어']], tip: '19개월은 작은 부품(삼킴 위험) 장난감을 피하고 대상 연령 표시를 확인하세요.' },
 };
-/* 첫 해외여행 안내 — 부모님 · 조카 · 아기 */
+/* 첫 해외여행 안내 — 부모님 · 시은 · 윤우 */
 const FIRST_TRIP = [
   ['🛂', '입국심사', '여권 + Visit Japan Web QR을 보여주고, 양손 검지 지문과 얼굴 사진을 찍어요(16세 미만은 지문 제외). 가족이 순서대로 같이 서요.'],
-  ['🧳', '짐 찾기', '벨트에서 우리 가방을 찾을 때까지 한곳에 모여 있기. 아기 유모차도 같이 나와요.'],
+  ['🧳', '짐 찾기', '벨트에서 우리 가방을 찾을 때까지 한곳에 모여 있기. 윤우 유모차도 같이 나와요.'],
   ['📍', '가족과 떨어지면', '그 자리에서 기다리고 전화하기. 급하면 “숙소로 가기” 화면을 택시 기사님께 보여주세요.'],
   ['🚗', '길 건널 때', '일본은 차가 왼쪽으로 달려요. 오른쪽을 먼저 보세요.'],
   ['🚻', '화장실', '비데 버튼이 많아요. “止(멈춤)” 버튼을 누르면 멈춰요. 휴지는 변기에 버려도 돼요.'],
   ['📱', '휴대폰', '도착하면 로밍이 켜졌는지 확인. 카카오톡은 그대로 써요.'],
   ['💴', '돈', '작은 가게·절은 현금만 받는 곳이 있어요. 1만 엔짜리보다 1천 엔짜리를 넉넉히.'],
-  ['👧', '조카', '가방에 부모님 연락처와 숙소 주소 카드를 넣어 두세요.'],
-  ['👶', '아기', '비행기 이착륙 때 젖병·빨대컵을 물리면 귀가 덜 아파요. 낯선 곳에서 잠을 설칠 수 있어 첫날은 일찍 재우기.'],
+  ['👧', '시은이', '가방에 부모님 연락처와 숙소 주소 카드를 넣어 두세요.'],
+  ['👶', '윤우', '비행기 이착륙 때 젖병·빨대컵을 물리면 귀가 덜 아파요. 낯선 곳에서 잠을 설칠 수 있어 첫날은 일찍 재우기.'],
 ];
 
 /* JUNGWON TOUR — Family Travel OS · app core */
@@ -2775,7 +2775,7 @@ const rvMini = (r) => r ? `<span class="rvm rv${r === '⭐' ? 1 : r === '△' ? 
 const BABY_KEYS = [['stroller', '🛒', '유모차'], ['chair', '🪑', '아기 의자'], ['diaper', '🚼', '기저귀'], ['nurse', '🍼', '수유·휴식'], ['stairs', '🪜', '계단']];
 function babyHTML(b) {
   if (!b) return '';
-  return `<div class="baby card flat"><div class="eyebrow">👶 아기와 함께 · 19개월</div>${BABY_KEYS.map(([k, e, l]) => `<div class="brow"><span class="be">${e}</span><b>${l}</b><span>${esc(b[k] || '사전 확인 필요')}</span></div>`).join('')}</div>`;
+  return `<div class="baby card flat"><div class="eyebrow">👶 윤우와 함께 · 19개월</div>${BABY_KEYS.map(([k, e, l]) => `<div class="brow"><span class="be">${e}</span><b>${l}</b><span>${esc(b[k] || '사전 확인 필요')}</span></div>`).join('')}</div>`;
 }
 function routeHTML(stops) {
   return `<div class="route" aria-label="이동 경로">${stops.map((s, i) => `<span class="rs ${/숙소/.test(s) ? 'home' : ''} ${/^\(선택\)/.test(s) ? 'opt' : ''}">${esc(s.replace(/^\(선택\) /, ''))}${/^\(선택\)/.test(s) ? '<small>선택</small>' : ''}</span>${i < stops.length - 1 ? '<i></i>' : ''}`).join('')}</div>`;
@@ -2969,7 +2969,7 @@ function timelineHTML(dayN, st) {
     if (p) {
       card = `<div class="tl-card"><button style="display:block;width:100%;text-align:left" data-open="place:${p.id}"><div style="position:relative">${photo(p.img)}${it.rv ? `<span class="rv-on">${rvTag(it.rv)}</span>` : ''}</div>
         <div class="tb"><h3>${esc(it.title)}${it.end ? ` <span class="muted xs num">~${it.end}</span>` : ''}</h3><p class="one">${esc(it.note || p.one)}</p>
-        <div class="tl-meta">${p.stay ? `<span>${ic('clock', 'sm')}${esc(p.stay)}</span>` : ''}${p.walk ? `<span>${ic('walk', 'sm')}${walkMeter(p.walk)}</span>` : ''}${p.baby ? '<span>👶 아기 정보</span>' : ''}</div>
+        <div class="tl-meta">${p.stay ? `<span>${ic('clock', 'sm')}${esc(p.stay)}</span>` : ''}${p.walk ? `<span>${ic('walk', 'sm')}${walkMeter(p.walk)}</span>` : ''}${p.baby ? '<span>👶 윤우 정보</span>' : ''}</div>
         ${babyLine}${badges(p.badges, 4)}</div></button>
         <div class="tl-acts"><a class="btn sm primary" href="${gm.dir(p.q)}" target="_blank" rel="noopener">${ic('nav', 'sm')}길찾기</a><a class="btn sm" href="${gm.search(p.q)}" target="_blank" rel="noopener">${ic('pin', 'sm')}지도</a></div></div>`;
     } else {
@@ -2993,7 +2993,7 @@ function timelineHTML(dayN, st) {
     <div class="pad stack-sm" style="padding-bottom:8px">
       <div class="info blue">${ic('rain', 'sm')}<div><b>비 오면</b> · ${esc(d.rain)}</div></div>
       <a class="info" href="#convenience" style="text-decoration:none">${ic('store', 'sm')}<div><b>편의점</b> · ${esc(d.konbini)}</div></a>
-      <p class="xs muted">${RV_LEGEND.map(([s, t]) => `${s} ${t}`).join(' · ')} · 👶 아기 정보</p>
+      <p class="xs muted">${RV_LEGEND.map(([s, t]) => `${s} ${t}`).join(' · ')} · 👶 윤우 정보</p>
     </div>`;
 }
 function reservationsHTML() {
@@ -3406,7 +3406,7 @@ PAGES.yen.after = () => {
 PAGES.budget = () => `${topbar('우리 가족 예상경비')}<div class="section"><div id="budgetSum"></div>
   <label class="toggle"><input type="checkbox" id="incShop" ${store.get('incShop', true) ? 'checked' : ''}>쇼핑 포함</label>
   <div class="card"><div class="card-body" id="budgetList"></div></div>
-  <p class="xs muted">항공권·숙박비 제외. 예상 금액은 BUDGET_CONFIG 기준 추정치예요. 실제 쓴 금액을 입력하면 이 기기에 저장돼요. 1인 금액은 성인 1 · 조카 0.5 · 아기 0.15 가중치로 나눈 참고값이에요. 원화 상품은 1엔 ≈ 8.8원으로 환산했어요.</p></div>${footer()}`;
+  <p class="xs muted">항공권·숙박비 제외. 예상 금액은 BUDGET_CONFIG 기준 추정치예요. 실제 쓴 금액을 입력하면 이 기기에 저장돼요. 1인 금액은 성인 1 · 시은 0.5 · 아기 0.15 가중치로 나눈 참고값이에요. 원화 상품은 1엔 ≈ 8.8원으로 환산했어요.</p></div>${footer()}`;
 PAGES.budget.after = () => {
   const actual = store.get('actual', {});
   const rate = store.get('rate', TRIP_CONFIG.defaultRateKrwPerJpy);
@@ -3417,7 +3417,7 @@ PAGES.budget.after = () => {
     const w = BUDGET.weights, units = 6 * w.adult + w.kid7 + w.kid2;
     $('#budgetSum').innerHTML = `<div class="card"><div class="card-body"><div class="eyebrow">8명 총액 (예상)</div><div class="row between"><b class="num" style="font-size:30px;letter-spacing:-.02em">${yen(est)}</b><span class="small muted num">≈ ${won(est * rate)}</span></div>
       <div class="bar"><i class="${act > est ? 'over' : ''}" style="width:${Math.min(100, (act / est) * 100 || 0)}%"></i></div><div class="row between small num"><span>실제 ${yen(act)}</span><span class="${act > est ? '' : 'muted'}" style="${act > est ? 'color:var(--coral);font-weight:700' : ''}">${act > est ? '초과 ' + yen(act - est) : '남음 ' + yen(est - act)}</span></div>
-      <div class="divider"></div><div class="wx"><div><span class="xs muted">성인 1인</span><br><b class="num">${yen(est / units)}</b></div><div><span class="xs muted">조카 / 아기</span><br><b class="num">${yen((est / units) * w.kid7)} / ${yen((est / units) * w.kid2)}</b></div></div></div></div>`;
+      <div class="divider"></div><div class="wx"><div><span class="xs muted">성인 1인</span><br><b class="num">${yen(est / units)}</b></div><div><span class="xs muted">시은 / 윤우</span><br><b class="num">${yen((est / units) * w.kid7)} / ${yen((est / units) * w.kid2)}</b></div></div></div></div>`;
     $('#budgetList').innerHTML = items.map((i) => { const a = +actual[i.key] || 0; const pct = Math.min(100, (a / i.est) * 100); return `<div class="bline"><div><b>${esc(i.label)}</b> <span class="xs muted num">예상 ${yen(i.est)}</span>${i.note ? `<div class="xs muted">${esc(i.note)}</div>` : ''}<div class="bar" style="margin-top:6px"><i class="${a > i.est ? 'over' : ''}" style="width:${pct}%"></i></div></div><input class="in" id="act-${i.key}" data-bkey="${i.key}" type="number" inputmode="numeric" placeholder="실제 ¥" value="${a || ''}" aria-label="${esc(i.label)} 실제 금액"></div>`; }).join('');
     $$('[data-bkey]').forEach((inp) => inp.addEventListener('change', () => { actual[inp.dataset.bkey] = +inp.value || 0; store.set('actual', actual); render(); }));
   };
@@ -3465,7 +3465,7 @@ PAGES.links = () => `${topbar('서비스 모음')}<div class="section"><p class=
 PAGES.credits = () => `${topbar('사진 출처 · 라이선스')}<div class="section"><p class="small muted">모든 사진은 Wikimedia Commons의 자유 라이선스 이미지예요. 앱 전체 톤을 맞추기 위해 크기 조정·WebP 변환·약한 색보정을 했어요. 식당 카드의 음식 사진은 해당 식당의 실제 사진이 아니라 음식 종류를 보여주는 참고 사진이에요.</p>
   <div class="stack-sm">${(window.PHOTO_MANIFEST || []).map((p) => `<div class="row" style="align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line2)">${photo(p.id).replace('class="ph ', 'style="width:64px;height:48px;border-radius:8px;flex:none" class="ph ')}<div class="grow xs"><b>${esc(p.title)}</b><br><span class="muted">${esc(p.photographer || 'Unknown')} · ${esc(p.license)}</span><br><a href="${p.sourceUrl}" target="_blank" rel="noopener">원본 보기</a></div></div>`).join('')}</div></div>${footer()}`;
 
-PAGES.rain = () => `${topbar('비 오는 날 대안')}<div class="section"><div class="info blue">${ic('rain', 'sm')}<div>산넨자카·후시미이나리 돌계단은 미끄러워요. 아기는 아기띠 + 유모차 레인커버, 부모님은 미끄럼 방지 신발과 가벼운 우비가 편해요.</div></div>${rainListHTML()}</div>${footer()}`;
+PAGES.rain = () => `${topbar('비 오는 날 대안')}<div class="section"><div class="info blue">${ic('rain', 'sm')}<div>산넨자카·후시미이나리 돌계단은 미끄러워요. 윤우는 아기띠 + 유모차 레인커버, 부모님은 미끄럼 방지 신발과 가벼운 우비가 편해요.</div></div>${rainListHTML()}</div>${footer()}`;
 
 /* ================================================================
    2026 가이드북 페이지
@@ -3521,8 +3521,8 @@ PAGES.transport = () => `${topbar('교통 가이드')}<div class="section"><div 
     <div class="kv2"><span>🚇 지하철</span><b>${esc(g.train)}</b><span>🚕 택시 2대</span><b>${esc(g.taxi)}</b></div><p class="xs muted">${esc(g.why)}</p></div></div>`).join('')}</div>
   <button class="btn block" data-act="taxi">${ic('taxi', 'sm')}택시 주소 카드 · 앱</button></div>${footer()}`;
 PAGES.admission = () => `${topbar('입장료')}<div class="section"><div class="eyebrow">入場料</div><h2 class="sec-title">주요 관광지 요금</h2>
-  <p class="xs muted">조카는 7세 기준으로 계산했어요. 아기(19개월)는 대부분 무료예요.</p>
-  <div class="card"><div class="adm"><div class="ah"><span>장소</span><span>성인</span><span>아이</span><span>아기</span></div>${ADMISSIONS.map((a) => `<div class="ar"><span><b>${esc(a.t)}</b><small>${a.day}일차${a.note ? ' · ' + esc(a.note) : ''}</small></span><span class="num">${esc(a.a)}</span><span>${esc(a.c)}</span><span>${esc(a.b)}</span></div>`).join('')}</div></div>
+  <p class="xs muted">시은이는 7세 기준으로 계산했어요. 윤우(19개월)는 대부분 무료예요.</p>
+  <div class="card"><div class="adm"><div class="ah"><span>장소</span><span>성인</span><span>아이</span><span>윤우</span></div>${ADMISSIONS.map((a) => `<div class="ar"><span><b>${esc(a.t)}</b><small>${a.day}일차${a.note ? ' · ' + esc(a.note) : ''}</small></span><span class="num">${esc(a.a)}</span><span>${esc(a.c)}</span><span>${esc(a.b)}</span></div>`).join('')}</div></div>
   <p class="xs muted">정보 확인일 2026-09-28 · 가이유칸은 날짜별 가격이에요.</p></div>${footer()}`;
 PAGES.glossary = () => `${topbar('음식 한 줄 사전')}<div class="section"><div class="eyebrow">料理</div><h2 class="sec-title">이건 무슨 음식?</h2>
   <div class="stack-sm">${FOOD_GLOSSARY.map(([k, j, d]) => `<div class="gl"><b>${esc(k)}</b><span class="ja">${esc(j)}</span><p>${esc(d)}</p></div>`).join('')}</div>
@@ -3542,13 +3542,13 @@ PAGES.culture = () => `${topbar('알아 두면 편한 것')}<div class="section"
   <p class="xs muted">꼭 지켜야 하는 규칙이라기보다 알아 두면 편한 것들이에요.</p>
   <div class="stack-sm">${CULTURE.map(([e, t, d]) => `<div class="gl"><b>${e} ${esc(t)}</b><p>${esc(d)}</p></div>`).join('')}</div></div>${footer()}`;
 PAGES.dropped = () => `${topbar('일정에서 뺀 곳')}<div class="section"><div class="eyebrow">見送り</div><h2 class="sec-title">왜 뺐는지</h2>
-  <p class="xs muted">하루 핵심 2–3곳 · 부모님 휴식 · 아기 낮잠을 기준으로 다시 짰어요.</p>
+  <p class="xs muted">하루 핵심 2–3곳 · 부모님 휴식 · 윤우 낮잠을 기준으로 다시 짰어요.</p>
   <div class="stack-sm">${DROPPED.map((d) => `<div class="card flat"><div class="card-body"><b>${esc(d.t)}</b><p class="small">${esc(d.why)}</p><p class="xs muted">대신: ${esc(d.alt)}</p></div></div>`).join('')}</div></div>${footer()}`;
 
 /* ================================================================
    보기 모드 — 쉬운 보기 / 기본 보기 / 우리 가족
    ================================================================ */
-const VIEWS = [['easy', '쉬운 보기', '👴👵'], ['basic', '기본 보기', 'FOR 처형'], ['family', '우리 가족', '8명']];
+const VIEWS = [['easy', '쉬운 보기', '👴👵'], ['basic', '기본 보기', 'FOR 연화'], ['family', '우리 가족', '8명']];
 function viewTabs(v) {
   return `<div class="viewtabs" role="tablist">${VIEWS.map(([k, l, s]) => `<button role="tab" aria-selected="${k === v}" class="vt ${k === v ? 'on' : ''}" data-view="${k}"><b>${l}</b><small>${s}</small></button>`).join('')}</div>`;
 }
@@ -3580,8 +3580,8 @@ function easyHTML(st) {
 }
 function familyHTML() {
   return `<div class="section"><div class="eyebrow">우리 가족 · 家族</div><h2 class="sec-title">누구 페이지를 열까요?</h2>
-    <div class="mem">${FAMILY.map((f) => `<a class="mc" href="#me-${f.key}"><span class="fe">${f.e}</span><b>${esc(f.nick)}</b><small>${esc(f.tag)}</small></a>`).join('')}</div>
-    <a class="card kidsbox" href="#kids" style="display:flex;gap:12px;align-items:center;padding:16px"><span style="font-size:30px">👧👶</span><div class="grow"><b>조카 · 아기 먹을 것 · 살 것</b><p class="xs muted">편의점 간식 · 키즈 메뉴 · 피해야 할 음식</p></div>${ic('chev')}</a></div>`;
+    <div class="mem">${FAMILY.map((f) => `<a class="mc" href="#me-${f.key}"><span class="fe">${f.e}</span><b>${esc(f.nick)}</b><span class="nm">${esc(f.name)}</span><small>${esc(f.tag)}</small></a>`).join('')}</div>
+    <a class="card kidsbox" href="#kids" style="display:flex;gap:12px;align-items:center;padding:16px"><span style="font-size:30px">👧👶</span><div class="grow"><b>시은이 · 윤우 먹을 것 · 살 것</b><p class="xs muted">편의점 간식 · 키즈 메뉴 · 피해야 할 음식</p></div>${ic('chev')}</a></div>`;
 }
 function pickRow([when, t, go]) {
   const attr = go.startsWith('#') ? `href="${go}"` : `href="#" data-open="${go}"`;
@@ -3600,7 +3600,7 @@ FAMILY.forEach((f) => {
     const blocks = f.likes.filter((l) => LIKE_PICKS[l]).map((l) => `<div class="card"><div class="card-body"><div class="eyebrow">${LIKE_LABEL[l]}</div>${LIKE_PICKS[l].map(pickRow).join('')}</div></div>`).join('');
     const kid = f.key === 'sieun' || f.key === 'yunu' ? kidBlock(f.key) : '';
     return `${topbar(f.nick + ' 맞춤 페이지')}<div class="section">
-      <div class="mehero"><span class="fe">${f.e}</span><div><small>${esc(f.who)} 전용 페이지</small><h2>${esc(f.title)}</h2><div class="badges">${f.likes.map((l) => `<span class="badge blue">${LIKE_LABEL[l]}</span>`).join('')}</div></div></div>
+      <div class="mehero"><span class="fe">${f.e}</span><div><small>${esc(f.who)} 전용 · ${esc(f.name)}</small><h2>${esc(f.title)}</h2><div class="badges">${f.likes.map((l) => `<span class="badge blue">${LIKE_LABEL[l]}</span>`).join('')}</div></div></div>
       <div class="info yellow">${ic('star', 'sm')}<div><b>이번 여행 미션</b> · ${esc(f.mission)}</div></div>
       ${MY_SHOP[f.key] ? `<div class="card myshop"><div class="card-body"><div class="eyebrow">🛍 사 오고 싶은 것</div><b style="font-size:17px">${esc(MY_SHOP[f.key].title)}</b>${MY_SHOP[f.key].list.map(([t, w]) => `<div class="giftrow"><b>${esc(t)}</b><small>${esc(w)}</small></div>`).join('')}<p class="xs muted">💡 ${esc(MY_SHOP[f.key].tip)}</p></div></div>` : ''}
       ${['father', 'mother', 'sieun', 'yunu'].includes(f.key) ? `<a class="info blue" href="#firsttrip" style="color:inherit">${ic('plane', 'sm')}<div><b>첫 해외여행이에요</b> · 알아 두면 편한 것 보기</div></a>` : ''}
@@ -3610,12 +3610,12 @@ FAMILY.forEach((f) => {
   };
   PAGE_TAB['me-' + f.key] = 'home';
 });
-PAGES.firsttrip = () => `${topbar('첫 해외여행 안내')}<div class="section"><div class="eyebrow">はじめての海外</div><h2 class="sec-title">아버님·어머님·조카·아기의 첫 해외여행</h2>
+PAGES.firsttrip = () => `${topbar('첫 해외여행 안내')}<div class="section"><div class="eyebrow">はじめての海外</div><h2 class="sec-title">아버님·어머님·시은·윤우의 첫 해외여행</h2>
   <p class="small muted">어렵지 않아요. 이것만 알면 돼요.</p><div class="stack-sm">${FIRST_TRIP.map(([e, t, d]) => `<div class="gl big"><b>${e} ${esc(t)}</b><p>${esc(d)}</p></div>`).join('')}</div>
   <button class="btn primary block" data-view-go="easy">👴👵 쉬운 보기로 첫 화면 보기</button></div>${footer()}`;
 PAGE_TAB.firsttrip = 'home';
-PAGES.kids = () => `${topbar('조카 · 아기')}<div class="section"><div class="mehero"><span class="fe">👧</span><div><small>조카 · 7살</small><h2>포켓몬·캐릭터 덕후</h2></div></div>${kidBlock('sieun')}${myShopMini('sieun')}
-  <div class="divider"></div><div class="mehero"><span class="fe">👶</span><div><small>아들 · 2살(19개월)</small><h2>고래상어·배·관람차 덕후</h2></div></div>${kidBlock('yunu')}${myShopMini('yunu')}</div>${footer()}`;
+PAGES.kids = () => `${topbar('시은 · 윤우')}<div class="section"><div class="mehero"><span class="fe">👧</span><div><small>이시은 · 7살</small><h2>포켓몬·캐릭터 덕후</h2></div></div>${kidBlock('sieun')}${myShopMini('sieun')}
+  <div class="divider"></div><div class="mehero"><span class="fe">👶</span><div><small>심윤우 · 2살(19개월)</small><h2>고래상어·배·관람차 덕후</h2></div></div>${kidBlock('yunu')}${myShopMini('yunu')}</div>${footer()}`;
 PAGE_TAB.kids = 'home';
 
 /* ================================================================
