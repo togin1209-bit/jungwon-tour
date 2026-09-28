@@ -1177,7 +1177,7 @@ const HOTEL_DATA = {
   area: '谷町七丁目 (다니마치 7초메)',
   lat: 34.6699, lng: 135.5167, coordApprox: true,
   checkin: '2026-10-14 (도착 약 21:00 예정)',
-  checkout: '2026-10-17 · 에어비앤비라 짐 보관 없음 → 레이트 체크아웃 요청 또는 난바 짐 보관',
+  checkout: '2026-10-17 11:00 · 에어비앤비라 짐 보관 없음 → 레이트 체크아웃 요청 또는 난바 짐 보관',
   nearest: [
     { name: '谷町六丁目駅', ko: '다니마치로쿠초메역', lines: '다니마치선 · 나가호리쓰루미료쿠치선', walk: '도보 약 5–8분' },
     { name: '谷町九丁目駅', ko: '다니마치큐초메역', lines: '다니마치선 · 센니치마에선 · 긴테쓰 오사카우에혼마치역', walk: '도보 약 5–8분' },
@@ -1410,7 +1410,7 @@ const PLACES = [
     desc: 'KALDI 난바시티 본관 1층(11:00–21:00), Standard Products·DAISO·THREEPPY 복합매장 난바파크스 T-terrace 1층(2026-05 오픈), 3COINS 난바시티 지하 2층, 로프트 난바파크스 5층.',
     badges: ['비오는날', '실내', '유모차'], rv: '○',
     baby: { stroller: '역 직결 쇼핑몰 · 엘리베이터', diaper: '사전 확인 필요' },
-    tips: ['신사이바시 쪽에는 KALDI·Standard Products 단독 매장이 확인되지 않았어요', 'KALDI 무료 시음 커피', '14:30 샌딩 시간 역산 → 13:30에는 짐 찾기', '짐 보관: 난카이 난바역 주변 코인로커(대형 칸은 수가 적어 오전 일찍) 또는 짐 보관 서비스 사전 예약 — 위치·요금 확인 필요'], verified: true },
+    tips: ['신사이바시 쪽에는 KALDI·Standard Products 단독 매장이 확인되지 않았어요', 'KALDI 무료 시음 커피', '14:30 샌딩 시간 역산 → 14:10에는 짐 찾으러', '짐 보관: 난카이 난바역 주변 코인로커(대형 칸은 수가 적어 오전 일찍) 또는 짐 보관 서비스 사전 예약 — 위치·요금 확인 필요'], verified: true },
 
   /* ===== 2026 최종 가이드북 신규 장소 ===== */
   { id: 'pickup', nameKo: '하이에이스 공항 픽업·샌딩', nameJa: '関西国際空港 第1ターミナル 到着ロビー', area: 'OSAKA', cat: 'transport', day: 1, img: 'hiace',
@@ -1596,21 +1596,21 @@ const ITINERARY = [
       { t: '21:15', title: '택시 2대로 숙소', type: 'hotel', ref: 'hotel', note: '22시 이후 택시 20% 할증' },
     ] },
   { day: 4, date: '2026-10-17', dow: '토', label: '쇼핑 & 귀국', title: '신사이바시에서 쇼핑하고 집으로', area: '오사카', cover: 'shinsaibashi',
-    summary: '다이마루(포켓몬센터) → 신사이바시스지 → 점심 → 14:30 숙소 출발 → 간사이공항.',
+    summary: '오전은 숙소에서 짐 정리 → 11:00 체크아웃 → 다이마루(포켓몬센터) → 점심 → 쇼핑 → 14:30 샌딩 → 간사이공항.',
     core: ['다이마루 · 포켓몬센터', '신사이바시스지', '츠루톤탄 점심'],
-    rest: '12:00 점심(개별실에서 60분) · 부모님은 다이마루 10층 식당가·카페에서 쉬기 · 공항에서는 체크인 후 앉아서 쉬기.',
-    route: ['숙소', '(선택) 구로몬 아침', '다이마루', '신사이바시스지', '점심', '짐 찾기', '간사이공항'],
+    rest: '10:00–10:50 숙소에서 쉬기 · 12:30 점심(개별실) · 부모님은 쇼핑 대신 카페에서 쉬어도 돼요 · 공항에서는 체크인 후 앉아서.',
+    route: ['숙소', '(선택) 구로몬 아침', '숙소 11:00 체크아웃', '(선택) 난바 짐 보관', '다이마루', '점심', '신사이바시·난바', '간사이공항'],
     rain: '다이마루 안에서 대부분 해결 + 신사이바시스지는 지붕 있는 아케이드라 거의 영향 없음.',
     konbini: '없음 · 공항 가기 전 물·간식만',
     items: [
       { t: '08:00', title: '아침 · (선택) 구로몬 시장', type: 'place', ref: 'kuromon', rv: '○', note: '다니마치큐초메 → 닛폰바시 1정거장 · 8–9시 오픈 · 관광지 가격 주의' },
-      { t: '09:30', title: '체크아웃 준비 (에어비앤비 · 짐 보관 없음)', type: 'hotel', ref: 'hotel', note: '① 호스트에게 14:30까지 레이트 체크아웃 요청 → 되면 짐 두고 쇼핑 ② 안 되면 짐 들고 택시로 난바 → 코인로커·짐 보관 → 샌딩을 난바에서 타기' },
-      { t: '10:00', end: '11:00', title: '다이마루 신사이바시 본관', type: 'place', ref: 'daimaru', note: '9층 포켓몬센터 DX(오픈 직후 한산) → 7층 베이비룸 → 지하 1층 과자·선물' },
-      { t: '11:00', end: '12:00', title: '신사이바시스지 상점가', type: 'place', ref: 'shinsaibashi', note: 'UNIQLO·GU(11:00 오픈) · 드러그스토어 · 옆 파르코(핸즈 9–11층)' },
-      { t: '12:00', end: '13:00', title: '점심 · 츠루톤탄 소에몬초점 (우동)', type: 'meal', ref: 'tsurutontan-soemoncho', rv: '⭐', note: '다다미·호리고타츠 개별실(4–8명) · TableCheck 예약' },
-      { t: '13:00', end: '13:30', title: '(선택) 난바 30분 · KALDI · Standard Products', type: 'place', ref: 'namba-parks', rv: '○', note: '젊은 어른 2–3명만 · 짐을 난바에 맡겼다면 모두 함께' },
-      { t: '13:40', title: '짐 찾기 (숙소 또는 난바 보관 장소)', type: 'hotel', ref: 'hotel', note: '레이트 체크아웃이면 택시 2대로 숙소 약 10분 · 난바 보관이면 걸어서' },
-      { t: '14:30', title: '하이에이스 샌딩 출발', type: 'place', ref: 'pickup', rv: '⭐', note: '꼭 지킬 시간 · 픽업 장소(숙소 또는 난바)는 예약 때 확정 · 무료 대기 30분' },
+      { t: '10:00', end: '10:50', title: '짐 정리 · 숙소에서 쉬기', type: 'hotel', ref: 'hotel', note: '부모님·윤우는 이 시간에 푹 쉬기 · 방 사진·두고 간 물건 확인' },
+      { t: '11:00', title: '체크아웃 (에어비앤비 · 짐 보관 없음)', type: 'hotel', ref: 'hotel', note: '① 호스트가 레이트 체크아웃(14:30)을 허락하면 짐 두고 쇼핑 ② 아니면 택시 2–3대로 짐과 함께 난바 → 코인로커·짐 보관' },
+      { t: '11:30', end: '12:20', title: '다이마루 신사이바시 본관', type: 'place', ref: 'daimaru', note: '9층 포켓몬센터 DX → 7층 베이비룸 → 지하 1층 과자·선물 · 난바에서 아케이드로 걸어서 약 15분' },
+      { t: '12:30', end: '13:20', title: '점심 · 츠루톤탄 소에몬초점 (우동)', type: 'meal', ref: 'tsurutontan-soemoncho', rv: '⭐', note: '다다미·호리고타츠 개별실(4–8명) · TableCheck 12:30 예약' },
+      { t: '13:20', end: '14:10', title: '신사이바시스지 · 난바 쇼핑', type: 'place', ref: 'shinsaibashi', note: 'UNIQLO·GU · 드러그스토어 → (선택) 난바 KALDI · Standard Products · 부모님은 카페에서 쉬기' },
+      { t: '14:15', title: '짐 찾기 (난바 보관 장소 또는 숙소)', type: 'hotel', ref: 'hotel', note: '난바 보관이면 걸어서 · 레이트 체크아웃이면 택시 2대로 숙소 약 10분 (그땐 13:50에 출발)' },
+      { t: '14:30', title: '하이에이스 샌딩 출발', type: 'place', ref: 'pickup', rv: '⭐', note: '꼭 지킬 시간 · 픽업 장소(난바 또는 숙소)는 예약 때 확정 · 무료 대기 30분' },
       { t: '15:45', title: '간사이공항 1터미널 도착 · 체크인', type: 'flight', ref: 'ret', note: '출발 2시간 30분 전 도착 목표 · 면세는 보안검색 후' },
       { t: '18:15', title: 'KE726 간사이 출발', type: 'flight', ref: 'ret' },
       { t: '20:05', title: '인천 2터미널 도착', type: 'flight', ref: 'ret' },
@@ -2189,9 +2189,9 @@ const RESERVATIONS = [
   { t: '⭐ 치보 도톤보리빌딩점', when: '10/15 19:20', url: 'https://shop.chibo.com/detail/28/', urgent: true, note: '8명 · 테이블 · 아기 의자 요청' },
   { t: '⭐ 가이유칸 e티켓', when: '10/16 10:00', url: 'https://webket.jp/pc/ticket/index?fc=00290&ac=0000', urgent: true, note: '15분 단위 입장 시간' },
   { t: '⭐ 동양정 한큐 우메다', when: '10/16 18:00', url: 'https://www.hankyu-dept.co.jp/honten/restaurant/detail/1194057_2073.html', urgent: true, note: '전날(10/15)까지만 예약' },
-  { t: '⭐ 츠루톤탄 소에몬초점', when: '10/17 12:00', url: 'https://www.tablecheck.com/en/tsurutontan-soemontyou', urgent: true, note: 'TableCheck · 개별실 요청' },
+  { t: '⭐ 츠루톤탄 소에몬초점', when: '10/17 12:30', url: 'https://www.tablecheck.com/en/tsurutontan-soemontyou', urgent: true, note: 'TableCheck · 개별실 요청' },
   { t: '⭐ 하이에이스 공항 샌딩', when: '10/17 14:30', url: 'https://experiences.myrealtrip.com/products/5679107', urgent: true, note: '픽업 장소: 숙소(레이트 체크아웃 시) 또는 난바 짐 보관 장소' },
-  { t: '⭐ 에어비앤비 레이트 체크아웃 문의', when: '10/17', url: 'https://www.airbnb.co.kr/trips', urgent: true, note: '호스트에게 14:30까지 가능한지 · 추가 요금 · 안 되면 난바 짐 보관' },
+  { t: '⭐ 에어비앤비 레이트 체크아웃 문의', when: '10/17', url: 'https://www.airbnb.co.kr/trips', urgent: true, note: '체크아웃 11:00 → 14:30까지 연장 가능한지 · 추가 요금 · 안 되면 난바 짐 보관' },
   { t: '△ 아라시야마 요시무라', when: '10/15 10:50', url: 'https://yoshimura-gr.com/arashiyama/', note: '전화 075-863-5700 · 우선 안내 방식' },
   { t: '△ 간코 덴포잔', when: '10/16 12:10', url: 'https://www.kaiyukan.com/thv/marketplace/', note: '전화 06-6576-5708' },
   { t: '△ 포켓몬 카페', when: '10/17', url: 'https://osaka.pokemon-cafe.jp/', note: '한 테이블 최대 6명 → 2건 · 선택' },
@@ -2293,7 +2293,7 @@ const FAMILY = [
   { key: 'me', name: '심정원', nick: '정원', who: '본인', e: '👨', tag: '술 · 음식 · 쇼핑 · 아이돌봄', likes: ['drink', 'food', 'shop', 'kids'],
     title: '가이드 · 총무 · 윤우 담당', mission: '14:30 샌딩 시간 사수하기' },
   { key: 'wife', name: '박은실', nick: '은실', who: '와이프', e: '👩', tag: '음식 · 쇼핑 · 아이돌봄', likes: ['food', 'shop', 'kids'],
-    title: '쇼핑 동선 총괄', mission: '다이마루 10:00 오픈런' },
+    title: '쇼핑 동선 총괄', mission: '포켓몬센터에서 시은이·윤우 선물 먼저 찜하기' },
   { key: 'sieun', name: '이시은', nick: '시은', who: '조카', e: '👧', tag: '7살 · 덕후', likes: ['otaku'],
     title: '포켓몬·캐릭터 덕후', mission: '포켓몬센터에서 오사카 한정 굿즈 1개 고르기' },
   { key: 'yunu', name: '심윤우', nick: '윤우', who: '아들', e: '👶', tag: '2살(19개월) · 덕후2', likes: ['otaku2'],
@@ -2403,7 +2403,7 @@ const TRANSPORT_GUIDE = {
     { from: '오사카코', to: '우메다', day: 3, train: '주오선 → 혼마치 환승 → 미도스지선 · 약 21분 · ¥290', taxi: '2대 · 25–35분 · 대당 약 ¥4,000–5,000', pick: '지하철', why: '부모님 컨디션이 나쁘면 택시' },
     { from: '우메다', to: '난바 (돈키호테)', day: 3, train: '미도스지선 약 8분 · ¥240', taxi: '2대 · 약 15–20분 (요금 확인 필요)', pick: '지하철', why: '한 번에 가요' },
     { from: '도톤보리', to: '숙소 (밤)', day: 3, train: '센니치마에선 1정거장 + 도보', taxi: '2대 · 10–15분 · 22시 이후 할증', pick: '택시', why: '밤 · 쇼핑 짐' },
-    { from: '숙소', to: '난바 (짐 보관)', day: 4, train: '캐리어 8개로는 비추천', taxi: '2–3대 (트렁크 여유 있는 JPN TAXI) · 약 10분', pick: '택시', why: '레이트 체크아웃이 안 될 때만' },
+    { from: '숙소 (11:00 체크아웃)', to: '난바 (짐 보관)', day: 4, train: '캐리어 8개로는 비추천', taxi: '2–3대 (트렁크 여유 있는 JPN TAXI) · 약 10분', pick: '택시', why: '레이트 체크아웃이 안 될 때만' },
     { from: '신사이바시', to: '숙소', day: 4, train: '나가호리쓰루미료쿠치선 등 (환승)', taxi: '2대 · 약 10분', pick: '택시', why: '레이트 체크아웃일 때 · 14:30 출발 시간을 지키기 위해' },
   ],
 };
@@ -2532,7 +2532,7 @@ const MY_SHOP = {
   sis: { title: '가족 챙기는 선물 · 시은이 선물', list: [['백화점 과자 선물 세트', '다이마루 지하 1층 · 한큐 우메다'], ['말차 과자 · 말차 가루', '교토 산넨자카 · 다이마루 지하 1층'], ['포켓몬 오사카 한정 굿즈 (조카)', '다이마루 9층'], ['GU 아동 잠옷 · 머리핀 (조카)', 'GU 신사이바시 · 3COINS']], tip: '선물 포장 일본어: “プレゼント用に包んでください (푸레젠토요-니 츠츤데 쿠다사이)”.' },
   me: { title: '술 한 병 · 윤우 물건', list: [['사케 · 우메슈', '다이마루 지하 1층 · 공항 면세점'], ['유아 과자 · 기저귀 보충', '드러그스토어'], ['돈키호테 쇼핑', '3일차 밤']], tip: '총무라면 영수증 사진을 경비 화면에 입력해 두면 정산이 쉬워요.' },
   wife: { title: '나를 위한 선물 · 윤우 선물', list: [['화장품 · 선크림 · 안약', '드러그스토어 · 돈키호테 (가격 비교)'], ['Standard Products · KALDI', '4일차 (선택) 난바 · 11:00 오픈'], ['GU · UNIQLO', '4일차 신사이바시'], ['아기 캐릭터 옷·장난감', '포켓몬센터 · 가이유칸 기념품점'], ['유아 과자', '드러그스토어 유아 코너 (월령 표시 확인)']], tip: '다이마루 7층 베이비룸에서 한 번 쉬고 쇼핑 시작하면 편해요.' },
-  sieun: { title: '예쁜 것 · 공주 · 캐릭터', list: [['포켓몬 오사카 한정 인형·굿즈', '다이마루 9층 포켓몬센터 DX'], ['반짝이 머리핀 · 액세서리', '3COINS · 돈키호테'], ['GU 아동 잠옷 (캐릭터 콜라보)', 'GU 신사이바시'], ['산리오 · 지브리 굿즈', '신사이바시 주변 (매장 위치 확인 필요)'], ['캐릭터 과자', '편의점 · 돈키호테']], tip: '포켓몬센터는 오픈 직후(10:00)가 가장 한산해요.' },
+  sieun: { title: '예쁜 것 · 공주 · 캐릭터', list: [['포켓몬 오사카 한정 인형·굿즈', '다이마루 9층 포켓몬센터 DX'], ['반짝이 머리핀 · 액세서리', '3COINS · 돈키호테'], ['GU 아동 잠옷 (캐릭터 콜라보)', 'GU 신사이바시'], ['산리오 · 지브리 굿즈', '신사이바시 주변 (매장 위치 확인 필요)'], ['캐릭터 과자', '편의점 · 돈키호테']], tip: '포켓몬센터는 오전이 덜 붐벼요. 4일차 11:30쯤 들러요.' },
   yunu: { title: '캐릭터 · 신기한 것 전부', list: [['고래상어·물고기 인형', '가이유칸 기념품점 (3일차)'], ['포켓몬 작은 인형', '다이마루 9층'], ['불빛·소리 나는 장난감', '돈키호테'], ['유아 과자', '드러그스토어']], tip: '19개월은 작은 부품(삼킴 위험) 장난감을 피하고 대상 연령 표시를 확인하세요.' },
 };
 /* 첫 해외여행 안내 — 부모님 · 시은 · 윤우 */
@@ -2887,8 +2887,8 @@ function openQuickFind() {
 
 /* ---------------- routing ---------------- */
 const TABS = [
-  { key: 'home', label: '일정', icon: 'cal' }, { key: 'map', label: '지도', icon: 'map' }, { key: 'food', label: '미식', icon: 'food' },
-  { key: 'shop', label: '쇼핑', icon: 'bag' }, { key: 'tools', label: '여행도구', icon: 'tool' },
+  { key: 'home', label: '일정', icon: 'cal' }, { key: 'map', label: '지도', icon: 'map' }, { key: 'food', label: '맛집', icon: 'food' },
+  { key: 'shop', label: '쇼핑', icon: 'bag' }, { key: 'tools', label: '가이드', icon: 'tool' },
 ];
 const PAGE_TAB = { bar: 'food', breakfast: 'food', kidsfood: 'food', korean: 'food', cafes: 'food', osasa: 'food', convenience: 'food', takeout: 'food', glossary: 'food', best: 'home', souvenir: 'shop', gifts: 'shop' };
 const PAGES = {};
@@ -3196,7 +3196,7 @@ PAGES.food = function () {
       <div class="section"><div class="sec-head"><div><div class="eyebrow">전체 · 全部</div><h2 class="sec-title">전체 식당</h2></div></div><div class="stack-sm">${RESTAURANTS.map((r) => restCard(r)).join('')}</div>
       <div class="info">${ic('info', 'sm')}<div>${esc('8명 팁: 예약할 때 “大人6名・子供2名・ベビーカー1台 / テーブル席希望”을 함께 적으세요. 피크(12–13시, 18:30–20시)를 피하면 착석 확률이 크게 올라가요.')}</div></div></div>`;
   }
-  return `${topbar('미식', false)}${chips}${body}${footer()}`;
+  return `${topbar('맛집', false)}${chips}${body}${footer()}`;
 };
 function osasaIntro() {
   return `<div class="info coral">${ic('info', 'sm')}<div><b>오사사에서 소개됐다는 이유만으로 BEST에 넣지 않았어요.</b> 우리 8명 가족의 동선·아이·부모님·예약 가능성을 함께 따졌어요.</div></div>`;
@@ -3289,7 +3289,7 @@ PAGES.shop = function () {
     <div class="section"><div class="sec-head"><div><div class="eyebrow">매장 · 店</div><h2 class="sec-title">매장</h2></div></div>
     <div class="carousel">${stores.map((s) => `<div role="button" tabindex="0" class="pcard" data-open="shop:${s.id}"><div class="ph" style="position:relative">${photo(s.img).replace(/^<div class="ph ">|<\/div>$/g, '')}<span class="cap">참고 사진</span>${favBtn('shop:' + s.id)}</div><div class="pb"><h3>${esc(s.name)}</h3><p class="one">${esc(s.one)}</p>${badges(s.cat.map((c) => SHOP_KO[c] || c), 3)}</div></div>`).join('') || '<div class="empty">해당 매장이 없어요</div>'}</div></div>
     ${items.length ? `<div class="section"><div class="sec-head"><div><div class="eyebrow">살 것 · 買い物</div><h2 class="sec-title">살 것</h2></div></div><div class="stack-sm">${items.map((i) => `<div class="lcard">${photo(i.img)}<div class="stack-sm"><h3>${esc(i.ko)}</h3><span class="ja xs muted">${esc(i.ja)}</span>${badges([i.who, ...i.cat.slice(0, 2).map((c) => SHOP_KO[c] || c)])}<div class="acts"><button class="btn sm" data-act="fs" data-ja="${esc(i.ja)}はありますか？" data-ko="${esc(i.ko)} 있나요?">직원에게 보여주기</button></div></div></div>`).join('')}</div></div>` : ''}
-    <div class="section"><div class="card"><div class="card-body"><div class="eyebrow">4일차 쇼핑 동선 · 건물별</div>${[['10:00 다이마루 본관', '9층 포켓몬센터 DX → 7층 베이비룸 → 4층 MoMA 디자인 스토어 → 지하 1층 과자·선물'], ['10:40 신사이바시 파르코 (옆 건물)', '핸즈 9–11층 · 캐릭터 층(도토리공화국 위치 확인 필요)'], ['11:00 신사이바시스지', 'UNIQLO·GU(11:00 오픈) · 드러그스토어'], ['13:00 (선택) 난바', 'KALDI 난바시티 1층 · Standard Products 난바파크스 1층 · 3COINS 난바시티 지하 2층']].map(([t, d]) => `<div class="giftrow"><b>${t}</b><small>${d}</small></div>`).join('')}<p class="xs muted">다이마루 안에는 KALDI·Standard Products가 없어요. 신사이바시 쪽 단독 매장도 확인되지 않아 난바에서 사요.</p></div></div>
+    <div class="section"><div class="card"><div class="card-body"><div class="eyebrow">4일차 쇼핑 동선 · 건물별</div>${[['11:30 다이마루 본관', '9층 포켓몬센터 DX → 7층 베이비룸 → 4층 MoMA 디자인 스토어 → 지하 1층 과자·선물'], ['(선택) 신사이바시 파르코 (옆 건물)', '핸즈 9–11층 · 캐릭터 층(도토리공화국 위치 확인 필요)'], ['13:20 신사이바시스지', 'UNIQLO·GU · 드러그스토어'], ['13:40 (선택) 난바', 'KALDI 난바시티 1층 · Standard Products 난바파크스 1층 · 3COINS 난바시티 지하 2층']].map(([t, d]) => `<div class="giftrow"><b>${t}</b><small>${d}</small></div>`).join('')}<p class="xs muted">다이마루 안에는 KALDI·Standard Products가 없어요. 신사이바시 쪽 단독 매장도 확인되지 않아 난바에서 사요.</p></div></div>
     <a class="card" href="#gifts" style="display:flex;align-items:center;gap:12px;padding:16px"><span style="font-size:28px">🎁</span><div class="grow"><b>카테고리별 선물 · 면세 안내</b><p class="xs muted">과자 · 말차 · 조미료 · 약 · 캐릭터 · 술</p></div>${ic('chev')}</a>
     <a class="card" href="#souvenir" style="display:grid;grid-template-columns:1fr 120px;overflow:hidden"><div class="card-body"><div class="eyebrow">お土産</div><b style="font-size:17px">기념품 BEST 10</b><p class="xs muted">공항 · 도심 · 아이 · 부모님 · 회사 · 친구</p></div>${photo('kitkat')}</a>
     <div class="info blue">${ic('info', 'sm')}<div class="xs">${esc(SHOPPING.taxfree)}</div></div>
@@ -3359,7 +3359,7 @@ const TOOL_LIST = [
   ['favorites', 'heart', '저장한 곳', '♡ 모아보기', 'var(--coral-soft)', 'var(--coral)'],
   ['links', 'link', '서비스 모음', '택시 · 예약 · 입국', 'var(--kyoto-soft)', 'var(--kyoto)'],
 ];
-PAGES.tools = () => `${topbar('여행도구', false)}<div class="section"><div class="tools">${TOOL_LIST.map(([k, icn, t, s, bg, fg]) => `<a class="tool" href="#${k}"><span class="ic" style="background:${bg};color:${fg}">${ic(icn)}</span><span><b>${t}</b><p>${s}</p></span></a>`).join('')}</div>
+PAGES.tools = () => `${topbar('가이드 · 여행 도우미', false)}<div class="section"><div class="tools">${TOOL_LIST.map(([k, icn, t, s, bg, fg]) => `<a class="tool" href="#${k}"><span class="ic" style="background:${bg};color:${fg}">${ic(icn)}</span><span><b>${t}</b><p>${s}</p></span></a>`).join('')}</div>
   ${tiredBtn()}
   <details class="accordion"><summary>앱 설정 · 화면 모드 ${ic('down', 'sm')}</summary><div class="acc-b">
     <p>여행 전/중/후 화면을 미리 볼 수 있어요. 평소엔 “자동”으로 두세요.</p>
