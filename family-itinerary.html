@@ -112,6 +112,7 @@ h2{font-size:20px;font-weight:900;margin:0}
 .t-eat{color:var(--orange);background:var(--orange-soft)}
 .t-fly{color:var(--blue);background:var(--blue-soft)}
 .t-opt{color:#fff;background:var(--pink)}
+.t-book{color:var(--blue);background:var(--blue-soft)}
 li.hot .tm2{color:var(--blue)}
 li.opt-row{background:var(--pink-soft)}
 li.opt-row .tm2{color:var(--pink)}
@@ -174,6 +175,37 @@ li.opt-row .tm2{color:var(--pink)}
 .food-group{margin-top:16px}
 .food-group h3{font-size:15px;margin:0 0 8px}
 .food-badge{display:inline-block;background:var(--orange-soft);color:var(--orange);font-size:11px;font-weight:800;border-radius:999px;padding:3px 8px;margin-right:5px}
+.ops-section{display:flex;flex-direction:column;gap:12px}
+.ops-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.ops-card p{font-size:14px;color:var(--sub);margin:6px 0 0;line-height:1.6}
+.ops-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.ops-card h3{font-size:15px;margin:0 0 4px}
+.priority{display:inline-flex;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:900;background:var(--orange-soft);color:var(--orange);margin-bottom:7px}
+.priority.blue{background:var(--blue-soft);color:var(--blue)}
+.ops-card .links{margin-top:10px}
+.route-steps{margin:8px 0 0;padding-left:22px;font-size:14px}
+.route-steps li{padding:5px 0}
+.route-steps b{color:var(--ink)}
+.route-note{padding:10px 12px;border-radius:12px;background:var(--blue-soft);font-size:13px;color:var(--sub);margin-top:10px}
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:10px}
+.resource-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+.resource-card h3{font-size:15px;margin:0 0 7px}
+.resource-card p,.resource-card li{font-size:13px;color:var(--sub);line-height:1.55}
+.resource-card p{margin:4px 0}
+.resource-card ul{margin:5px 0 0;padding-left:19px}
+.resource-card .links{margin-top:9px}
+.mapbox{height:390px;border-radius:16px;overflow:hidden;background:var(--map-bg);border:1px solid var(--line)}
+.mapbox .leaflet-container{height:100%;font-family:var(--kr)}
+.mapbox-note{font-size:12px;color:var(--sub);margin:7px 2px 0}
+.check-progress{font-size:13px;font-weight:800;color:var(--mint)}
+.convenience-list{display:flex;flex-direction:column;gap:7px}
+.convenience-list li{margin:0}
+.source-line{font-size:11.5px!important}
+.baby-word{font-weight:800;color:var(--blue)}
+.mini-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.mini-table th,.mini-table td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.mini-table th{font-size:12px;color:var(--sub)}
+@media(max-width:420px){.mapbox{height:330px}.mini-table{font-size:12px}.mini-table th,.mini-table td{padding:7px 4px}}
 </style>
 </head>
 <body>
@@ -217,7 +249,7 @@ li.opt-row .tm2{color:var(--pink)}
     <div class="overview">
       <button type="button" class="ov c1" data-go="1"><span class="n">DAY 1 · 10/14</span><span class="t">오사카 도착</span><span class="s">체크인 · 초밥·도시락 야식</span></button>
       <button type="button" class="ov c2" data-go="2"><span class="n">DAY 2 · 10/15</span><span class="t">교토</span><span class="s">아라시야마 · 온천(선택) · 가와라마치</span></button>
-      <button type="button" class="ov c3" data-go="3"><span class="n">DAY 3 · 10/16</span><span class="t">오사카 시내</span><span class="s">오사카성 · 규카츠 · 도톤보리 스키야키</span></button>
+      <button type="button" class="ov c3" data-go="3"><span class="n">DAY 3 · 10/16</span><span class="t">오사카 시내</span><span class="s">오사카성 · 나카자키초 · 그랜드그린 · 도톤보리</span></button>
       <button type="button" class="ov c4" data-go="4"><span class="n">DAY 4 · 10/17</span><span class="t">덴포잔 or 난바</span><span class="s">골라서 놀고 귀국</span></button>
     </div>
   </section>
@@ -230,7 +262,7 @@ li.opt-row .tm2{color:var(--pink)}
       <div class="food-list">
         <article class="food-card"><h3>이제이보쿠조 <span class="jp">EJ牧場</span></h3><p>방송 소개 식당 · 함박스테이크·돈카츠로 알려진 곳. 이즈미오쓰에 있어 오사카 시내 일정과는 거리가 있어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=EJ%E7%89%A7%E5%A0%B4+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
         <article class="food-card"><h3>퐁퐁야 <span class="jp">ぽんぽん屋</span></h3><p>방송 소개 간식집 · 호두모치(쿠루미모치)로 소개됐어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%BD%E3%82%93%E3%81%BD%E3%82%93%E5%B1%8B+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
-        <article class="food-card"><h3>아지쿠라야 <span class="jp">味くらや</span></h3><p>EP.77 또갈집 선정 · 오코노미야키·야키소바. 일정 2일차 저녁 후보에 이미 포함돼 있어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%91%B3%E3%81%8F%E3%82%89%E3%82%84+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+        <article class="food-card"><h3>아지쿠라야 <span class="jp">味くらや</span></h3><p>EP.77 또갈집 선정 · 오코노미야키·야키소바. 일정 2일차 저녁 후보예요. 8명 예약과 도착 시간 확인이 필요해요.</p><div class="links"><a class="go" href="https://ajikuraya.foodre.jp/" target="_blank" rel="noopener">공식 예약 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%91%B3%E3%81%8F%E3%82%89%E3%82%84+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
         <article class="food-card"><h3>카페 포켓 <span class="jp">カフェポケット</span></h3><p>방송 소개 카페 · 달걀 샌드위치가 대표 메뉴로 알려져 있어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%95%E3%82%A7%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
       </div>
     </div>
@@ -246,13 +278,51 @@ li.opt-row .tm2{color:var(--pink)}
     <div class="food-group">
       <h3><span class="food-badge">이번 일정</span>날짜별 식당</h3>
       <div class="food-list">
-        <article class="food-card"><h3>1일차 · 숙소 근처 야식</h3><p>라이프 가라호리점에서 초밥·도시락 포장. 선택 식당은 후사야 본점(돈돈야키).</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%A9%E3%82%A4%E3%83%95+%E7%A9%BA%E5%A0%80%E5%BA%97" target="_blank" rel="noopener">라이프 지도 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%86%A8%E7%B4%97%E5%AE%B6+%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">후사야 지도 ↗</a></div></article>
-        <article class="food-card"><h3>2일차 · 아라시야마·가와라마치</h3><p>점심 오아가리 아라시야마점 · 저녁 아지쿠라야. 오아가리 기온점과 다른 지점이에요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%82%89%E3%81%AE%E9%9A%A0%E3%82%8C%E5%AE%B6+%E3%81%8A%E3%81%82%E3%81%8C%E3%82%8A+Arashiyama" target="_blank" rel="noopener">오아가리 아라시야마 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%91%B3%E3%81%8F%E3%82%89%E3%82%84+Kyoto" target="_blank" rel="noopener">아지쿠라야 ↗</a></div></article>
-        <article class="food-card"><h3>3일차 · 오사카성·나카자키초·도톤보리</h3><p>점심 규카츠 모토무라 우메다점(대안: 유카리 소네자키점) · 저녁 하리쥬 도톤보리점.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%89%9B%E3%82%AB%E3%83%84%E3%82%82%E3%81%A8%E6%9D%91+Umeda" target="_blank" rel="noopener">모토무라 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%86%E3%81%8B%E3%82%8A+%E6%9B%BD%E6%A0%B9%E5%B4%8E" target="_blank" rel="noopener">유카리 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%AF%E3%82%8A%E9%87%8D+%E9%81%93%E9%A0%93%E5%A0%80" target="_blank" rel="noopener">하리쥬 ↗</a></div></article>
+        <article class="food-card"><h3>1일차 · 숙소 근처 야식</h3><p>늦은 도착이므로 라이프 가라호리점에서 초밥·도시락을 포장하는 안이 안정적이에요. 후사야 본점은 도착이 늦어질 수 있어 영업 여부·주문 마감을 먼저 확인하세요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%A9%E3%82%A4%E3%83%95+%E7%A9%BA%E5%A0%80%E5%BA%97" target="_blank" rel="noopener">라이프 지도 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%86%A8%E7%B4%97%E5%AE%B6+%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">후사야 지도 ↗</a></div></article>
+        <article class="food-card"><h3>2일차 · 아라시야마·가와라마치</h3><p>점심 오아가리 아라시야마점은 사전 예약 추천. 가와라마치에서는 저녁 전에 간식·휴식을 하고, 오사카로 돌아와 아지쿠라야 예약 시간에 맞춰요.</p><div class="links"><a class="go" href="https://oagari.com/oagari-arashiyama/" target="_blank" rel="noopener">오아가리 공식 예약 ↗</a><a class="go" href="https://ajikuraya.foodre.jp/" target="_blank" rel="noopener">아지쿠라야 공식 예약 ↗</a></div></article>
+        <article class="food-card"><h3>3일차 · 오사카성·나카자키초·도톤보리</h3><p>점심 규카츠 모토무라 우메다점은 줄서기 대안도 준비하고, 저녁 하리쥬 일본요리는 좌석 예약을 권해요. 나카자키초를 넣으면 그랜드그린 체류 시간을 줄여 여유를 확보하세요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%89%9B%E3%82%AB%E3%83%84%E3%82%82%E3%81%A8%E6%9D%91+Umeda" target="_blank" rel="noopener">모토무라 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%86%E3%81%8B%E3%82%8A+%E6%9B%BD%E6%A0%B9%E5%B4%8E" target="_blank" rel="noopener">유카리 ↗</a><a class="go" href="https://www.harijyu.co.jp/shop-info/2173/" target="_blank" rel="noopener">하리쥬 예약 ↗</a></div></article>
         <article class="food-card"><h3>4일차 · 선택 코스</h3><p>덴포잔: 간코 덴포잔점·쿠라긴 스시점. 난바: 난바시티·난바파크스 식당가에서 정식 선택.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8C%E3%82%93%E3%81%93+%E5%A4%A9%E4%BF%9D%E5%B1%B1" target="_blank" rel="noopener">간코 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A9%E4%BF%9D%E5%B1%B1+%E5%AF%BF%E5%8F%B8+%E3%81%8F%E3%82%89%E9%8A%80" target="_blank" rel="noopener">쿠라긴 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%AA%E3%82%93%E3%81%B0CITY+%E5%AE%9A%E9%A3%9F" target="_blank" rel="noopener">난바 정식 ↗</a></div></article>
       </div>
     </div>
     <p class="hint" style="margin-top:10px">또간집 출연 식당은 방송·정리 자료 기준으로 모았어요. 지점, 영업시간, 휴무와 대기 방법은 바뀔 수 있으니 지도에서 최신 정보를 확인해 주세요.</p>
+  </section>
+
+  <section class="ops-section" aria-label="예약과 식당 지도">
+    <div class="sh"><h2>예약·예매 먼저 확인</h2><small>가족 8명 기준 · 예약 확정은 직접 확인</small></div>
+    <div class="ops-grid">
+      <article class="ops-card"><span class="priority">우선 문의 · 2일차</span><h3>오아가리 아라시야마 본점</h3><p>점심 시간대 혼잡 가능성이 있어 사전 예약을 권해요. 8명과 유아 동반, 유모차 자리, 아기의자, 입장 시간을 함께 문의하세요.</p><div class="links"><a class="go" href="https://oagari.com/oagari-arashiyama/" target="_blank" rel="noopener">공식 매장·예약 ↗</a><a class="go" href="https://oagari.com/oagari-arashiyama/faq/" target="_blank" rel="noopener">유아·좌석 안내 ↗</a></div></article>
+      <article class="ops-card"><span class="priority">우선 문의 · 2일차 저녁</span><h3>아지쿠라야</h3><p>8명은 예약하고 좌석을 확인하는 편이 안전해요. 교토에서 오사카로 돌아오는 시간과 19시 전후 예약을 먼저 맞추고, 늦으면 가까운 포장 식사로 전환하세요.</p><div class="links"><a class="go" href="https://ajikuraya.foodre.jp/" target="_blank" rel="noopener">공식 예약·빈자리 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC%E3%81%8D+%E3%81%82%E3%81%98%E3%81%8F%E3%82%89%E3%82%84+%E5%A4%A7%E9%98%AA%E4%B8%8A%E6%9C%AC%E7%94%BA" target="_blank" rel="noopener">지도 ↗</a></div></article>
+      <article class="ops-card"><span class="priority">좌석 예약 권장 · 3일차</span><h3>하리쥬 도톤보리 본점 · 일본요리</h3><p>스키야키 저녁은 예약 가능한 일본요리 매장으로 문의하세요. 8명 좌석, 윤우 의자, 유모차 보관, 아이 식사 가능 여부를 함께 확인해요.</p><div class="links"><a class="go" href="https://www.harijyu.co.jp/shop-info/2173/" target="_blank" rel="noopener">공식 매장·예약 ↗</a></div></article>
+      <article class="ops-card"><span class="priority blue">선택 시 날짜 지정권 추천 · 4일차</span><h3>덴포잔 · 가이유칸</h3><p>가이유칸을 고르면 15분 단위 입장 e티켓을 미리 구매해 대기 시간을 줄이세요. 티켓은 재입장이 불가하므로 관람 후 마켓플레이스에서 점심·수유실을 이용하는 순서가 편해요.</p><div class="links"><a class="go" href="https://www.kaiyukan.com/info/ticket/kaiyukan/" target="_blank" rel="noopener">공식 e티켓 ↗</a></div></article>
+      <article class="ops-card"><span class="priority blue">좌석 확인 · 식당 후보</span><h3>오아가리 대신 다른 아라시야마 식당을 고를 때</h3><p>유도후 사가노는 좌석·코스 예약 가능 여부를 먼저 확인하고, 요시무라는 전화 우선 안내가 입장 보장은 아니라는 점을 감안해요. 타카라스시·오우치고항 하나는 영업일과 8명 착석을 방문 전에 확인하세요.</p><div class="links"><a class="go" href="https://kyoto-sagano.jp/" target="_blank" rel="noopener">유도후 사가노 공식 ↗</a><a class="go" href="https://oagari.com/oagari-arashiyama/" target="_blank" rel="noopener">오아가리 대체점 확인 ↗</a><a class="go" href="https://www.ouchigohan-hana.jp/" target="_blank" rel="noopener">오우치고항 하나 공식 ↗</a></div></article>
+      <article class="ops-card"><span class="priority blue">예매 가능 · 필수는 아님</span><h3>3일차 오사카성 천수각</h3><p>현장 매표도 가능하고 온라인 사전 구매도 돼요. 일정이 빠듯하면 온라인 표로 매표 줄을 줄이고, 15세 이하 무료 입장 연령 확인용 증빙을 준비하세요.</p><div class="links"><a class="go" href="https://www.osakacastle.net/" target="_blank" rel="noopener">오사카성 공식·티켓 ↗</a><a class="go" href="https://www.osakacastle.net/guide/" target="_blank" rel="noopener">운영·요금 안내 ↗</a></div></article>
+      <article class="ops-card"><span class="priority blue">현장 확인으로 충분</span><h3>예약이 보통 필요 없는 곳</h3><p>후후노유 당일 온천, 니시키시장, 가모강 산책, 그랜드 그린 공원, 도톤보리, 대관람차는 예약 없이 방문할 수 있어요. 온천은 윤우 입욕 연령·기저귀 규정부터 확인하고, 대관람차는 당일 운영·대기를 확인하세요.</p></article>
+    </div>
+    <div class="ops-card"><div class="sh"><h3>식당 후보 지도</h3><small id="restaurant-map-count">좌표 확인 장소</small></div><div id="family-restaurant-map" class="mapbox" role="application" aria-label="오사카·교토 식당 지도"></div><p class="mapbox-note">핀을 누르면 식당 이름과 Google 지도 검색 링크가 열려요. 표시된 핀은 좌표가 등록된 식당 기준이에요. 도톤보리·아라시야마 등 떨어진 지역은 지도를 축소해 함께 보세요.</p></div>
+  </section>
+
+  <section class="ops-section" aria-label="윤우 이유식과 편의점 추천">
+    <div class="sh"><h2>윤우 먹거리·여행 쇼핑</h2><small>숙소 근처부터 확인</small></div>
+    <div class="ops-grid">
+      <article class="ops-card"><span class="priority blue">숙소 근처 · 식품점</span><h3>이유식 구매처</h3><p>재고는 매장마다 다르니 먼저 전화하거나 방문해 확인하세요. 일본어로 <span class="baby-word">「ベビーフード／離乳食（りにゅうしょく）はありますか？」</span>라고 물으면 돼요.</p>
+        <table class="mini-table"><thead><tr><th>장소</th><th>주소·메모</th></tr></thead><tbody>
+          <tr><td>라이프 가라호리점</td><td>大阪市中央区谷町6-14-24 · 식품·도시락 함께 구매</td></tr>
+          <tr><td>슈퍼 산코 가라호리점</td><td>大阪市中央区谷町6-17-25 · 9:30–20:30, 수요일 휴무 표기</td></tr>
+          <tr><td>아카짱혼포 오사카 혼마치점</td><td>大阪市中央区南本町3-3-21 · 10:00–20:00 · 이유식 재고는 확인 필요</td></tr>
+        </tbody></table>
+        <p>월령 표시 「○か月頃」, 알레르기 원재료와 보관 방법을 확인하세요. 고기·육수 성분이 있는 유아식은 일본 반입 규정을 별도로 확인하고, 불확실하면 현지 구매를 권해요.</p>
+        <div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%A9%E3%82%A4%E3%83%95+%E7%A9%BA%E5%A0%80%E5%BA%97" target="_blank" rel="noopener">라이프 지도 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%B5%E3%83%B3%E3%82%B3%E3%83%BC+%E7%A9%BA%E5%A0%80%E5%BA%97" target="_blank" rel="noopener">산코 지도 ↗</a><a class="go" href="https://stores.akachan.jp/2" target="_blank" rel="noopener">아카짱혼포 매장 ↗</a></div>
+      </article>
+      <article class="ops-card"><span class="priority blue">편의점 추천 · 영상 참고</span><h3>세븐일레븐 · 패밀리마트 · 로손</h3><ul class="convenience-list">
+        <li><b>아침·가벼운 식사:</b> 달걀 샌드위치, 연어 주먹밥, 키츠네 우동</li>
+        <li><b>바로 먹는 간식:</b> 패밀리마트 Famichiki, 야키소바빵, 모찌푸요, 로손 카라아게군</li>
+        <li><b>달콤한 디저트:</b> 크렘브륄레, 말차 디저트, 슈크림, 미니 모찌 롤케이크, 고구마 아이스크림</li>
+        <li><b>음료·간편식:</b> 매장 스무디, 유자 레몬 탄산, 아사이 스무디, 과일 젤리</li>
+      </ul><p>영상에 나온 상품명·판매처를 참고한 추천이에요. 상품 구성과 입고는 매장·시기마다 다르고 윤우 월령·알레르기에 맞지 않을 수 있으니 성분표를 확인하세요.</p>
+        <div class="links"><a class="go" href="https://www.youtube.com/watch?v=ElxrHLsaSZ8&amp;t=107s" target="_blank" rel="noopener">일본 편의점 추천 25종 ↗</a><a class="go" href="https://www.youtube.com/watch?v=5NNwuVKqXGk" target="_blank" rel="noopener">추성훈 가족 편의점 투어 ↗</a><a class="go" href="https://www.youtube.com/watch?v=Xuk3VDz7VFU" target="_blank" rel="noopener">와썹맨 편의점 3대장 ↗</a></div>
+      </article>
+      <article class="ops-card"><span class="priority">가족 짐 체크</span><h3>외출 가방에 넣기</h3><ul class="convenience-list"><li>윤우 익숙한 유아식·간식·빨대컵·아기 식기</li><li>기저귀·물티슈·여벌 옷·비닐봉투</li><li>유모차 레인커버·아기띠·보조배터리</li><li>간단 상비약·체온계·손소독제</li></ul><p>긴 이동일은 익숙한 예비식을 챙기고, 낮잠과 수유 시간을 먼저 확보해요.</p></article>
+    </div>
   </section>
 
   <section aria-label="일정">
@@ -284,6 +354,15 @@ li.opt-row .tm2{color:var(--pink)}
     <div class="day" id="day2" role="tabpanel" aria-labelledby="c2" hidden>
       <div class="day-head"><span class="k">DAY 2 · 10월 15일 목요일</span><h3>교토에서 하루</h3><span class="r">아라시야마 → 온천(선택) → 가와라마치 → 아지쿠라야</span></div>
       <div class="map" data-map="m2"><iframe src="https://maps.google.com/maps?saddr=%E9%98%AA%E6%80%A5%E5%B5%90%E5%B1%B1%E9%A7%85&daddr=%E6%B8%A1%E6%9C%88%E6%A9%8B+to:%E9%8C%A6%E5%B8%82%E5%A0%B4+to:%E4%B8%89%E6%9D%A1%E5%A4%A7%E6%A9%8B%20%E4%BA%AC%E9%83%BD&output=embed" loading="lazy" title="동선 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <article class="ops-card"><div class="sh"><h3>숙소 → 아라시야마 → 가와라마치</h3><small>한큐선 환승 2번</small></div><ol class="route-steps">
+        <li><b>숙소 → 다니마치 6초메역 (谷町六丁目)</b> · 주소 기준 역까지 걸어가요.</li>
+        <li><b>다니마치선 → 히가시우메다 (東梅田)</b> · 다이니치(大日) 방면 열차를 타요.</li>
+        <li><b>히가시우메다 → 한큐 오사카우메다</b> · 지하 연결 통로에서 「阪急電車」 표지를 따라가요. 큰 역 환승이니 10–15분 여유를 둬요.</li>
+        <li><b>한큐 교토선 → 가쓰라 (桂)</b> · 교토가와라마치 방면 열차를 타고 가쓰라에서 내립니다.</li>
+        <li><b>한큐 아라시야마선 → 아라시야마 (嵐山)</b> · 가쓰라에서 환승해 도게츠교·대나무숲 방향으로 걸어요.</li>
+        <li><b>가와라마치로 이동</b> · 아라시야마선으로 가쓰라에 돌아와 교토선 「京都河原町」행으로 환승해요.</li>
+        <li><b>오사카 숙소·저녁 식당으로</b> · 교토가와라마치에서 한큐선으로 오사카우메다, 히가시우메다에서 다니마치선 야오미나미(八尾南) 방면을 타고 다니마치 6초메로 돌아와요.</li>
+      </ol><p class="route-note">8명과 유모차는 우메다의 지하 환승 통로와 가쓰라 환승에 여유를 두세요. 역에서 엘리베이터 표지를 따라가고, 열차 시간·승강장은 당일 지도 앱에서 확인해요. 아라시야마에서 가와라마치까지 택시를 타면 교통·시간대에 따라 비용이 커질 수 있어 한큐선 이동을 기본으로 잡았어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/dir/?api=1&amp;origin=7-ch%C5%8Dme-6-33%20Tanimachi%2C%20Osaka&amp;destination=Hankyu%20Arashiyama%20Station&amp;travelmode=transit" target="_blank" rel="noopener">숙소 → 아라시야마 길찾기 ↗</a><a class="go" href="https://www.google.com/maps/dir/?api=1&amp;origin=Hankyu%20Arashiyama%20Station&amp;destination=Hankyu%20Kyoto-Kawaramachi%20Station&amp;travelmode=transit" target="_blank" rel="noopener">아라시야마 → 가와라마치 ↗</a><a class="go" href="https://www.hankyu.co.jp/en/station/index.html" target="_blank" rel="noopener">한큐 역·노선도 ↗</a></div></article>
       <ol class="tl">
         <li><span class="tm2">09:00</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>숙소에서 아침 먹고 출발</span><span class="ds">다니마치선 히가시우메다 → 한큐 교토선 → 가쓰라 환승 → 아라시야마 · 약 1시간 20분</span></div></li>
         <li><span class="tm2">10:20</span><div class="w"><span class="ttl"><span class="tag t-see">관광</span>대나무숲 · 노노미야신사 · 도게츠교</span>
@@ -301,7 +380,7 @@ li.opt-row .tm2{color:var(--pink)}
           <div class="links"><a class="go" href="https://www.google.com/search?q=%E4%BA%AC%E9%83%BD%E5%B5%90%E5%B1%B1%E6%B8%A9%E6%B3%89%20%E6%B9%AF%E6%B5%B4%E3%81%BF%E5%87%A6%20%E9%A2%A8%E9%A2%A8%E3%81%AE%E6%B9%AF" target="_blank" rel="noopener">후후노유<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E5%A4%A9%E9%BE%8D%E5%AF%BA%20%E5%B5%90%E5%B1%B1" target="_blank" rel="noopener">텐류지<span aria-hidden="true">↗</span></a></div></div></li>
         <li><span class="tm2">13:30</span><div class="w"><span class="ttl"><span class="tag t-eat">점심</span>오아가리 아라시야마 본점</span>
           <div class="info"><div class="it food"><figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Roast_Beef_Bowl_in_Red_Rock%2C_Kyoto.jpg/800px-Roast_Beef_Bowl_in_Red_Rock%2C_Kyoto.jpg" alt="와규화산 덮밥" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Roast_Beef_Bowl_in_Red_Rock,_Kyoto.jpg" target="_blank" rel="noopener">와규 덮밥 예시 사진 (이 가게·메뉴 사진 아님) · 사진 Choi2451 / CC BY-SA 3.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">와규화산 덮밥 <em>1,800엔(세전)</em> <span class="jp">和牛火山</span></span><p>흑모와규 꽃등심을 손님 눈앞에서 1,000℃ 넘는 불꽃으로 구워 밥에 올려요. 반쯤 먹으면 육수를 부어 오차즈케처럼 먹고, 성게·연어알 추가도 돼요. 계단만 있는 가게, 아기의자 2개.</p></div></div>
-          <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%8A%E3%81%82%E3%81%8C%E3%82%8A%20%E5%B5%90%E5%B1%B1%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">오아가리<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%8A%E3%81%82%E3%81%8C%E3%82%8A%20%E5%92%8C%E7%89%9B%E7%81%AB%E5%B1%B1&amp;tbm=isch" target="_blank" rel="noopener">와규화산 사진<span aria-hidden="true">↗</span></a></div></div></li>
+          <div class="links"><a class="go" href="https://oagari.com/oagari-arashiyama/" target="_blank" rel="noopener">오아가리 공식 예약·매장 ↗</a><a class="go" href="https://oagari.com/oagari-arashiyama/faq/" target="_blank" rel="noopener">아이·유모차 안내 ↗</a></div></div></li>
         <li class="hot"><span class="tm2">14:30</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>가와라마치로</span><span class="ds">택시 2대 약 30분 (2대 약 1만 엔) 또는 한큐선 약 30분</span></div></li>
         <li><span class="tm2">15:00</span><div class="w"><span class="ttl"><span class="tag t-see">관광</span>니시키시장 · 가와라마치 · 가모강</span>
           <div class="info">
@@ -312,28 +391,29 @@ li.opt-row .tm2{color:var(--pink)}
           <div class="links"><a class="go" href="https://www.google.com/search?q=%E9%8C%A6%E5%B8%82%E5%A0%B4%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener">니시키시장<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E9%B4%A8%E5%B7%9D%20%E4%B8%89%E6%9D%A1%E5%A4%A7%E6%A9%8B%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener">가모강<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9%20%E4%BA%AC%E9%83%BD%E4%B8%89%E6%9D%A1%E5%A4%A7%E6%A9%8B%E5%BA%97" target="_blank" rel="noopener">스타벅스 산조오하시<span aria-hidden="true">↗</span></a></div></div></li>
         <li class="hot"><span class="tm2">19:00</span><div class="w"><span class="ttl"><span class="tag t-eat">저녁</span>아지쿠라야</span>
           <div class="info"><div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Okonomiyaki_-a_Japanese_savory_pancake_in_Osaka%2C_Japan.jpg/960px-Okonomiyaki_-a_Japanese_savory_pancake_in_Osaka%2C_Japan.jpg" alt="오사카야키 믹스 · 야키소바" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Okonomiyaki_-a_Japanese_savory_pancake_in_Osaka,_Japan.jpg" target="_blank" rel="noopener">오코노미야키 예시 사진 (이 가게 사진 아님) · 사진 Joli Rumi / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">오사카야키 믹스 · 야키소바 <span class="jp">お好み焼き あじくらや</span></span><p>이 집에서 가장 인기 있는 오코노미야키와, 믹스·해물 소금 야키소바가 명물이에요. 철판에서 바로 구워 먹어요. 8인실 예약, 17:45 교토 출발.</p></div></div>
-          <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC%E3%81%8D%20%E3%81%82%E3%81%98%E3%81%8F%E3%82%89%E3%82%84%20%E4%B8%8A%E6%9C%AC%E7%94%BA" target="_blank" rel="noopener">아지쿠라야<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%82%E3%81%98%E3%81%8F%E3%82%89%E3%82%84%20%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC%E3%81%8D&amp;tbm=isch" target="_blank" rel="noopener">메뉴 사진<span aria-hidden="true">↗</span></a></div></div></li>
+          <div class="links"><a class="go" href="https://ajikuraya.foodre.jp/" target="_blank" rel="noopener">아지쿠라야 공식 예약 ↗</a><a class="go" href="https://www.google.com/search?q=%E3%81%82%E3%81%98%E3%81%8F%E3%82%89%E3%82%84%20%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC%E3%81%8D&amp;tbm=isch" target="_blank" rel="noopener">메뉴 사진 ↗</a></div></div></li>
       </ol>
     </div>
 
     <!-- 3일차 -->
     <div class="day" id="day3" role="tabpanel" aria-labelledby="c3" hidden>
-      <div class="day-head"><span class="k">DAY 3 · 10월 16일 금요일</span><h3>느긋한 오사카</h3><span class="r">오사카성 → 우메다 → 그랜드 그린 → 도톤보리</span></div>
-      <div class="map" data-map="m3"><iframe src="https://maps.google.com/maps?saddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%B0%B7%E7%94%BA7%E4%B8%81%E7%9B%AE6-33&daddr=%E5%A4%A7%E9%98%AA%E5%9F%8E%E5%A4%A9%E5%AE%88%E9%96%A3+to:%E6%9D%B1%E6%A2%85%E7%94%B0%E9%A7%85+to:%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E5%A4%A7%E9%98%AA+to:%E9%81%93%E9%A0%93%E5%A0%80&output=embed" loading="lazy" title="동선 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="day-head"><span class="k">DAY 3 · 10월 16일 금요일</span><h3>느긋한 오사카</h3><span class="r">오사카성 → 우메다 점심 → 나카자키초 → 그랜드 그린 → 도톤보리</span></div>
+      <div class="map" data-map="m3"><iframe src="https://maps.google.com/maps?saddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%B0%B7%E7%94%BA7%E4%B8%81%E7%9B%AE6-33&daddr=%E5%A4%A7%E9%98%AA%E5%9F%8E%E5%A4%A9%E5%AE%88%E9%96%A3+to:%E6%A2%85%E7%94%B0%E9%A7%85+to:%E4%B8%AD%E5%B4%8E%E7%94%BA+to:%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E5%A4%A7%E9%98%AA+to:%E9%81%93%E9%A0%93%E5%A0%80&output=embed" loading="lazy" title="동선 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <ol class="tl">
         <li><span class="tm2">09:00</span><div class="w"><span class="ttl"><span class="tag t-see">관광</span>숙소에서 아침 먹고 오사카성</span>
           <div class="info"><div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Osaka_Castle%2C_Main_Tower_%282850633888%29.jpg/960px-Osaka_Castle%2C_Main_Tower_%282850633888%29.jpg" alt="오사카성 · 천수각" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Osaka_Castle,_Main_Tower_(2850633888).jpg" target="_blank" rel="noopener">사진 alisdair / CC BY 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">오사카성 · 천수각 <span class="jp">大阪城天守閣</span></span><p>도요토미 히데요시가 쌓은 성. 지금의 천수각은 1931년에 다시 지었고, 꼭대기 전망대에서 시내가 보여요. 해자와 돌담을 따라 넓은 공원을 산책해요. 다니마치선 2정거장.</p></div></div>
-          <div class="links"><a class="go" href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%9F%8E%E5%A4%A9%E5%AE%88%E9%96%A3" target="_blank" rel="noopener">오사카성<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=JO-TERRACE%20OSAKA" target="_blank" rel="noopener">조테라스 카페<span aria-hidden="true">↗</span></a></div></div></li>
+          <div class="links"><a class="go" href="https://www.osakacastle.net/" target="_blank" rel="noopener">오사카성 공식 티켓 ↗</a><a class="go" href="https://www.google.com/search?q=JO-TERRACE%20OSAKA" target="_blank" rel="noopener">조테라스 카페 ↗</a></div></div></li>
         <li class="hot"><span class="tm2">12:00</span><div class="w"><span class="ttl"><span class="tag t-eat">점심</span>규카츠 · 모토무라 우메다</span>
           <div class="info"><div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Gyukatsu_%2846075415774%29.jpg/960px-Gyukatsu_%2846075415774%29.jpg" alt="규카츠 정식" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Gyukatsu_(46075415774).jpg" target="_blank" rel="noopener">규카츠 예시 사진 (모토무라 사진 아님) · 사진 Raita Futo / CC BY-SA 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">규카츠 정식 <span class="jp">牛かつもと村 牛カツ定食</span></span><p>소고기에 얇은 튀김옷을 입혀 겉만 바삭하게 튀긴 커틀릿. 속은 거의 생고기라 자리마다 놓인 작은 화로에 한 점씩 원하는 만큼 구워 먹어요. 보리밥 리필 무료, 참마 즙(도로로) 세트도 있어요. 카운터 위주라 8명은 나눠 앉아요.</p></div>
             <div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Okonomiyaki_cooking_on_teppan_Osaka.jpg/960px-Okonomiyaki_cooking_on_teppan_Osaka.jpg" alt="유카리 소네자키 본점" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Okonomiyaki_cooking_on_teppan_Osaka.jpg" target="_blank" rel="noopener">오코노미야키 조리 예시 사진 (이 가게 사진 아님) · 사진 Lianguanlun / CC BY 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">줄이 길면 · 유카리 소네자키 본점 <span class="jp">お好焼 ゆかり</span></span><p>지름 30cm, 1kg짜리 대형 오코노미야키 ‘오사카성’ 4,650엔이 명물. 96석이라 단체도 편해요.</p></div></div>
           <div class="links"><a class="go" href="https://www.google.com/search?q=%E7%89%9B%E3%81%8B%E3%81%A4%E3%82%82%E3%81%A8%E6%9D%91%20%E6%A2%85%E7%94%B0" target="_blank" rel="noopener">모토무라 우메다<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E7%89%9B%E3%81%8B%E3%81%A4%E3%82%82%E3%81%A8%E6%9D%91%20%E7%89%9B%E3%82%AB%E3%83%84%E5%AE%9A%E9%A3%9F&amp;tbm=isch" target="_blank" rel="noopener">규카츠 사진<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%8A%E5%A5%BD%E7%84%BC%20%E3%82%86%E3%81%8B%E3%82%8A%20%E6%9B%BD%E6%A0%B9%E5%B4%8E%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">유카리<span aria-hidden="true">↗</span></a></div></div></li>
-        <li><span class="tm2">13:30</span><div class="w"><span class="ttl"><span class="tag t-see">휴식</span>그랜드 그린 오사카</span>
+        <li><span class="tm2">13:30</span><div class="w"><span class="ttl"><span class="tag t-see">산책</span>나카자키초 골목</span><span class="ds">우메다에서 가까운 옛 목조 가옥·카페 거리. 45분만 둘러보고 걸어서 그랜드 그린으로 이동해요. 계단·좁은 골목은 유모차 이동이 불편할 수 있어요.</span><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%AD%E5%B4%8E%E7%94%BA+%E5%A4%A7%E9%98%AA" target="_blank" rel="noopener">나카자키초 지도 ↗</a></div></div></li>
+        <li><span class="tm2">15:00</span><div class="w"><span class="ttl"><span class="tag t-see">휴식</span>그랜드 그린 오사카</span>
           <div class="info"><div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Grand_Green_Osaka_20250831.jpg/960px-Grand_Green_Osaka_20250831.jpg" alt="그랜드 그린 오사카" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Grand_Green_Osaka_20250831.jpg" target="_blank" rel="noopener">사진 掬茶 / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">그랜드 그린 오사카 <span class="jp">グラングリーン大阪</span></span><p>오사카역 바로 옆, 옛 화물역 자리에 새로 생긴 도심 공원(우메키타 공원). 넓은 잔디밭에서 아이들은 뛰어놀고 어른들은 주변 카페에서 쉬어요.</p></div></div>
           <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E5%A4%A7%E9%98%AA%20%E3%81%86%E3%82%81%E3%81%8D%E3%81%9F%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">그랜드 그린<span aria-hidden="true">↗</span></a></div></div></li>
         <li class="hot"><span class="tm2">17:30</span><div class="w"><span class="ttl"><span class="tag t-eat">저녁</span>하리쥬 도톤보리 본점</span>
           <div class="info"><div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Sukiyaki_01.jpg/960px-Sukiyaki_01.jpg" alt="흑모와규 스키야키" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Sukiyaki_01.jpg" target="_blank" rel="noopener">스키야키 예시 사진 (이 가게 사진 아님) · 사진 ajari / CC BY 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">흑모와규 스키야키 <em>1인 8,800엔~</em> <span class="jp">はり重 すき焼き</span></span><p>1919년부터 이어온 정육점 겸 노포. 국산 흑모와규를 달콤짭짤한 간장 육수에 익혀 날계란에 찍어 먹어요. 개별실이 많아 가족끼리 조용히 먹기 좋아요. 아이 메뉴는 없어요, 화요일 휴무.</p></div></div>
-          <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%AF%E3%82%8A%E9%87%8D%20%E9%81%93%E9%A0%93%E5%A0%80%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">하리쥬<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%AF%E3%82%8A%E9%87%8D%20%E3%81%99%E3%81%8D%E7%84%BC%E3%81%8D&amp;tbm=isch" target="_blank" rel="noopener">스키야키 사진<span aria-hidden="true">↗</span></a></div></div></li>
+          <div class="links"><a class="go" href="https://www.harijyu.co.jp/shop-info/2173/" target="_blank" rel="noopener">하리쥬 공식 예약·매장 ↗</a><a class="go" href="https://www.google.com/search?q=%E3%81%AF%E3%82%8A%E9%87%8D%20%E3%81%99%E3%81%8D%E7%84%BC%E3%81%8D&amp;tbm=isch" target="_blank" rel="noopener">스키야키 사진 ↗</a></div></div></li>
         <li><span class="tm2">19:00</span><div class="w"><span class="ttl"><span class="tag t-see">관광</span>도톤보리 야경 · 가족사진</span>
           <div class="info">
             <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Dotonbori%2C_Osaka%2C_at_night%2C_November_2016.jpg/960px-Dotonbori%2C_Osaka%2C_at_night%2C_November_2016.jpg" alt="도톤보리" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg" target="_blank" rel="noopener">사진 Martin Falbisoner / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">도톤보리 <span class="jp">道頓堀</span></span><p>운하를 따라 거대한 게, 복어 간판과 글리코 러너 전광판이 이어지는 오사카의 상징 거리. 밤에 네온이 강물에 비칠 때가 가장 예뻐요.</p></div>
@@ -361,7 +441,7 @@ li.opt-row .tm2{color:var(--pink)}
               <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg/960px-Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg" alt="덴포잔 대관람차" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg" target="_blank" rel="noopener">사진 TimBray / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">덴포잔 대관람차 <em>800엔</em> <span class="jp">天保山大観覧車</span></span><p>높이 112.5m, 한 바퀴 약 15분. 오사카 항구와 시내가 한눈에 보이고, 바닥이 투명한 칸도 고를 수 있어요.</p></div>
               <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tempozan_Market_Place_Building_and_Osaka_Aquarium_%22Kaiyukan%22.jpg/960px-Tempozan_Market_Place_Building_and_Osaka_Aquarium_%22Kaiyukan%22.jpg" alt="덴포잔 마켓플레이스" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tempozan_Market_Place_Building_and_Osaka_Aquarium_%22Kaiyukan%22.jpg" target="_blank" rel="noopener">사진 そらみみ / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">휴식 · 덴포잔 마켓플레이스 <span class="jp">天保山マーケットプレース</span></span><p>수족관 옆 쇼핑몰. 카페와 기념품 가게가 있고 2층에 수유실과 기저귀 교환대가 있어요.</p></div>
             </div>
-            <div class="links"><a class="go" href="https://www.google.com/search?q=%E6%B5%B7%E9%81%8A%E9%A4%A8%20%E5%A4%A7%E9%98%AA" target="_blank" rel="noopener">가이유칸<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E5%A4%A9%E4%BF%9D%E5%B1%B1%E5%A4%A7%E8%A6%B3%E8%A6%A7%E8%BB%8A" target="_blank" rel="noopener">대관람차<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E5%A4%A9%E4%BF%9D%E5%B1%B1%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%97%E3%83%AC%E3%83%BC%E3%82%B9" target="_blank" rel="noopener">마켓플레이스<span aria-hidden="true">↗</span></a></div></div></li>
+            <div class="links"><a class="go" href="https://www.kaiyukan.com/info/ticket/kaiyukan/" target="_blank" rel="noopener">가이유칸 날짜 지정권 ↗</a><a class="go" href="https://www.google.com/search?q=%E5%A4%A9%E4%BF%9D%E5%B1%B1%E5%A4%A7%E8%A6%B3%E8%A6%A7%E8%BB%8A" target="_blank" rel="noopener">대관람차·운영 확인 ↗</a><a class="go" href="https://www.google.com/search?q=%E5%A4%A9%E4%BF%9D%E5%B1%B1%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%97%E3%83%AC%E3%83%BC%E3%82%B9" target="_blank" rel="noopener">마켓플레이스 ↗</a></div></div></li>
           <li><span class="tm2">12:30</span><div class="w"><span class="ttl"><span class="tag t-eat">점심</span>초밥 · 덴포잔 마켓플레이스</span>
             <div class="info">
               <div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Nigiri_Sushi_%2826505096851%29.jpg/960px-Nigiri_Sushi_%2826505096851%29.jpg" alt="초밥 정식" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Nigiri_Sushi_(26505096851).jpg" target="_blank" rel="noopener">초밥 예시 사진 (이 가게 사진 아님) · 사진 Tim Reckmann / CC BY 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">초밥 정식 <span class="jp">がんこ 天保山店</span></span><p>오사카에서 시작한 초밥·일식 체인. 모둠초밥과 일식 정식이 있고 자리가 넓어 8명이 함께 앉기 좋아요.</p></div>
@@ -402,7 +482,11 @@ li.opt-row .tm2{color:var(--pink)}
       <label><input type="checkbox" id="p1"><span class="box"></span><span class="txt">여권 8명 · 비짓재팬웹</span></label>
       <label><input type="checkbox" id="p2"><span class="box"></span><span class="txt">교통카드 충전 · 택시 앱(GO, Uber)</span></label>
       <label><input type="checkbox" id="p3"><span class="box"></span><span class="txt">밴 업체: 17일 픽업 장소(덴포잔 또는 난바) 확정</span></label>
-      <label><input type="checkbox" id="p4"><span class="box"></span><span class="txt">예약: 오아가리 · 아지쿠라야 · 하리쥬</span></label>
+      <label><input type="checkbox" id="p4"><span class="box"></span><span class="txt">2일차 점심 오아가리 아라시야마 · 8명·유모차 예약</span></label>
+      <label><input type="checkbox" id="p7"><span class="box"></span><span class="txt">2일차 저녁 아지쿠라야 · 귀환 시간에 맞춰 8명 예약</span></label>
+      <label><input type="checkbox" id="p8"><span class="box"></span><span class="txt">3일차 하리쥬 일본요리 · 8명 좌석·아기 의자 문의</span></label>
+      <label><input type="checkbox" id="p9"><span class="box"></span><span class="txt">4일차 덴포잔 선택 시 가이유칸 날짜·시간 지정권 구매</span></label>
+      <label><input type="checkbox" id="p10"><span class="box"></span><span class="txt">오사카성 천수각 온라인 티켓 구매 여부 결정 (현장 구매 가능)</span></label>
       <label><input type="checkbox" id="p5"><span class="box"></span><span class="txt">온천 갈 사람 정하기 · 아기 입욕 확인</span></label>
       <label><input type="checkbox" id="p6"><span class="box"></span><span class="txt">아침거리 · 햇반, 김, 누룽지 (고기·계란 X)</span></label>
     </div>
@@ -414,7 +498,7 @@ li.opt-row .tm2{color:var(--pink)}
     <div><b>전압</b>100V · 돼지코 챙기기</div>
     <div><b>귀국</b>고기 든 음식 반입 금지</div>
   </section>
-  <p class="hint">사진은 Wikimedia Commons의 자유 이용 사진이고, ‘예시 사진’은 그 가게 사진이 아니에요. 가게 사진은 ‘사진’ 버튼으로 구글에서 보세요. 지도 아래 번호 그림은 방문 순서예요. 실제 길은 ‘구글 지도로 동선 보기’를 눌러 확인하세요. ‘↗’ 버튼은 구글 검색으로 열려요. 시간과 요금은 예상이에요.</p>
+  <p class="hint">예약·예매는 링크에서 매장에 직접 확인해 주세요. 이 체크리스트는 이 기기의 브라우저에 저장되므로 가족끼리 체크 상태가 동기화되지는 않아요. 사진 중 ‘예시 사진’은 해당 가게 사진이 아니며, 시간·요금·재고는 방문 전 확인이 필요해요.</p>
 </div>
 
 <script>
@@ -426,8 +510,8 @@ li.opt-row .tm2{color:var(--pink)}
     m2:{pts:[["아라시야마",35.0125,135.6775,"down"],["니시키시장·가와라마치",35.0050,135.7650,"down"],["가모강",35.0095,135.7722,"up"]],
         far:"→ 오사카 아지쿠라야 19:00",
         g:["谷町六丁目駅","阪急嵐山駅","竹林の小径","渡月橋","京都嵐山温泉 風風の湯","錦市場","三条大橋","お好み焼き あじくらや 上本町"],note:"아라시야마에서 대나무숲·도게츠교·온천·점심 · 숙소에서 전철 약 1시간 20분"},
-    m3:{pts:[["숙소",34.6705,135.5170],["오사카성",34.6873,135.5262],["모토무라 우메다",34.7010,135.5000],["그랜드 그린",34.7055,135.4945],["하리쥬·도톤보리",34.6688,135.5020]],
-        g:["大阪市中央区谷町7丁目6-33","大阪城天守閣","東梅田駅","グラングリーン大阪","はり重 道頓堀本店"],note:"지하철 위주 · 각 구간 10~20분"},
+    m3:{pts:[["숙소",34.6705,135.5170],["오사카성",34.6873,135.5262],["우메다 점심",34.7010,135.5000],["나카자키초",34.7074,135.5060],["그랜드 그린",34.7055,135.4945],["도톤보리",34.6688,135.5020]],
+        g:["大阪市中央区谷町7丁目6-33","大阪城天守閣","牛かつもと村 梅田","中崎町","グラングリーン大阪","はり重 道頓堀本店"],note:"오사카성 → 우메다·나카자키초·그랜드그린 → 도톤보리"},
     m4a:{pts:[["숙소",34.6705,135.5170],["가이유칸",34.6545,135.4289],["대관람차",34.6575,135.4325]],
         far:"→ 간사이공항 14:30",
         g:["大阪市中央区谷町7丁目6-33","海遊館","天保山大観覧車","関西国際空港 第1ターミナル"],note:"숙소 → 덴포잔 약 25~35분"},
@@ -510,6 +594,7 @@ li.opt-row .tm2{color:var(--pink)}
   });
 })();
 </script>
+<script src="family-restaurants.js" defer></script>
 
 </body>
 </html>
