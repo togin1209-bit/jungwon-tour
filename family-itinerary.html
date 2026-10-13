@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>오사카·교토 가족 패키지</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;700;800&display=swap">
+<style>
+/* 레이아웃: 여행 앱 상품 화면 느낌. 간단한 머리말 → 항공 → 4일 요약 → 날짜 칩으로 하루씩(동선 지도 + 시간표 + 메뉴·관광지 설명) → 준비 */
+:root{
+  --bg:#f6f7fb; --card:#ffffff; --ink:#111827; --sub:#5f6779; --line:#e7e9f0;
+  --blue:#2b59ff; --blue-soft:#eaf0ff; --on-blue:#ffffff;
+  --orange:#ff6b2c; --orange-soft:#fff0e8;
+  --mint:#00a87e; --mint-soft:#e3f7f1;
+  --pink:#ff3d7f; --pink-soft:#ffe9f1;
+  --map-bg:#f1f4fb; --map-grid:#e1e6f2;
+  --kr:"Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --num:"Outfit","Noto Sans KR",system-ui,sans-serif;
+  --shadow:0 6px 20px rgba(17,24,39,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1017; --card:#171b25; --ink:#f1f3f8; --sub:#a4abbb; --line:#272d3a;
+  --blue:#6f8bff; --blue-soft:#1b2447; --on-blue:#0b1020;
+  --orange:#ff8a57; --orange-soft:#3a2216; --mint:#3fd3a6; --mint-soft:#123329;
+  --pink:#ff6b9c; --pink-soft:#3a1626; --map-bg:#131826; --map-grid:#20283a; --shadow:none; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1017; --card:#171b25; --ink:#f1f3f8; --sub:#a4abbb; --line:#272d3a;
+  --blue:#6f8bff; --blue-soft:#1b2447; --on-blue:#0b1020;
+  --orange:#ff8a57; --orange-soft:#3a2216; --mint:#3fd3a6; --mint-soft:#123329;
+  --pink:#ff6b9c; --pink-soft:#3a1626; --map-bg:#131826; --map-grid:#20283a; --shadow:none; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--kr);font-size:16px;line-height:1.6;word-break:keep-all}
+.wrap{max-width:640px;margin:0 auto;padding-inline:16px;padding-block:22px 64px;display:flex;flex-direction:column;gap:22px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* 머리말 */
+header{display:flex;flex-direction:column;gap:4px}
+.pill{align-self:flex-start;font-size:12.5px;font-weight:800;background:var(--orange);color:#fff;border-radius:999px;padding:3px 11px}
+h1{font-size:26px;line-height:1.3;font-weight:900;margin:6px 0 0;letter-spacing:-.02em}
+.meta{font-size:14px;color:var(--sub);margin:0}
+
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+h2{font-size:20px;font-weight:900;margin:0}
+.sh small{font-size:13px;color:var(--sub)}
+
+/* 항공 */
+.flights{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:10px}
+.fl{background:var(--card);border-radius:18px;padding:16px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.fl-top{display:flex;justify-content:space-between;font-size:13px;color:var(--sub)}
+.fl-top b{color:var(--blue);font-family:var(--num)}
+.fl-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
+.fl-row .pt:last-child{text-align:right}
+.code{font-family:var(--num);font-size:26px;font-weight:800;line-height:1}
+.tm{font-family:var(--num);font-size:15px;font-weight:700;margin-top:4px}
+.ap{font-size:12.5px;color:var(--sub)}
+.plane{font-size:12px;color:var(--sub);text-align:center}
+.plane i{display:block;width:56px;height:2px;background:repeating-linear-gradient(90deg,var(--blue) 0 6px,transparent 6px 10px);margin:4px auto}
+.fl .note{font-size:13px;background:var(--blue-soft);border-radius:10px;padding:8px 10px}
+.fl .note b{color:var(--blue)}
+
+/* 요약 */
+.overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.ov{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow);text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:3px;min-width:0}
+.ov .n{font-family:var(--num);font-size:13px;font-weight:800}
+.ov .t{font-size:16px;font-weight:900;line-height:1.3}
+.ov .s{font-size:13px;color:var(--sub);line-height:1.45}
+.ov.c1 .n{color:var(--blue)} .ov.c2 .n{color:var(--mint)} .ov.c3 .n{color:var(--orange)} .ov.c4 .n{color:var(--pink)}
+
+/* 날짜 칩 */
+.chips{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);margin-inline:-16px;padding:10px 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer;display:flex;gap:6px;align-items:baseline}
+.chip small{font-family:var(--num);font-weight:500;color:var(--sub);font-size:12px}
+.chip[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip[aria-selected="true"] small{color:var(--bg);opacity:.75}
+
+/* 하루 */
+.day{display:flex;flex-direction:column;gap:12px}
+.day-head{display:flex;flex-direction:column;gap:2px}
+.day-head .k{font-family:var(--num);font-size:13px;font-weight:800;color:var(--blue)}
+.day-head h3{font-size:22px;font-weight:900;margin:0}
+.day-head .r{font-size:14px;color:var(--sub)}
+
+/* 지도 */
+.map{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.map svg{display:block;width:100%;height:auto;background:var(--map-bg)}
+.map .gl{stroke:var(--map-grid);stroke-width:1}
+.map .rt{fill:none;stroke:var(--blue);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2 7}
+.map .dot{fill:var(--blue);stroke:var(--card);stroke-width:2.5}
+.map .dot.end{fill:var(--orange)}
+.map .num{fill:var(--on-blue);font-family:var(--num);font-size:11px;font-weight:800}
+.map .lb{fill:var(--ink);font-size:11.5px;font-weight:700;paint-order:stroke;stroke:var(--map-bg);stroke-width:4px;stroke-linejoin:round}
+.map .far{fill:var(--sub);font-size:11px;font-weight:600}
+.map-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px}
+.map-foot span{font-size:12.5px;color:var(--sub)}
+.gmap{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:800;color:#fff;background:var(--blue);border-radius:999px;padding:7px 14px;text-decoration:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .gmap{color:var(--on-blue)}}
+:root[data-theme="dark"] .gmap{color:var(--on-blue)}
+
+/* 시간표 */
+.tl{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:6px 0;list-style:none;margin:0}
+.tl>li{display:grid;grid-template-columns:58px 1fr;gap:12px;padding:14px 18px}
+.tl>li+li{border-top:1px solid var(--line)}
+.tm2{font-family:var(--num);font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;padding-top:1px}
+.w{min-width:0;display:flex;flex-direction:column;gap:6px}
+.ttl{font-size:16px;font-weight:700;line-height:1.45}
+.ds{font-size:14px;color:var(--sub);line-height:1.55}
+.tag{display:inline-block;font-size:11.5px;font-weight:800;border-radius:6px;padding:2px 7px;margin-right:6px;vertical-align:2px}
+.t-move{color:var(--sub);background:var(--bg)}
+.t-see{color:var(--mint);background:var(--mint-soft)}
+.t-eat{color:var(--orange);background:var(--orange-soft)}
+.t-fly{color:var(--blue);background:var(--blue-soft)}
+.t-opt{color:#fff;background:var(--pink)}
+li.hot .tm2{color:var(--blue)}
+li.opt-row{background:var(--pink-soft)}
+li.opt-row .tm2{color:var(--pink)}
+
+/* 메뉴·관광지 설명 */
+.info{display:flex;flex-direction:column;gap:6px}
+.it{background:var(--bg);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}
+.it .nm{font-size:14.5px;font-weight:800;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.it .nm em{font-style:normal;font-family:var(--num);font-size:13px;font-weight:700;color:var(--orange)}
+.it .nm .jp{font-size:12px;font-weight:500;color:var(--sub)}
+.it p{margin:0;font-size:13.5px;color:var(--sub);line-height:1.6}
+.it.food .nm{color:var(--ink)}
+.it.food{border-left:3px solid var(--orange)}
+.it.place{border-left:3px solid var(--mint)}
+.links{display:flex;flex-wrap:wrap;gap:6px}
+.go{display:inline-flex;align-items:center;gap:3px;font-size:12.5px;font-weight:700;text-decoration:none;color:var(--blue);background:var(--blue-soft);border-radius:999px;padding:5px 11px;min-height:28px}
+.go span{font-size:11px}
+.go:hover{background:var(--blue);color:var(--on-blue)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px}
+.grid3 div{border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-size:13.5px;line-height:1.5}
+.grid3 b{display:block;font-size:13px;color:var(--pink)}
+.fee{font-family:var(--num);font-weight:700}
+
+/* 4일차 옵션 */
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;gap:4px}
+.seg button{border:0;background:none;border-radius:12px;padding:10px 8px;font-size:14.5px;font-weight:800;cursor:pointer;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:1px}
+.seg button small{font-size:12px;font-weight:500}
+.seg #optA[aria-selected="true"]{background:var(--pink);color:#fff}
+.seg #optB[aria-selected="true"]{background:var(--orange);color:#fff}
+.plan{display:flex;flex-direction:column;gap:12px}
+
+/* 준비 */
+.checks{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:4px 0;margin-top:10px}
+.checks label{display:flex;gap:12px;align-items:flex-start;padding:12px 18px;cursor:pointer;font-size:15px}
+.checks label+label{border-top:1px solid var(--line)}
+.checks input{position:absolute;opacity:0;pointer-events:none}
+.box{flex:none;width:22px;height:22px;border-radius:7px;border:2px solid var(--line);display:grid;place-items:center;margin-top:1px}
+.checks input:checked+.box{background:var(--mint);border-color:var(--mint)}
+.checks input:checked+.box::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.checks input:checked~.txt{color:var(--sub);text-decoration:line-through}
+.checks input:focus-visible+.box{outline:2px solid var(--blue);outline-offset:2px}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.tips div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;font-size:13.5px;line-height:1.5}
+.tips b{display:block;font-size:14px;margin-bottom:2px}
+.hint{font-size:12.5px;color:var(--sub);margin:0}
+.ph{margin:-2px 0 4px;display:flex;flex-direction:column;gap:3px}
+.ph img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:var(--line);display:block}
+.ph figcaption{font-size:11px;line-height:1.4;text-align:right}
+.ph figcaption a{color:var(--sub);text-decoration:none}
+.ph figcaption a:hover{text-decoration:underline}
+.map iframe{display:block;width:100%;height:240px;border:0;background:var(--map-bg)}
+
+/* 맛집 리스트 */
+.food-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.food-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px}
+.food-card h3{margin:0;font-size:16px;line-height:1.4}
+.food-card .jp{font-size:12px;font-weight:500;color:var(--sub)}
+.food-card p{margin:0;color:var(--sub);font-size:13px;line-height:1.55}
+.food-card .links{margin-top:auto;padding-top:4px}
+.food-group{margin-top:16px}
+.food-group h3{font-size:15px;margin:0 0 8px}
+.food-badge{display:inline-block;background:var(--orange-soft);color:var(--orange);font-size:11px;font-weight:800;border-radius:999px;padding:3px 8px;margin-right:5px}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+  <header>
+    <span class="pill" id="dday">출발 D-1</span>
+    <h1>우리 가족 오사카·교토</h1>
+    <p class="meta">10.14(수) – 10.17(토) · 3박 4일 · 어른 6 · 시은 · 윤우</p>
+    <p class="meta">숙소 · 다니마치 7초메 에어비앤비 (다니마치6초메역)</p>
+  </header>
+
+  <section aria-label="항공편">
+    <div class="sh"><h2>항공편</h2><small>대한항공</small></div>
+    <div class="flights">
+      <div class="fl">
+        <div class="fl-top"><span>가는 날 · 10/14(수)</span><b>KE2119</b></div>
+        <div class="fl-row">
+          <div class="pt"><div class="code">GMP</div><div class="tm">16:30</div><div class="ap">김포 국제선</div></div>
+          <div class="plane"><i></i>1h 55m</div>
+          <div class="pt"><div class="code">KIX</div><div class="tm">18:25</div><div class="ap">간사이 T1</div></div>
+        </div>
+        <div class="note"><b>14:00</b> 김포 국제선 2층 대한항공 카운터 앞 · 탑승구 3층 34~39번</div>
+      </div>
+      <div class="fl">
+        <div class="fl-top"><span>오는 날 · 10/17(토)</span><b>KE726</b></div>
+        <div class="fl-row">
+          <div class="pt"><div class="code">KIX</div><div class="tm">18:15</div><div class="ap">간사이 T1</div></div>
+          <div class="plane"><i></i>1h 50m</div>
+          <div class="pt"><div class="code">ICN</div><div class="tm">20:05</div><div class="ap">인천 T2</div></div>
+        </div>
+        <div class="note">올 때는 <b>인천 2터미널</b>이에요.</div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="4일 한눈에">
+    <div class="sh"><h2>4일 한눈에</h2><small>누르면 그날로 이동</small></div>
+    <div class="overview">
+      <button type="button" class="ov c1" data-go="1"><span class="n">DAY 1 · 10/14</span><span class="t">오사카 도착</span><span class="s">체크인 · 초밥·도시락 야식</span></button>
+      <button type="button" class="ov c2" data-go="2"><span class="n">DAY 2 · 10/15</span><span class="t">교토</span><span class="s">아라시야마 · 온천(선택) · 가와라마치</span></button>
+      <button type="button" class="ov c3" data-go="3"><span class="n">DAY 3 · 10/16</span><span class="t">오사카 시내</span><span class="s">오사카성 · 규카츠 · 도톤보리 스키야키</span></button>
+      <button type="button" class="ov c4" data-go="4"><span class="n">DAY 4 · 10/17</span><span class="t">덴포잔 or 난바</span><span class="s">골라서 놀고 귀국</span></button>
+    </div>
+  </section>
+
+
+  <section aria-label="맛집 리스트">
+    <div class="sh"><h2>맛집 리스트</h2><small>또간집 + 이번 일정 식당</small></div>
+    <div class="food-group">
+      <h3><span class="food-badge">풍자 또간집 EP.77</span>오사카</h3>
+      <div class="food-list">
+        <article class="food-card"><h3>이제이보쿠조 <span class="jp">EJ牧場</span></h3><p>방송 소개 식당 · 함박스테이크·돈카츠로 알려진 곳. 이즈미오쓰에 있어 오사카 시내 일정과는 거리가 있어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=EJ%E7%89%A7%E5%A0%B4+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+        <article class="food-card"><h3>퐁퐁야 <span class="jp">ぽんぽん屋</span></h3><p>방송 소개 간식집 · 호두모치(쿠루미모치)로 소개됐어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%BD%E3%82%93%E3%81%BD%E3%82%93%E5%B1%8B+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+        <article class="food-card"><h3>아지쿠라야 <span class="jp">味くらや</span></h3><p>EP.77 또갈집 선정 · 오코노미야키·야키소바. 일정 2일차 저녁 후보에 이미 포함돼 있어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%91%B3%E3%81%8F%E3%82%89%E3%82%84+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+        <article class="food-card"><h3>카페 포켓 <span class="jp">カフェポケット</span></h3><p>방송 소개 카페 · 달걀 샌드위치가 대표 메뉴로 알려져 있어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%AB%E3%83%95%E3%82%A7%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88+Osaka" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+      </div>
+    </div>
+    <div class="food-group">
+      <h3><span class="food-badge">풍자 또간집 EP.78</span>교토</h3>
+      <div class="food-list">
+        <article class="food-card"><h3>멘야 유코 <span class="jp">麺屋 優光</span></h3><p>EP.78 또갈집 선정 · 조개 육수 라멘. 가라스마오이케역 근처예요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%BA%BA%E5%B1%8B+%E5%84%AA%E5%85%89+Kyoto" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+        <article class="food-card"><h3>오아가리 기온점 <span class="jp">肉の隠れ家 おあがり 祇園店</span></h3><p>와규 덮밥집. 일정에 적힌 아라시야마점과는 다른 지점이에요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%82%89%E3%81%AE%E9%9A%A0%E3%82%8C%E5%AE%B6+%E3%81%8A%E3%81%82%E3%81%8C%E3%82%8A+Gion+Kyoto" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+        <article class="food-card"><h3>사오리 <span class="jp">和栗専門 紗織</span></h3><p>일본 밤 몽블랑 전문점. 웨이팅·정리권 운영 여부는 방문 전에 확인해 주세요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%92%8C%E6%A0%97%E5%B0%82%E9%96%80+%E7%B4%97%E7%B9%94+Kyoto" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+        <article class="food-card"><h3>하이라이트 햐쿠만벤점 <span class="jp">ハイライト 百万遍店</span></h3><p>교토대 인근 경양식집 · 치킨카츠 정식으로 소개됐어요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88+%E7%99%BE%E4%B8%87%E9%81%8D%E5%BA%97+Kyoto" target="_blank" rel="noopener">지도 검색 ↗</a></div></article>
+      </div>
+    </div>
+    <div class="food-group">
+      <h3><span class="food-badge">이번 일정</span>날짜별 식당</h3>
+      <div class="food-list">
+        <article class="food-card"><h3>1일차 · 숙소 근처 야식</h3><p>라이프 가라호리점에서 초밥·도시락 포장. 선택 식당은 후사야 본점(돈돈야키).</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%A9%E3%82%A4%E3%83%95+%E7%A9%BA%E5%A0%80%E5%BA%97" target="_blank" rel="noopener">라이프 지도 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%86%A8%E7%B4%97%E5%AE%B6+%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">후사야 지도 ↗</a></div></article>
+        <article class="food-card"><h3>2일차 · 아라시야마·가와라마치</h3><p>점심 오아가리 아라시야마점 · 저녁 아지쿠라야. 오아가리 기온점과 다른 지점이에요.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%82%89%E3%81%AE%E9%9A%A0%E3%82%8C%E5%AE%B6+%E3%81%8A%E3%81%82%E3%81%8C%E3%82%8A+Arashiyama" target="_blank" rel="noopener">오아가리 아라시야마 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%91%B3%E3%81%8F%E3%82%89%E3%82%84+Kyoto" target="_blank" rel="noopener">아지쿠라야 ↗</a></div></article>
+        <article class="food-card"><h3>3일차 · 오사카성·나카자키초·도톤보리</h3><p>점심 규카츠 모토무라 우메다점(대안: 유카리 소네자키점) · 저녁 하리쥬 도톤보리점.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%89%9B%E3%82%AB%E3%83%84%E3%82%82%E3%81%A8%E6%9D%91+Umeda" target="_blank" rel="noopener">모토무라 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%86%E3%81%8B%E3%82%8A+%E6%9B%BD%E6%A0%B9%E5%B4%8E" target="_blank" rel="noopener">유카리 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%AF%E3%82%8A%E9%87%8D+%E9%81%93%E9%A0%93%E5%A0%80" target="_blank" rel="noopener">하리쥬 ↗</a></div></article>
+        <article class="food-card"><h3>4일차 · 선택 코스</h3><p>덴포잔: 간코 덴포잔점·쿠라긴 스시점. 난바: 난바시티·난바파크스 식당가에서 정식 선택.</p><div class="links"><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8C%E3%82%93%E3%81%93+%E5%A4%A9%E4%BF%9D%E5%B1%B1" target="_blank" rel="noopener">간코 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A9%E4%BF%9D%E5%B1%B1+%E5%AF%BF%E5%8F%B8+%E3%81%8F%E3%82%89%E9%8A%80" target="_blank" rel="noopener">쿠라긴 ↗</a><a class="go" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%AA%E3%82%93%E3%81%B0CITY+%E5%AE%9A%E9%A3%9F" target="_blank" rel="noopener">난바 정식 ↗</a></div></article>
+      </div>
+    </div>
+    <p class="hint" style="margin-top:10px">또간집 출연 식당은 방송·정리 자료 기준으로 모았어요. 지점, 영업시간, 휴무와 대기 방법은 바뀔 수 있으니 지도에서 최신 정보를 확인해 주세요.</p>
+  </section>
+
+  <section aria-label="일정">
+    <div class="chips" role="tablist" aria-label="날짜 선택">
+      <button type="button" class="chip" role="tab" id="c1" aria-controls="day1" aria-selected="true">1일차 <small>10.14</small></button>
+      <button type="button" class="chip" role="tab" id="c2" aria-controls="day2" aria-selected="false">2일차 <small>10.15</small></button>
+      <button type="button" class="chip" role="tab" id="c3" aria-controls="day3" aria-selected="false">3일차 <small>10.16</small></button>
+      <button type="button" class="chip" role="tab" id="c4" aria-controls="day4" aria-selected="false">4일차 <small>10.17</small></button>
+    </div>
+
+    <!-- 1일차 -->
+    <div class="day" id="day1" role="tabpanel" aria-labelledby="c1">
+      <div class="day-head"><span class="k">DAY 1 · 10월 14일 수요일</span><h3>반가워, 오사카</h3><span class="r">김포 → 간사이공항 → 숙소</span></div>
+      <div class="map" data-map="m1"><iframe src="https://maps.google.com/maps?saddr=%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%20%E7%AC%AC1%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&daddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%B0%B7%E7%94%BA7%E4%B8%81%E7%9B%AE6-33&output=embed" loading="lazy" title="동선 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <ol class="tl">
+        <li class="hot"><span class="tm2">16:30</span><div class="w"><span class="ttl"><span class="tag t-fly">항공</span>김포 출발 · 저녁은 기내식</span></div></li>
+        <li><span class="tm2">19:35</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>공항 밴 타고 숙소로</span><span class="ds">카시트·유모차 적재 확인 · 약 1시간</span></div></li>
+        <li><span class="tm2">20:30</span><div class="w"><span class="ttl"><span class="tag t-move">숙소</span>체크인하고 쉬기</span><span class="ds">셀프 체크인 방법은 에어비앤비 메시지</span></div></li>
+        <li><span class="tm2">21:00</span><div class="w"><span class="ttl"><span class="tag t-eat">야식</span>초밥·도시락 포장</span>
+          <div class="info">
+            <div class="it food"><figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Syshi_platter_to_go_at_Japanese_super_market.jpg" alt="초밥·도시락" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Syshi_platter_to_go_at_Japanese_super_market.jpg" target="_blank" rel="noopener">초밥·도시락 예시 사진 (이 가게 사진 아님) · 사진 OJ-JP / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">초밥 · 도시락 <span class="jp">라이프 가라호리점 ライフ 空堀店</span></span><p>밤 12시까지 여는 동네 슈퍼. 모둠초밥, 가라아게 도시락, 반찬, 과일, 맥주까지 한 번에 살 수 있어요. 저녁 늦게는 할인 스티커가 붙는 경우가 많아요. 다음 날 아침거리도 같이 사요.</p></div>
+            <div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Okonomiyaki_in_Osaka.JPG/960px-Okonomiyaki_in_Osaka.JPG" alt="돈돈야키" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Okonomiyaki_in_Osaka.JPG" target="_blank" rel="noopener">돈돈야키 예시 사진 (이 가게 사진 아님) · 사진 Zheng Zhou / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">돈돈야키 <em>1,210엔</em> <span class="jp">후사야 본점 冨紗家 本店</span></span><p>오코노미야키가 당기면. 밀가루 대신 마즙 반죽에 양배추와 돼지고기를 겹치고 계란으로 감싼 이 집 간판 메뉴예요. 숙소에서 걸어서 5분, 수요일 17:00~24:00.</p></div>
+          </div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%83%A9%E3%82%A4%E3%83%95%20%E7%A9%BA%E5%A0%80%E5%BA%97" target="_blank" rel="noopener">라이프 가라호리점<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E2%97%8B%E2%96%B3%E2%96%A1%E7%84%BC%20%E5%86%A8%E7%B4%97%E5%AE%B6%20%E6%9C%AC%E5%BA%97%20%E8%B0%B7%E7%94%BA" target="_blank" rel="noopener">후사야<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E5%86%A8%E7%B4%97%E5%AE%B6%20%E3%83%88%E3%83%B3%E3%83%88%E3%83%B3%E7%84%BC&amp;tbm=isch" target="_blank" rel="noopener">돈돈야키 사진<span aria-hidden="true">↗</span></a></div></div></li>
+      </ol>
+    </div>
+
+    <!-- 2일차 -->
+    <div class="day" id="day2" role="tabpanel" aria-labelledby="c2" hidden>
+      <div class="day-head"><span class="k">DAY 2 · 10월 15일 목요일</span><h3>교토에서 하루</h3><span class="r">아라시야마 → 온천(선택) → 가와라마치 → 아지쿠라야</span></div>
+      <div class="map" data-map="m2"><iframe src="https://maps.google.com/maps?saddr=%E9%98%AA%E6%80%A5%E5%B5%90%E5%B1%B1%E9%A7%85&daddr=%E6%B8%A1%E6%9C%88%E6%A9%8B+to:%E9%8C%A6%E5%B8%82%E5%A0%B4+to:%E4%B8%89%E6%9D%A1%E5%A4%A7%E6%A9%8B%20%E4%BA%AC%E9%83%BD&output=embed" loading="lazy" title="동선 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <ol class="tl">
+        <li><span class="tm2">09:00</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>숙소에서 아침 먹고 출발</span><span class="ds">다니마치선 히가시우메다 → 한큐 교토선 → 가쓰라 환승 → 아라시야마 · 약 1시간 20분</span></div></li>
+        <li><span class="tm2">10:20</span><div class="w"><span class="ttl"><span class="tag t-see">관광</span>대나무숲 · 노노미야신사 · 도게츠교</span>
+          <div class="info">
+            <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg/960px-Bamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg" alt="대나무숲" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Bamboo_Forest,_Arashiyama,_Kyoto,_Japan.jpg" target="_blank" rel="noopener">사진 Basile Morin / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">대나무숲 <span class="jp">竹林の小径</span></span><p>하늘까지 뻗은 대나무가 양옆으로 빽빽한 산책로. 바람이 불면 잎 소리가 들려요. 붐비면 짧은 구간만 걸어도 충분해요.</p></div>
+            <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Nonomiya-jinja_%28Uky%C5%8D-ku_Kyoto%29_Shrine_hdsr_S5_02.jpg/960px-Nonomiya-jinja_%28Uky%C5%8D-ku_Kyoto%29_Shrine_hdsr_S5_02.jpg" alt="노노미야신사" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Nonomiya-jinja_(Uky%C5%8D-ku_Kyoto)_Shrine_hdsr_S5_02.jpg" target="_blank" rel="noopener">사진 Hyppolyte de Saint-Rambert / CC BY 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">노노미야신사 <span class="jp">野宮神社</span></span><p>대나무숲 입구의 작은 신사. 껍질을 벗기지 않은 나무로 만든 검은 도리이가 특징이고, 인연을 빌러 많이 찾아요.</p></div>
+            <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Togetsu-ky%C5%8D_bridge_at_golden_hour%2C_Kyoto%2C_Japan.jpg/960px-Togetsu-ky%C5%8D_bridge_at_golden_hour%2C_Kyoto%2C_Japan.jpg" alt="도게츠교" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Togetsu-ky%C5%8D_bridge_at_golden_hour,_Kyoto,_Japan.jpg" target="_blank" rel="noopener">사진 Basile Morin / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">도게츠교 <span class="jp">渡月橋</span></span><p>‘달이 건너는 다리’라는 이름의 목조 다리. 가쓰라강과 산이 함께 보이는 아라시야마의 대표 풍경이에요.</p></div>
+          </div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E5%B5%90%E5%B1%B1%20%E7%AB%B9%E6%9E%97%E3%81%AE%E5%B0%8F%E5%BE%84" target="_blank" rel="noopener">대나무숲<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E9%87%8E%E5%AE%AE%E7%A5%9E%E7%A4%BE%20%E5%B5%90%E5%B1%B1" target="_blank" rel="noopener">노노미야신사<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E6%B8%A1%E6%9C%88%E6%A9%8B%20%E5%B5%90%E5%B1%B1" target="_blank" rel="noopener">도게츠교<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%25%20ARABICA%20Kyoto%20Arashiyama" target="_blank" rel="noopener">% 아라비카 카페<span aria-hidden="true">↗</span></a></div></div></li>
+        <li class="opt-row"><span class="tm2">12:00</span><div class="w"><span class="ttl"><span class="tag t-opt">선택관광</span>후후노유 온천</span>
+          <div class="info">
+            <div class="it place"><figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Arashiyama_Onsen_01.jpg" alt="후후노유" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Arashiyama_Onsen_01.jpg" target="_blank" rel="noopener">아라시야마 온천 참고 사진 · 사진 いぬっころ / CC BY-SA 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">후후노유 <em>어른 1,200엔</em> <span class="jp">風風の湯</span></span><p>아라시야마 온천수를 쓰는 당일 온천. 노천탕이 있고 한큐 아라시야마역에서 걸어서 1분. 3세~초등 600엔, 2세 이하 300엔, 수건 대여 250엔, 12:00~22:00.</p></div>
+            <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Tenryu-ji%2C_Sogenchi_Teien_%28Garden%29_-1_%28November_2008%29_-_panoramio.jpg/960px-Tenryu-ji%2C_Sogenchi_Teien_%28Garden%29_-1_%28November_2008%29_-_panoramio.jpg" alt="안 가는 사람 · 텐류지" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tenryu-ji,_Sogenchi_Teien_(Garden)_-1_(November_2008)_-_panoramio.jpg" target="_blank" rel="noopener">사진 ttshr1970 / CC BY 3.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">안 가는 사람 · 텐류지 <span class="jp">天龍寺</span></span><p>1339년에 세워진 선종 사찰로 세계문화유산. 산을 배경으로 한 연못 정원이 유명해요.</p></div>
+          </div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E4%BA%AC%E9%83%BD%E5%B5%90%E5%B1%B1%E6%B8%A9%E6%B3%89%20%E6%B9%AF%E6%B5%B4%E3%81%BF%E5%87%A6%20%E9%A2%A8%E9%A2%A8%E3%81%AE%E6%B9%AF" target="_blank" rel="noopener">후후노유<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E5%A4%A9%E9%BE%8D%E5%AF%BA%20%E5%B5%90%E5%B1%B1" target="_blank" rel="noopener">텐류지<span aria-hidden="true">↗</span></a></div></div></li>
+        <li><span class="tm2">13:30</span><div class="w"><span class="ttl"><span class="tag t-eat">점심</span>오아가리 아라시야마 본점</span>
+          <div class="info"><div class="it food"><figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Roast_Beef_Bowl_in_Red_Rock%2C_Kyoto.jpg/800px-Roast_Beef_Bowl_in_Red_Rock%2C_Kyoto.jpg" alt="와규화산 덮밥" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Roast_Beef_Bowl_in_Red_Rock,_Kyoto.jpg" target="_blank" rel="noopener">와규 덮밥 예시 사진 (이 가게·메뉴 사진 아님) · 사진 Choi2451 / CC BY-SA 3.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">와규화산 덮밥 <em>1,800엔(세전)</em> <span class="jp">和牛火山</span></span><p>흑모와규 꽃등심을 손님 눈앞에서 1,000℃ 넘는 불꽃으로 구워 밥에 올려요. 반쯤 먹으면 육수를 부어 오차즈케처럼 먹고, 성게·연어알 추가도 돼요. 계단만 있는 가게, 아기의자 2개.</p></div></div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%8A%E3%81%82%E3%81%8C%E3%82%8A%20%E5%B5%90%E5%B1%B1%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">오아가리<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%8A%E3%81%82%E3%81%8C%E3%82%8A%20%E5%92%8C%E7%89%9B%E7%81%AB%E5%B1%B1&amp;tbm=isch" target="_blank" rel="noopener">와규화산 사진<span aria-hidden="true">↗</span></a></div></div></li>
+        <li class="hot"><span class="tm2">14:30</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>가와라마치로</span><span class="ds">택시 2대 약 30분 (2대 약 1만 엔) 또는 한큐선 약 30분</span></div></li>
+        <li><span class="tm2">15:00</span><div class="w"><span class="ttl"><span class="tag t-see">관광</span>니시키시장 · 가와라마치 · 가모강</span>
+          <div class="info">
+            <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg/960px-A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg" alt="니시키시장" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market,_Kyoto,_Japan.jpg" target="_blank" rel="noopener">사진 Joli Rumi / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">니시키시장 <span class="jp">錦市場</span></span><p>400년 넘게 이어진 ‘교토의 부엌’. 폭 좁은 아케이드에 절임 반찬, 두부, 꼬치, 디저트 가게가 줄지어 있어 걸으며 맛보기 좋아요. 오후 5~6시면 닫는 가게가 많아요.</p></div>
+            <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Shijo_Kawaramachi-2.jpg/960px-Shijo_Kawaramachi-2.jpg" alt="가와라마치" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Shijo_Kawaramachi-2.jpg" target="_blank" rel="noopener">사진 江戸村のとくぞう / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">가와라마치 <span class="jp">河原町</span></span><p>백화점과 상점가가 모인 교토 최대 번화가. 기념품 쇼핑은 여기서.</p></div>
+            <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Kamo_River_%40_Kyoto.jpg/960px-Kamo_River_%40_Kyoto.jpg" alt="가모강" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Kamo_River_@_Kyoto.jpg" target="_blank" rel="noopener">사진 Guilhem Vellut / CC BY 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">가모강 <span class="jp">鴨川</span></span><p>교토 시내를 가로지르는 강. 평평한 강변 산책로에 앉아 쉬어 가요. 해 질 무렵이 가장 예뻐요.</p></div>
+          </div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E9%8C%A6%E5%B8%82%E5%A0%B4%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener">니시키시장<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E9%B4%A8%E5%B7%9D%20%E4%B8%89%E6%9D%A1%E5%A4%A7%E6%A9%8B%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener">가모강<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9%20%E4%BA%AC%E9%83%BD%E4%B8%89%E6%9D%A1%E5%A4%A7%E6%A9%8B%E5%BA%97" target="_blank" rel="noopener">스타벅스 산조오하시<span aria-hidden="true">↗</span></a></div></div></li>
+        <li class="hot"><span class="tm2">19:00</span><div class="w"><span class="ttl"><span class="tag t-eat">저녁</span>아지쿠라야</span>
+          <div class="info"><div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Okonomiyaki_-a_Japanese_savory_pancake_in_Osaka%2C_Japan.jpg/960px-Okonomiyaki_-a_Japanese_savory_pancake_in_Osaka%2C_Japan.jpg" alt="오사카야키 믹스 · 야키소바" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Okonomiyaki_-a_Japanese_savory_pancake_in_Osaka,_Japan.jpg" target="_blank" rel="noopener">오코노미야키 예시 사진 (이 가게 사진 아님) · 사진 Joli Rumi / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">오사카야키 믹스 · 야키소바 <span class="jp">お好み焼き あじくらや</span></span><p>이 집에서 가장 인기 있는 오코노미야키와, 믹스·해물 소금 야키소바가 명물이에요. 철판에서 바로 구워 먹어요. 8인실 예약, 17:45 교토 출발.</p></div></div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC%E3%81%8D%20%E3%81%82%E3%81%98%E3%81%8F%E3%82%89%E3%82%84%20%E4%B8%8A%E6%9C%AC%E7%94%BA" target="_blank" rel="noopener">아지쿠라야<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%82%E3%81%98%E3%81%8F%E3%82%89%E3%82%84%20%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC%E3%81%8D&amp;tbm=isch" target="_blank" rel="noopener">메뉴 사진<span aria-hidden="true">↗</span></a></div></div></li>
+      </ol>
+    </div>
+
+    <!-- 3일차 -->
+    <div class="day" id="day3" role="tabpanel" aria-labelledby="c3" hidden>
+      <div class="day-head"><span class="k">DAY 3 · 10월 16일 금요일</span><h3>느긋한 오사카</h3><span class="r">오사카성 → 우메다 → 그랜드 그린 → 도톤보리</span></div>
+      <div class="map" data-map="m3"><iframe src="https://maps.google.com/maps?saddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%B0%B7%E7%94%BA7%E4%B8%81%E7%9B%AE6-33&daddr=%E5%A4%A7%E9%98%AA%E5%9F%8E%E5%A4%A9%E5%AE%88%E9%96%A3+to:%E6%9D%B1%E6%A2%85%E7%94%B0%E9%A7%85+to:%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E5%A4%A7%E9%98%AA+to:%E9%81%93%E9%A0%93%E5%A0%80&output=embed" loading="lazy" title="동선 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <ol class="tl">
+        <li><span class="tm2">09:00</span><div class="w"><span class="ttl"><span class="tag t-see">관광</span>숙소에서 아침 먹고 오사카성</span>
+          <div class="info"><div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Osaka_Castle%2C_Main_Tower_%282850633888%29.jpg/960px-Osaka_Castle%2C_Main_Tower_%282850633888%29.jpg" alt="오사카성 · 천수각" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Osaka_Castle,_Main_Tower_(2850633888).jpg" target="_blank" rel="noopener">사진 alisdair / CC BY 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">오사카성 · 천수각 <span class="jp">大阪城天守閣</span></span><p>도요토미 히데요시가 쌓은 성. 지금의 천수각은 1931년에 다시 지었고, 꼭대기 전망대에서 시내가 보여요. 해자와 돌담을 따라 넓은 공원을 산책해요. 다니마치선 2정거장.</p></div></div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E5%A4%A7%E9%98%AA%E5%9F%8E%E5%A4%A9%E5%AE%88%E9%96%A3" target="_blank" rel="noopener">오사카성<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=JO-TERRACE%20OSAKA" target="_blank" rel="noopener">조테라스 카페<span aria-hidden="true">↗</span></a></div></div></li>
+        <li class="hot"><span class="tm2">12:00</span><div class="w"><span class="ttl"><span class="tag t-eat">점심</span>규카츠 · 모토무라 우메다</span>
+          <div class="info"><div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Gyukatsu_%2846075415774%29.jpg/960px-Gyukatsu_%2846075415774%29.jpg" alt="규카츠 정식" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Gyukatsu_(46075415774).jpg" target="_blank" rel="noopener">규카츠 예시 사진 (모토무라 사진 아님) · 사진 Raita Futo / CC BY-SA 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">규카츠 정식 <span class="jp">牛かつもと村 牛カツ定食</span></span><p>소고기에 얇은 튀김옷을 입혀 겉만 바삭하게 튀긴 커틀릿. 속은 거의 생고기라 자리마다 놓인 작은 화로에 한 점씩 원하는 만큼 구워 먹어요. 보리밥 리필 무료, 참마 즙(도로로) 세트도 있어요. 카운터 위주라 8명은 나눠 앉아요.</p></div>
+            <div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Okonomiyaki_cooking_on_teppan_Osaka.jpg/960px-Okonomiyaki_cooking_on_teppan_Osaka.jpg" alt="유카리 소네자키 본점" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Okonomiyaki_cooking_on_teppan_Osaka.jpg" target="_blank" rel="noopener">오코노미야키 조리 예시 사진 (이 가게 사진 아님) · 사진 Lianguanlun / CC BY 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">줄이 길면 · 유카리 소네자키 본점 <span class="jp">お好焼 ゆかり</span></span><p>지름 30cm, 1kg짜리 대형 오코노미야키 ‘오사카성’ 4,650엔이 명물. 96석이라 단체도 편해요.</p></div></div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E7%89%9B%E3%81%8B%E3%81%A4%E3%82%82%E3%81%A8%E6%9D%91%20%E6%A2%85%E7%94%B0" target="_blank" rel="noopener">모토무라 우메다<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E7%89%9B%E3%81%8B%E3%81%A4%E3%82%82%E3%81%A8%E6%9D%91%20%E7%89%9B%E3%82%AB%E3%83%84%E5%AE%9A%E9%A3%9F&amp;tbm=isch" target="_blank" rel="noopener">규카츠 사진<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%8A%E5%A5%BD%E7%84%BC%20%E3%82%86%E3%81%8B%E3%82%8A%20%E6%9B%BD%E6%A0%B9%E5%B4%8E%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">유카리<span aria-hidden="true">↗</span></a></div></div></li>
+        <li><span class="tm2">13:30</span><div class="w"><span class="ttl"><span class="tag t-see">휴식</span>그랜드 그린 오사카</span>
+          <div class="info"><div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Grand_Green_Osaka_20250831.jpg/960px-Grand_Green_Osaka_20250831.jpg" alt="그랜드 그린 오사카" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Grand_Green_Osaka_20250831.jpg" target="_blank" rel="noopener">사진 掬茶 / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">그랜드 그린 오사카 <span class="jp">グラングリーン大阪</span></span><p>오사카역 바로 옆, 옛 화물역 자리에 새로 생긴 도심 공원(우메키타 공원). 넓은 잔디밭에서 아이들은 뛰어놀고 어른들은 주변 카페에서 쉬어요.</p></div></div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E5%A4%A7%E9%98%AA%20%E3%81%86%E3%82%81%E3%81%8D%E3%81%9F%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">그랜드 그린<span aria-hidden="true">↗</span></a></div></div></li>
+        <li class="hot"><span class="tm2">17:30</span><div class="w"><span class="ttl"><span class="tag t-eat">저녁</span>하리쥬 도톤보리 본점</span>
+          <div class="info"><div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Sukiyaki_01.jpg/960px-Sukiyaki_01.jpg" alt="흑모와규 스키야키" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Sukiyaki_01.jpg" target="_blank" rel="noopener">스키야키 예시 사진 (이 가게 사진 아님) · 사진 ajari / CC BY 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">흑모와규 스키야키 <em>1인 8,800엔~</em> <span class="jp">はり重 すき焼き</span></span><p>1919년부터 이어온 정육점 겸 노포. 국산 흑모와규를 달콤짭짤한 간장 육수에 익혀 날계란에 찍어 먹어요. 개별실이 많아 가족끼리 조용히 먹기 좋아요. 아이 메뉴는 없어요, 화요일 휴무.</p></div></div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%AF%E3%82%8A%E9%87%8D%20%E9%81%93%E9%A0%93%E5%A0%80%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">하리쥬<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%AF%E3%82%8A%E9%87%8D%20%E3%81%99%E3%81%8D%E7%84%BC%E3%81%8D&amp;tbm=isch" target="_blank" rel="noopener">스키야키 사진<span aria-hidden="true">↗</span></a></div></div></li>
+        <li><span class="tm2">19:00</span><div class="w"><span class="ttl"><span class="tag t-see">관광</span>도톤보리 야경 · 가족사진</span>
+          <div class="info">
+            <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Dotonbori%2C_Osaka%2C_at_night%2C_November_2016.jpg/960px-Dotonbori%2C_Osaka%2C_at_night%2C_November_2016.jpg" alt="도톤보리" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg" target="_blank" rel="noopener">사진 Martin Falbisoner / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">도톤보리 <span class="jp">道頓堀</span></span><p>운하를 따라 거대한 게, 복어 간판과 글리코 러너 전광판이 이어지는 오사카의 상징 거리. 밤에 네온이 강물에 비칠 때가 가장 예뻐요.</p></div>
+            <div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Takoyaki_dish.jpg/960px-Takoyaki_dish.jpg" alt="다코야키" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Takoyaki_dish.jpg" target="_blank" rel="noopener">사진 sayo ts / CC0 · Wikimedia Commons</a></figcaption></figure><span class="nm">다코야키 <span class="jp">たこ焼き</span></span><p>문어 조각을 넣은 반죽을 동그랗게 구운 오사카 대표 간식. 소스와 가쓰오부시를 올려 갓 구운 걸 호호 불며 먹어요.</p></div>
+          </div>
+          <div class="links"><a class="go" href="https://www.google.com/search?q=%E9%81%93%E9%A0%93%E5%A0%80%20%E5%A4%A7%E9%98%AA" target="_blank" rel="noopener">도톤보리<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E9%81%93%E9%A0%93%E5%A0%80%20%E3%81%9F%E3%81%93%E7%84%BC%E3%81%8D&amp;tbm=isch" target="_blank" rel="noopener">다코야키 사진<span aria-hidden="true">↗</span></a></div></div></li>
+      </ol>
+    </div>
+
+    <!-- 4일차 -->
+    <div class="day" id="day4" role="tabpanel" aria-labelledby="c4" hidden>
+      <div class="day-head"><span class="k">DAY 4 · 10월 17일 토요일</span><h3>마지막 날, 골라서</h3><span class="r">덴포잔 또는 난바 → 간사이공항 → 인천</span></div>
+      <div class="seg" role="tablist" aria-label="4일차 옵션">
+        <button type="button" role="tab" id="optA" aria-selected="true" aria-controls="planA">옵션 A · 덴포잔<small>수족관 · 대관람차 · 초밥</small></button>
+        <button type="button" role="tab" id="optB" aria-selected="false" aria-controls="planB">옵션 B · 난바시티<small>쇼핑 · 가정식 정식</small></button>
+      </div>
+
+      <div class="plan" id="planA" role="tabpanel" aria-labelledby="optA">
+        <div class="map" data-map="m4a"><iframe src="https://maps.google.com/maps?saddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%B0%B7%E7%94%BA7%E4%B8%81%E7%9B%AE6-33&daddr=%E6%B5%B7%E9%81%8A%E9%A4%A8+to:%E5%A4%A9%E4%BF%9D%E5%B1%B1%E5%A4%A7%E8%A6%B3%E8%A6%A7%E8%BB%8A&output=embed" loading="lazy" title="동선 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <ol class="tl">
+          <li><span class="tm2">09:30</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>아침 먹고 체크아웃 → 덴포잔</span><span class="ds">밴 업체 아침 이동, 또는 짐은 택시·사람은 전철 (다니마치선 → 주오선 오사카코역, 약 35분)</span></div></li>
+          <li><span class="tm2">10:00</span><div class="w"><span class="ttl"><span class="tag t-see">자유</span>하고 싶은 것 골라서</span>
+            <div class="info">
+              <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Kaiyukan_Manta_and_Whale_shark.JPG/960px-Kaiyukan_Manta_and_Whale_shark.JPG" alt="가이유칸" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Kaiyukan_Manta_and_Whale_shark.JPG" target="_blank" rel="noopener">사진 SR EXR / CC0 · Wikimedia Commons</a></figcaption></figure><span class="nm">가이유칸 <em>어른 2,700엔~</em> <span class="jp">海遊館</span></span><p>고래상어가 헤엄치는 태평양 대수조를 8층에서부터 나선형으로 내려가며 보는 대형 수족관. 초·중학생 1,400엔~, 3세 이상 700엔~, 2세 이하 무료. 개관 직후가 가장 한산해요.</p></div>
+              <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg/960px-Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg" alt="덴포잔 대관람차" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg" target="_blank" rel="noopener">사진 TimBray / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">덴포잔 대관람차 <em>800엔</em> <span class="jp">天保山大観覧車</span></span><p>높이 112.5m, 한 바퀴 약 15분. 오사카 항구와 시내가 한눈에 보이고, 바닥이 투명한 칸도 고를 수 있어요.</p></div>
+              <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tempozan_Market_Place_Building_and_Osaka_Aquarium_%22Kaiyukan%22.jpg/960px-Tempozan_Market_Place_Building_and_Osaka_Aquarium_%22Kaiyukan%22.jpg" alt="덴포잔 마켓플레이스" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Tempozan_Market_Place_Building_and_Osaka_Aquarium_%22Kaiyukan%22.jpg" target="_blank" rel="noopener">사진 そらみみ / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">휴식 · 덴포잔 마켓플레이스 <span class="jp">天保山マーケットプレース</span></span><p>수족관 옆 쇼핑몰. 카페와 기념품 가게가 있고 2층에 수유실과 기저귀 교환대가 있어요.</p></div>
+            </div>
+            <div class="links"><a class="go" href="https://www.google.com/search?q=%E6%B5%B7%E9%81%8A%E9%A4%A8%20%E5%A4%A7%E9%98%AA" target="_blank" rel="noopener">가이유칸<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E5%A4%A9%E4%BF%9D%E5%B1%B1%E5%A4%A7%E8%A6%B3%E8%A6%A7%E8%BB%8A" target="_blank" rel="noopener">대관람차<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E5%A4%A9%E4%BF%9D%E5%B1%B1%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%E3%83%97%E3%83%AC%E3%83%BC%E3%82%B9" target="_blank" rel="noopener">마켓플레이스<span aria-hidden="true">↗</span></a></div></div></li>
+          <li><span class="tm2">12:30</span><div class="w"><span class="ttl"><span class="tag t-eat">점심</span>초밥 · 덴포잔 마켓플레이스</span>
+            <div class="info">
+              <div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Nigiri_Sushi_%2826505096851%29.jpg/960px-Nigiri_Sushi_%2826505096851%29.jpg" alt="초밥 정식" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Nigiri_Sushi_(26505096851).jpg" target="_blank" rel="noopener">초밥 예시 사진 (이 가게 사진 아님) · 사진 Tim Reckmann / CC BY 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">초밥 정식 <span class="jp">がんこ 天保山店</span></span><p>오사카에서 시작한 초밥·일식 체인. 모둠초밥과 일식 정식이 있고 자리가 넓어 8명이 함께 앉기 좋아요.</p></div>
+              <div class="it food"><figure class="ph"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/%E9%AD%9A%E7%B1%B3%E8%BF%B4%E8%BD%89%E5%A3%BD%E5%8F%B8%2C_%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82%E5%BA%97%2C_%E6%9D%B1%E4%BA%AC%2C_%E6%97%A5%E6%9C%AC%2C_Uobei_Shibuya_Dogenzaka%2C_Tokyo%2C_Japan%2C_Nippon%2C_Nihon%2C_%E9%AD%9A%E3%81%B9%E3%81%84%2C_%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82%E5%BA%97%2C_%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%2C_%E3%81%A8%E3%81%86%E3%81%8D%E3%82%87%E3%81%86%2C_%E3%81%AB%E3%81%A3%E3%81%BD%E3%82%93%2C_%E3%81%AB%E3%81%BB%E3%82%93_%2827577690457%29.jpg/960px-thumbnail.jpg" alt="회전초밥" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E9%AD%9A%E7%B1%B3%E8%BF%B4%E8%BD%89%E5%A3%BD%E5%8F%B8,_%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82%E5%BA%97,_%E6%9D%B1%E4%BA%AC,_%E6%97%A5%E6%9C%AC,_Uobei_Shibuya_Dogenzaka,_Tokyo,_Japan,_Nippon,_Nihon,_%E9%AD%9A%E3%81%B9%E3%81%84,_%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82%E5%BA%97,_%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8,_%E3%81%A8%E3%81%86%E3%81%8D%E3%82%87%E3%81%86,_%E3%81%AB%E3%81%A3%E3%81%BD%E3%82%93,_%E3%81%AB%E3%81%BB%E3%82%93_(27577690457).jpg" target="_blank" rel="noopener">회전초밥 예시 사진 (도쿄 우오베이 지점, 구라긴 사진 아님) · 사진 bryan... / CC BY-SA 2.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">회전초밥 <span class="jp">蔵銀</span></span><p>레일 위 접시를 골라 먹는 재미가 있어 아이들이 좋아해요. 해산물덮밥도 있어요.</p></div>
+            </div>
+            <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%8C%E3%82%93%E3%81%93%20%E5%A4%A9%E4%BF%9D%E5%B1%B1%E5%BA%97" target="_blank" rel="noopener">간코<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E8%94%B5%E9%8A%80%20%E5%A4%A9%E4%BF%9D%E5%B1%B1" target="_blank" rel="noopener">구라긴<span aria-hidden="true">↗</span></a></div></div></li>
+          <li class="hot"><span class="tm2">14:30</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>공항 밴 · 덴포잔 출발</span><span class="ds">간사이공항까지 약 50분</span></div></li>
+          <li class="hot"><span class="tm2">18:15</span><div class="w"><span class="ttl"><span class="tag t-fly">항공</span>간사이 출발 → 인천 20:05</span></div></li>
+        </ol>
+      </div>
+
+      <div class="plan" id="planB" role="tabpanel" aria-labelledby="optB" hidden>
+        <div class="map" data-map="m4b"><iframe src="https://maps.google.com/maps?saddr=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%B0%B7%E7%94%BA7%E4%B8%81%E7%9B%AE6-33&daddr=%E9%BB%92%E9%96%80%E5%B8%82%E5%A0%B4+to:%E3%81%AA%E3%82%93%E3%81%B0CITY+to:%E3%81%AA%E3%82%93%E3%81%B0%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B9&output=embed" loading="lazy" title="동선 지도" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <ol class="tl">
+          <li><span class="tm2">09:30</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>아침 먹고 체크아웃 → 난바</span><span class="ds">택시 약 15분 · 짐은 밴에 두거나 난바역 코인로커</span></div></li>
+          <li><span class="tm2">10:00</span><div class="w"><span class="ttl"><span class="tag t-see">산책</span>구로몬시장</span>
+            <div class="info"><div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/%E9%BB%92%E9%96%80%E5%B8%82%E5%A0%B4_2024%282%29.jpg/500px-%E9%BB%92%E9%96%80%E5%B8%82%E5%A0%B4_2024%282%29.jpg" alt="구로몬시장" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:%E9%BB%92%E9%96%80%E5%B8%82%E5%A0%B4_2024%282%29.jpg" target="_blank" rel="noopener">사진 ほっきー / CC0 · Wikimedia Commons</a></figcaption></figure><span class="nm">구로몬시장 <span class="jp">黒門市場</span></span><p>‘오사카의 부엌’이라 불리는 아케이드 시장. 생선, 과일, 꼬치구이 가게가 많아 걸으며 간식 먹기 좋아요. 쇼핑몰은 11시에 열어서 먼저 들러요.</p></div></div>
+            <div class="links"><a class="go" href="https://www.google.com/search?q=%E9%BB%92%E9%96%80%E5%B8%82%E5%A0%B4%20%E5%A4%A7%E9%98%AA" target="_blank" rel="noopener">구로몬시장<span aria-hidden="true">↗</span></a></div></div></li>
+          <li><span class="tm2">11:00</span><div class="w"><span class="ttl"><span class="tag t-see">쇼핑</span>난바시티 · 난바파크스</span>
+            <div class="info">
+              <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Namba_City_-_panoramio.jpg/960px-Namba_City_-_panoramio.jpg" alt="난바시티" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Namba_City_-_panoramio.jpg" target="_blank" rel="noopener">사진 DVMG / CC BY 3.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">난바시티 <span class="jp">なんばCITY</span></span><p>난카이 난바역과 붙어 있는 쇼핑몰. 200개 넘는 패션·잡화 매장. 11:00~21:00.</p></div>
+              <div class="it place"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/150328_Namba_Parks_Osaka_Japan01bs3.jpg/960px-150328_Namba_Parks_Osaka_Japan01bs3.jpg" alt="난바파크스" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:150328_Namba_Parks_Osaka_Japan01bs3.jpg" target="_blank" rel="noopener">사진 663highland / CC BY 2.5 · Wikimedia Commons</a></figcaption></figure><span class="nm">난바파크스 <span class="jp">なんばパークス</span></span><p>계단식 건물 위로 약 11,500㎡의 옥상 정원이 이어지는 쇼핑몰. 아이들이 걷고 쉬기 좋고 수유실이 있어요.</p></div>
+            </div>
+            <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%AA%E3%82%93%E3%81%B0CITY" target="_blank" rel="noopener">난바시티<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E3%81%AA%E3%82%93%E3%81%B0%E3%83%91%E3%83%BC%E3%82%AF%E3%82%B9" target="_blank" rel="noopener">난바파크스<span aria-hidden="true">↗</span></a></div></div></li>
+          <li><span class="tm2">12:30</span><div class="w"><span class="ttl"><span class="tag t-eat">점심</span>일본 가정식 정식</span>
+            <div class="info"><div class="it food"><figure class="ph"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Grilled_Okhotsk_Atka_Mackerel.jpg/960px-Grilled_Okhotsk_Atka_Mackerel.jpg" alt="생선구이 정식 · 돈지루" loading="lazy" width="960" height="540"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Grilled_Okhotsk_Atka_Mackerel.jpg" target="_blank" rel="noopener">생선구이 예시 사진 · 사진 Fred Cherrygarden / CC BY-SA 4.0 · Wikimedia Commons</a></figcaption></figure><span class="nm">생선구이 정식 · 돈지루 <span class="jp">焼き魚定食 · 豚汁</span></span><p>밥, 된장국(돼지고기 넣은 돈지루), 생선구이나 고기 반찬, 절임이 한 쟁반에 나오는 일본 집밥 한 상. 난바시티·파크스 식당가에서 골라요 (22시까지).</p></div></div>
+            <div class="links"><a class="go" href="https://www.google.com/search?q=%E3%81%AA%E3%82%93%E3%81%B0CITY%20%E5%AE%9A%E9%A3%9F%20%E5%92%8C%E9%A3%9F" target="_blank" rel="noopener">난바 정식집 찾기<span aria-hidden="true">↗</span></a><a class="go" href="https://www.google.com/search?q=%E7%84%BC%E3%81%8D%E9%AD%9A%E5%AE%9A%E9%A3%9F&amp;tbm=isch" target="_blank" rel="noopener">정식 사진<span aria-hidden="true">↗</span></a></div></div></li>
+          <li class="hot"><span class="tm2">14:00</span><div class="w"><span class="ttl"><span class="tag t-move">이동</span>공항 밴 · 난바 출발</span><span class="ds">간사이공항까지 약 50분 · 난카이 라피트로 가도 돼요</span></div></li>
+          <li class="hot"><span class="tm2">18:15</span><div class="w"><span class="ttl"><span class="tag t-fly">항공</span>간사이 출발 → 인천 20:05</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="출발 전 준비">
+    <div class="sh"><h2>출발 전 준비</h2><small>체크는 이 휴대폰에만 저장</small></div>
+    <div class="checks">
+      <label><input type="checkbox" id="p1"><span class="box"></span><span class="txt">여권 8명 · 비짓재팬웹</span></label>
+      <label><input type="checkbox" id="p2"><span class="box"></span><span class="txt">교통카드 충전 · 택시 앱(GO, Uber)</span></label>
+      <label><input type="checkbox" id="p3"><span class="box"></span><span class="txt">밴 업체: 17일 픽업 장소(덴포잔 또는 난바) 확정</span></label>
+      <label><input type="checkbox" id="p4"><span class="box"></span><span class="txt">예약: 오아가리 · 아지쿠라야 · 하리쥬</span></label>
+      <label><input type="checkbox" id="p5"><span class="box"></span><span class="txt">온천 갈 사람 정하기 · 아기 입욕 확인</span></label>
+      <label><input type="checkbox" id="p6"><span class="box"></span><span class="txt">아침거리 · 햇반, 김, 누룽지 (고기·계란 X)</span></label>
+    </div>
+  </section>
+
+  <section class="tips" aria-label="팁">
+    <div><b>택시</b>4명까지라 8명은 2대</div>
+    <div><b>환율</b>100엔 ≈ 860원</div>
+    <div><b>전압</b>100V · 돼지코 챙기기</div>
+    <div><b>귀국</b>고기 든 음식 반입 금지</div>
+  </section>
+  <p class="hint">사진은 Wikimedia Commons의 자유 이용 사진이고, ‘예시 사진’은 그 가게 사진이 아니에요. 가게 사진은 ‘사진’ 버튼으로 구글에서 보세요. 지도 아래 번호 그림은 방문 순서예요. 실제 길은 ‘구글 지도로 동선 보기’를 눌러 확인하세요. ‘↗’ 버튼은 구글 검색으로 열려요. 시간과 요금은 예상이에요.</p>
+</div>
+
+<script>
+(function(){
+  /* 일차별 동선 데이터 (대략 좌표) */
+  var MAPS={
+    m1:{pts:[["간사이공항",34.4347,135.2440],["숙소 · 다니마치 (라이프 슈퍼 근처)",34.6705,135.5170]],
+        g:["関西国際空港 第1ターミナル","大阪市中央区谷町7丁目6-33","ライフ 空堀店"],note:"밴 약 1시간"},
+    m2:{pts:[["아라시야마",35.0125,135.6775,"down"],["니시키시장·가와라마치",35.0050,135.7650,"down"],["가모강",35.0095,135.7722,"up"]],
+        far:"→ 오사카 아지쿠라야 19:00",
+        g:["谷町六丁目駅","阪急嵐山駅","竹林の小径","渡月橋","京都嵐山温泉 風風の湯","錦市場","三条大橋","お好み焼き あじくらや 上本町"],note:"아라시야마에서 대나무숲·도게츠교·온천·점심 · 숙소에서 전철 약 1시간 20분"},
+    m3:{pts:[["숙소",34.6705,135.5170],["오사카성",34.6873,135.5262],["모토무라 우메다",34.7010,135.5000],["그랜드 그린",34.7055,135.4945],["하리쥬·도톤보리",34.6688,135.5020]],
+        g:["大阪市中央区谷町7丁目6-33","大阪城天守閣","東梅田駅","グラングリーン大阪","はり重 道頓堀本店"],note:"지하철 위주 · 각 구간 10~20분"},
+    m4a:{pts:[["숙소",34.6705,135.5170],["가이유칸",34.6545,135.4289],["대관람차",34.6575,135.4325]],
+        far:"→ 간사이공항 14:30",
+        g:["大阪市中央区谷町7丁目6-33","海遊館","天保山大観覧車","関西国際空港 第1ターミナル"],note:"숙소 → 덴포잔 약 25~35분"},
+    m4b:{pts:[["숙소",34.6705,135.5170],["구로몬시장",34.6650,135.5065],["난바시티",34.6633,135.5015],["난바파크스",34.6612,135.5020]],
+        far:"→ 간사이공항 14:00",
+        g:["大阪市中央区谷町7丁目6-33","黒門市場","なんばCITY","なんばパークス","関西国際空港 第1ターミナル"],note:"모두 택시·도보 15분 이내"}
+  };
+  var NS="http://www.w3.org/2000/svg";
+  function el(n,a,t){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e}
+  function draw(box,d){
+    var W=360,H=220,P=34;
+    var lats=d.pts.map(function(p){return p[1]}),lngs=d.pts.map(function(p){return p[2]});
+    var mid=(Math.min.apply(0,lats)+Math.max.apply(0,lats))/2,k=Math.cos(mid*Math.PI/180);
+    var xs=lngs.map(function(v){return v*k}),ys=lats.map(function(v){return -v});
+    var x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs),y0=Math.min.apply(0,ys),y1=Math.max.apply(0,ys);
+    var s=Math.min((W-2*P-60)/((x1-x0)||1e-6),(H-2*P)/((y1-y0)||1e-6));
+    var ox=(W-(x1-x0)*s)/2,oy=(H-(y1-y0)*s)/2;
+    var pos=xs.map(function(x,i){return[ox+(x-x0)*s,oy+(ys[i]-y0)*s]});
+    var svg=el("svg",{viewBox:"0 0 "+W+" "+H,role:"img","aria-label":"동선: "+d.pts.map(function(p){return p[0]}).join(" → ")});
+    for(var gx=0;gx<=W;gx+=30)svg.appendChild(el("line",{x1:gx,y1:0,x2:gx,y2:H,"class":"gl"}));
+    for(var gy=0;gy<=H;gy+=30)svg.appendChild(el("line",{x1:0,y1:gy,x2:W,y2:gy,"class":"gl"}));
+    svg.appendChild(el("polyline",{points:pos.map(function(p){return p.join(",")}).join(" "),"class":"rt"}));
+    pos.forEach(function(p,i){
+      var last=i===pos.length-1;
+      svg.appendChild(el("circle",{cx:p[0],cy:p[1],r:10,"class":"dot"+(last?" end":"")}));
+      svg.appendChild(el("text",{x:p[0],y:p[1]+4,"text-anchor":"middle","class":"num"},String(i+1)));
+      var right=p[0]<W-110, lx=right?p[0]+14:p[0]-14, ly=p[1]+4, anc=right?"start":"end", ov=d.pts[i][3];
+      if(ov==="up"){lx=p[0];ly=p[1]-16;anc="middle"} else if(ov==="down"){lx=p[0];ly=p[1]+26;anc="middle"}
+      // 겹침 줄이기: 이웃 점과 너무 가까우면 위/아래로
+      for(var j=0;j<i;j++){if(Math.abs(pos[j][0]-p[0])<70&&Math.abs(pos[j][1]-p[1])<14){ly+= (p[1]>pos[j][1]?10:-10)}}
+      svg.appendChild(el("text",{x:lx,y:ly,"text-anchor":anc,"class":"lb"},d.pts[i][0]));
+    });
+    if(d.far){svg.appendChild(el("text",{x:W-10,y:H-10,"text-anchor":"end","class":"far"},d.far))}
+    box.appendChild(svg);
+    var foot=document.createElement("div");foot.className="map-foot";
+    var sp=document.createElement("span");sp.textContent=d.note;
+    var a=document.createElement("a");a.className="gmap";a.target="_blank";a.rel="noopener";
+    a.href="https://www.google.com/maps/dir/"+d.g.map(encodeURIComponent).join("/");
+    a.textContent="구글 지도로 동선 보기 ↗";
+    foot.appendChild(sp);foot.appendChild(a);box.appendChild(foot);
+  }
+  document.querySelectorAll(".map[data-map]").forEach(function(b){var d=MAPS[b.getAttribute("data-map")];if(d)draw(b,d)});
+
+  /* D-day */
+  try{
+    var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Seoul'}));
+    var t=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    var dd=Math.round((new Date(2026,9,14)-t)/86400000), e=document.getElementById('dday');
+    if(dd>0) e.textContent='출발 D-'+dd; else if(dd===0) e.textContent='오늘 출발!';
+    else if(t<=new Date(2026,9,17)) e.textContent='여행 '+(1-dd)+'일차'; else e.textContent='즐거웠던 여행';
+  }catch(err){}
+
+  /* 날짜 탭 */
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  function showDay(n,scroll){
+    chips.forEach(function(c,i){var on=i===n-1;c.setAttribute('aria-selected',String(on));document.getElementById('day'+(i+1)).hidden=!on});
+    try{localStorage.setItem('osaka-day',String(n))}catch(err){}
+    if(scroll){var s=document.querySelector('.chips');window.scrollTo({top:s.getBoundingClientRect().top+window.scrollY-4,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
+  }
+  chips.forEach(function(c,i){c.addEventListener('click',function(){showDay(i+1,false)})});
+  document.querySelectorAll('.ov').forEach(function(b){b.addEventListener('click',function(){showDay(+b.dataset.go,true)})});
+  var start=1;
+  try{var sv=+localStorage.getItem('osaka-day');if(sv>=1&&sv<=4)start=sv}catch(err){}
+  try{var n2=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Seoul'}));if(n2.getFullYear()===2026&&n2.getMonth()===9&&n2.getDate()>=14&&n2.getDate()<=17)start=n2.getDate()-13}catch(err){}
+  var h=(location.hash||'').match(/^#d([1-4])$/); if(h) start=+h[1];
+  showDay(start,false);
+
+  /* 4일차 옵션 */
+  var oA=document.getElementById('optA'),oB=document.getElementById('optB'),pA=document.getElementById('planA'),pB=document.getElementById('planB');
+  function opt(b){oA.setAttribute('aria-selected',String(!b));oB.setAttribute('aria-selected',String(b));pA.hidden=b;pB.hidden=!b;try{localStorage.setItem('osaka-d4',b?'B':'A')}catch(err){}}
+  oA.addEventListener('click',function(){opt(false)});oB.addEventListener('click',function(){opt(true)});
+  try{if(localStorage.getItem('osaka-d4')==='B')opt(true)}catch(err){}
+
+  /* 체크 */
+  var KEY='osaka-family-checks2',ck={};
+  try{ck=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(err){}
+  document.querySelectorAll('.checks input').forEach(function(cb){
+    if(ck[cb.id]) cb.checked=true;
+    cb.addEventListener('change',function(){ck[cb.id]=cb.checked;try{localStorage.setItem(KEY,JSON.stringify(ck))}catch(err){}});
+  });
+})();
+</script>
+
+</body>
+</html>
